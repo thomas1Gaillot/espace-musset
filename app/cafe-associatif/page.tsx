@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Coffee, Users, Clock, Heart } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CafeAssociatifPage() {
-   const services = [
+  const services = [
     {
       title: "Espace de coworking",
       description: "Travaillez dans un environnement stimulant et bienveillant"
@@ -31,8 +30,8 @@ export default function CafeAssociatifPage() {
             Café Associatif
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Au cœur de l'Espace Musset, notre café associatif est un lieu de rencontre 
-            ouvert à tous, où la convivialité et l'échange interculturel se conjuguent 
+            Au cœur de l'Espace Musset, notre café associatif est un lieu de rencontre
+            ouvert à tous, où la convivialité et l'échange interculturel se conjuguent
             autour d'un café équitable et de moments de partage authentiques.
           </p>
         </div>
@@ -40,8 +39,8 @@ export default function CafeAssociatifPage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           {/* Image principale */}
           <div className="relative h-80 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1582562124811-c09040d0a901" 
+            <img
+              src="/cafe-asso.jpeg"
               alt="Café associatif"
               className="w-full h-full object-cover"
             />
@@ -55,19 +54,19 @@ export default function CafeAssociatifPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Notre café associatif incarne les valeurs de partage et d'inclusion qui 
-                animent l'Espace Musset. C'est un lieu où chacun peut venir travailler, 
-                se détendre, rencontrer d'autres personnes ou simplement profiter d'un 
+                Notre café associatif incarne les valeurs de partage et d'inclusion qui
+                animent l'Espace Musset. C'est un lieu où chacun peut venir travailler,
+                se détendre, rencontrer d'autres personnes ou simplement profiter d'un
                 moment de calme.
               </p>
               <p>
-                Nous proposons des boissons chaudes issues du commerce équitable, 
-                des collations saines et locales, dans une atmosphère chaleureuse 
+                Nous proposons des boissons chaudes issues du commerce équitable,
+                des collations saines et locales, dans une atmosphère chaleureuse
                 qui favorise les échanges spontanés et les nouvelles amitiés.
               </p>
               <p>
-                Le café sert également de point de rendez-vous pour de nombreuses 
-                activités de l'Espace Musset et accueille régulièrement des événements 
+                Le café sert également de point de rendez-vous pour de nombreuses
+                activités de l'Espace Musset et accueille régulièrement des événements
                 culturels intimistes.
               </p>
             </div>
@@ -126,7 +125,7 @@ export default function CafeAssociatifPage() {
             Venez nous rencontrer !
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Que ce soit pour travailler, se détendre ou rencontrer de nouvelles personnes, 
+            Que ce soit pour travailler, se détendre ou rencontrer de nouvelles personnes,
             notre café vous accueille dans une atmosphère bienveillante.
           </p>
           <Button size="lg" className="mr-4">

@@ -1,32 +1,18 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Link from "next/link";
+import React from "react";
 
 export default function LocationSallesPage() {
   const salles = [
     {
-      name: "Salle de conférence",
-      capacity: "50 personnes",
-      features: ["Vidéoprojecteur", "Sonorisation", "WiFi", "Accessibilité PMR"],
-      price: "120€/jour"
+      name: "Salle de réunion, ateliers, conférences",
+      capacity: "42m² - 24-60 personnes selon disposition",
+      features: ["Vidéoprojecteur", "WiFi", "toilettes PMR", "Eclairage avec variateurs et tonalités", "Climatisation", "lumière du jour"],
+      prices: ["Tarif 1/2 Journée - dès 140 € HT", "Tarif Journée - dès 240 € HT", "Tarif Soirée - dès 140 € HT"]
     },
-    {
-      name: "Atelier créatif",
-      capacity: "20 personnes",
-      features: ["Tables modulables", "Éclairage naturel", "Matériel artistique", "Point d'eau"],
-      price: "80€/jour"
-    },
-    {
-      name: "Salle de mouvement",
-      capacity: "30 personnes",
-      features: ["Parquet", "Miroirs", "Système audio", "Vestiaires"],
-      price: "100€/jour"
-    },
-    {
-      name: "Espace café",
-      capacity: "40 personnes",
-      features: ["Cuisine équipée", "Mobilier modulable", "Terrasse", "Ambiance chaleureuse"],
-      price: "150€/jour"
-    }
   ];
 
   return (
@@ -46,14 +32,7 @@ export default function LocationSallesPage() {
 
         {/* Description générale */}
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
-          <div className="relative h-80 rounded-lg overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-              alt="Espaces à louer"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-          </div>
+          <CarouselSalleDesMuses />
 
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
@@ -83,20 +62,23 @@ export default function LocationSallesPage() {
           <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
             Nos espaces disponibles
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 ">
             {salles.map((salle, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow bg-white border-none">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
-                      <CardTitle className="font-serif text-xl">{salle.name}</CardTitle>
-                      <CardDescription className="text-lg font-medium text-primary">
+                      <CardTitle className="font-serif text-xl font-bold">{salle.name}</CardTitle>
+                      <CardDescription className="text-sm font-medium text-primary">
                         {salle.capacity}
                       </CardDescription>
                     </div>
-                    <div className="text-right">
-                      <p className="font-semibold text-lg text-foreground">{salle.price}</p>
+                    <div className="grid text-right text-sm">
+                      {salle.prices.map(p =>
+                        <p className="font-semibold text-foreground">{p}</p>
+                      )}
                     </div>
+
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -114,79 +96,22 @@ export default function LocationSallesPage() {
           </div>
         </div>
 
-        {/* Conditions et services */}
-        <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-                Services inclus
-              </h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Accueil et accompagnement</li>
-                <li>• Ménage de fin de prestation</li>
-                <li>• Accès aux sanitaires</li>
-                <li>• WiFi haut débit</li>
-                <li>• Chauffage et éclairage</li>
-                <li>• Assurance responsabilité civile</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-                Tarifs préférentiels
-              </h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• <strong>Associations:</strong> -30% sur tous nos tarifs</li>
-                <li>• <strong>Projets sociaux:</strong> -20% pour les initiatives citoyennes</li>
-                <li>• <strong>Événements récurrents:</strong> Dégressif à partir de 5 locations</li>
-                <li>• <strong>Demi-journée:</strong> 60% du tarif journalier</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Processus de réservation */}
-        <div className="mb-12">
-          <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
-            Comment réserver ?
-          </h2>
-          <div className="grid md:grid-cols-4 gap-6 text-center">
-            <div className="space-y-2">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">1</div>
-              <h3 className="font-medium text-foreground">Contact</h3>
-              <p className="text-sm text-muted-foreground">Appelez-nous ou envoyez un email</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">2</div>
-              <h3 className="font-medium text-foreground">Visite</h3>
-              <p className="text-sm text-muted-foreground">Découvrez nos espaces</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">3</div>
-              <h3 className="font-medium text-foreground">Devis</h3>
-              <p className="text-sm text-muted-foreground">Recevez votre proposition personnalisée</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">4</div>
-              <h3 className="font-medium text-foreground">Réservation</h3>
-              <p className="text-sm text-muted-foreground">Confirmez votre événement</p>
-            </div>
-          </div>
-        </div>
-
         {/* CTA */}
         <div className="text-center">
           <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-            Organisez votre événement chez nous
+            Comment réserver ?
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
             Contactez-nous pour une visite ou un devis personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              Demander un devis
+            <Button size="lg" asChild>
+              <Link href='contact'>
+                Nous contacter
+              </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="https://kaktus.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.kactus.com/fr/lieux/espace-musset" target="_blank" rel="noopener noreferrer">
                 Réserver sur Kaktus
               </a>
             </Button>
@@ -196,3 +121,52 @@ export default function LocationSallesPage() {
     </div>
   );
 };
+
+
+function CarouselSalleDesMuses() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
+  const images = [
+    "/salle-des-muses.jpg",
+    "/salle-des-muses-2.jpg",
+    "/salle-des-muses-3.jpg",
+  ]
+
+  React.useEffect(() => {
+    if (!api) return
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+
+  }, [api])
+
+  return (
+    <div className="mx-auto max-w-3xl relative rounded-lg overflow-hidden h-80">
+      <Carousel setApi={setApi} className="w-full h-full">
+        <CarouselContent>
+          {images.map((src, index) => (
+            <CarouselItem key={index} className="relative w-full h-80">
+              <img
+                src={src}
+                alt={`Image ${index + 1} - Espaces à louer`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent rounded-lg" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10" />
+        <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10" />
+      </Carousel>
+      <div className="text-muted-foreground py-2 text-center text-sm">
+        Slide {current} of {count}
+      </div>
+    </div>
+  )
+}
