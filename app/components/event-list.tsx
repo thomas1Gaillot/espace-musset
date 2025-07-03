@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Calendar, MapPin, Clock } from "lucide-react"
+import { Calendar, Clock, MapPin } from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
 
 interface Event {
   id: number
@@ -158,7 +158,7 @@ export default function EventList() {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-6">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex  justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Événements</h1>
         <Select value={sortBy} onValueChange={setSortBy}>
           <SelectTrigger className="w-48">
@@ -174,26 +174,26 @@ export default function EventList() {
       <ScrollArea className="h-[600px] w-full">
         <div className="space-y-4">
           {sortedEvents.map((event) => (
-            <Card key={event.id} className="p-4 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-4">
+            <Card key={event.id} className="px-0 w-full sm:px-4 p-4 hover:shadow-md transition-shadow">
+              <div className="flex flex-col w-full sm:flex-row items-start sm:items-center gap-4">
                 {/* Event Image */}
-                <div className="relative flex-shrink-0">
+                <div className="relative flex-shrink-0 w-full sm:w-auto">
                   <Image
                     src={event.image || "/placeholder.svg"}
                     alt={event.title}
                     width={120}
                     height={80}
-                    className="rounded-lg object-cover"
+                    className="rounded-lg object-cover w-full sm:w-[120px] h-[80px]"
                   />
                   {event.isNew && (
                     <Badge className="absolute -top-2 -right-2 bg-green-100 text-green-800 hover:bg-green-100">
-                      Just added
+                      {"Nouveau"}
                     </Badge>
                   )}
                 </div>
 
                 {/* Event Details */}
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 w-full">
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 truncate">{event.title}</h3>
 
                   <div className="space-y-1 text-sm text-gray-600">
@@ -204,26 +204,29 @@ export default function EventList() {
 
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-gray-500" />
-                      <span>{event.time} (heure : France)</span>
+                      <span>{event.time} {"(heure : France)"}</span>
                     </div>
 
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-gray-500" />
                       <span>
-                        {event.venue} • {event.city}
+                        {event.venue} {"•"} {event.city}
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Action Button */}
-                <div className="flex-shrink-0">
-                  <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6">
-                    Réserver
+                <div className="w-full sm:w-auto">
+                  <Button
+                    className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white px-6"
+                  >
+                    {"Réserver"}
                   </Button>
                 </div>
               </div>
             </Card>
+
           ))}
         </div>
       </ScrollArea>
