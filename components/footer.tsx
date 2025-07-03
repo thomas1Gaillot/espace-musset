@@ -6,6 +6,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
     <footer className="bg-sage-50 border-t border-sage-200">
+
       <div className="container mx-auto px-4 py-12">
         {/* Logo centré */}
         <div className="text-center mb-8">
@@ -17,6 +18,7 @@ export const Footer = () => {
               <h2 className="font-serif font-bold text-2xl text-foreground">Espace Musset</h2>
               <p className="text-sm text-muted-foreground">Centre culturel & associatif</p>
             </div>
+
           </div>
         </div>
 
@@ -48,6 +50,7 @@ export const Footer = () => {
               <Button className="rounded-l-none">
                 S'inscrire
               </Button>
+
             </div>
           </div>
 

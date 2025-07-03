@@ -91,6 +91,7 @@
   .nav-link:hover::after,
   .nav-link.active::after {
     width: 100%;
+
   }
 
   .hero-section {
