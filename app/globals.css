@@ -21,11 +21,11 @@
   .prose h2,
   .prose h3,
   .prose h4 {
-    @apply text-earth-dark font-serif;
+    @apply text-burgundy font-serif;
   }
 
   .prose strong {
-    @apply text-earth-dark;
+    @apply text-burgundy;
   }
 
   .prose ul {

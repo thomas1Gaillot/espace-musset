@@ -1,127 +1,139 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Coffee, Users, Clock, Heart } from "lucide-react"
 
 export default function CafeAssociatifPage() {
-  const services = [
-    {
-      title: "Café équitable",
-      description: "Sélection de cafés issus du commerce équitable",
-      icon: <Coffee className="w-6 h-6" />,
-    },
+   const services = [
     {
       title: "Espace de coworking",
-      description: "Travaillez dans un environnement convivial et inspirant",
-      icon: <Users className="w-6 h-6" />,
+      description: "Travaillez dans un environnement stimulant et bienveillant"
+    },
+    {
+      title: "Rencontres interculturelles",
+      description: "Échangez avec des personnes de tous horizons"
     },
     {
       title: "Événements communautaires",
-      description: "Soirées jeux, lectures publiques, concerts intimistes",
-      icon: <Heart className="w-6 h-6" />,
+      description: "Participez à nos soirées thématiques et débats spontanés"
     },
-  ]
+    {
+      title: "Soutien aux associations",
+      description: "Un lieu de réunion pour les initiatives locales"
+    }
+  ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-terracotta/20 to-sage/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-serif font-bold text-4xl md:text-5xl text-earth-dark mb-6">Café associatif</h1>
-            <p className="text-xl text-earth-medium mb-8">
-              Un espace chaleureux où se rencontrer, échanger et créer des liens autour d'un café équitable
-            </p>
-            <Button size="lg" className="bg-terracotta hover:bg-terracotta/80 text-cream">
-              Nous rendre visite
-            </Button>
-          </div>
+    <div className="min-h-screen py-12 px-4">
+      <div className="container mx-auto">
+        {/* Hero */}
+        <div className="text-center mb-12">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Café Associatif
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Au cœur de l'Espace Musset, notre café associatif est un lieu de rencontre 
+            ouvert à tous, où la convivialité et l'échange interculturel se conjuguent 
+            autour d'un café équitable et de moments de partage authentiques.
+          </p>
         </div>
-      </section>
 
-      {/* About Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif font-bold text-3xl text-earth-dark mb-6">Un lieu de vie et de partage</h2>
-              <p className="text-earth-medium mb-6">
-                Notre café associatif est bien plus qu'un simple lieu de restauration. C'est un espace de rencontre où
-                les habitants du quartier, les membres de l'association et les visiteurs de passage peuvent se retrouver
-                dans une atmosphère détendue et bienveillante.
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          {/* Image principale */}
+          <div className="relative h-80 rounded-lg overflow-hidden">
+            <img 
+              src="https://images.unsplash.com/photo-1582562124811-c09040d0a901" 
+              alt="Café associatif"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+
+          {/* Description */}
+          <div className="flex flex-col justify-center space-y-6">
+            <h2 className="font-serif text-2xl font-semibold text-foreground">
+              Un espace de vie communautaire
+            </h2>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                Notre café associatif incarne les valeurs de partage et d'inclusion qui 
+                animent l'Espace Musset. C'est un lieu où chacun peut venir travailler, 
+                se détendre, rencontrer d'autres personnes ou simplement profiter d'un 
+                moment de calme.
               </p>
-              <p className="text-earth-medium mb-6">
-                Nous privilégions les produits locaux et équitables, dans une démarche respectueuse de l'environnement
-                et des producteurs. Chaque consommation contribue au financement des activités de l'association.
+              <p>
+                Nous proposons des boissons chaudes issues du commerce équitable, 
+                des collations saines et locales, dans une atmosphère chaleureuse 
+                qui favorise les échanges spontanés et les nouvelles amitiés.
+              </p>
+              <p>
+                Le café sert également de point de rendez-vous pour de nombreuses 
+                activités de l'Espace Musset et accueille régulièrement des événements 
+                culturels intimistes.
               </p>
             </div>
-            <div className="bg-sage/10 rounded-2xl p-8">
-              <div className="bg-[url('/placeholder.svg?height=300&width=400')] bg-cover bg-center h-64 rounded-lg mb-4"></div>
-              <p className="text-earth-medium text-center italic">"Un espace où chacun peut se sentir chez soi"</p>
-            </div>
           </div>
         </div>
-      </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif font-bold text-3xl text-center text-earth-dark mb-12">Ce que nous proposons</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+        {/* Services */}
+        <div className="mb-12">
+          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+            Ce que nous offrons
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="bg-white border-none shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="text-terracotta mb-4 flex justify-center">{service.icon}</div>
-                  <h3 className="font-serif font-semibold text-xl text-earth-dark mb-3">{service.title}</h3>
-                  <p className="text-earth-medium">{service.description}</p>
+              <Card key={index} className="text-center hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <CardTitle className="font-serif text-lg">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{service.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Hours Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <Clock className="w-12 h-12 text-sage mx-auto mb-6" />
-            <h2 className="font-serif font-bold text-3xl text-earth-dark mb-8">Horaires d'ouverture</h2>
-            <div className="bg-sage/10 rounded-2xl p-8">
-              <div className="space-y-4 text-earth-dark">
-                <div className="flex justify-between">
-                  <span className="font-semibold">Lundi - Vendredi</span>
-                  <span>9h00 - 18h00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Samedi</span>
-                  <span>10h00 - 17h00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="font-semibold">Dimanche</span>
-                  <span>Fermé</span>
-                </div>
+        {/* Horaires et infos pratiques */}
+        <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                Horaires d'ouverture
+              </h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p><strong>Lundi - Vendredi:</strong> 9h00 - 19h00</p>
+                <p><strong>Samedi:</strong> 10h00 - 18h00</p>
+                <p><strong>Dimanche:</strong> 14h00 - 18h00</p>
               </div>
-              <div className="mt-6 pt-6 border-t border-sage/20">
-                <p className="text-earth-medium text-sm">Horaires susceptibles de varier selon les événements</p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                Accès libre
+              </h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p>• Entrée libre et gratuite</p>
+                <p>• WiFi gratuit</p>
+                <p>• Prises électriques disponibles</p>
+                <p>• Accessible aux personnes à mobilité réduite</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-terracotta/10 to-sage/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif font-bold text-3xl text-earth-dark mb-6">Venez nous rencontrer</h2>
-          <p className="text-earth-medium text-lg mb-8 max-w-2xl mx-auto">
-            Que ce soit pour un café, pour travailler ou simplement pour discuter, vous êtes les bienvenus à l'Espace
-            Musset
+        {/* CTA */}
+        <div className="text-center">
+          <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
+            Venez nous rencontrer !
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6">
+            Que ce soit pour travailler, se détendre ou rencontrer de nouvelles personnes, 
+            notre café vous accueille dans une atmosphère bienveillante.
           </p>
-          <Button size="lg" className="bg-terracotta hover:bg-terracotta/80 text-cream">
-            Nous contacter
+          <Button size="lg" className="mr-4">
+            Nous rendre visite
           </Button>
         </div>
-      </section>
+      </div>
     </div>
-  )
-}
+  );
+};

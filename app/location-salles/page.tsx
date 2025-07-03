@@ -1,183 +1,198 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Users, Clock, Wifi, Coffee, Car } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LocationSallesPage() {
-  const rooms = [
+  const salles = [
     {
-      name: "Salle Principale",
+      name: "Salle de conférence",
       capacity: "50 personnes",
-      size: "80 m²",
-      description: "Espace modulable idéal pour conférences, ateliers et événements",
-      features: ["Vidéoprojecteur", "Système audio", "Éclairage modulable", "Accès PMR"],
-      price: "25€/heure",
+      features: ["Vidéoprojecteur", "Sonorisation", "WiFi", "Accessibilité PMR"],
+      price: "120€/jour"
     },
     {
-      name: "Salle Intime",
-      capacity: "15 personnes",
-      size: "30 m²",
-      description: "Parfaite pour réunions, formations et ateliers en petit groupe",
-      features: ["Tableau blanc", "Connexion internet", "Climatisation", "Mobilier modulable"],
-      price: "15€/heure",
+      name: "Atelier créatif",
+      capacity: "20 personnes",
+      features: ["Tables modulables", "Éclairage naturel", "Matériel artistique", "Point d'eau"],
+      price: "80€/jour"
     },
     {
-      name: "Espace Détente",
-      capacity: "25 personnes",
-      size: "45 m²",
-      description: "Ambiance cosy pour événements informels et rencontres conviviales",
-      features: ["Coin cuisine", "Canapés", "Éclairage tamisé", "Terrasse privée"],
-      price: "20€/heure",
+      name: "Salle de mouvement",
+      capacity: "30 personnes",
+      features: ["Parquet", "Miroirs", "Système audio", "Vestiaires"],
+      price: "100€/jour"
     },
-  ]
-
-  const amenities = [
-    { icon: <Wifi className="w-6 h-6" />, name: "WiFi gratuit" },
-    { icon: <Coffee className="w-6 h-6" />, name: "Espace café" },
-    { icon: <Car className="w-6 h-6" />, name: "Parking proche" },
-    { icon: <MapPin className="w-6 h-6" />, name: "Métro à 5 min" },
-  ]
+    {
+      name: "Espace café",
+      capacity: "40 personnes",
+      features: ["Cuisine équipée", "Mobilier modulable", "Terrasse", "Ambiance chaleureuse"],
+      price: "150€/jour"
+    }
+  ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-sage/20 to-earth-medium/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <MapPin className="w-16 h-16 text-sage mx-auto mb-6" />
-            <h1 className="font-serif font-bold text-4xl md:text-5xl text-earth-dark mb-6">Location de salles</h1>
-            <p className="text-xl text-earth-medium mb-8">
-              Des espaces modulables et équipés au cœur de Toulouse pour vos événements, réunions et formations
-            </p>
-            <Button size="lg" className="bg-sage hover:bg-sage/80 text-cream">
-              Réserver une salle
-            </Button>
+    <div className="min-h-screen py-12 px-4">
+      <div className="container mx-auto">
+        {/* Hero */}
+        <div className="text-center mb-12">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Location de Salles
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Louez nos espaces chaleureux et modulables pour vos événements, formations,
+            réunions ou célébrations. Des lieux inspirants qui reflètent nos valeurs
+            de convivialité et de partage.
+          </p>
+        </div>
+
+        {/* Description générale */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          <div className="relative h-80 rounded-lg overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+              alt="Espaces à louer"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+
+          <div className="flex flex-col justify-center space-y-6">
+            <h2 className="font-serif text-2xl font-semibold text-foreground">
+              Des espaces à votre image
+            </h2>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                L'Espace Musset met à disposition ses différentes salles pour accueillir
+                vos projets associatifs, professionnels ou personnels. Nos espaces
+                reflètent nos valeurs d'ouverture et de bienveillance.
+              </p>
+              <p>
+                Que ce soit pour une conférence, un atelier, une formation ou une
+                célébration, nous vous proposons des environnements adaptés et
+                équipés selon vos besoins.
+              </p>
+              <p>
+                Nos tarifs préférentiels pour les associations et les projets à
+                vocation sociale témoignent de notre engagement communautaire.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Rooms Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif font-bold text-3xl text-center text-earth-dark mb-12">Nos espaces disponibles</h2>
-          <div className="grid lg:grid-cols-3 gap-8">
-            {rooms.map((room, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow">
-                <div className="bg-[url('/placeholder.svg?height=200&width=300')] bg-cover bg-center h-48 rounded-t-lg"></div>
-                <CardContent className="p-6">
-                  <h3 className="font-serif font-bold text-xl text-earth-dark mb-2">{room.name}</h3>
-                  <div className="flex items-center space-x-4 text-earth-medium mb-4">
-                    <span className="flex items-center space-x-1">
-                      <Users className="w-4 h-4" />
-                      <span className="text-sm">{room.capacity}</span>
-                    </span>
-                    <span className="text-sm">{room.size}</span>
+        {/* Nos salles */}
+        <div className="mb-12">
+          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+            Nos espaces disponibles
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {salles.map((salle, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <CardTitle className="font-serif text-xl">{salle.name}</CardTitle>
+                      <CardDescription className="text-lg font-medium text-primary">
+                        {salle.capacity}
+                      </CardDescription>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-semibold text-lg text-foreground">{salle.price}</p>
+                    </div>
                   </div>
-                  <p className="text-earth-medium mb-4">{room.description}</p>
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-earth-dark mb-2">Équipements inclus :</h4>
-                    <ul className="text-sm text-earth-medium space-y-1">
-                      {room.features.map((feature, idx) => (
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-foreground">Équipements inclus :</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      {salle.features.map((feature, idx) => (
                         <li key={idx}>• {feature}</li>
                       ))}
                     </ul>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold text-sage text-lg">{room.price}</span>
-                    <Button className="bg-sage hover:bg-sage/80 text-cream">Réserver</Button>
-                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Amenities Section */}
-      <section className="py-16 bg-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif font-bold text-3xl text-center text-earth-dark mb-12">Services inclus</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {amenities.map((amenity, index) => (
-              <div key={index} className="text-center">
-                <div className="text-sage mb-4 flex justify-center">{amenity.icon}</div>
-                <h3 className="font-semibold text-earth-dark">{amenity.name}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif font-bold text-3xl text-center text-earth-dark mb-12">Tarifs et conditions</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-sage/10 border-none">
-                <CardContent className="p-6">
-                  <Clock className="w-8 h-8 text-sage mb-4" />
-                  <h3 className="font-serif font-semibold text-xl text-earth-dark mb-4">Tarification</h3>
-                  <div className="space-y-3 text-earth-medium">
-                    <div className="flex justify-between">
-                      <span>Demi-journée (4h)</span>
-                      <span className="font-semibold">-20%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Journée complète (8h)</span>
-                      <span className="font-semibold">-30%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Associations locales</span>
-                      <span className="font-semibold">-15%</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Événements récurrents</span>
-                      <span className="font-semibold">Sur devis</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-terracotta/10 border-none">
-                <CardContent className="p-6">
-                  <Users className="w-8 h-8 text-terracotta mb-4" />
-                  <h3 className="font-serif font-semibold text-xl text-earth-dark mb-4">Conditions</h3>
-                  <div className="space-y-3 text-earth-medium">
-                    <p>• Réservation minimum 48h à l'avance</p>
-                    <p>• Caution de 100€ demandée</p>
-                    <p>• Nettoyage inclus dans le tarif</p>
-                    <p>• Annulation gratuite 24h avant</p>
-                    <p>• Accès aux équipements techniques</p>
-                  </div>
-                </CardContent>
-              </Card>
+        {/* Conditions et services */}
+        <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                Services inclus
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• Accueil et accompagnement</li>
+                <li>• Ménage de fin de prestation</li>
+                <li>• Accès aux sanitaires</li>
+                <li>• WiFi haut débit</li>
+                <li>• Chauffage et éclairage</li>
+                <li>• Assurance responsabilité civile</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                Tarifs préférentiels
+              </h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>• <strong>Associations:</strong> -30% sur tous nos tarifs</li>
+                <li>• <strong>Projets sociaux:</strong> -20% pour les initiatives citoyennes</li>
+                <li>• <strong>Événements récurrents:</strong> Dégressif à partir de 5 locations</li>
+                <li>• <strong>Demi-journée:</strong> 60% du tarif journalier</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-r from-sage/10 to-earth-medium/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif font-bold text-3xl text-earth-dark mb-6">Réservez votre espace</h2>
-          <p className="text-earth-medium text-lg mb-8 max-w-2xl mx-auto">
-            Contactez-nous pour discuter de vos besoins et organiser une visite de nos espaces. Nous vous accompagnons
-            dans la réalisation de votre événement.
+        {/* Processus de réservation */}
+        <div className="mb-12">
+          <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
+            Comment réserver ?
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            <div className="space-y-2">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">1</div>
+              <h3 className="font-medium text-foreground">Contact</h3>
+              <p className="text-sm text-muted-foreground">Appelez-nous ou envoyez un email</p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">2</div>
+              <h3 className="font-medium text-foreground">Visite</h3>
+              <p className="text-sm text-muted-foreground">Découvrez nos espaces</p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">3</div>
+              <h3 className="font-medium text-foreground">Devis</h3>
+              <p className="text-sm text-muted-foreground">Recevez votre proposition personnalisée</p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto text-primary-foreground font-bold">4</div>
+              <h3 className="font-medium text-foreground">Réservation</h3>
+              <p className="text-sm text-muted-foreground">Confirmez votre événement</p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
+            Organisez votre événement chez nous
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6">
+            Contactez-nous pour une visite ou un devis personnalisé
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-sage hover:bg-sage/80 text-cream">
+            <Button size="lg">
               Demander un devis
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-earth-dark text-earth-dark hover:bg-earth-dark hover:text-cream bg-transparent"
-            >
-              Visiter nos espaces
+            <Button size="lg" variant="outline" asChild>
+              <a href="https://kaktus.com" target="_blank" rel="noopener noreferrer">
+                Réserver sur Kaktus
+              </a>
             </Button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
-  )
-}
+  );
+};
