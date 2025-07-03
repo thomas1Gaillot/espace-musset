@@ -1,154 +1,153 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Brain, Coffee, Film, Users } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function PhilosophiePage() {
-  const activities = [
+  const subpages = [
     {
       title: "Ateliers hebdos",
-      description: "Rencontres hebdomadaires pour explorer les grandes questions philosophiques",
-      icon: <Users className="w-8 h-8" />,
-      href: "/philosophie/ateliers-hebdos",
-      color: "bg-earth-medium/10",
+      description: "Rencontres philosophiques régulières pour explorer les grandes questions existentielles",
+      link: "/philosophie/ateliers-hebdos",
+      icon: "📚"
     },
     {
       title: "Cafés philo",
-      description: "Discussions informelles autour d'un café sur des thèmes philosophiques",
-      icon: <Coffee className="w-8 h-8" />,
-      href: "/philosophie/cafes-philo",
-      color: "bg-terracotta/10",
+      description: "Discussions informelles autour d'un café sur les sujets qui nous interrogent",
+      link: "/philosophie/cafes-philo",
+      icon: "☕"
     },
     {
       title: "Ciné philo",
-      description: "Projections de films suivies de débats philosophiques",
-      icon: <Film className="w-8 h-8" />,
-      href: "/philosophie/cine-philo",
-      color: "bg-sage/10",
+      description: "Projections de films suivies de débats philosophiques enrichissants",
+      link: "/philosophie/cine-philo",
+      icon: "🎬"
     },
     {
       title: "Conférences",
-      description: "Interventions d'experts sur des sujets philosophiques contemporains",
-      icon: <Brain className="w-8 h-8" />,
-      href: "/philosophie/conferences",
-      color: "bg-earth-medium/10",
-    },
-  ]
+      description: "Interventions d'experts et penseurs sur des thématiques philosophiques actuelles",
+      link: "/philosophie/conferences",
+      icon: "🎤"
+    }
+  ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-earth-medium/20 to-sage/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Brain className="w-16 h-16 text-earth-medium mx-auto mb-6" />
-            <h1 className="font-serif font-bold text-4xl md:text-5xl text-earth-dark mb-6">Philosophie</h1>
-            <p className="text-xl text-earth-medium mb-8">
-              Un espace de réflexion et de dialogue pour explorer les grandes questions de l'existence et du vivre
-              ensemble
-            </p>
-            <Button size="lg" className="bg-earth-medium hover:bg-earth-medium/80 text-cream">
-              Rejoindre nos discussions
-            </Button>
-          </div>
+    <div className="min-h-screen py-12 px-4">
+      <div className="container mx-auto">
+        {/* Hero */}
+        <div className="text-center mb-12">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Philosophie
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Un espace de réflexion et de dialogue pour explorer ensemble les grandes questions
+            de l'existence, développer notre pensée critique et nourrir notre sagesse collective.
+          </p>
         </div>
-      </section>
 
-      {/* Philosophy Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="font-serif font-bold text-3xl text-earth-dark mb-6">
-              La philosophie au cœur de nos échanges
+        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          {/* Image principale */}
+          <div className="relative h-80 rounded-lg overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
+              alt="Réflexion philosophique"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          </div>
+
+          {/* Description */}
+          <div className="flex flex-col justify-center space-y-6">
+            <h2 className="font-serif text-2xl font-semibold text-foreground">
+              La philosophie accessible à tous
             </h2>
-            <p className="text-earth-medium text-lg mb-8">
-              À l'Espace Musset, nous croyons que la philosophie n'est pas réservée aux académiques. C'est un outil
-              accessible à tous pour mieux comprendre le monde, questionner nos certitudes et enrichir notre réflexion
-              personnelle et collective.
-            </p>
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="bg-sage/10 rounded-2xl p-6">
-                <h3 className="font-serif font-semibold text-xl text-earth-dark mb-4">Notre approche</h3>
-                <p className="text-earth-medium">
-                  Nous privilégions un dialogue ouvert et bienveillant, où chacun peut exprimer ses idées sans jugement.
-                  La philosophie devient ainsi un moyen de créer du lien social et de développer notre esprit critique.
-                </p>
-              </div>
-              <div className="bg-terracotta/10 rounded-2xl p-6">
-                <h3 className="font-serif font-semibold text-xl text-earth-dark mb-4">Nos thèmes</h3>
-                <p className="text-earth-medium">
-                  Éthique, politique, esthétique, métaphysique... Nous abordons tous les domaines de la philosophie en
-                  les reliant aux enjeux contemporains et à nos expériences personnelles.
-                </p>
-              </div>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                À l'Espace Musset, la philosophie n'est pas une discipline réservée aux érudits.
+                C'est un art de vivre et de penser que nous pratiquons ensemble, dans un esprit
+                d'ouverture et de bienveillance.
+              </p>
+              <p>
+                Nos activités philosophiques s'adressent à tous, quel que soit votre niveau.
+                L'important n'est pas d'avoir des réponses, mais de savoir poser les bonnes
+                questions et d'être prêt à les explorer avec curiosité.
+              </p>
+              <p>
+                Nous créons un espace de parole libre où chacun peut exprimer ses idées,
+                ses doutes et ses interrogations dans le respect mutuel et l'écoute active.
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Activities Section */}
-      <section className="py-16 bg-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif font-bold text-3xl text-center text-earth-dark mb-12">
+        {/* Sous-pages */}
+        <div className="mb-12">
+          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
             Nos activités philosophiques
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {activities.map((activity, index) => (
-              <Card key={index} className={`${activity.color} border-none transition-all duration-300 hover:scale-105`}>
-                <CardContent className="p-6">
-                  <div className="text-earth-dark mb-4">{activity.icon}</div>
-                  <h3 className="font-serif font-semibold text-lg text-earth-dark mb-3">{activity.title}</h3>
-                  <p className="text-earth-medium text-sm mb-4">{activity.description}</p>
-                  <Link href={activity.href}>
-                    <Button variant="ghost" className="text-earth-dark hover:text-sage p-0 text-sm">
-                      En savoir plus →
-                    </Button>
-                  </Link>
+            {subpages.map((page, index) => (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
+                <CardHeader>
+                  <div className="text-4xl mb-2">{page.icon}</div>
+                  <CardTitle className="font-serif text-lg">{page.title}</CardTitle>
+                  <CardDescription className="text-sm">{page.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full">
+                    <Link href={page.link}>Découvrir</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* Quote Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="text-2xl md:text-3xl font-serif italic text-earth-dark mb-6">
-              "La philosophie commence dans l'étonnement"
-            </blockquote>
-            <cite className="text-earth-medium text-lg">— Aristote</cite>
-            <p className="text-earth-medium mt-6 max-w-2xl mx-auto">
-              Cette citation guide notre démarche : cultiver l'étonnement, poser des questions, et chercher ensemble des
-              éléments de réponse dans un esprit de curiosité et d'ouverture.
-            </p>
+        {/* Approche philosophique */}
+        <div className="bg-earth-50/50 rounded-lg p-8 mb-12">
+          <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
+            Notre approche
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <h3 className="font-semibold text-foreground mb-2">Dialogue socratique</h3>
+              <p className="text-sm text-muted-foreground">
+                Questionnement mutuel pour approfondir la réflexion
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-2">Pensée critique</h3>
+              <p className="text-sm text-muted-foreground">
+                Développement de l'esprit d'analyse et de discernement
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-foreground mb-2">Sagesse pratique</h3>
+              <p className="text-sm text-muted-foreground">
+                Application concrète des réflexions dans la vie quotidienne
+              </p>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-earth-medium/10 to-sage/10">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif font-bold text-3xl text-earth-dark mb-6">Venez philosopher avec nous</h2>
-          <p className="text-earth-medium text-lg mb-8 max-w-2xl mx-auto">
-            Que vous soyez novice ou passionné de philosophie, nos activités sont ouvertes à tous. Venez enrichir vos
-            réflexions et partager vos questionnements.
+        {/* CTA */}
+        <div className="text-center">
+          <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
+            Rejoignez nos réflexions philosophiques
+          </h2>
+          <p className="text-lg text-muted-foreground mb-6">
+            Que vous soyez novice ou passionné, venez explorer avec nous les questions
+            fondamentales de l'existence humaine
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-earth-medium hover:bg-earth-medium/80 text-cream">
-              Participer aux ateliers
+            <Button size="lg">
+              Découvrir les ateliers
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-earth-dark text-earth-dark hover:bg-earth-dark hover:text-cream bg-transparent"
-            >
-              Voir le programme
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/contact">Nous contacter</Link>
             </Button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
-  )
-}
+  );
+};

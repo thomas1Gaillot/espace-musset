@@ -2,33 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Conversion hex -> HSL approximative pour tes couleurs */
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  :root {
+    /* Couleurs basées sur ton logo (en HSL) */
+    --cream: 39 61% 95%;        /* #F4E6D1 */
+    --burgundy: 352 57% 32%;    /* #8B2635 */
+    --burgundy-light: 352 45% 45%; /* #A53E4C */
+    --teal: 170 35% 40%;        /* #4A9B8E */
+    --teal-light: 169 33% 56%;  /* #6BB5A8 */
+    --earth-dark: 18 30% 34%;   /* #5D4037 */
+    --earth-medium: 19 21% 53%; /* #8D6E63 */
+    --earth-light: 24 14% 69%;  /* #BCAAA4 */
+
+    /* Exemple de variables système */
+    --background: var(--cream);
+    --foreground: var(--earth-dark);
+
+    --primary: var(--burgundy);
+    --primary-foreground: var(--cream);
+
+    --secondary: var(--earth-medium);
+    --secondary-foreground: var(--earth-light);
+
+    --accent: var(--teal);
+    --accent-foreground: var(--cream);
+
+    --destructive: 0 84.2% 60.2%; /* Garde la destructive si besoin */
+
+    --border: var(--earth-light);
+    --input: var(--earth-light);
+    --ring: var(--primary);
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode : adapte un peu plus sombre */
+    --background: 18 30% 12%; /* presque noir avec base earth-dark */
+    --foreground: var(--cream);
+
+    --primary: 352 57% 43%; /* burgundy plus clair */
+    --primary-foreground: var(--cream);
+
+    --secondary: 19 21% 40%; /* earth-medium plus sombre */
+    --secondary-foreground: var(--earth-light);
+
+    --accent: 168 33% 44%; /* teal plus sombre */
+    --accent-foreground: var(--cream);
+
+    --border: 19 21% 40%; /* earth-medium */
+    --input: 19 21% 40%;
+    --ring: 352 57% 43%; /* primary */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
 
   body {
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
 @layer components {
-  .prose {
-    @apply text-earth-medium;
+  .nav-link {
+    @apply text-foreground hover:text-primary transition-colors duration-200 relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: hsl(var(--primary));
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+
   }
 
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4 {
-    @apply text-burgundy font-serif;
-  }
-
-  .prose strong {
-    @apply text-burgundy;
-  }
-
-  .prose ul {
-    @apply space-y-2;
+  .hero-section {
+    background: linear-gradient(135deg, rgba(74, 155, 142, 0.1) 0%, rgba(180, 155, 121, 0.1) 100%);
   }
 }
