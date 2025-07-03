@@ -50,6 +50,7 @@ export const Header = () => {
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
               <p className="text-xs text-muted-foreground">Centre culturel & associatif</p>
             </div>
+
           </Link>
 
           {/* Desktop Navigation */}
@@ -120,6 +121,7 @@ export const Header = () => {
             <Link href="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
               Contact
             </Link>
+
           </nav>
 
           {/* Mobile Menu Button */}

@@ -34,6 +34,7 @@ export default function HomePage() {
     }
   ];
 
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -65,6 +66,7 @@ export default function HomePage() {
                 <Link href="/location-salles">Réserver une salle</Link>
               </Button>
             </div>
+
           </div>
         </div>
       </section>
@@ -136,6 +138,7 @@ export default function HomePage() {
                   <Button className="w-full" asChild>
                     <Link href={activity.link}>{activity.cta}</Link>
                   </Button>
+
                 </CardContent>
               </Card>
             ))}
@@ -163,6 +166,7 @@ export default function HomePage() {
                 <Link href="/cafe-associatif">Visiter le café</Link>
               </Button>
             </div>
+
           </div>
         </div>
       </section>

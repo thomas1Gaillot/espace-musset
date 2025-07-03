@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${inter.variable} ${crimsonText.variable} font-sans bg-cream text-earth-dark`}>
+      <body className={`${inter.variable} ${crimsonText.variable} font-sans bg-cream text-burgundy`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
