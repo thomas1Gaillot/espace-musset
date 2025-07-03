@@ -5,14 +5,12 @@ import { Input } from "@/components/ui/input"
 
 const Footer = () => {
   return (
-    <footer className="bg-earth-dark text-cream">
+    <footer className="bg-burgundy text-cream">
       <div className="container mx-auto px-4 py-12">
         {/* Logo Section */}
         <div className="text-center mb-8">
           <div className="flex justify-center items-center space-x-3 mb-4">
-            <div className="w-16 h-16 bg-sage rounded-full flex items-center justify-center">
-              <span className="text-cream font-bold text-2xl">EM</span>
-            </div>
+            <img src="/logo.png" alt="Espace Musset" className="w-16 h-16" />
             <h2 className="font-serif font-bold text-3xl">Espace Musset</h2>
           </div>
           <p className="text-cream/80 max-w-md mx-auto">
@@ -46,7 +44,7 @@ const Footer = () => {
                 placeholder="Votre email"
                 className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/60"
               />
-              <Button className="bg-sage hover:bg-sage/80 text-cream">S'inscrire</Button>
+              <Button className="bg-teal hover:bg-teal/80 text-cream">S'inscrire</Button>
             </div>
           </div>
 
@@ -54,16 +52,16 @@ const Footer = () => {
           <div>
             <h3 className="font-serif font-semibold text-xl mb-4">Suivez-nous</h3>
             <div className="flex space-x-4 mb-4">
-              <Link href="#" className="text-cream/80 hover:text-sage transition-colors">
+              <Link href="#" className="text-cream/80 hover:text-teal transition-colors">
                 <Facebook className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-cream/80 hover:text-sage transition-colors">
+              <Link href="#" className="text-cream/80 hover:text-teal transition-colors">
                 <Instagram className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-cream/80 hover:text-sage transition-colors">
+              <Link href="#" className="text-cream/80 hover:text-teal transition-colors">
                 <Calendar className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-cream/80 hover:text-sage transition-colors">
+              <Link href="#" className="text-cream/80 hover:text-teal transition-colors">
                 <Home className="w-6 h-6" />
               </Link>
             </div>
@@ -79,10 +77,10 @@ const Footer = () => {
         <div className="border-t border-cream/20 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-cream/60">
           <p>&copy; 2024 Espace Musset. Tous droits réservés.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="/mentions-legales" className="hover:text-sage transition-colors">
+            <Link href="/mentions-legales" className="hover:text-teal transition-colors">
               Mentions légales
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-sage transition-colors">
+            <Link href="/politique-confidentialite" className="hover:text-teal transition-colors">
               Politique de confidentialité
             </Link>
           </div>

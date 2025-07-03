@@ -67,11 +67,15 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        cream: "#FBF8F3",
-        sage: "#8B9A7A",
-        terracotta: "#C17B5C",
-        "earth-dark": "#3D2F1F",
-        "earth-medium": "#6B5B47",
+        // Updated brand colors to match logo
+        cream: "#F4E6D1", // Warm beige from logo background
+        burgundy: "#8B2635", // Deep burgundy from lyre and text
+        "burgundy-light": "#A53E4C", // Lighter burgundy for hover states
+        teal: "#4A9B8E", // Teal from the bird
+        "teal-light": "#6BB5A8", // Lighter teal for accents
+        "earth-dark": "#5D4037", // Darker brown for text
+        "earth-medium": "#8D6E63", // Medium brown for secondary text
+        "earth-light": "#BCAAA4", // Light brown for subtle elements
       },
       borderRadius: {
         lg: "var(--radius)",

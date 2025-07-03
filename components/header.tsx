@@ -45,15 +45,13 @@ const Header = () => {
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-sage/20">
+    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-teal/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-sage rounded-full flex items-center justify-center">
-              <span className="text-cream font-bold text-lg">EM</span>
-            </div>
-            <span className="font-serif font-bold text-xl text-earth-dark">Espace Musset</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <img src="/logo.png" alt="Espace Musset" className="w-12 h-12" />
+            <span className="font-serif font-bold text-xl text-burgundy">Espace Musset</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,19 +65,19 @@ const Header = () => {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center space-x-1 text-earth-dark hover:text-sage transition-colors duration-200 py-2"
+                  className="flex items-center space-x-1 text-burgundy hover:text-teal transition-colors duration-200 py-2"
                 >
                   <span>{item.name}</span>
                   {item.dropdown && <ChevronDown className="w-4 h-4" />}
                 </Link>
 
                 {item.dropdown && activeDropdown === item.name && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-sage/20 py-2">
+                  <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-lg shadow-lg border border-teal/20 py-2">
                     {item.dropdown.map((subItem) => (
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-earth-dark hover:bg-sage/10 hover:text-sage transition-colors duration-200"
+                        className="block px-4 py-2 text-earth-dark hover:bg-teal/10 hover:text-teal transition-colors duration-200"
                       >
                         {subItem.name}
                       </Link>
@@ -98,13 +96,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-sage/20">
+          <div className="lg:hidden py-4 border-t border-teal/20">
             <nav className="space-y-2">
               {navigationItems.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-2 text-earth-dark hover:text-sage transition-colors duration-200"
+                    className="block py-2 text-burgundy hover:text-teal transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -115,7 +113,7 @@ const Header = () => {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          className="block py-1 text-sm text-earth-medium hover:text-sage transition-colors duration-200"
+                          className="block py-1 text-sm text-earth-medium hover:text-teal transition-colors duration-200"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {subItem.name}
