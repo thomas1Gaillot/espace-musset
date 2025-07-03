@@ -13,8 +13,8 @@ export default function MentionsLegalesPage() {
             </h2>
             <div className="text-muted-foreground space-y-2">
               <p><strong>Raison sociale :</strong> Association Espace Musset</p>
-              <p><strong>Siège social :</strong> 123 Rue de la République, 31000 Toulouse</p>
-              <p><strong>Téléphone :</strong> 05 61 XX XX XX</p>
+              <p><strong>Siège social :</strong> 52 Bis Rue Alfred de Musset, 31200 Toulouse</p>
+              <p><strong>Téléphone :</strong> 06 30 15 46 48 XX XX XX</p>
               <p><strong>Email :</strong> contact@espacemusset.fr</p>
               <p><strong>Numéro SIRET :</strong> XXX XXX XXX XXXXX</p>
             </div>

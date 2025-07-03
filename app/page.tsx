@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import EventList from "./components/event-list";
 
 export default function HomePage() {
   const activities = [
@@ -39,7 +40,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="px-4 sm:px-6 lg:px-8 mt-8">
-        <div className="h-120 md:h-[60dvh] flex flex-col bg-[url('https://images.unsplash.com/photo-1462917882517-e150004895fa?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat rounded-2xl">
+        <div className="h-120 md:h-[60dvh] flex flex-col bg-[url('https://images.unsplash.com/photo-1748235346624-792b916e6d45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat rounded-2xl">
           <div className="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
             <h1 className="text-xl md:text-3xl lg:text-5xl text-white">
               {"Bienvenue à l'espace Musset"}
@@ -84,23 +85,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-2 border-sage-200 hover:border-sage-300 transition-colors">
-              <div className="relative h-64 bg-gradient-to-r from-sage-100 to-earth-100 flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">
-                    Événements à venir
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Consultez notre programmation complète
-                  </p>
-                  <Button asChild>
-                    <a href="https://eventbrite.com" target="_blank" rel="noopener noreferrer">
-                      Voir l'agenda complet
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </Card>
+            <EventList/>
           </div>
         </div>
       </section>

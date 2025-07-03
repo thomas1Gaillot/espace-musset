@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function CafeAssociatifPage() {
   const services = [
@@ -128,8 +129,10 @@ export default function CafeAssociatifPage() {
             Que ce soit pour travailler, se détendre ou rencontrer de nouvelles personnes,
             notre café vous accueille dans une atmosphère bienveillante.
           </p>
-          <Button size="lg" className="mr-4">
-            Nous rendre visite
+          <Button size="lg" className="mr-4" asChild>
+            <Link href='contact'>
+              Nous rendre visite
+            </Link>
           </Button>
         </div>
       </div>
