@@ -25,10 +25,10 @@ export const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="font-serif font-semibold text-lg mb-4">Contact</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>123 Rue de la République</p>
-              <p>31000 Toulouse</p>
-              <p>Métro: République</p>
-              <p>Tél: 05 61 XX XX XX</p>
+              <p>52 Bis Rue Alfred de Musset</p>
+              <p>31200 Toulouse</p>
+              <p>Métro: Minimes - Claude Nougaro</p>
+              <p>Tél: 06 30 15 46 48</p>
               <p>contact@espacemusset.fr</p>
             </div>
           </div>

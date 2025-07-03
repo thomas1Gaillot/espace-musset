@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Clock, MapIcon as Metro } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -15,7 +14,7 @@ export default function ContactPage() {
             Contact
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Nous serions ravis d'échanger avec vous. N'hésitez pas à nous contacter 
+            Nous serions ravis d'échanger avec vous. N'hésitez pas à nous contacter
             pour toute question ou pour rejoindre notre communauté.
           </p>
         </div>
@@ -31,23 +30,28 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Adresse</h3>
                   <p className="text-muted-foreground">
-                    123 Rue de la République<br />
-                    31000 Toulouse<br />
+                    52 Bis Rue Alfred de Musset<br />
+                    31200 Toulouse<br />
                     France
                   </p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Transport</h3>
                   <p className="text-muted-foreground">
-                    Métro ligne A - Station République<br />
-                    Bus 14, 38 - Arrêt République
+                    Métro ligne A - Minimes - Claude Nougaro<br />
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-2">Depuis la station de métro, à pied</h3>
+                  <p className="text-muted-foreground">
+                    Au fond de la place, prendre la rue du Général Bourbaki vers la droite, puis la première à gauche, rue Biot. Au bout de cette rue, prendre la rue Alfred de Musset à gauche. Notre local est à 20 mètres à gauche.<br />
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Téléphone</h3>
-                  <p className="text-muted-foreground">05 61 XX XX XX</p>
+                  <p className="text-muted-foreground">06 30 15 46 48</p>
                 </div>
 
                 <div>
@@ -98,7 +102,7 @@ export default function ContactPage() {
                       <Input id="lastname" placeholder="Votre nom" />
                     </div>
                   </div>
-                  
+
                   <div>
                     <Label htmlFor="email">Email</Label>
                     <Input id="email" type="email" placeholder="votre.email@example.com" />
@@ -116,8 +120,8 @@ export default function ContactPage() {
 
                   <div>
                     <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
+                    <Textarea
+                      id="message"
                       rows={6}
                       placeholder="Décrivez votre demande, vos questions ou partagez-nous votre intérêt pour nos activités..."
                     />
@@ -139,12 +143,8 @@ export default function ContactPage() {
               <CardTitle className="font-serif text-2xl text-center">Nous trouver</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="bg-sage-50/30 rounded-lg h-64 flex items-center justify-center">
-                <p className="text-muted-foreground text-center">
-                  Plan interactif de l'Espace Musset<br />
-                  123 Rue de la République, 31000 Toulouse<br />
-                  <span className="text-sm">Métro République - Ligne A</span>
-                </p>
+              <div className="bg-sage-50/30 rounded-lg h-80 flex items-center justify-center overflow-hidden">
+                <iframe id={"espace-musset-map"} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.172408378903!2d1.428601215438378!3d43.62143034769658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb2e94d13dff%3A0xdc7a821da483bd99!2sESPACE%20MUSSET!5e0!3m2!1sfr!2sfr!4v1698888888888!5m2!1sfr!2sfr" width="100%" height="100%" style={{ border: 0 }} allowFullScreen={true} loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Carte Espace Musset" ></iframe>
               </div>
             </CardContent>
           </Card>
