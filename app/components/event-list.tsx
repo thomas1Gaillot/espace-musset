@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { cn } from "@/lib/utils"
 import { Calendar, Clock, MapPin } from "lucide-react"
@@ -34,7 +34,7 @@ export default function EventList({ data }: {
   const lastPastEvent = pastEvents[0]
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl">
       <div className="flex justify-between items-center mb-6 gap-2">
         <h1 className="text-2xl font-bold">{`Événements à venir (${upcomingEvents.length})`}</h1>
         <Select value={sortBy} onValueChange={setSortBy}>
@@ -48,12 +48,11 @@ export default function EventList({ data }: {
         </Select>
       </div>
 
-      <ScrollArea className="h-[60vh] w-full overflow-y-scroll ">
-        <div className="space-y-4">
+      <ScrollArea className=" sm:max-h-[60vh] mb-4 w-full overflow-x-auto sm:overflow-y-scroll sm:overflow-x-hidden">
+        <div className="flex flex-row sm:flex-col gap-4 w-full">
           {upcomingEvents.map((event) => (
-            <Card key={event.id} className="w-full sm:px-4 p-4 hover:shadow-md transition-shadow">
+            <Card key={event.id} className="w-[67vw] sm:w-full flex-shrink-0 sm:px-4 p-4 hover:shadow-md transition-shadow">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full">
-
                 {/* Image */}
                 <div className="relative w-full sm:w-auto sm:flex-shrink-0">
                   <Image
@@ -80,7 +79,6 @@ export default function EventList({ data }: {
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 truncate">{event.title}</h3>
                   <div className="space-y-1 text-sm text-gray-600">
-
                     <div className="flex items-center gap-2 text-accent">
                       <Calendar className="w-4 h-4 text-primary" />
                       <span className="font-medium text-primary">{event.date}</span>
@@ -114,8 +112,10 @@ export default function EventList({ data }: {
             </Card>
           ))}
         </div>
+        <ScrollBar orientation="horizontal" />
       </ScrollArea>
-      <div className="mt-4 text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
+
+      <div className=" text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
 
       {/* Dernier événement passé */}
       {lastPastEvent && (
