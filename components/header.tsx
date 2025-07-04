@@ -17,7 +17,7 @@ export const Header = () => {
   const isActive = (path: string) => pathname === path;
 
   const philosophieSubpages = [
-    { name: "Ateliers hebdos", path: "/philosophie/ateliers-hebdos" },
+    { name: "Ateliers hebdos", path: "/philosophie/atelier-hebdos" },
     { name: "Cafés philo", path: "/philosophie/cafes-philo" },
     { name: "Ciné philo", path: "/philosophie/cine-philo" },
     { name: "Conférences", path: "/philosophie/conferences" },

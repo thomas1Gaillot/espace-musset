@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
@@ -25,6 +26,19 @@ export default function CafeAssociatifPage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              Café associatif
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">

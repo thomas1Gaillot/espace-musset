@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,26 +6,40 @@ const CafesPhilo = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
-        <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/philosophie" className="hover:text-primary">Philosophie</Link>
-          <span className="mx-2">›</span>
-          <span>Cafés philo</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/philosophie">
+                Philosophie
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{"Café philo"}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Cafés Philo
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Des discussions philosophiques informelles autour d'un café, où la convivialité 
+            Des discussions philosophiques informelles autour d'un café, où la convivialité
             rencontre la réflexion dans une ambiance détendue.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div className="relative h-80 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1582562124811-c09040d0a901" 
+            <img
+              src="https://images.unsplash.com/photo-1582562124811-c09040d0a901"
               alt="Café philosophique"
               className="w-full h-full object-cover"
             />
@@ -36,13 +51,13 @@ const CafesPhilo = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Nos cafés philo créent un espace de rencontre unique où la philosophie 
-                se mêle à la convivialité. Dans l'atmosphère chaleureuse de notre café 
+                Nos cafés philo créent un espace de rencontre unique où la philosophie
+                se mêle à la convivialité. Dans l'atmosphère chaleureuse de notre café
                 associatif, nous explorons les questions qui nous interrogent.
               </p>
               <p>
-                Ces moments privilégient l'échange spontané et la découverte mutuelle. 
-                Chacun peut partager ses réflexions, ses questionnements et sa vision 
+                Ces moments privilégient l'échange spontané et la découverte mutuelle.
+                Chacun peut partager ses réflexions, ses questionnements et sa vision
                 du monde dans un climat de respect et d'écoute.
               </p>
             </div>

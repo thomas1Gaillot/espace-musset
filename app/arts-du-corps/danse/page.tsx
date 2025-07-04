@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,18 +6,32 @@ const Danse = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
-        <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/arts-du-corps" className="hover:text-primary">Arts du corps</Link>
-          <span className="mx-2">›</span>
-          <span>Danse</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/arts-du-corps">
+                Arts du corps
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{"Danse"}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Danse
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Libérez votre expression corporelle à travers la danse libre, créative 
+            Libérez votre expression corporelle à travers la danse libre, créative
             et accessible à tous, dans un esprit de joie et de partage.
           </p>
         </div>
@@ -32,13 +47,13 @@ const Danse = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Nos ateliers de danse privilégient l'expression personnelle et la 
-                créativité plutôt que la technique pure. Dans un environnement 
+                Nos ateliers de danse privilégient l'expression personnelle et la
+                créativité plutôt que la technique pure. Dans un environnement
                 bienveillant, chacun explore son propre langage corporel.
               </p>
               <p>
-                Nous puisons dans différentes traditions (danse contemporaine, 
-                mouvement authentique, danses du monde) pour offrir une palette 
+                Nous puisons dans différentes traditions (danse contemporaine,
+                mouvement authentique, danses du monde) pour offrir une palette
                 riche d'exploration corporelle et émotionnelle.
               </p>
             </div>

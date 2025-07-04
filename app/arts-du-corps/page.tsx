@@ -1,7 +1,7 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Users, Zap, Smile } from "lucide-react"
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function ArtsCorpsPage() {
   const subpages = [
@@ -28,13 +28,26 @@ export default function ArtsCorpsPage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              Arts du corps
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Arts du Corps
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explorez l'expression corporelle sous toutes ses formes : yoga, danse et théâtre 
+            Explorez l'expression corporelle sous toutes ses formes : yoga, danse et théâtre
             pour reconnecter avec votre corps, libérer votre créativité et cultiver votre bien-être.
           </p>
         </div>
@@ -42,8 +55,8 @@ export default function ArtsCorpsPage() {
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           {/* Image principale */}
           <div className="relative h-80 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843" 
+            <img
+              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843"
               alt="Arts du corps et mouvement"
               className="w-full h-full object-cover"
             />
@@ -57,17 +70,17 @@ export default function ArtsCorpsPage() {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Les arts du corps à l'Espace Musset célèbrent la richesse de l'expression 
-                corporelle. Nous proposons des pratiques variées qui permettent à chacun 
+                Les arts du corps à l'Espace Musset célèbrent la richesse de l'expression
+                corporelle. Nous proposons des pratiques variées qui permettent à chacun
                 de découvrir ou redécouvrir son rapport au mouvement et à la créativité.
               </p>
               <p>
-                Nos activités s'adressent à tous, quel que soit votre niveau ou votre âge. 
-                Dans un environnement bienveillant et sans jugement, vous pourrez explorer 
+                Nos activités s'adressent à tous, quel que soit votre niveau ou votre âge.
+                Dans un environnement bienveillant et sans jugement, vous pourrez explorer
                 de nouvelles formes d'expression et développer votre conscience corporelle.
               </p>
               <p>
-                Que ce soit par le yoga, la danse ou le théâtre, nous cultivons l'écoute 
+                Que ce soit par le yoga, la danse ou le théâtre, nous cultivons l'écoute
                 de soi, l'expression authentique et la joie du mouvement partagé.
               </p>
             </div>

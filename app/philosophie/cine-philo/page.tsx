@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,18 +6,32 @@ const CinePhilo = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
-        <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/philosophie" className="hover:text-primary">Philosophie</Link>
-          <span className="mx-2">›</span>
-          <span>Ciné philo</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/philosophie">
+                Philosophie
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{"Ciné philo"}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Ciné Philo
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Le cinéma comme porte d'entrée vers la philosophie. Projections suivies 
+            Le cinéma comme porte d'entrée vers la philosophie. Projections suivies
             de débats enrichissants pour explorer les grandes questions existentielles.
           </p>
         </div>
@@ -32,13 +47,13 @@ const CinePhilo = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Nos soirées ciné-philo proposent une approche originale de la philosophie 
-                à travers le 7ème art. Après la projection d'un film soigneusement choisi, 
+                Nos soirées ciné-philo proposent une approche originale de la philosophie
+                à travers le 7ème art. Après la projection d'un film soigneusement choisi,
                 nous engageons un débat collectif sur les questions philosophiques soulevées.
               </p>
               <p>
-                Cette formule permet d'aborder des concepts complexes de manière accessible 
-                et vivante, en s'appuyant sur l'émotion et la narration cinématographique 
+                Cette formule permet d'aborder des concepts complexes de manière accessible
+                et vivante, en s'appuyant sur l'émotion et la narration cinématographique
                 pour nourrir la réflexion.
               </p>
             </div>

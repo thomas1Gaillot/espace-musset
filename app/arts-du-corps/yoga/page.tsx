@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,11 +6,25 @@ const Yoga = () => {
     return (
         <div className="min-h-screen py-12 px-4">
             <div className="container mx-auto">
-                <nav className="mb-8 text-sm text-muted-foreground">
-                    <Link href="/arts-du-corps" className="hover:text-primary">Arts du corps</Link>
-                    <span className="mx-2">›</span>
-                    <span>Yoga</span>
-                </nav>
+                <Breadcrumb className="mb-8">
+                    <BreadcrumbList>
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/">
+                                Accueil
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbLink href="/arts-du-corps">
+                                Arts du corps
+                            </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        <BreadcrumbSeparator />
+                        <BreadcrumbItem>
+                            <BreadcrumbPage>{"Yoga"}</BreadcrumbPage>
+                        </BreadcrumbItem>
+                    </BreadcrumbList>
+                </Breadcrumb>
 
                 <div className="text-center mb-12">
                     <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">

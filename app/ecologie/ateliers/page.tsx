@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,26 +6,40 @@ const AteliersEcologiques = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
-        <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/ecologie" className="hover:text-primary">Écologie</Link>
-          <span className="mx-2">›</span>
-          <span>Ateliers écologiques</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/ecologie">
+                Ecologie
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{"Ateliers écologiques"}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Ateliers Écologiques
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Apprenez les gestes concrets du quotidien pour réduire votre impact 
+            Apprenez les gestes concrets du quotidien pour réduire votre impact
             environnemental et adopter un mode de vie plus durable.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-12">
           <div className="relative h-80 rounded-lg overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9" 
+            <img
+              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9"
               alt="Ateliers écologiques"
               className="w-full h-full object-cover"
             />
@@ -36,13 +51,13 @@ const AteliersEcologiques = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Nos ateliers écologiques vous accompagnent dans l'adoption de pratiques 
-                respectueuses de l'environnement. Avec des approches pratiques et 
+                Nos ateliers écologiques vous accompagnent dans l'adoption de pratiques
+                respectueuses de l'environnement. Avec des approches pratiques et
                 accessibles, nous explorons ensemble les solutions durables.
               </p>
               <p>
-                Chaque atelier allie théorie et pratique : comprendre les enjeux 
-                environnementaux et apprendre des techniques concrètes à appliquer 
+                Chaque atelier allie théorie et pratique : comprendre les enjeux
+                environnementaux et apprendre des techniques concrètes à appliquer
                 immédiatement dans votre quotidien.
               </p>
             </div>

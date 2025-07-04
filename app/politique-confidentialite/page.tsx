@@ -1,7 +1,22 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+
 export default function PolitiqueConfidentialitePage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-4xl">
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              Politique de Confidentialité
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <h1 className="font-serif text-4xl font-bold text-foreground mb-8">
           Politique de Confidentialité
         </h1>

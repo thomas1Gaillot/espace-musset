@@ -1,3 +1,4 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -5,18 +6,32 @@ const Theatre = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
-        <nav className="mb-8 text-sm text-muted-foreground">
-          <Link href="/arts-du-corps" className="hover:text-primary">Arts du corps</Link>
-          <span className="mx-2">›</span>
-          <span>Théâtre</span>
-        </nav>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">
+                Accueil
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/arts-du-corps">
+                Arts du corps
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{"Théâtre"}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
 
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
             Théâtre
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explorez votre créativité et votre expressivité à travers l'improvisation 
+            Explorez votre créativité et votre expressivité à travers l'improvisation
             et le jeu théâtral dans un cadre ludique et bienveillant.
           </p>
         </div>
@@ -32,13 +47,13 @@ const Theatre = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Nos ateliers théâtre privilégient le jeu, la spontanéité et la découverte 
-                de ses propres capacités expressives. À travers l'improvisation et des 
+                Nos ateliers théâtre privilégient le jeu, la spontanéité et la découverte
+                de ses propres capacités expressives. À travers l'improvisation et des
                 exercices ludiques, chacun explore sa créativité sans jugement.
               </p>
               <p>
-                Le théâtre devient un outil de développement personnel qui permet 
-                de gagner en confiance, d'améliorer sa communication et de découvrir 
+                Le théâtre devient un outil de développement personnel qui permet
+                de gagner en confiance, d'améliorer sa communication et de découvrir
                 des facettes insoupçonnées de sa personnalité.
               </p>
             </div>
