@@ -33,7 +33,7 @@ export default function EventList() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6 gap-2">
-        <h1 className="text-2xl font-bold">{"Événements"}</h1>
+        <h1 className="text-2xl font-bold">{`Événements à venir (${upcomingEvents.length})`}</h1>
         <Select value={sortBy} onValueChange={setSortBy}>
           <SelectTrigger className="w-32">
             <SelectValue placeholder="Trier par" />
@@ -45,7 +45,7 @@ export default function EventList() {
         </Select>
       </div>
 
-      <ScrollArea className="h-[600px] w-full">
+      <ScrollArea className="h-[60vh] w-full overflow-y-scroll ">
         <div className="space-y-4">
           {upcomingEvents.map((event) => (
             <Card key={event.id} className="w-full sm:px-4 p-4 hover:shadow-md transition-shadow">
@@ -62,7 +62,7 @@ export default function EventList() {
                   />
                   {(event.dateObj.getTime() - Date.now()) < 7 * 24 * 60 * 60 * 1000 && (
                     <Badge className="absolute -top-2 -right-2 bg-accent text-white hover:bg-accent/90">
-                      {"Date proche"}
+                      {"Date imminente"}
                     </Badge>
                   )}
                 </div>
@@ -112,6 +112,7 @@ export default function EventList() {
           ))}
         </div>
       </ScrollArea>
+      <div className="mt-4 text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
 
       {/* Dernier événement passé */}
       {lastPastEvent && (
