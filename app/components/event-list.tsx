@@ -118,7 +118,7 @@ export default function EventList({ data }: {
       <div className=" text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
 
       {/* Dernier événement passé */}
-      {lastPastEvent && (
+      {/* {lastPastEvent && (
         <div className="pt-10">
           <h2 className="text-xl font-semibold text-gray-700 mb-2">{"Dernier événement passé"}</h2>
           <Card className="px-0 w-full sm:px-4 p-4 opacity-60">
@@ -161,7 +161,7 @@ export default function EventList({ data }: {
             </div>
           </Card>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
