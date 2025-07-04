@@ -5,6 +5,9 @@
 /* Conversion hex -> HSL approximative pour tes couleurs */
 
 @layer base {
+  html {
+  scroll-behavior: smooth;
+}
   :root {
     /* Couleurs basées sur ton logo (en HSL) */
     --cream: 39 61% 95%;        /* #F4E6D1 */
@@ -98,3 +101,4 @@
     background: linear-gradient(135deg, rgba(74, 155, 142, 0.1) 0%, rgba(180, 155, 121, 0.1) 100%);
   }
 }
+

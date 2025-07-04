@@ -5,35 +5,35 @@ import Link from "next/link";
 import EventList from "./components/event-list";
 
 export default function HomePage() {
-  const activities = [
-    {
-      title: "Philosophie",
-      description: "Ateliers hebdomadaires, cafés philo, ciné-débats et conférences pour explorer les grandes questions de l'existence",
-      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
-      link: "/philosophie",
-      cta: "Découvrir les ateliers"
-    },
-    {
-      title: "Écologie",
-      description: "Sensibilisation environnementale, jardinage urbain et ateliers zéro déchet pour un mode de vie durable",
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      link: "/ecologie",
-      cta: "Participer"
-    },
-    {
-      title: "Arts du corps",
-      description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-      link: "/arts-du-corps",
-      cta: "Voir les cours"
-    },
-    {
-      title: "Café associatif",
-      description: "Espace de rencontre et de convivialité ouvert à tous, lieu de partage et d'échange interculturel",
-      image: '/cafe-asso.jpeg',
-      link: "/cafe-associatif",
-      cta: "Découvrir"
-    }
+  const activities = [{
+    title: "Café associatif",
+    description: "Espace de rencontre et de convivialité ouvert à tous, lieu de partage et d'échange interculturel",
+    image: '/cafe-asso.jpeg',
+    link: "/cafe-associatif",
+    cta: "Découvrir"
+  },
+  {
+    title: "Philosophie",
+    description: "Cours hebdomadaires, cafés philo, ciné philo et conférences pour explorer les grandes questions de l'existence.",
+    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
+    link: "/philosophie",
+    cta: "Découvrir les ateliers"
+  },
+  {
+    title: "Écologie",
+    description: "Sensibilisation environnementale, jardinage urbain et ateliers zéro déchet pour un mode de vie durable",
+    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    link: "/ecologie",
+    cta: "Participer"
+  },
+  {
+    title: "Arts du corps",
+    description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
+    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
+    link: "/arts-du-corps",
+    cta: "Voir les cours"
+  },
+
   ];
   const bgImgClass = "bg-[url('https://images.unsplash.com/photo-1748235346624-792b916e6d45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
   const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat"
@@ -54,14 +54,16 @@ export default function HomePage() {
               Un lieu de rencontre, de partage et d'épanouissement au cœur de Toulouse.
             </p>
             <p className="text-xl md:text-2xl text-primary-foreground mb-8 leading-relaxed">
-              Philosophie, écologie, arts du corps et convivialité se conjuguent pour créer
-              une communauté ouverte et bienveillante.
+              Nos bénévoles organisent des conférences, concerts, expositions, ateliers ... dans un esprit d'ouverture et de partage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4" asChild id={"contact-button"}>
+              <Button size="lg" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
+                <Link href="/#agenda">Agenda</Link>
+              </Button>
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild id={"contact-button"}>
                 <Link href="/contact">Nous Contacter</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
+              <Button size="lg" variant="link" className="text-lg text-white px-8 py-4" asChild id={"reservation-button"}>
                 <Link href="/location-salles">Réserver une salle</Link>
               </Button>
             </div>
@@ -77,7 +79,7 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Agenda
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p id='agenda' className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Découvrez nos prochains événements, ateliers et rencontres
             </p>
           </div>
@@ -146,7 +148,7 @@ export default function HomePage() {
                 <Link href="/contact">Prendre contact</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/cafe-associatif">Visiter le café</Link>
+                <Link href="/contact#map">Visiter le café</Link>
               </Button>
             </div>
 

@@ -62,7 +62,7 @@ export default function PhilosophiePage() {
           {/* Image principale */}
           <div className="relative h-80 rounded-lg overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
+              src="https://images.unsplash.com/photo-1582562124811-c09040d0a901"
               alt="Réflexion philosophique"
               className="w-full h-full object-cover"
             />

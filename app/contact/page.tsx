@@ -1,11 +1,16 @@
+'use client'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-
+import { useRef, useState } from "react"
 export default function ContactPage() {
+
+
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto">
@@ -100,58 +105,12 @@ export default function ContactPage() {
 
           {/* Formulaire de contact */}
           <div>
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-serif text-2xl">Envoyez-nous un message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="firstname">Prénom</Label>
-                      <Input id="firstname" placeholder="Votre prénom" />
-                    </div>
-                    <div>
-                      <Label htmlFor="lastname">Nom</Label>
-                      <Input id="lastname" placeholder="Votre nom" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="votre.email@example.com" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="phone">Téléphone (optionnel)</Label>
-                    <Input id="phone" type="tel" placeholder="06 XX XX XX XX" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="subject">Sujet</Label>
-                    <Input id="subject" placeholder="Objet de votre message" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      rows={6}
-                      placeholder="Décrivez votre demande, vos questions ou partagez-nous votre intérêt pour nos activités..."
-                    />
-                  </div>
-
-                  <Button className="w-full" size="lg">
-                    Envoyer le message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <ContactSection />
           </div>
         </div>
 
         {/* Plan et accès */}
-        <div className="mt-12">
+        <div id='map' className="mt-12">
           <Card>
             <CardHeader>
               <CardTitle className="font-serif text-2xl text-center">Nous trouver</CardTitle>
@@ -167,3 +126,106 @@ export default function ContactPage() {
     </div>
   );
 };
+
+
+
+
+
+
+function ContactSection() {
+  const formRef = useRef<HTMLFormElement>(null)
+  const [subject, setSubject] = useState("")
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSendMail = () => {
+    const { firstname, lastname, email, phone, message } = formData
+    const selectedSubject = {
+      "visite-cafe": "Visiter le café",
+      "atelier-inscription": "Inscription à un atelier",
+      "rencontre": "Nous rencontrer",
+      "autre": "Autre demande"
+    }[subject]
+
+    const body = `
+Prénom: ${firstname}
+Nom: ${lastname}
+Email: ${email}
+Téléphone: ${phone}
+Sujet: ${selectedSubject}
+Message:
+${message}
+    `.trim()
+
+    const mailto = `mailto:contact@espacemusset.fr?subject=${encodeURIComponent(selectedSubject || "")}&body=${encodeURIComponent(body)}`
+    window.location.href = mailto
+  }
+
+  return (
+    <form ref={formRef} onSubmit={e => { e.preventDefault(); handleSendMail() }}>
+      <Card className="space-y-6 mb-8">
+        <CardHeader>
+          <CardTitle className="font-serif text-2xl">Nous contacter</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <Label htmlFor="firstname">Prénom</Label>
+              <Input name='firstname' id="firstname" placeholder="Votre prénom" value={formData.firstname} onChange={handleChange} />
+            </div>
+            <div>
+              <Label htmlFor="lastname">Nom</Label>
+              <Input name="lastname" id="lastname" placeholder="Votre nom" value={formData.lastname} onChange={handleChange} />
+            </div>
+          </div>
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input name="email" id="email" type="email" placeholder="votre.email@example.com" value={formData.email} onChange={handleChange} />
+          </div>
+          <div>
+            <Label htmlFor="phone">Téléphone (optionnel)</Label>
+            <Input name="phone" id="phone" type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={handleChange} />
+          </div>
+          <div>
+            <Label htmlFor="subject">Sujet</Label>
+            <Select value={subject} onValueChange={setSubject}>
+              <SelectTrigger id="subject">
+                <SelectValue placeholder="Choisissez un sujet" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="visite-cafe">Visiter le café – Envie de découvrir le lieu</SelectItem>
+                <SelectItem value="atelier-inscription">Inscription à un atelier ou conférence</SelectItem>
+                <SelectItem value="rencontre">Nous rencontrer – Échanger sur une idée ou projet</SelectItem>
+                <SelectItem value="autre">Autre demande</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div>
+            <Label htmlFor="message">Message</Label>
+            <Textarea name="message" id="message" rows={6} placeholder="Décrivez votre demande..." value={formData.message} onChange={handleChange} />
+          </div>
+
+          <Button
+            id={"send-contact-mailto-button"}
+            className="w-full"
+            size="lg"
+            onClick={handleSendMail}
+
+          >
+            {"Envoyer le message"}
+          </Button>
+        </CardContent>
+      </Card>
+    </form>
+  )
+}
