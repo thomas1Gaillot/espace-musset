@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import EventList from "./components/event-list";
 
@@ -34,43 +35,40 @@ export default function HomePage() {
       cta: "Découvrir"
     }
   ];
-
-
+  const bgImgClass = "bg-[url('https://images.unsplash.com/photo-1748235346624-792b916e6d45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
+  const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat"
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="px-4 sm:px-6 lg:px-8 mt-8">
-        <div className="h-120 md:h-[60dvh] flex flex-col bg-[url('https://images.unsplash.com/photo-1748235346624-792b916e6d45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-no-repeat rounded-2xl">
-          <div className="mt-auto w-2/3 md:max-w-lg ps-5 pb-5 md:ps-10 md:pb-10">
-            <h1 className="text-xl md:text-3xl lg:text-5xl text-white">
-              {"Bienvenue à l'espace Musset"}
-            </h1>
-          </div>
-        </div>
-      </div>
-      <section className="hero-section py-20 px-4">
-        <div className="container mx-auto text-center">
+
+      <section className={cn("hero-section relative py-20 px-4", bgHeroSectionCalass, bgImgClass)}>
+        {/* Overlay foncé */}
+        <div className="absolute inset-0 bg-black/20 z-0" aria-hidden="true" />
+
+        <div className="relative z-10 container mx-auto text-center">
           <div className="max-w-4xl mx-auto animate-fade-in">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
               Bienvenue à l'Espace Musset
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-primary-foreground mb-2 leading-relaxed">
               Un lieu de rencontre, de partage et d'épanouissement au cœur de Toulouse.
+            </p>
+            <p className="text-xl md:text-2xl text-primary-foreground mb-8 leading-relaxed">
               Philosophie, écologie, arts du corps et convivialité se conjuguent pour créer
               une communauté ouverte et bienveillante.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
+              <Button size="lg" className="text-lg px-8 py-4" asChild id={"contact-button"}>
                 <Link href="/contact">Nous Contacter</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
                 <Link href="/location-salles">Réserver une salle</Link>
               </Button>
             </div>
-
           </div>
         </div>
       </section>
+
 
       {/* Agenda Section */}
       <section className="py-16 px-4 bg-sage-50/50">
@@ -85,7 +83,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <EventList/>
+            <EventList />
           </div>
         </div>
       </section>

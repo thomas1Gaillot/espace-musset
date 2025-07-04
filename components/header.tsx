@@ -41,12 +41,10 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              {/* <span className="text-primary-foreground font-serif font-semibold text-xl">EM</span> */}
-              <img src="/logo.png" alt="Espace Musset" className="w-12 h-12" />
-
-            </div>
-            <div className="hidden sm:block">
+            {/* <span className="text-primary-foreground font-serif font-semibold text-xl">EM</span> */}
+            <img src="/logo.png" alt="Espace Musset" className="w-12 h-12" />
+            
+            <div className="block">
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
               <p className="text-xs text-muted-foreground">Centre culturel & associatif</p>
             </div>

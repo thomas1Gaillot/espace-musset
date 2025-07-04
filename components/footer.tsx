@@ -1,6 +1,6 @@
-import { Facebook, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ExternalLinkIcon, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -11,9 +11,7 @@ export const Footer = () => {
         {/* Logo centré */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-3">
-            <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center">
-              <span className="text-primary-foreground font-serif font-bold text-2xl">EM</span>
-            </div>
+            <img src="/logo.png" alt="Espace Musset" className="w-16 h-16" />
             <div>
               <h2 className="font-serif font-bold text-2xl text-foreground">Espace Musset</h2>
               <p className="text-sm text-muted-foreground">Centre culturel & associatif</p>
@@ -42,8 +40,8 @@ export const Footer = () => {
               Restez informé de nos événements et ateliers
             </p>
             <div className="flex max-w-sm mx-auto">
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 placeholder="Votre email"
                 className="rounded-r-none"
               />
@@ -68,14 +66,14 @@ export const Footer = () => {
                   <Instagram className="h-4 w-4" />
                 </a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
+              <Button variant="outline" size="sm" className="h-10" asChild>
                 <a href="https://eventbrite.com" target="_blank" rel="noopener noreferrer">
-                  Eventbrite
+                  Evènements <ExternalLinkIcon className="size-4"/>
                 </a>
               </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a href="https://kaktus.com" target="_blank" rel="noopener noreferrer">
-                  Kaktus
+              <Button variant="outline" size="sm" className="h-10" asChild>
+                <a href="https://www.kactus.com/fr/lieux/espace-musset" target="_blank" rel="noopener noreferrer">
+                  Location Salle <ExternalLinkIcon className="size-4"/>
                 </a>
               </Button>
             </div>
