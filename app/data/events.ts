@@ -1,6 +1,6 @@
 
 
-export interface Event {
+export interface EventData {
     id: number
     title: string
     date: string
@@ -12,8 +12,8 @@ export interface Event {
     dateObj: Date
     eventLink: string
     price: string
-    type: EventType
-    category: {name :string, href : string}
+    type: { name: EventType, href: string }
+    category: { name: string, href: string }
 }
 
 export type EventType =
@@ -30,12 +30,12 @@ export type EventType =
     | "Chant"
     | 'Spectacle';
 
-const philosophieEventCategory: {name :string, href : string} = { name: 'Philosophie', href: '/philosophie' };
-const ArtEventCategory:  {name :string, href : string}  = { name: 'Arts', href: '/arts-du-corps' };
-const EcologieEventCategory:  {name :string, href : string}  = { name: 'Ecologie', href: '/ecologie' };
-const CafeEventCategory:  {name :string, href : string}  = { name: 'Café associatif', href: 'philosophie' };
+const philosophieEventCategory: { name: string, href: string } = { name: 'Philosophie', href: '/philosophie' };
+const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '/arts-du-corps' };
+const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie', href: '/ecologie' };
+const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'philosophie' };
 
-const eventList: Event[] = [
+const eventList: EventData[] = [
     {
         id: 1,
         price: '6 €',
@@ -49,7 +49,7 @@ const eventList: Event[] = [
         eventLink: 'https://www.eventbrite.fr/e/billets-cine-philo-kaamelott-et-le-roi-arthur-1459840976659?aff=ebdssbdestsearch',
         dateObj: new Date("2025-08-26"),
         category: philosophieEventCategory,
-        type: 'Ciné philo'
+        type: { name: 'Ciné philo', href: 'philosophie/cafe-philo' }
     },
     {
         id: 2,
@@ -64,7 +64,7 @@ const eventList: Event[] = [
         dateObj: new Date("2025-07-08"),
         eventLink: 'https://www.eventbrite.com/e/billets-la-philosophie-de-la-divine-comedie-de-dante-1434042903929?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: 'Conférence'
+        type: { name: 'Conférence', href: 'philosophie/conferences' }
     },
     {
         id: 3,
@@ -79,7 +79,7 @@ const eventList: Event[] = [
         dateObj: new Date("2025-07-22"),
         eventLink: 'https://www.eventbrite.com/e/billets-sur-les-traces-dulysse-un-periple-en-quete-de-soi-1434216262449?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: 'Rencontre'
+        type: { name: 'Rencontre', href: 'philosophie/conferences' }
     },
     {
         id: 4,
@@ -94,7 +94,7 @@ const eventList: Event[] = [
         dateObj: new Date("2025-07-29"),
         eventLink: 'https://www.eventbrite.com/e/billets-lindifference-est-elle-le-mal-de-notre-siecle-1434429299649?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: 'Rencontre'
+        type: { name: 'Rencontre', href: 'philosophie/conferences' }
     },
     {
         id: 11,
@@ -109,8 +109,116 @@ const eventList: Event[] = [
         dateObj: new Date("2025-06-06"),
         eventLink: '',
         category: CafeEventCategory,
-        type: 'Spectacle'
+        type: { name: 'Spectacle', href: 'cafe-associatif' }
     },
+    {
+        id: 12,
+        price: 'gratuit',
+        title: "La philosophie pratique : une forme de vie",
+        date: "Lundi 01 Septembre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours1philo.jpg",
+        dateObj: new Date("2025-09-01"),
+        eventLink: '/philosophie/atelier-hebdos',
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+    },
+    {
+        id: 13,
+        price: "gratuit",
+        title: "Platon : Le mythe de la caverne",
+        date: "Lundi 08 Septembre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours2philo.jpg",
+        dateObj: new Date("2025-09-08"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+    },
+    {
+        id: 14,
+        price: "gratuit",
+        title: "L'être humain dans l'univers",
+        date: "Lundi 15 Septembre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours3philo.jpg",
+        dateObj: new Date("2025-09-15"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+    },
+    {
+        id: 15,
+        price: "gratuit",
+        title: "La sagesse de l'Inde",
+        date: "Lundi 22 Septembre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours4philo.jpg",
+        dateObj: new Date("2025-09-22"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+    },
+    {
+        id: 16,
+        price: "gratuit",
+        title: "Les mystères du Tibet",
+        date: "Lundi 29 Septembre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours5philo.jpg",
+        dateObj: new Date("2025-09-29"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+
+    },
+    {
+        id: 17,
+        price: "gratuit",
+        title: "La philosophie Bouddhiste",
+        date: "Lundi 06 Octobre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours6philo.jpg",
+        dateObj: new Date("2025-10-06"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+
+    },
+    {
+        id: 18,
+        price: "gratuit",
+        title: "Confucius et la sagesse de Chine",
+        date: "Lundi 13 Octobre 2025",
+        time: "19:30 à 22:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cours7philo.jpg",
+        dateObj: new Date("2025-10-13"),
+        eventLink: "/philosophie/atelier-hebdos",
+        category: philosophieEventCategory,
+        type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
+
+    }
 ]
 
 

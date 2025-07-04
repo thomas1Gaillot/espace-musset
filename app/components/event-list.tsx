@@ -5,18 +5,21 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { cn } from "@/lib/utils"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { eventList } from "../data/events"
+import { EventData } from "../data/events"
 
-export default function EventList() {
+export default function EventList({ data }: {
+  data: EventData[]
+}) {
   const [sortBy, setSortBy] = useState("asc")
 
   const now = new Date()
 
-  const upcomingEvents = eventList
+  const upcomingEvents = data
     .filter(event => event.dateObj >= now)
     .sort((a, b) => {
       return sortBy === "desc"
@@ -24,7 +27,7 @@ export default function EventList() {
         : a.dateObj.getTime() - b.dateObj.getTime()
     })
 
-  const pastEvents = eventList
+  const pastEvents = data
     .filter(event => event.dateObj < now)
     .sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime())
 
@@ -62,7 +65,7 @@ export default function EventList() {
                   />
                   {(event.dateObj.getTime() - Date.now()) < 7 * 24 * 60 * 60 * 1000 && (
                     <Badge className="absolute -top-2 -right-2 bg-accent text-white hover:bg-accent/90">
-                      {"Date imminente"}
+                      {"Date proche"}
                     </Badge>
                   )}
                 </div>
@@ -72,7 +75,7 @@ export default function EventList() {
                   <div className="flex items-center text-xs gap-1 mb-2 uppercase text-gray-600">
                     <Link className="underline hover:font-medium" href={event.category.href}>{event.category.name}</Link>
                     {"•"}
-                    <Link className="underline hover:font-medium" href='/philosophie/conferences'>{event.type}</Link>
+                    <Link className="underline hover:font-medium" href={event.type.href}>{event.type.name}</Link>
                   </div>
 
                   <h3 className="text-lg font-semibold text-gray-900 mb-2 truncate">{event.title}</h3>
@@ -86,7 +89,7 @@ export default function EventList() {
                       <Clock className="w-4 h-4 text-gray-500" />
                       <span>{event.time} {"(heure : France)"}</span>
                       {"•"}
-                      <span className="font-medium text-gray-600 text-sm">{event.price}</span>
+                      <span className={cn("font-medium text-gray-600 text-sm", event.price === 'gratuit' && 'font-bold text-xs uppercase')}>{event.price}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-gray-500" />

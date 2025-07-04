@@ -1,8 +1,12 @@
+import EventList from "@/app/components/event-list";
+import { eventList } from "@/app/data/events";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const AteliersHebdos = () => {
+    const recentAtelierHebdosEvent = eventList.filter((e) => e.category.name === 'Philosophie' && e.type.name === 'Atelier')
+
     return (
         <div className="min-h-screen py-12 px-4">
             <div className="container mx-auto">
@@ -40,7 +44,7 @@ const AteliersHebdos = () => {
                 <div className="grid lg:grid-cols-2 gap-12 mb-12">
                     <div className="relative h-80 rounded-lg overflow-hidden">
                         <img
-                            src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
+                            src="/event/cours3philo.jpg"
                             alt="Atelier philosophie"
                             className="w-full h-full object-cover"
                         />
@@ -53,42 +57,29 @@ const AteliersHebdos = () => {
                         <div className="space-y-4 text-muted-foreground">
                             <p>
                                 Nos ateliers hebdomadaires constituent le cœur de notre activité philosophique.
-                                Chaque semaine, nous nous réunissons pour explorer un thème différent,
-                                guidés par la curiosité et l'envie de comprendre.
+                                Chaque semaine, nous nous réunissons pour explorer un thème différent autour des philosophies d'orient et d'occident.
                             </p>
                             <p>
-                                Ces rencontres s'articulent autour du dialogue socratique : nous questionnons
-                                nos certitudes, échangeons nos perspectives et construisons ensemble une
-                                réflexion collective enrichissante.
+                                Ces rencontres s'articulent en trois partie : un cours, un repas convivial et un moment d'échange et de questions.
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-12">
-                    <div className="bg-earth-50/50 rounded-lg p-6">
+                <div className="grid md:grid-cols-2  gap-8 mb-12">
+                    <div className="bg-earth-50/50  h-max rounded-lg p-6">
                         <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
                             Informations pratiques
                         </h3>
                         <ul className="space-y-2 text-muted-foreground">
-                            <li><strong>Quand :</strong> Tous les jeudis, 19h-21h</li>
-                            <li><strong>Où :</strong> Salle de conférence</li>
-                            <li><strong>Tarif :</strong> 15€ par séance ou 50€/mois</li>
-                            <li><strong>Public :</strong> Ouvert à tous, débutants bienvenus</li>
+                            <li><strong>Quand :</strong> 1 fois par semaine, 19h30-22h00</li>
+                            <li><strong>Où :</strong> Salle de cours au premier étage, 52 Bis Rue Alfred de Musset, 31200 Toulouse</li>
+                            <li><strong>Tarif :</strong> 6€ les séance découverte, et ~250€ pour le cycle entier (18 ateliers)</li>
+                            <li><strong>Public :</strong> Tout type de  public</li>
                         </ul>
                     </div>
 
-                    <div className="bg-sage-50/50 rounded-lg p-6">
-                        <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-                            Thèmes récents
-                        </h3>
-                        <ul className="space-y-2 text-muted-foreground">
-                            <li>• Qu'est-ce que la liberté ?</li>
-                            <li>• Le sens de la vie</li>
-                            <li>• Éthique et intelligence artificielle</li>
-                            <li>• L'amitié selon Aristote</li>
-                        </ul>
-                    </div>
+                        <EventList data={recentAtelierHebdosEvent} />
                 </div>
 
                 <div className="text-center">

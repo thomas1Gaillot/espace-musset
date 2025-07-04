@@ -87,16 +87,20 @@ export default function ContactPage() {
               <CardContent>
                 <div className="space-y-2 text-muted-foreground">
                   <div className="flex justify-between">
-                    <span>Lundi - Vendredi</span>
-                    <span>9h00 - 19h00</span>
+                    <span>Lundi - Jeudi</span>
+                    <span>18h00 - 22h00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Vendredi</span>
+                    <span>Fermé</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Samedi</span>
-                    <span>10h00 - 18h00</span>
+                    <span>14h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Dimanche</span>
-                    <span>14h00 - 18h00</span>
+                    <span>Fermé</span>
                   </div>
                 </div>
               </CardContent>

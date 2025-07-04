@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import EventList from "./components/event-list";
+import { eventList } from "./data/events";
 
 export default function HomePage() {
   const activities = [{
@@ -85,7 +86,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <EventList />
+            <EventList data={eventList} />
           </div>
         </div>
       </section>

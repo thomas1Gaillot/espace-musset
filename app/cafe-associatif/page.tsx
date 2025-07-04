@@ -115,9 +115,10 @@ export default function CafeAssociatifPage() {
                 Horaires d'ouverture
               </h3>
               <div className="space-y-2 text-muted-foreground">
-                <p><strong>Lundi - Vendredi:</strong> 9h00 - 19h00</p>
-                <p><strong>Samedi:</strong> 10h00 - 18h00</p>
-                <p><strong>Dimanche:</strong> 14h00 - 18h00</p>
+                <p><strong>Lundi - Jeudi:</strong> 18h00 - 22h00</p>
+                <p><strong>Vendredi:</strong> Fermé</p>
+                <p><strong>Samedi:</strong> 14h00 - 18h00</p>
+                <p><strong>Dimanche:</strong> Fermé</p>
               </div>
             </div>
             <div>
