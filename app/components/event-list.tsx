@@ -31,7 +31,7 @@ export default function EventList() {
   const lastPastEvent = pastEvents[0]
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-6">
+    <div className="w-full max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6 gap-2">
         <h1 className="text-2xl font-bold">{"Événements"}</h1>
         <Select value={sortBy} onValueChange={setSortBy}>

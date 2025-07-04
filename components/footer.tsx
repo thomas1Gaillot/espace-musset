@@ -55,7 +55,7 @@ export const Footer = () => {
           {/* Social Links */}
           <div className="text-center md:text-right">
             <h3 className="font-serif font-semibold text-lg mb-4">Suivez-nous</h3>
-            <div className="flex justify-center md:justify-end space-x-4">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-end space-x-4">
               <Button variant="outline" size="icon" asChild>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                   <Facebook className="h-4 w-4" />
