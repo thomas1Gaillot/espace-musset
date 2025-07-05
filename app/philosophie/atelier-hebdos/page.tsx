@@ -1,9 +1,9 @@
 import EventList from "@/app/components/event-list";
-import { eventList } from "@/data/data.allevents";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
+import Link from "next/link";
 
 const AteliersHebdos = () => {
     const recentAtelierHebdosEvent = eventList.filter((e) => e.category.name === 'Philosophie' && e.type.name === 'Atelier')
@@ -80,7 +80,7 @@ const AteliersHebdos = () => {
                         </ul>
                     </div>
 
-                        <EventList data={recentAtelierHebdosEvent} />
+                    <EventList data={recentAtelierHebdosEvent} title='Ateliers philo à venir' />
                 </div>
 
                 <div className="text-center">

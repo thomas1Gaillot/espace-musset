@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ROUTES } from "@/data/route"
 import { cn } from "@/lib/utils"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import Image from "next/image"
@@ -12,8 +13,9 @@ import Link from "next/link"
 import { useState } from "react"
 import { EventData } from "../../data/data.allevents"
 
-export default function EventList({ data }: {
-  data: EventData[]
+export default function EventList({ data, title }: {
+  data: EventData[],
+  title: string
 }) {
   const [sortBy, setSortBy] = useState("asc")
 
@@ -36,7 +38,7 @@ export default function EventList({ data }: {
   return (
     <div className="w-full max-w-6xl">
       <div className="flex justify-between items-center mb-6 gap-2">
-        <h1 className="text-2xl font-bold">{`Événements à venir (${upcomingEvents.length})`}</h1>
+        <h1 className="text-2xl font-bold">{`${title} (${upcomingEvents.length})`}</h1>
         <Select value={sortBy} onValueChange={setSortBy}>
           <SelectTrigger className="w-32">
             <SelectValue placeholder="Trier par" />
@@ -70,7 +72,7 @@ export default function EventList({ data }: {
                 </div>
 
                 {/* Détails */}
-                <div className="grid min-w-0 w-full">
+                <div className="grid min-w-0 w-full mt-4 sm:mt-0">
                   <div className="flex items-center text-xs gap-1 mb-2 uppercase text-gray-600">
                     <Link className="underline hover:font-medium" href={event.category.href}>{event.category.name}</Link>
                     {"•"}
@@ -97,7 +99,18 @@ export default function EventList({ data }: {
                 </div>
 
                 {/* Bouton */}
-                <div className="w-full sm:w-auto flex-shrink-0">
+                <div className="w-full mt-6 sm:mt-0 sm:w-max flex gap-2 flex-col-reverse sm:flex-row">
+
+                  <Button
+                    variant={'outline'}
+                    className="w-full sm:w-auto  px-6"
+                    id={"contact-button-" + event.id}
+                    asChild
+                  >
+                    <Link href={ROUTES.CONTACT}>
+                      {"Nous contacter"}
+                    </Link>
+                  </Button>
                   <Button
                     className="w-full sm:w-auto text-white px-6"
                     id={"reserve-button-" + event.id}

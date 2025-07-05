@@ -1,10 +1,14 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Link from "next/link";
+import { eventList } from "@/data/data.allevents";
 import { philosophieContent } from "@/data/philosophie.data";
+import Link from "next/link";
+import EventList from "../components/event-list";
 
 export default function PhilosophiePage() {
+  const philoEvents = eventList.filter((e) => e.category.name === 'Philosophie')
+
   const { breadcrumb, hero, intro, subpages, approche, cta } = philosophieContent;
 
   return (
@@ -79,6 +83,9 @@ export default function PhilosophiePage() {
             ))}
           </div>
         </div>
+        <div className="w-full flex justify-center">
+          <EventList data={philoEvents} title='Événements philo à venir' />
+        </div>
 
         {/* Approche */}
         <div className="bg-earth-50/50 rounded-lg p-8 mb-12">
@@ -106,7 +113,7 @@ export default function PhilosophiePage() {
           <p className="text-lg text-muted-foreground mb-6">{cta.description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" id={"cta-ateliers-button"}>
-              {cta.primaryLabel}
+              <Link href={cta.primaryLink}>{cta.primaryLabel}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild id={"cta-contact-button"}>
               <Link href={cta.secondaryLink}>{cta.secondaryLabel}</Link>

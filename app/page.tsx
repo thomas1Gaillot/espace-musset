@@ -87,7 +87,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <EventList data={eventList} />
+            <EventList data={eventList} title='Événements à venir' />
           </div>
         </div>
       </section>

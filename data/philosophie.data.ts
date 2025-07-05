@@ -81,6 +81,7 @@ export const philosophieContent = {
     title: "Rejoignez nos réflexions philosophiques",
     description: "Que vous soyez novice ou passionné, venez explorer avec nous les questions fondamentales de l'existence humaine",
     primaryLabel: "Découvrir les ateliers",
+    primaryLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
     secondaryLabel: "Nous contacter",
     secondaryLink: ROUTES.CONTACT
   }
