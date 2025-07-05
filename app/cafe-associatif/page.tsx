@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 export default function CafeAssociatifPage() {
@@ -29,7 +30,7 @@ export default function CafeAssociatifPage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>

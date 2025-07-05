@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const JardinageUrbain = () => {
@@ -9,13 +10,13 @@ const JardinageUrbain = () => {
                 <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/">
+                            <BreadcrumbLink href={ROUTES.ACCUEIL}>
                                 Accueil
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/ecologie">
+                            <BreadcrumbLink href={ROUTES.ECOLOGIE.ROOT}>
                                 Ecologie
                             </BreadcrumbLink>
                         </BreadcrumbItem>
@@ -124,7 +125,7 @@ const JardinageUrbain = () => {
                         Rejoignez nos ateliers et repartez avec vos premières plantations
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/contact">Participer</Link>
+                        <Link href={ROUTES.CONTACT}>Participer</Link>
                     </Button>
                 </div>
             </div>

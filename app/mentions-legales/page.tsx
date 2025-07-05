@@ -1,13 +1,14 @@
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { ROUTES } from "@/data/route";
 
 export default function MentionsLegalesPage() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-4xl">
-          <Breadcrumb className="mb-8">
+        <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -40,7 +41,7 @@ export default function MentionsLegalesPage() {
               Hébergement
             </h2>
             <p className="text-muted-foreground">
-              Ce site est hébergé par Lovable, dont le siège social est situé en ligne.
+              Ce site est hébergé par OVH.
             </p>
           </section>
 
@@ -49,9 +50,7 @@ export default function MentionsLegalesPage() {
               Propriété intellectuelle
             </h2>
             <p className="text-muted-foreground">
-              Le contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels)
-              est la propriété exclusive de l'Association Espace Musset, à l'exception des
-              marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
+              {"L’ensemble des éléments constituant le site espace-musset.com (textes, graphismes, logiciels, photographies, images, vidéos, sons, plans, noms, logos, marques, créations et œuvres protégeables diverses, bases de données, etc…) ainsi que le site lui-même, relèvent des législations françaises et internationales sur le droit d’auteur et sur les droits voisins du droit d’auteur (notamment les articles L122-4 et L122-5. du Code de la Propriété Intellectuelle)."}
             </p>
           </section>
 

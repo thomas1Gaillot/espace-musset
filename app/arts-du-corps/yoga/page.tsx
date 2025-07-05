@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const Yoga = () => {
@@ -9,13 +10,13 @@ const Yoga = () => {
                 <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/">
+                            <BreadcrumbLink href={ROUTES.ACCUEIL}>
                                 Accueil
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/arts-du-corps">
+                            <BreadcrumbLink href={ROUTES.ARTS_DU_CORPS.ROOT}>
                                 Arts du corps
                             </BreadcrumbLink>
                         </BreadcrumbItem>
@@ -136,7 +137,7 @@ const Yoga = () => {
                             Cours d'essai gratuit
                         </Button>
                         <Button size="lg" variant="outline" asChild>
-                            <Link href="/contact">Nous contacter</Link>
+                            <Link href={ROUTES.CONTACT}>Nous contacter</Link>
                         </Button>
                     </div>
                 </div>

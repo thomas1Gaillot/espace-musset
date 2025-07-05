@@ -1,3 +1,4 @@
+import { ROUTES } from "./route"
 
 
 export interface EventData {
@@ -137,7 +138,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours2philo.jpg",
         dateObj: new Date("2025-09-08"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
     },
@@ -152,7 +153,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours3philo.jpg",
         dateObj: new Date("2025-09-15"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
     },
@@ -167,7 +168,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours4philo.jpg",
         dateObj: new Date("2025-09-22"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
     },
@@ -182,7 +183,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours5philo.jpg",
         dateObj: new Date("2025-09-29"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
 
@@ -198,7 +199,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours6philo.jpg",
         dateObj: new Date("2025-10-06"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
 
@@ -214,7 +215,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/cours7philo.jpg",
         dateObj: new Date("2025-10-13"),
-        eventLink: "/philosophie/atelier-hebdos",
+        eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
         category: philosophieEventCategory,
         type: { name: 'Atelier', href: 'philosophie/atelier-hebdos' }
 

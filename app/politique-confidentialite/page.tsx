@@ -1,4 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { ROUTES } from "@/data/route";
 
 export default function PolitiqueConfidentialitePage() {
   return (
@@ -7,7 +8,7 @@ export default function PolitiqueConfidentialitePage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>

@@ -6,6 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ROUTES } from "@/data/route";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,22 +18,22 @@ export const Header = () => {
   const isActive = (path: string) => pathname === path;
 
   const philosophieSubpages = [
-    { name: "Ateliers hebdos", path: "/philosophie/atelier-hebdos" },
-    { name: "Cafés philo", path: "/philosophie/cafes-philo" },
-    { name: "Ciné philo", path: "/philosophie/cine-philo" },
-    { name: "Conférences", path: "/philosophie/conferences" },
+    { name: "Ateliers hebdos", path: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
+    { name: "Cafés philo", path: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES },
+    { name: "Ciné philo", path: ROUTES.PHILOSOPHIE.SUBPAGES.CINE },
+    { name: "Conférences", path: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES },
   ];
 
   const ecologieSubpages = [
-    { name: "Ateliers écologiques", path: "/ecologie/ateliers" },
-    { name: "Jardinage urbain", path: "/ecologie/jardinage" },
-    { name: "Zéro déchet", path: "/ecologie/zero-dechet" },
+    { name: "Ateliers écologiques", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
+    { name: "Jardinage urbain", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE },
+    { name: "Zéro déchet", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
   ];
 
   const artsSubpages = [
-    { name: "Yoga", path: "/arts-du-corps/yoga" },
-    { name: "Danse", path: "/arts-du-corps/danse" },
-    { name: "Théâtre", path: "/arts-du-corps/theatre" },
+    { name: "Yoga", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
+    { name: "Danse", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE },
+    { name: "Théâtre", path:ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
   ];
 
   return (
@@ -40,7 +41,7 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={ROUTES.ACCUEIL} className="flex items-center space-x-2">
             {/* <span className="text-primary-foreground font-serif font-semibold text-xl">EM</span> */}
             <img src="/logo.png" alt="Espace Musset" className="w-12 h-12" />
 
@@ -53,11 +54,11 @@ export const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+            <Link href={ROUTES.ACCUEIL} className={`nav-link ${isActive('/') ? 'active' : ''}`}>
               Accueil
             </Link>
 
-            <Link href="/cafe-associatif" className={`nav-link ${isActive('/cafe-associatif') ? 'active' : ''}`}>
+            <Link href={ROUTES.CAFE_ASSOCIATIF} className={`nav-link ${isActive('/cafe-associatif') ? 'active' : ''}`}>
               Café associatif
             </Link>
             <DropdownMenu>
@@ -67,7 +68,7 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href="/philosophie" className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.PHILOSOPHIE.ROOT} className="w-full">Vue d'ensemble</Link>
                 </DropdownMenuItem>
                 {philosophieSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
@@ -83,7 +84,7 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href="/ecologie" className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ECOLOGIE.ROOT} className="w-full">Vue d'ensemble</Link>
                 </DropdownMenuItem>
                 {ecologieSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
@@ -102,7 +103,7 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href="/arts-du-corps" className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="w-full">Vue d'ensemble</Link>
                 </DropdownMenuItem>
                 {artsSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
@@ -112,11 +113,11 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link href="/location-salles" className={`nav-link ${isActive('/location-salles') ? 'active' : ''}`}>
+            <Link href={ROUTES.LOCATION_SALLES} className={`nav-link ${isActive('/location-salles') ? 'active' : ''}`}>
               Location de salles
             </Link>
 
-            <Link href="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
+            <Link href={ROUTES.CONTACT} className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
               Contact
             </Link>
 
@@ -138,25 +139,25 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.ACCUEIL} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Accueil
               </Link>
-              <Link href="/cafe-associatif" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.CAFE_ASSOCIATIF} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Café associatif
               </Link>
-              <Link href="/ecologie" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.ECOLOGIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Écologie
               </Link>
-              <Link href="/philosophie" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.PHILOSOPHIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Philosophie
               </Link>
-              <Link href="/arts-du-corps" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Arts du corps
               </Link>
-              <Link href="/location-salles" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.LOCATION_SALLES} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Location de salles
               </Link>
-              <Link href="/contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.CONTACT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </Link>
             </nav>

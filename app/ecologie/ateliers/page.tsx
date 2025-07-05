@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const AteliersEcologiques = () => {
@@ -9,13 +10,13 @@ const AteliersEcologiques = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/ecologie">
+              <BreadcrumbLink href={ROUTES.ECOLOGIE.ROOT}>
                 Ecologie
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -137,7 +138,7 @@ const AteliersEcologiques = () => {
             Inscription obligatoire - Places limitées pour un apprentissage optimal
           </p>
           <Button size="lg" asChild>
-            <Link href="/contact">S'inscrire</Link>
+            <Link href={ROUTES.CONTACT}>S'inscrire</Link>
           </Button>
         </div>
       </div>

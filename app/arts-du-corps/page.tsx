@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 export default function ArtsCorpsPage() {
@@ -8,19 +9,19 @@ export default function ArtsCorpsPage() {
     {
       title: "Yoga",
       description: "Pratiques douces et dynamiques pour harmoniser corps et esprit",
-      link: "/arts-du-corps/yoga",
+      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA,
       icon: "🧘"
     },
     {
       title: "Danse",
       description: "Expression corporelle libre et créative pour tous niveaux",
-      link: "/arts-du-corps/danse",
+      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE,
       icon: "💃"
     },
     {
       title: "Théâtre",
       description: "Improvisation et jeu théâtral pour explorer sa créativité",
-      link: "/arts-du-corps/theatre",
+      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
       icon: "🎭"
     }
   ];
@@ -31,7 +32,7 @@ export default function ArtsCorpsPage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -148,7 +149,7 @@ export default function ArtsCorpsPage() {
               Voir les cours
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/contact">Essayer gratuitement</Link>
+              <Link href={ROUTES.CONTACT}>Essayer gratuitement</Link>
             </Button>
           </div>
         </div>

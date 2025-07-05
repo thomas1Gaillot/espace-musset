@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const Danse = () => {
@@ -9,13 +10,13 @@ const Danse = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/arts-du-corps">
+              <BreadcrumbLink href={ROUTES.ARTS_DU_CORPS.ROOT}>
                 Arts du corps
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -132,7 +133,7 @@ const Danse = () => {
               Séance découverte
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/contact">Plus d'informations</Link>
+              <Link href={ROUTES.CONTACT}>Plus d'informations</Link>
             </Button>
           </div>
         </div>

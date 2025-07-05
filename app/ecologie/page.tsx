@@ -1,6 +1,7 @@
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 export default function EcologiePage() {
@@ -8,19 +9,19 @@ export default function EcologiePage() {
     {
       title: "Ateliers écologiques",
       description: "Apprenez les gestes du quotidien pour réduire votre impact environnemental",
-      link: "/ecologie/ateliers",
+      link: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS,
       icon: "🌱"
     },
     {
       title: "Jardinage urbain",
       description: "Découvrez comment cultiver en ville et créer votre propre jardin",
-      link: "/ecologie/jardinage",
+      link: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE,
       icon: "🌿"
     },
     {
       title: "Zéro déchet",
       description: "Adoptez un mode de vie durable et réduisez vos déchets",
-      link: "/ecologie/zero-dechet",
+      link: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET,
       icon: "♻️"
     }
   ];
@@ -31,7 +32,7 @@ export default function EcologiePage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -148,7 +149,7 @@ export default function EcologiePage() {
               Participer aux ateliers
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/contact">Nous contacter</Link>
+              <Link href={ROUTES.CONTACT}>Nous contacter</Link>
             </Button>
           </div>
         </div>

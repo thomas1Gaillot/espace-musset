@@ -3,40 +3,41 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import EventList from "./components/event-list";
-import { eventList } from "./data/events";
+import { eventList } from "../data/data.allevents";
+import { ROUTES } from "@/data/route";
 
 export default function HomePage() {
   const activities = [{
     title: "Café associatif",
     description: "Espace de rencontre et de convivialité ouvert à tous, lieu de partage et d'échange interculturel",
     image: '/cafe-asso.jpeg',
-    link: "/cafe-associatif",
+    link: ROUTES.CAFE_ASSOCIATIF,
     cta: "Découvrir"
   },
   {
     title: "Philosophie",
     description: "Cours hebdomadaires, cafés philo, ciné philo et conférences pour explorer les grandes questions de l'existence.",
     image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
-    link: "/philosophie",
+    link: ROUTES.PHILOSOPHIE.ROOT,
     cta: "Découvrir les ateliers"
   },
   {
     title: "Écologie",
     description: "Sensibilisation environnementale, jardinage urbain et ateliers zéro déchet pour un mode de vie durable",
     image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-    link: "/ecologie",
+    link: ROUTES.ECOLOGIE.ROOT,
     cta: "Participer"
   },
   {
     title: "Arts du corps",
     description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    link: "/arts-du-corps",
+    link: ROUTES.ARTS_DU_CORPS.ROOT,
     cta: "Voir les cours"
   },
 
   ];
-  const bgImgClass = "bg-[url('https://images.unsplash.com/photo-1748235346624-792b916e6d45?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]"
+  const bgImgClass = "bg-[url('/welcome2.jpg')]"
   const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat"
   return (
     <div className="min-h-screen">
@@ -62,10 +63,10 @@ export default function HomePage() {
                 <Link href="/#agenda">Agenda</Link>
               </Button>
               <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild id={"contact-button"}>
-                <Link href="/contact">Nous Contacter</Link>
+                <Link href={ROUTES.CONTACT}>Nous Contacter</Link>
               </Button>
               <Button size="lg" variant="link" className="text-lg text-white px-8 py-4" asChild id={"reservation-button"}>
-                <Link href="/location-salles">Réserver une salle</Link>
+                <Link href={ROUTES.LOCATION_SALLES}>Réserver une salle</Link>
               </Button>
             </div>
           </div>
@@ -146,10 +147,10 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={'default'} size="lg" asChild>
-                <Link href="/contact">Prendre contact</Link>
+                <Link href={ROUTES.CONTACT}>Prendre contact</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/contact#map">Visiter le café</Link>
+                <Link href={ROUTES.CONTACT + '#map'}>Visiter le café</Link>
               </Button>
             </div>
 

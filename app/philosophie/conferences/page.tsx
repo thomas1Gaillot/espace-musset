@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const Conferences = () => {
@@ -9,13 +10,13 @@ const Conferences = () => {
                 <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/">
+                            <BreadcrumbLink href={ROUTES.ACCUEIL}>
                                 Accueil
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/philosophie">
+                            <BreadcrumbLink href={ROUTES.PHILOSOPHIE.ROOT}>
                                 Philosophie
                             </BreadcrumbLink>
                         </BreadcrumbItem>
@@ -124,7 +125,7 @@ const Conferences = () => {
                         Consultez notre agenda pour ne manquer aucune de nos rencontres intellectuelles
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/contact">Voir l'agenda</Link>
+                        <Link href={ROUTES.CONTACT}>Voir l'agenda</Link>
                     </Button>
                 </div>
             </div>

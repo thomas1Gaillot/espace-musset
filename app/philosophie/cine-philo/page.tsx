@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const CinePhilo = () => {
@@ -9,13 +10,13 @@ const CinePhilo = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/philosophie">
+              <BreadcrumbLink href={ROUTES.PHILOSOPHIE.ROOT}>
                 Philosophie
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -94,7 +95,7 @@ const CinePhilo = () => {
             Découvrez notre programmation mensuelle et réservez votre place
           </p>
           <Button size="lg" asChild>
-            <Link href="/contact">Voir la programmation</Link>
+            <Link href={ROUTES.CONTACT}>Voir la programmation</Link>
           </Button>
         </div>
       </div>

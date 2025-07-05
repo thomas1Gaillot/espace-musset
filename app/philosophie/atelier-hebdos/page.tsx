@@ -1,8 +1,9 @@
 import EventList from "@/app/components/event-list";
-import { eventList } from "@/app/data/events";
+import { eventList } from "@/data/data.allevents";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ROUTES } from "@/data/route";
 
 const AteliersHebdos = () => {
     const recentAtelierHebdosEvent = eventList.filter((e) => e.category.name === 'Philosophie' && e.type.name === 'Atelier')
@@ -13,13 +14,13 @@ const AteliersHebdos = () => {
                 <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/">
+                            <BreadcrumbLink href={ROUTES.ACCUEIL}>
                                 Accueil
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/philosophie">
+                            <BreadcrumbLink href={ROUTES.PHILOSOPHIE.ROOT}>
                                 Philosophie
                             </BreadcrumbLink>
                         </BreadcrumbItem>
@@ -90,7 +91,7 @@ const AteliersHebdos = () => {
                         Aucun prérequis nécessaire, juste l'envie de questionner et d'apprendre
                     </p>
                     <Button size="lg" asChild>
-                        <Link href="/contact">S'inscrire</Link>
+                        <Link href={ROUTES.CONTACT}>S'inscrire</Link>
                     </Button>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const ZeroDechet = () => {
@@ -9,13 +10,13 @@ const ZeroDechet = () => {
                 <Breadcrumb className="mb-8">
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/">
+                            <BreadcrumbLink href={ROUTES.ACCUEIL}>
                                 Accueil
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="/ecologie">
+                            <BreadcrumbLink href={ROUTES.ECOLOGIE.ROOT}>
                                 Ecologie
                             </BreadcrumbLink>
                         </BreadcrumbItem>
@@ -128,7 +129,7 @@ const ZeroDechet = () => {
                             Rejoindre le défi
                         </Button>
                         <Button size="lg" variant="outline" asChild>
-                            <Link href="/contact">En savoir plus</Link>
+                            <Link href={ROUTES.CONTACT}>En savoir plus</Link>
                         </Button>
                     </div>
                 </div>

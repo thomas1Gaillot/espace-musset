@@ -10,7 +10,7 @@ import { Calendar, Clock, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { EventData } from "../data/events"
+import { EventData } from "../../data/data.allevents"
 
 export default function EventList({ data }: {
   data: EventData[]
@@ -116,52 +116,6 @@ export default function EventList({ data }: {
       </ScrollArea>
 
       <div className=" text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
-
-      {/* Dernier événement passé */}
-      {/* {lastPastEvent && (
-        <div className="pt-10">
-          <h2 className="text-xl font-semibold text-gray-700 mb-2">{"Dernier événement passé"}</h2>
-          <Card className="px-0 w-full sm:px-4 p-4 opacity-60">
-            <div className="flex flex-col w-full sm:flex-row items-start sm:items-center gap-4">
-              <div className="relative flex-shrink-0 w-full sm:w-auto">
-                <Image
-                  src={lastPastEvent.image || "/placeholder.svg"}
-                  alt={lastPastEvent.title}
-                  width={120}
-                  height={80}
-                  className="rounded-lg object-cover w-full sm:w-[120px] h-[80px]"
-                />
-              </div>
-              <div className="flex-1 min-w-0 w-full">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 truncate">{lastPastEvent.title}</h3>
-                <div className="space-y-1 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-orange-500" />
-                    <span className="font-medium text-orange-600">{lastPastEvent.date}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-gray-500" />
-                    <span>{lastPastEvent.time} {"(heure : France)"}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-gray-500" />
-                    <span>{lastPastEvent.venue} {"•"} {lastPastEvent.city}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full sm:w-auto">
-                <Button
-                  className="w-full sm:w-auto px-6"
-                  disabled
-                  id={"last-past-event-button"}
-                >
-                  {"Événement terminé"}
-                </Button>
-              </div>
-            </div>
-          </Card>
-        </div>
-      )} */}
     </div>
   )
 }

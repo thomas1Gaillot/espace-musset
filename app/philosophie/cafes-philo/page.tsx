@@ -1,5 +1,6 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
+import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const CafesPhilo = () => {
@@ -9,13 +10,13 @@ const CafesPhilo = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>
                 Accueil
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href="/philosophie">
+              <BreadcrumbLink href={ROUTES.PHILOSOPHIE.ROOT}>
                 Philosophie
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -104,7 +105,7 @@ const CafesPhilo = () => {
             Venez comme vous êtes, avec vos questions et votre curiosité
           </p>
           <Button size="lg" asChild>
-            <Link href="/contact">En savoir plus</Link>
+            <Link href={ROUTES.CONTACT}>En savoir plus</Link>
           </Button>
         </div>
       </div>
