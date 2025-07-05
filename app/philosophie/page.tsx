@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { eventList } from "@/data/data.allevents";
 import { philosophieContent } from "@/data/philosophie.data";
 import Link from "next/link";
-import EventList from "../components/event-list";
+import EventList from "../../components/event-list";
 
 export default function PhilosophiePage() {
   const philoEvents = eventList.filter((e) => e.category.name === 'Philosophie')

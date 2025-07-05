@@ -1,10 +1,11 @@
+import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ROUTES } from "@/data/route";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import EventList from "./components/event-list";
+import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
-import { ROUTES } from "@/data/route";
 
 export default function HomePage() {
   const activities = [{
@@ -86,6 +87,9 @@ export default function HomePage() {
             </p>
           </div>
 
+          <div className="max-w-4xl mx-auto">
+            <SmartCalendar events={eventList} />
+          </div>
           <div className="max-w-4xl mx-auto">
             <EventList data={eventList} title='Événements à venir' />
           </div>

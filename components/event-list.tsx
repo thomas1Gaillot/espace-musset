@@ -7,11 +7,11 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ROUTES } from "@/data/route"
 import { cn } from "@/lib/utils"
+import { EventData } from "@/types/event-types"
 import { Calendar, Clock, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { EventData } from "../../data/data.allevents"
 
 export default function EventList({ data, title }: {
   data: EventData[],

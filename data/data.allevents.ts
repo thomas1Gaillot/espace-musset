@@ -1,35 +1,8 @@
+import { EventData } from "@/types/event-types";
 import { ROUTES } from "./route"
 
 
-export interface EventData {
-    id: number
-    title: string
-    date: string
-    time: string
-    location: string
-    venue: string
-    city: string
-    image: string
-    dateObj: Date
-    eventLink: string
-    price: string
-    type: { name: EventType, href: string }
-    category: { name: string, href: string }
-}
 
-export type EventType =
-    | "Café philo"
-    | "Atelier"
-    | "Conférence"
-    | "Rencontre"
-    | "Volontariat"
-    | "Ciné philo"
-    | "Cours de philosophie"
-    | "Yoga"
-    | "Danse"
-    | "Théâtre"
-    | "Chant"
-    | 'Spectacle';
 
 const philosophieEventCategory: { name: string, href: string } = { name: 'Philosophie', href: '/philosophie' };
 const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '/arts-du-corps' };

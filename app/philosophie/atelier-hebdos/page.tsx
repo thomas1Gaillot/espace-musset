@@ -1,4 +1,4 @@
-import EventList from "@/app/components/event-list";
+import EventList from "@/components/event-list";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { eventList } from "@/data/data.allevents";
