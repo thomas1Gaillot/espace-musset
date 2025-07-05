@@ -28,7 +28,7 @@ export function EventCard({ event, onClick }: EventCardProps) {
         transition: "all 0.2s",
       }}
     >
-      <div style={{ fontWeight: "500", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginBottom: "0.25rem" }}>
+      <div className="max-w-20 sm:max-w-28 truncate" style={{ fontWeight: "500", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", marginBottom: "0.25rem" }}>
         {event.title}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "0.25rem", opacity: 0.75, marginBottom: "0.25rem" }}>

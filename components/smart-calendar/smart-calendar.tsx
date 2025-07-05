@@ -44,7 +44,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
     }
 
     // Add empty cells to complete the grid (6 weeks)
-    while (days.length < 42) {
+    while (days.length < 32) {
       days.push(null)
     }
 
@@ -93,8 +93,8 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
         onPreviousMonth={handlePreviousMonth}
         onNextMonth={handleNextMonth} />
 
-      <div className="flex-1 p-2 sm:p-4 overflow-hidden">
-        <div className="bg-white/60 rounded-lg shadow-sm h-full flex flex-col">
+      <div className="flex-1 p-2 sm:p-4   w-full overflow-x-auto">
+        <div className="bg-white/60 rounded-lg w-max  shadow-sm h-fullflex flex-col">
           {/* Days of week header */}
           <div className="grid grid-cols-7 border-b">
             {daysOfWeek.map((day) => (
@@ -114,7 +114,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
               return (
                 <div
                   key={index}
-                  className={`border-r border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] overflow-hidden
+                  className={`border-r  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
@@ -133,7 +133,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                         </span>
                       </div>
 
-                      <div className="space-y-1 overflow-hidden">
+                      <div className="space-y-1 min-w-20  overflow-hidden">
                         {visibleEvents.map((event) => (
                           <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
                         ))}
