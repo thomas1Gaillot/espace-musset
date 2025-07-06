@@ -18,9 +18,9 @@ export default function HomePage() {
   {
     title: "Philosophie",
     description: "Cours hebdomadaires, cafés philo, ciné philo et conférences pour explorer les grandes questions de l'existence.",
-    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
+    image: "/event/atelier-philo.jpg",
     link: ROUTES.PHILOSOPHIE.ROOT,
-    cta: "Découvrir les ateliers"
+    cta: "Découvrir nos activités"
   },
   {
     title: "Écologie",

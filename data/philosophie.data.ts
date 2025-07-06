@@ -14,7 +14,7 @@ export const philosophieContent = {
     description:
       "Un espace de réflexion et de dialogue pour explorer ensemble les grandes questions de l'existence, développer notre pensée critique et nourrir notre sagesse collective.",
     image: {
-      url: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
+      url: "/event/atelier-philo.jpg",
       alt: "Réflexion philosophique"
     }
   },

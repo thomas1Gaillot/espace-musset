@@ -45,7 +45,7 @@ const AteliersHebdos = () => {
                 <div className="grid lg:grid-cols-2 gap-12 mb-12">
                     <div className="relative h-80 rounded-lg overflow-hidden">
                         <img
-                            src="/event/cours3philo.jpg"
+                            src="/event/atelier-philo.jpg"
                             alt="Atelier philosophie"
                             className="w-full h-full object-cover"
                         />
