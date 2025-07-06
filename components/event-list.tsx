@@ -36,7 +36,7 @@ export default function EventList({ data, title }: {
   const lastPastEvent = pastEvents[0]
 
   return (
-    <div className="w-full max-w-6xl">
+    <>
       <div className="flex justify-between items-center mb-6 gap-2">
         <h1 className="text-2xl font-bold">{`${title} (${upcomingEvents.length})`}</h1>
         <Select value={sortBy} onValueChange={setSortBy}>
@@ -50,7 +50,7 @@ export default function EventList({ data, title }: {
         </Select>
       </div>
 
-      <ScrollArea className=" sm:max-h-[60vh] mb-4 w-full overflow-x-auto sm:overflow-y-scroll sm:overflow-x-hidden">
+      <ScrollArea className=" sm:max-h-[60vh]  mb-4 w-full overflow-x-auto sm:overflow-y-scroll sm:overflow-x-hidden">
         <div className="flex flex-row sm:flex-col gap-4 w-full">
           {upcomingEvents.map((event) => (
             <Card key={event.id} className="w-[67vw] sm:w-full flex-shrink-0 sm:px-4 p-4 hover:shadow-md transition-shadow">
@@ -129,6 +129,6 @@ export default function EventList({ data, title }: {
       </ScrollArea>
 
       <div className=" text-center text-sm text-gray-500">{upcomingEvents.length} événements disponibles</div>
-    </div>
+    </>
   )
 }

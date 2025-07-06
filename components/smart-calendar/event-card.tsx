@@ -15,7 +15,7 @@ export function EventCard({ event, onClick }: EventCardProps) {
   return (
     <div
       onClick={onClick}
-      className="p-[0.25rem] mb-[0.25rem] rounded-[0.15rem] cursor-pointer text-[0.6rem] "
+      className="p-[0.25rem] mb-[0.25rem] rounded-[0.15rem] cursor-pointer text-[0.6rem]  "
       style={{
         borderLeft: `3px solid ${borderColor}`,
         backgroundColor,

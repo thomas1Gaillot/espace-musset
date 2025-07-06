@@ -83,7 +83,7 @@ export default function PhilosophiePage() {
             ))}
           </div>
         </div>
-        <div className="w-full flex justify-center">
+        <div className="w-full ml-[24px] max-w-[calc(100vw-24px)]  mb-8 grid justify-center">
           <EventList data={philoEvents} title='Événements philo à venir' />
         </div>
 

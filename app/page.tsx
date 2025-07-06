@@ -76,9 +76,9 @@ export default function HomePage() {
 
 
       {/* Agenda Section */}
-      <section className="py-16 px-4 bg-sage-50/50">
-        <div className="container mx-auto space-y-6">
-          <div className="text-center mb-12">
+      <section className="py-16 bg-sage-50/50">
+        <div className="space-y-6 flex flex-col items-center">
+          <div className="text-center mb-12 container">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Agenda
             </h2>
@@ -87,10 +87,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-2 ">
             <SmartCalendar events={eventList} />
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full ml-[24px] max-w-[calc(100vw-24px)] grid justify-center">
             <EventList data={eventList} title='Événements à venir' />
           </div>
         </div>

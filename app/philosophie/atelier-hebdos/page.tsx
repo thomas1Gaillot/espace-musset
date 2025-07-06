@@ -79,9 +79,10 @@ const AteliersHebdos = () => {
                             <li><strong>Public :</strong> Tout type de  public</li>
                         </ul>
                     </div>
-
-                    <EventList data={recentAtelierHebdosEvent} title='Ateliers philo à venir' />
                 </div>
+                <div className="w-full ml-[24px]  mb-8 max-w-[calc(100vw-24px)] grid justify-center">
+                    <EventList data={recentAtelierHebdosEvent} title='Ateliers philo à venir' />
+                    </div>
 
                 <div className="text-center">
                     <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
