@@ -133,7 +133,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                         </span>
                       </div>
 
-                      <div className="space-y-1 min-w-12 sm:min-w-20  overflow-hidden">
+                      <div className="space-y-1  overflow-hidden">
                         {visibleEvents.map((event) => (
                           <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
                         ))}
