@@ -77,7 +77,7 @@ export default function HomePage() {
 
       {/* Agenda Section */}
       <section className="py-16 px-4 bg-sage-50/50">
-        <div className="container mx-auto">
+        <div className="container mx-auto space-y-6">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Agenda

@@ -26,31 +26,31 @@ export function CalendarHeader({ currentDate, onPreviousMonth, onNextMonth }: Ca
   ]
 
   return (
-    <div className="flex items-center justify-between p-4 border-b ">
+    <div className="flex items-center gap-4 p-4 border-b ">
       <Button
         variant="outline"
-        size="lg"
+        size='sm'
         onClick={onPreviousMonth}
         className="flex items-center gap-2 hover:bg-gray-50 bg-transparent"
       >
-        <ChevronLeft className="h-5 w-5" />
-        <span className="hidden sm:inline">Précédent</span>
+        <ChevronLeft className="h-4 w-4" />
       </Button>
 
       <div className="flex flex-col items-center">
-        <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">
-          {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
+        <h1 className="text-lg flex  gap-1 font-bold text-gray-700">
+          {monthNames[currentDate.getMonth()]} 
+          <p className="font-light">{currentDate.getFullYear()}</p>
         </h1>
       </div>
 
       <Button
         variant="outline"
-        size="lg"
+        size='sm'
+
         onClick={onNextMonth}
         className="flex items-center gap-2 hover:bg-gray-50 bg-transparent"
       >
-        <span className="hidden sm:inline">Suivant</span>
-        <ChevronRight className="h-5 w-5" />
+        <ChevronRight className="h-4 w-4" />
       </Button>
     </div>
   )

@@ -87,18 +87,18 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
   }
 
   return (
-    <div className="h-max flex flex-col">
+    <div className="h-max flex flex-col bg-white/60 rounded-lg">
       <CalendarHeader
         currentDate={currentDate}
         onPreviousMonth={handlePreviousMonth}
         onNextMonth={handleNextMonth} />
 
-      <div className="flex-1 p-2 sm:p-4   w-full overflow-x-auto">
-        <div className="bg-white/60 rounded-lg w-max  shadow-sm h-fullflex flex-col">
+      <div className="flex-1 w-full overflow-x-auto">
+        <div className=" w-full  shadow-sm h-full flex flex-col">
           {/* Days of week header */}
-          <div className="grid grid-cols-7 border-b">
+          <div className="grid grid-cols-7 border-b border-secondary/20">
             {daysOfWeek.map((day) => (
-              <div key={day} className="p-2 sm:p-3 text-xs sm:text-sm font-medium text-gray-600 text-center">
+              <div key={day} className="p-2 sm:p-3 text-[10px] sm:text-xs  font-light text-gray-600 text-end">
                 {day}
               </div>
             ))}
@@ -114,16 +114,16 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
               return (
                 <div
                   key={index}
-                  className={`border-r  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] overflow-hidden
+                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
                   {date && (
                     <>
-                      <div className="flex justify-between items-center mb-1 sm:mb-2">
+                      <div className="flex w-full justify-end items-end mb-1 sm:mb-2">
                         <span
-                          className={`text-xs sm:text-sm font-medium ${isToday(date)
-                              ? "bg-blue-600 text-white w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center text-xs"
+                          className={`text-[10px] sm:text-xs font-light ${isToday(date)
+                              ? "bg-primary text-white w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center "
                               : isCurrentMonth(date)
                                 ? "text-gray-900"
                                 : "text-gray-400"
@@ -133,12 +133,12 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                         </span>
                       </div>
 
-                      <div className="space-y-1 min-w-20  overflow-hidden">
+                      <div className="space-y-1 min-w-12 sm:min-w-20  overflow-hidden">
                         {visibleEvents.map((event) => (
                           <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
                         ))}
                         {hasMoreEvents && (
-                          <div className="text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autres</div>
+                          <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autres</div>
                         )}
                       </div>
                     </>
