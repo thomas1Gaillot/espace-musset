@@ -18,7 +18,7 @@ export type EventType =
   | "Café philo"
   | "Atelier"
   | "Conférence"
-  | "Rencontre"
+  | "Rencontre philo"
   | "Volontariat"
   | "Ciné philo"
   | "Cours de philosophie"
@@ -27,3 +27,4 @@ export type EventType =
   | "Théâtre"
   | "Chant"
   | "Spectacle"
+  | "Portes ouvertes"

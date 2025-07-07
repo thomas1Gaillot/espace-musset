@@ -7,7 +7,8 @@ export const ROUTES = {
       ATELIERS: "/philosophie/atelier-hebdos",
       CAFES: "/philosophie/cafes-philo",
       CINE: "/philosophie/cine-philo",
-      CONFERENCES: "/philosophie/conferences"
+      CONFERENCES: "/philosophie/conferences",
+      RENCONTRES: "/philosophie/rencontres-philo",
     }
   },
   ECOLOGIE: {

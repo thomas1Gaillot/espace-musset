@@ -7,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { useRef, useState } from "react"
 import { ROUTES } from "@/data/route"
+import { useRef, useState } from "react"
 export default function ContactPage() {
 
 
@@ -207,9 +207,14 @@ ${message}
                 <SelectValue placeholder="Choisissez un sujet" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="visite-cafe">Visiter le café – Envie de découvrir le lieu</SelectItem>
-                <SelectItem value="atelier-inscription">Inscription à un atelier ou conférence</SelectItem>
                 <SelectItem value="rencontre">Nous rencontrer – Échanger sur une idée ou projet</SelectItem>
+                <SelectItem value="visite-cafe">Visiter le café – Envie de découvrir le lieu</SelectItem>
+                <SelectItem value="cafe-philo">Philosophie - Inscription à un café philo</SelectItem>
+                <SelectItem value="atelier-philo">Philosophie - Inscription à un atelier philo</SelectItem>
+                <SelectItem value="cine-philo">Philosophie - Inscription à un ciné philo</SelectItem>
+                <SelectItem value="rencontre-philo">Philosophie - Inscription à une rencontre philo</SelectItem>
+                <SelectItem value="conf-philo">Philosophie - Inscription à une conférence philo</SelectItem>
+
                 <SelectItem value="autre">Autre demande</SelectItem>
               </SelectContent>
             </Select>

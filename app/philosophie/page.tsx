@@ -12,113 +12,111 @@ export default function PhilosophiePage() {
   const { breadcrumb, hero, intro, subpages, approche, cta } = philosophieContent;
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto">
-        {/* Fil d'Ariane */}
-        <Breadcrumb className="mb-8">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href={breadcrumb.home.link}>
-                {breadcrumb.home.label}
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>{breadcrumb.current}</BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+    <div className=" mx-auto py-12">
+      {/* Fil d'Ariane */}
+      <Breadcrumb className="mb-8 container">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href={breadcrumb.home.link}>
+              {breadcrumb.home.label}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>{breadcrumb.current}</BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
 
-        {/* Hero */}
-        <div className="text-center mb-12">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            {hero.title}
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            {hero.description}
-          </p>
+      {/* Hero */}
+      <div className="text-center mb-12 container">
+        <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+          {hero.title}
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          {hero.description}
+        </p>
+      </div>
+
+      <div className="grid lg:grid-cols-2 gap-12 mb-12 container">
+        <div className="relative h-80 rounded-lg overflow-hidden">
+          <img
+            src={hero.image.url}
+            alt={hero.image.alt}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
-          <div className="relative h-80 rounded-lg overflow-hidden">
-            <img
-              src={hero.image.url}
-              alt={hero.image.alt}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="flex flex-col justify-center space-y-6">
+          <h2 className="font-serif text-2xl font-semibold text-foreground">
+            {intro.title}
+          </h2>
+          <div className="space-y-4 text-muted-foreground">
+            {intro.paragraphs.map((p, idx) => (
+              <p key={idx}>{p}</p>
+            ))}
           </div>
+        </div>
+      </div>
 
-          <div className="flex flex-col justify-center space-y-6">
-            <h2 className="font-serif text-2xl font-semibold text-foreground">
-              {intro.title}
-            </h2>
-            <div className="space-y-4 text-muted-foreground">
-              {intro.paragraphs.map((p, idx) => (
-                <p key={idx}>{p}</p>
-              ))}
+      {/* Sous-pages */}
+      <div className="mb-12 container">
+        <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+          {subpages.title}
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {subpages.items.map((page, index) => (
+            <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
+              <CardHeader className="items-center">
+                <page.Icon className="size-8" />
+                <CardTitle className="font-serif text-lg">{page.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="h-20">
+                <CardDescription className="text-sm">{page.description}</CardDescription>
+              </CardContent>
+              <CardFooter>
+                <Button asChild className="w-full" id={`philo-${page.title.toLowerCase().replace(/\s/g, "-")}-button`}>
+                  <Link href={page.link}>{page.buttonLabel}</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
+      <div className="w-full ml-[24px] mr-[4px] max-w-[calc(100vw-28px)]  mb-8 grid justify-center">
+        <EventList data={philoEvents} title='Événements philo à venir' />
+      </div>
+
+      {/* Approche */}
+      <div className="bg-earth-50/50 rounded-lg p-8 mb-12 container">
+        <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
+          {approche.title}
+        </h2>
+        <div className="font-serif italic text-2xl font-light text-center text-foreground mb-6">
+          {approche.citation}
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 text-center">
+          {approche.items.map((item, idx) => (
+            <div key={idx}>
+              <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.description}</p>
             </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        {/* Sous-pages */}
-        <div className="mb-12">
-          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
-            {subpages.title}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subpages.items.map((page, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
-                <CardHeader className="items-center">
-                  <page.Icon className="size-8" />
-                  <CardTitle className="font-serif text-lg">{page.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="h-20">
-                  <CardDescription className="text-sm">{page.description}</CardDescription>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild className="w-full" id={`philo-${page.title.toLowerCase().replace(/\s/g, "-")}-button`}>
-                    <Link href={page.link}>{page.buttonLabel}</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </div>
-        <div className="w-full ml-[24px] max-w-[calc(100vw-24px)]  mb-8 grid justify-center">
-          <EventList data={philoEvents} title='Événements philo à venir' />
-        </div>
-
-        {/* Approche */}
-        <div className="bg-earth-50/50 rounded-lg p-8 mb-12">
-          <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
-            {approche.title}
-          </h2>
-          <div className="font-serif italic text-2xl font-light text-center text-foreground mb-6">
-            {approche.citation}
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            {approche.items.map((item, idx) => (
-              <div key={idx}>
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-            {cta.title}
-          </h2>
-          <p className="text-lg text-muted-foreground mb-6">{cta.description}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" id={"cta-ateliers-button"}>
-              <Link href={cta.primaryLink}>{cta.primaryLabel}</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild id={"cta-contact-button"}>
-              <Link href={cta.secondaryLink}>{cta.secondaryLabel}</Link>
-            </Button>
-          </div>
+      {/* CTA */}
+      <div className="text-center container">
+        <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
+          {cta.title}
+        </h2>
+        <p className="text-lg text-muted-foreground mb-6">{cta.description}</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" id={"cta-ateliers-button"}>
+            <Link href={cta.primaryLink}>{cta.primaryLabel}</Link>
+          </Button>
+          <Button size="lg" variant="outline" asChild id={"cta-contact-button"}>
+            <Link href={cta.secondaryLink}>{cta.secondaryLabel}</Link>
+          </Button>
         </div>
       </div>
     </div>

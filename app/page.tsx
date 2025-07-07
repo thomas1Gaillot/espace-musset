@@ -17,7 +17,7 @@ export default function HomePage() {
   },
   {
     title: "Philosophie",
-    description: "Cours hebdomadaires, cafés philo, ciné philo et conférences pour explorer les grandes questions de l'existence.",
+    description: "Cours hebdomadaires, cafés philo, conférences et rencontres pour explorer les grandes questions de l'existence.",
     image: "/event/atelier-philo.jpg",
     link: ROUTES.PHILOSOPHIE.ROOT,
     cta: "Découvrir nos activités"
@@ -90,7 +90,7 @@ export default function HomePage() {
           <div className="max-w-4xl mx-2 ">
             <SmartCalendar events={eventList} />
           </div>
-          <div className="w-full ml-[24px] max-w-[calc(100vw-24px)] grid justify-center">
+          <div className="w-full ml-[24px] mr-[4px] max-w-[calc(100vw-28px)] grid justify-center">
             <EventList data={eventList} title='Événements à venir' />
           </div>
         </div>

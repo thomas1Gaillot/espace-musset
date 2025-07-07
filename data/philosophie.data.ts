@@ -1,4 +1,4 @@
-import { CoffeeIcon, LandmarkIcon, MicVocalIcon, PopcornIcon } from "lucide-react";
+import { CoffeeIcon, HandshakeIcon, LandmarkIcon, MicVocalIcon, PopcornIcon } from "lucide-react";
 import { ROUTES } from "./route";
 
 export const philosophieContent = {
@@ -38,23 +38,30 @@ export const philosophieContent = {
       },
       {
         title: "Cafés philo",
-        description: "Discussions informelles autour d'un café sur les sujets qui nous interrogent",
+        description: "Ateliers de réflexion collective guidés pour apprendre à penser par soi-même et avec les autres",
         link: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES,
         Icon: CoffeeIcon,
         buttonLabel: "Découvrir"
       },
       {
         title: "Ciné philo",
-        description: "Projections de films suivies de débats philosophiques enrichissants",
+        description: "Projections d'extraits de film suivies de discussions philosophiques enrichissantes",
         link: ROUTES.PHILOSOPHIE.SUBPAGES.CINE,
         Icon: PopcornIcon,
         buttonLabel: "Découvrir"
       },
       {
         title: "Conférences",
-        description: "Interventions d'experts et penseurs sur des thématiques philosophiques actuelles",
+        description: "Interventions sur des thématiques philosophiques actuelles",
         link: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES,
         Icon: MicVocalIcon,
+        buttonLabel: "Découvrir"
+      },
+      {
+        title: "Rencontres philo",
+        description: "Discussion ouverte et abordable autour d'un sujet philosophique",
+        link: ROUTES.PHILOSOPHIE.SUBPAGES.RENCONTRES,
+        Icon: HandshakeIcon,
         buttonLabel: "Découvrir"
       }
     ]

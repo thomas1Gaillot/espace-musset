@@ -23,7 +23,7 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#faf5ff",
       textColor: "#5b21b6"
     },
-    Rencontre: {
+    "Rencontre philo": {
       borderColor: "#22c55e",
       backgroundColor: "#f0fdf4",
       textColor: "#14532d"

@@ -117,7 +117,7 @@ export default function EventList({ data, title }: {
                     asChild
                   >
                     <Link href={event.eventLink} target="_blank">
-                      {"Réserver"}
+                      {"Voir"}
                     </Link>
                   </Button>
                 </div>

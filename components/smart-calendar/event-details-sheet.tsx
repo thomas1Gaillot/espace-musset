@@ -83,8 +83,8 @@ export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetP
                 }
               }}
             >
-              <ExternalLink className="h-4 w-4 mr-2" />
-              Réserver maintenant
+              <ExternalLink className="h-4 w-4 mr-1" />
+              {"Voir l'annonce"}
             </Button>
           )}
           <Button variant="outline" className="w-full bg-transparent" onClick={onClose}>
