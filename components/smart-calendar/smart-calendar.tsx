@@ -114,7 +114,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
               return (
                 <div
                   key={index}
-                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] min-w-[60px] sm:min-w-[120px] overflow-hidden
+                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] min-w-[50px] sm:min-w-[120px] overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
