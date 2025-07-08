@@ -114,28 +114,29 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
               return (
                 <div
                   key={index}
-                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 min-h-[80px] sm:min-h-[120px] min-w-[50px] sm:min-w-[120px] overflow-hidden
+                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[80px]  w-[54px] sm:h-[80px] sm:w-[80px] lg:h-[100px] lg:w-[120px]  overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
                   {date && (
                     <>
-                      <div className="flex w-full justify-end items-end mb-1 sm:mb-2">
+                      <div className="relative flex w-full justify-end items-end">
                         <span
-                          className={`text-[10px] sm:text-xs font-light ${isToday(date)
-                              ? "bg-primary text-white w-5 h-5 sm:w-6 sm:h-6 rounded-full flex items-center justify-center "
-                              : isCurrentMonth(date)
-                                ? "text-gray-900"
-                                : "text-gray-400"
+                          className={`absolute top-0  w-0 h-0 text-[10px] sm:text-xs font-medium 
+                        ${isToday(date)
+                              ? "bg-primary text-white w-5 h-5 sm:w-6 sm:h-6 right-1 rounded-full flex items-center justify-center"
+                              : "text-gray-400 right-3"
                             }`}
                         >
                           {date.getDate()}
                         </span>
                       </div>
 
+
+
                       <div className="space-y-1  overflow-hidden">
                         {visibleEvents.map((event) => (
-                          <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
+                          <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} truncate={visibleEvents.length > 1} />
                         ))}
                         {hasMoreEvents && (
                           <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autres</div>

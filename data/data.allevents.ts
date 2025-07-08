@@ -98,7 +98,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-15"),
         eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
         category: philosophieEventCategory,
-        type: { name: 'Atelier', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
     },
     {
         id: 13,
@@ -113,7 +113,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-22"),
         eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
         category: philosophieEventCategory,
-        type: { name: 'Atelier', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
     },
     {
         id: 14,
@@ -128,7 +128,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-29"),
         eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
         category: philosophieEventCategory,
-        type: { name: 'Atelier', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
     },
     {
         id: 15,
@@ -206,7 +206,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-24"),
         eventLink: ROUTES.CONTACT,
         category: philosophieEventCategory,
-        type: { name: 'Atelier', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
     },
     {
         id: 20,
@@ -221,7 +221,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-10-01"),
         eventLink: ROUTES.CONTACT,
         category: philosophieEventCategory,
-        type: { name: 'Atelier', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
     },
 
 ]

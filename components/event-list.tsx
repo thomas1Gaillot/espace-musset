@@ -20,10 +20,14 @@ export default function EventList({ data, title }: {
   const [sortBy, setSortBy] = useState("asc")
 
   const now = new Date()
+  now.setHours(0, 0, 0, 0); // on ignore l'heure
 
   const upcomingEvents = data
-    .filter(event => event.dateObj >= now)
-    .sort((a, b) => {
+    .filter(event => {
+      const eventDate = new Date(event.dateObj);
+      eventDate.setHours(0, 0, 0, 0);
+      return eventDate >= now;
+    }).sort((a, b) => {
       return sortBy === "desc"
         ? b.dateObj.getTime() - a.dateObj.getTime()
         : a.dateObj.getTime() - b.dateObj.getTime()
@@ -33,7 +37,6 @@ export default function EventList({ data, title }: {
     .filter(event => event.dateObj < now)
     .sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime())
 
-  const lastPastEvent = pastEvents[0]
 
   return (
     <>
@@ -52,8 +55,15 @@ export default function EventList({ data, title }: {
 
       <ScrollArea className=" sm:max-h-[60vh]  mb-4 w-full overflow-x-auto sm:overflow-y-scroll sm:overflow-x-hidden">
         <div className="flex flex-row sm:flex-col gap-4 w-full">
-          {upcomingEvents.map((event) => (
-            <Card key={event.id} className="w-[67vw] sm:w-full flex-shrink-0 sm:px-4 p-4 hover:shadow-md transition-shadow">
+          {upcomingEvents.map((event) => {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const eventDate = new Date(event.dateObj);
+            eventDate.setHours(0, 0, 0, 0);
+            const isToday = eventDate.getTime() === today.getTime();
+            const isSoon = event.dateObj.getTime() - Date.now() < 7 * 24 * 60 * 60 * 1000 && !isToday
+            return <Card key={event.id} className="w-[67vw] sm:w-full flex-shrink-0 sm:px-4 p-4 hover:shadow-md transition-shadow">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full">
                 {/* Image */}
                 <div className="relative w-full sm:w-auto sm:flex-shrink-0">
@@ -64,11 +74,24 @@ export default function EventList({ data, title }: {
                     height={80}
                     className="rounded-lg object-cover w-full sm:w-[120px] h-[80px]"
                   />
-                  {(event.dateObj.getTime() - Date.now()) < 7 * 24 * 60 * 60 * 1000 && (
-                    <Badge className="absolute -top-2 -right-2 bg-accent text-white hover:bg-accent/90">
-                      {"Date proche"}
-                    </Badge>
-                  )}
+                  <>
+                    {isSoon && (
+                      <Badge
+                        className="absolute -top-2 -right-2 bg-accent text-white hover:bg-accent/90"
+                        id={"near-date-badge"}
+                      >
+                        {"Date proche"}
+                      </Badge>
+                    )}
+                    {isToday && (
+                      <Badge
+                        className="absolute -top-2 -right-2 bg-accent text-white hover:bg-accent/90"
+                        id={"today-date-badge"}
+                      >
+                        {"Aujourd’hui"}
+                      </Badge>
+                    )}
+                  </>
                 </div>
 
                 {/* Détails */}
@@ -123,7 +146,7 @@ export default function EventList({ data, title }: {
                 </div>
               </div>
             </Card>
-          ))}
+          })}
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>

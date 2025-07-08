@@ -24,7 +24,8 @@ export const ROUTES = {
     SUBPAGES: {
       YOGA: "/arts-du-corps/yoga",
       DANSE: "/arts-du-corps/danse",
-      THEATRE: "/arts-du-corps/theatre"
+      THEATRE: "/arts-du-corps/theatre",
+      CHANT: "/arts-du-corps/chant"
     }
   },
   LOCATION_SALLES: "/location-salles",

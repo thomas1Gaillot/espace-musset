@@ -13,7 +13,7 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#fdf2f8",
       textColor: "#831843"
     },
-    Atelier: {
+    "Atelier philo": {
       borderColor: "#3b82f6",
       backgroundColor: "#eff6ff",
       textColor: "#1e3a8a"
@@ -65,6 +65,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
     },
     Spectacle: {
       borderColor: "#8b5cf6",
+      backgroundColor: "#f5f3ff",
+      textColor: "#4c1d95"
+    },
+    "Portes ouvertes" : {
+       borderColor: "#8b5cf6",
       backgroundColor: "#f5f3ff",
       textColor: "#4c1d95"
     }

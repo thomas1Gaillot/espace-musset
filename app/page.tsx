@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
+import EventsSection from "@/components/events-section";
 
 export default function HomePage() {
   const activities = [{
@@ -107,8 +108,9 @@ export default function HomePage() {
               Explorez nos différents univers thématiques et trouvez votre voie d'épanouissement
             </p>
           </div>
+          <EventsSection/>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
             {activities.map((activity, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
                 <div className="relative h-48 overflow-hidden">
