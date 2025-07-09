@@ -76,7 +76,7 @@ export default function ContactPage() {
 
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                  <p className="text-muted-foreground">contact@espacemusset.fr</p>
+                  <p className="text-muted-foreground">contact@espace-musset.com</p>
                 </div>
               </CardContent>
             </Card>
@@ -171,7 +171,7 @@ Message:
 ${message}
     `.trim()
 
-    const mailto = `mailto:contact@espacemusset.fr?subject=${encodeURIComponent(selectedSubject || "")}&body=${encodeURIComponent(body)}`
+    const mailto = `mailto:contact@espace-musset.com?subject=${encodeURIComponent(selectedSubject || "")}&body=${encodeURIComponent(body)}`
     window.location.href = mailto
   }
 
@@ -209,6 +209,7 @@ ${message}
               <SelectContent>
                 <SelectItem value="rencontre">Nous rencontrer – Échanger sur une idée ou projet</SelectItem>
                 <SelectItem value="visite-cafe">Visiter le café – Envie de découvrir le lieu</SelectItem>
+                <SelectItem value="location-salle">Location de salle</SelectItem>
                 <SelectItem value="cafe-philo">Philosophie - Inscription à un café philo</SelectItem>
                 <SelectItem value="atelier-philo">Philosophie - Inscription à un atelier philo</SelectItem>
                 <SelectItem value="cine-philo">Philosophie - Inscription à un ciné philo</SelectItem>

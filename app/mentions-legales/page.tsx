@@ -31,7 +31,7 @@ export default function MentionsLegalesPage() {
               <p><strong>Raison sociale :</strong> Association Espace Musset</p>
               <p><strong>Siège social :</strong> 52 Bis Rue Alfred de Musset, 31200 Toulouse</p>
               <p><strong>Téléphone :</strong> 06 30 15 46 48 XX XX XX</p>
-              <p><strong>Email :</strong> contact@espacemusset.fr</p>
+              <p><strong>Email :</strong> contact@espace-musset.com</p>
               <p><strong>Numéro SIRET :</strong> XXX XXX XXX XXXXX</p>
             </div>
           </section>

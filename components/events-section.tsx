@@ -45,8 +45,8 @@ export default function EventsSection() {
             href={event.href}
             className="group flex flex-col items-center px-3 py-2 rounded-2xl bg-background"
           >
-            <div className="w-24 h-24 rounded-full border border-primary/30 hover:border-none flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <IconComponent strokeWidth={1.1} className="w-10 h-10 text-primary " />
+            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-full border border-primary/30 hover:border-none flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <IconComponent strokeWidth={1.1} className="w-8 sm:w-10 h-8 sm:h-10 text-primary " />
             </div>
             <h3 className="text-sm font-semibold text-center leading-tight text-primary/60 group-hover:text-primary transition-colors">
               {event.type}

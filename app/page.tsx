@@ -1,3 +1,4 @@
+import EventsSection from "@/components/events-section";
 import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,7 +7,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
-import EventsSection from "@/components/events-section";
 
 export default function HomePage() {
   const activities = [{
@@ -17,11 +17,11 @@ export default function HomePage() {
     cta: "Découvrir"
   },
   {
-    title: "Philosophie",
-    description: "Cours hebdomadaires, cafés philo, conférences et rencontres pour explorer les grandes questions de l'existence.",
-    image: "/event/atelier-philo.jpg",
-    link: ROUTES.PHILOSOPHIE.ROOT,
-    cta: "Découvrir nos activités"
+    title: "Arts du corps",
+    description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
+    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
+    link: ROUTES.ARTS_DU_CORPS.ROOT,
+    cta: "Voir les cours"
   },
   {
     title: "Écologie",
@@ -31,12 +31,14 @@ export default function HomePage() {
     cta: "Participer"
   },
   {
-    title: "Arts du corps",
-    description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    link: ROUTES.ARTS_DU_CORPS.ROOT,
-    cta: "Voir les cours"
+    title: "Philosophie",
+    description: "Cours hebdomadaires, cafés philo, conférences et rencontres pour explorer les grandes questions de l'existence.",
+    image: "/event/atelier-philo.jpg",
+    link: ROUTES.PHILOSOPHIE.ROOT,
+    cta: "Découvrir nos activités"
   },
+
+
 
   ];
   const bgImgClass = "bg-[url('/welcome2.jpg')]"
@@ -108,7 +110,7 @@ export default function HomePage() {
               Explorez nos différents univers thématiques et trouvez votre voie d'épanouissement
             </p>
           </div>
-          <EventsSection/>
+          <EventsSection />
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
             {activities.map((activity, index) => (

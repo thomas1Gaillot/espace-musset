@@ -64,7 +64,7 @@ export default function PolitiqueConfidentialitePage() {
             <p className="text-muted-foreground">
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
               suppression de vos données personnelles. Vous pouvez exercer ces droits en nous
-              contactant à l'adresse : contact@espacemusset.fr
+              contactant à l'adresse : contact@espace-musset.com
             </p>
           </section>
         </div>

@@ -4,16 +4,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ROUTES } from "@/data/route";
+import { Accessibility, AirVentIcon, Lightbulb, MicIcon, PianoIcon, Projector, Snowflake, SpeakerIcon, Sun, Wifi } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 export default function LocationSallesPage() {
   const salles = [
     {
-      name: "Salle de réunion, ateliers, conférences",
+      name: "Salle des muses",
       capacity: "42m² - 24-60 personnes selon disposition",
-      features: ["Vidéoprojecteur", "WiFi", "toilettes PMR", "Eclairage avec variateurs et tonalités", "Climatisation", "lumière du jour"],
-      prices: ["Tarif 1/2 Journée - dès 140 € HT", "Tarif Journée - dès 240 € HT", "Tarif Soirée - dès 140 € HT"]
+      features: [
+        { title: "Vidéoprojecteur", Icon: Projector },
+        { title: "WiFi", Icon: Wifi },
+        { title: "Toilettes PMR", Icon: Accessibility },
+        { title: "Éclairage avec variateurs et tonalités", Icon: Lightbulb },
+        { title: "Climatisation", Icon: Snowflake },
+        { title: "Lumière du jour", Icon: Sun },
+        { title: "Micro", Icon: MicIcon }
+      ],
+      activity: [
+        { title: "Yoga", Icon: AirVentIcon },
+        { title: "Conférences", Icon: SpeakerIcon },
+        { title: "Piano", Icon: PianoIcon },
+      ],
+      prices: ["Tarif 1/2 Journée - dès XXX € TTC", "Tarif Journée - dès XXX € TTC", "Tarif Soirée - dès XXX € TTC"]
     },
   ];
 
@@ -81,29 +95,43 @@ export default function LocationSallesPage() {
             {salles.map((salle, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow bg-white border-none">
                 <CardHeader>
-                  <div className="flex justify-between items-start">
+                  <div className="flex flex-col gap-4 sm:flex-row justify-between items-start">
                     <div>
                       <CardTitle className="font-serif text-xl font-bold">{salle.name}</CardTitle>
-                      <CardDescription className="text-sm font-medium text-primary">
+                      <CardDescription className="text-xs font-medium text-primary/60">
                         {salle.capacity}
                       </CardDescription>
                     </div>
-                    <div className="grid text-right text-sm">
-                      {salle.prices.map(p =>
-                        <p className="font-semibold text-foreground">{p}</p>
+                    <div className="grid text-left sm:text-right text-sm">
+                      {salle.prices.map((p, index) =>
+                        <p key={p + index} className="font-light text-foreground">{p}</p>
                       )}
                     </div>
 
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-foreground">Équipements inclus :</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {salle.features.map((feature, idx) => (
-                        <li key={idx}>• {feature}</li>
+                  <div className="space-y-2 mb-6">
+                    <h4 className="font-medium text-foreground">Activités possibles</h4>
+                    <div className="text-xs font-semibold leading-tight flex flex-wrap gap-2">
+                      {salle.activity.map((a, idx) => (
+                        <div key={idx} className="px-4 py-2 flex items-center rounded-md  bg-primary/10">
+                          <a.Icon strokeWidth={1.25} className="size-6 mr-2" />
+                          {a.title}
+                        </div>
                       ))}
-                    </ul>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-foreground ">Équipements inclus :</h4>
+                    <div className="text-xs font-semibold leading-tight flex flex-wrap gap-2">
+                      {salle.features.map((feature, idx) => (
+                        <div key={idx} className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                          <feature.Icon strokeWidth={1.25} className="size-6 mr-2" />
+                          {feature.title}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -124,11 +152,6 @@ export default function LocationSallesPage() {
               <Link href='contact'>
                 Nous contacter
               </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="https://www.kactus.com/fr/lieux/espace-musset" target="_blank" rel="noopener noreferrer">
-                Réserver sur Kaktus
-              </a>
             </Button>
           </div>
         </div>

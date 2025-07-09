@@ -29,7 +29,7 @@ export const Footer = () => {
               <p>31200 Toulouse</p>
               <p>Métro: Minimes - Claude Nougaro</p>
               <p>Tél: 06 30 15 46 48</p>
-              <p>contact@espacemusset.fr</p>
+              <p>contact@espace-musset.com</p>
             </div>
           </div>
 
