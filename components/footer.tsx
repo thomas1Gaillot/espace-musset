@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ROUTES } from "@/data/route";
 import { ExternalLinkIcon, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 
@@ -35,7 +36,7 @@ export const Footer = () => {
 
           {/* Newsletter */}
           <div className="text-center">
-            <h3 className="font-serif font-semibold text-lg mb-4">Newsletter</h3>
+            <h3 className="font-serif font-semibold text-lg mb-4">Nous contacter</h3>
             <p className="text-sm text-muted-foreground mb-4">
               Restez informé de nos événements et ateliers
             </p>
@@ -45,8 +46,10 @@ export const Footer = () => {
                 placeholder="Votre email"
                 className="rounded-r-none"
               />
-              <Button className="rounded-l-none">
-                S'inscrire
+              <Button className="rounded-l-none" asChild>
+                <Link href={ROUTES.CONTACT}>
+                  Nous contacter
+                </Link>
               </Button>
 
             </div>
@@ -62,18 +65,18 @@ export const Footer = () => {
                 </a>
               </Button>
               <Button variant="outline" size="icon" asChild>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://instagram.com/espacemussettoulouse" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-4 w-4" />
                 </a>
               </Button>
               <Button variant="outline" size="sm" className="h-10" asChild>
                 <a href="https://eventbrite.com" target="_blank" rel="noopener noreferrer">
-                  Evènements <ExternalLinkIcon className="size-4"/>
+                  Evènements <ExternalLinkIcon className="size-4" />
                 </a>
               </Button>
               <Button variant="outline" size="sm" className="h-10" asChild>
                 <a href="https://www.kactus.com/fr/lieux/espace-musset" target="_blank" rel="noopener noreferrer">
-                  Location Salle <ExternalLinkIcon className="size-4"/>
+                  Location Salle <ExternalLinkIcon className="size-4" />
                 </a>
               </Button>
             </div>
