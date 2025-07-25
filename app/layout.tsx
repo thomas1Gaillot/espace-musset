@@ -5,7 +5,7 @@ import { Crimson_Text, Inter } from "next/font/google"
 import Head from "next/head"
 import type React from "react"
 import "./globals.css"
-
+import { Toaster } from "@/components/ui/sonner"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${inter.variable} ${crimsonText.variable} font-sans bg-cream text-burgundy`}>
         <Header />
+        <Toaster/>
         <Head>
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

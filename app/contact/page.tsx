@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { ROUTES } from "@/data/route"
 import { useRef, useState } from "react"
+import { toast } from "sonner"
 export default function ContactPage() {
 
 
@@ -136,7 +137,6 @@ export default function ContactPage() {
 
 
 
-
 function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null)
   const [subject, setSubject] = useState("")
@@ -148,32 +148,66 @@ function ContactSection() {
     message: "",
   })
 
+  const subjectMap: Record<string, string> = {
+    "rencontre": "Demande de rencontre",
+    "visite-cafe": "Demande de visite du café",
+    "location-salle": "Demande de location de salle",
+    "cafe-philo": "Inscription à un café philo",
+    "atelier-philo": "Inscription à un atelier philo",
+    "cine-philo": "Inscription à un ciné philo",
+    "rencontre-philo": "Inscription à une rencontre philo",
+    "conf-philo": "Inscription à une conférence philo",
+    "autre": "Autre demande",
+  }
+
+  const defaultMessages: Record<string, string> = {
+    "rencontre": "Bonjour,\nJe souhaite prendre rendez-vous pour échanger avec vous.",
+    "visite-cafe": "Bonjour,\nJe souhaite visiter le café afin de découvrir le lieu.",
+    "location-salle": "Bonjour,\nJe suis intéressé(e) par la location d'une salle.",
+    "cafe-philo": "Bonjour,\nJe souhaite m'inscrire à un café philo.",
+    "atelier-philo": "Bonjour,\nJe souhaite m'inscrire à un atelier philo.",
+    "cine-philo": "Bonjour,\nJe souhaite m'inscrire à un ciné philo.",
+    "rencontre-philo": "Bonjour,\nJe souhaite participer à une rencontre philo.",
+    "conf-philo": "Bonjour,\nJe souhaite assister à une conférence philo.",
+    "autre": "",
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSendMail = () => {
+  const handleSendMail = async () => {
     const { firstname, lastname, email, phone, message } = formData
-    const selectedSubject = {
-      "visite-cafe": "Visiter le café",
-      "atelier-inscription": "Inscription à un atelier",
-      "rencontre": "Nous rencontrer",
-      "autre": "Autre demande"
-    }[subject]
 
-    const body = `
-Prénom: ${firstname}
-Nom: ${lastname}
-Email: ${email}
-Téléphone: ${phone}
-Sujet: ${selectedSubject}
-Message:
-${message}
-    `.trim()
+    if (!subject || !message.trim()) {
+      toast("Veuillez sélectionner un sujet et écrire un message.")
+      return
+    }
 
-    const mailto = `mailto:contact@espace-musset.com?subject=${encodeURIComponent(selectedSubject || "")}&body=${encodeURIComponent(body)}`
-    window.location.href = mailto
+    const subjectLabel = subjectMap[subject] || "Autre demande"
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstname,
+        lastname,
+        email,
+        phone,
+        subject: subjectLabel,
+        message,
+      }),
+    })
+
+    if (res.ok) {
+      toast("Message envoyé avec succès")
+      setFormData({ firstname: "", lastname: "", email: "", phone: "", message: "" })
+      setSubject("")
+    } else {
+      toast.error("Une erreur est survenue")
+    }
   }
+
 
   return (
     <form ref={formRef} onSubmit={e => { e.preventDefault(); handleSendMail() }}>
@@ -202,7 +236,16 @@ ${message}
           </div>
           <div>
             <Label htmlFor="subject">Sujet</Label>
-            <Select value={subject} onValueChange={setSubject}>
+            <Select
+              value={subject}
+              onValueChange={(value) => {
+                setSubject(value)
+                setFormData((prev) => ({
+                  ...prev,
+                  message: defaultMessages[value] || prev.message,
+                }))
+              }}
+            >
               <SelectTrigger id="subject">
                 <SelectValue placeholder="Choisissez un sujet" />
               </SelectTrigger>
@@ -215,7 +258,6 @@ ${message}
                 <SelectItem value="cine-philo">Philosophie - Inscription à un ciné philo</SelectItem>
                 <SelectItem value="rencontre-philo">Philosophie - Inscription à une rencontre philo</SelectItem>
                 <SelectItem value="conf-philo">Philosophie - Inscription à une conférence philo</SelectItem>
-
                 <SelectItem value="autre">Autre demande</SelectItem>
               </SelectContent>
             </Select>
@@ -227,11 +269,10 @@ ${message}
           </div>
 
           <Button
-            id={"send-contact-mailto-button"}
+            data-id={"send-contact-mailto-button"}
             className="w-full"
             size="lg"
             onClick={handleSendMail}
-
           >
             {"Envoyer le message"}
           </Button>
@@ -240,3 +281,4 @@ ${message}
     </form>
   )
 }
+
