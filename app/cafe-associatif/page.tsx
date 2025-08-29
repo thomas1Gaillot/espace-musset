@@ -1,10 +1,36 @@
+import EventList from "@/components/event-list";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
+import Image from "next/image";
 import Link from "next/link";
 
+type ImageData = {
+  src: string;
+  blurredSrc?: string;
+  alt: string;
+};
+
+const imageData: ImageData[] = [
+  {
+    src: "/gallery/gallery-cafe-0.jpeg",
+    blurredSrc: '/blur/gallery-0.jpeg',
+    alt: "Gallery Image 1"
+  },
+  { src: "/gallery/gallery-cafe-1.jpeg", blurredSrc: '/blur/gallery-1.jpeg', alt: "Gallery Image 2" },
+  { src: "/gallery/gallery-cafe-2.jpeg", blurredSrc: '/blur/gallery-2.jpeg', alt: "Gallery Image 3" },
+  { src: "/gallery/gallery-cafe-3.jpeg", blurredSrc: '/blur/gallery-3.jpeg', alt: "Gallery Image 4" },
+  { src: "/gallery/gallery-cafe-4.jpeg", blurredSrc: '/blur/gallery-4.jpeg', alt: "Gallery Image 5" },
+  { src: "/gallery/gallery-cafe-5.jpeg", blurredSrc: '/blur/gallery-5.jpeg', alt: "Gallery Image 6" },
+
+];
+
 export default function CafeAssociatifPage() {
+  const recentCafeEvents = eventList.filter((e) => e.category.name === 'Café associatif')
+
   const services = [
     {
       title: "Plats réalisés par nos bénévoles",
@@ -22,7 +48,7 @@ export default function CafeAssociatifPage() {
       title: "Événements",
       description: "Participez à nos spectacles et soirées scène ouverte"
     },
-    
+
   ];
 
   return (
@@ -44,52 +70,143 @@ export default function CafeAssociatifPage() {
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Café Associatif
+            Le Café d'Oc
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Au cœur de l'Espace Musset, notre café associatif est un lieu de rencontre
             ouvert à tous, où la convivialité et l'échange interculturel se conjuguent
-            autour d'un café équitable et de moments de partage authentiques.
+            autour de moments de partage.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-12">
+        <div className="flex flex-col sm:flex-row   gap-12 mb-12">
           {/* Image principale */}
-          <div className="relative h-80 rounded-lg overflow-hidden">
+          <div className="relative h-[450px] w-full sm:w-[450px] rounded-lg overflow-hidden">
             <img
-              src="/cafe-asso.jpeg"
-              alt="Café associatif"
-              className="w-full h-full object-cover"
+              src="/cafe-doc.png"
+              alt={"Café associatif"}
+              className="w-full h-auto object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-transparent" />
           </div>
 
           {/* Description */}
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
-              Un espace de vie communautaire
+              Des activités autour d'un bon repas*
             </h2>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Notre café associatif incarne les valeurs de partage et d'inclusion qui
-                animent l'Espace Musset. C'est un lieu où chacun peut venir travailler,
-                se détendre, rencontrer d'autres personnes ou simplement profiter d'un
-                moment de calme.
-              </p>
-              <p>
-                Nous proposons des boissons chaudes issues du commerce équitable,
-                des collations saines et locales, dans une atmosphère chaleureuse
-                qui favorise les échanges spontanés et les nouvelles amitiés.
-              </p>
-              <p>
-                Le café sert également de point de rendez-vous pour de nombreuses
-                activités de l'Espace Musset et accueille régulièrement des événements
-                culturels intimistes.
-              </p>
-            </div>
+            <ul className="space-y-4 text-muted-foreground">
+              <li>
+                Notre café associatif est animé par les bénévoles, aussi, pour débuter notre activité nous allons commencer par des choses simples :
+              </li>
+              <li>
+                - <strong>Le soir des activités</strong> ( voir le programme) : nous proposerons des planches typiques du sud-ouest et teintées de notre voisine l’Espagne : charcuterie, fromage ou végétarienne
+              </li>
+              <li>
+                - <strong>Les lundis et mercredis </strong> : des tartes salées maisons accompagnée de salades
+              </li>
+              <li>
+                - <strong>Le dernier jeudi du mois </strong> : soirée pizza avec Thomas à l’occasion de la soirée jeux de sociétés.
+              </li>
+              <li>
+                - <strong>Le dernier dimanche du mois de 15h à 17h</strong> :  c’est l’association «  Ensemble toi et moi » qui propose un concept « JE CUISINE POUR LES AUTRES »
+              </li>
+            </ul>
+            <span className="text-xs">
+              {"* pour consommer, vous devrez adhérer à notre association. L'adhésion est de 5€/an et est soumis au bon respect du "}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="underline hover:no-underline font-medium" >
+                    {" règlement intérieur"}
+                  </button>
+                </DialogTrigger>
+                <DialogContent
+                  className="max-w-2xl max-h-[80vh] overflow-y-auto"
+                  style={{ backgroundColor: "#f5f1eb" }}
+                >
+                  <DialogHeader>
+                    <DialogTitle className="text-xl font-bold mb-4" >
+                      Règlement intérieur
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4 text-sm leading-relaxed" >
+                    <p className="font-medium">Règlement intérieur (charte de bonne conduite dans le café)</p>
+
+                    <p>
+                      Toute personne rentrant au café d'Oc se soumet d'office au présent règlement. Le café d'Oc se
+                      réserve le droit de ne pas te servir et/ou de te raccompagner avec bienveillance en dehors des
+                      murs du café si cela est jugé nécessaire. Le personnel te veut du bien, alors écoute-le, si tu
+                      n'es pas d'accord, on peut en discuter... mais pas trop SVP
+                    </p>
+
+                    <div>
+                      <p className="font-medium mb-2">De ce fait tu respecteras :</p>
+                      <ul className="space-y-2 ml-4">
+                        <li>- L'interdiction de fumer/vapoter dans le café</li>
+                        <li>- L'interdiction d'être en état d'ébriété dans le café</li>
+                        <li>
+                          - L'interdiction de consommer/exhiber des substances illicites dans et devant le café
+                        </li>
+                        <li>- L'interdiction de tenir des propos discriminants</li>
+                        <li>- Aucune forme de violence, physique, verbale, morale ne sera tolérée</li>
+                        <li>
+                          - Le fait de ne pas faire trop de bruits si tu passes un appel, regarde une vidéo ou
+                          écoute de la musique
+                        </li>
+                        <li>- Les voisins, en n'étant pas exagérément bruyant dans /ou devant le café</li>
+                        <li>- Nous ne faisons pas de crédit</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="font-medium mb-2">Petit rappel</p>
+                      <p>
+                        C'est par l'adhésion à l'association ESPACE MUSSET qui gère le café d'Oc, café associatif
+                        qui permet la consommation au café et contribue au fonctionnement économique de l'espace. Tu
+                        peux nous rejoindre pour du bénévolat
+                      </p>
+                    </div>
+
+                    <p>
+                      L'espace Musset décline toute responsabilité en cas de vol et/ou perte de tes effets
+                      personnels.
+                    </p>
+
+                    <p className="font-medium">
+                      Nous te remercions de ta participation
+                      <br />
+                      L'équipe de l'Espace Musset
+                    </p>
+                  </div>
+                </DialogContent>
+              </Dialog>.
+            </span>
           </div>
         </div>
 
+        <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
+          <EventList data={recentCafeEvents} title='Prochains évènements du café' />
+        </div>
+        <div className="mb-12">
+          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+            Gallerie
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto p-4 md:p-6">
+            {imageData.map((image, index) => (
+              <Image
+                key={index}
+                src={image.src}
+                alt={image.alt}
+                width="369"
+                height="369"
+                className="object-cover rounded-lg"
+                // blurDataURL={image.blurredSrc || ''}
+                // placeholder="blur"
+                style={{ aspectRatio: "369/369", objectFit: "cover" }}
+              />
+            ))}
+          </div>
+        </div>
         {/* Services */}
         <div className="mb-12">
           <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">

@@ -10,7 +10,7 @@ import { eventList } from "../data/data.allevents";
 
 export default function HomePage() {
   const activities = [{
-    title: "Café associatif",
+    title: "Le café associatif “Café d'Oc”",
     description: "Espace de rencontre et de convivialité ouvert à tous, lieu de partage et d'échange interculturel",
     image: '/cafe-asso.jpeg',
     link: ROUTES.CAFE_ASSOCIATIF,
@@ -77,9 +77,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Call to Action Section */}
+      <section className="py-16 px-4 bg-primary/5">
+        <div className="container mx-auto text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
+              L'Association
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              L’association Espace Musset est un lieu dédié à la promotion de <strong>l’art, de la culture et de la convivialité</strong>.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Grâce à l’engagement de bénévoles, elle organise des conférences, concerts, expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.
+              Elle anime également, le café associatif <strong>« Le Café d’Oc »</strong>, qui ouvrira ses portes prochainement.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant={'default'} size="lg" asChild>
+                <Link href={ROUTES.CONTACT}>Nous contacter</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href={ROUTES.ACCUEIL + '#agenda'}>Prochains évènements</Link>
+              </Button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
       {/* Agenda Section */}
-      <section className="py-16 bg-sage-50/50">
+      <section id="agenda" className="py-16 bg-sage-50/50">
         <div className="space-y-6 flex flex-col items-center">
           <div className="text-center mb-12 container">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
@@ -100,14 +127,18 @@ export default function HomePage() {
       </section>
 
       {/* Nos Activités Section */}
-      <section className="py-16 px-4">
+      <section id="activités" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Nos Activités
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              L'Espace Musset est un de ces endroits où tout se maille : le chant, le théâtre, le yoga, les cafés litérraires, cafés histoire et cafés philo... Pour répondre aux besoins essentiels du "vivre ensemble", construire le monde d'aujourd'hui et de demain par la coopération et le partage, en commençant par notre quartier.            </p>
+              L'Espace Musset est <strong>un de ces endroits où tout se maille </strong>: le chant, le théâtre, le yoga, les cafés litérraires, cafés histoire et cafés philo...
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Pour répondre aux besoins essentiels du <strong>"vivre ensemble"</strong>, construire le monde d'aujourd'hui et de demain par la coopération et le partage, en commençant <strong>par notre quartier</strong>.
+            </p>
           </div>
           <EventsSection />
 
@@ -140,30 +171,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-16 px-4 bg-primary/5">
-        <div className="container mx-auto text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              Rejoignez notre communauté
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L’Association Espace Musset est un lieu dédié à la promotion de l’art, de la culture et de la convivialité.
-              Grâce à l’engagement de bénévoles, elle organise des conférences, concerts, expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.
-              Elle anime également, le café associatif « Le Café d’Oc », qui ouvrira ses portes prochainement.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant={'default'} size="lg" asChild>
-                <Link href={ROUTES.CONTACT}>Prendre contact</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href={ROUTES.CONTACT + '#map'}>Visiter le café</Link>
-              </Button>
-            </div>
 
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

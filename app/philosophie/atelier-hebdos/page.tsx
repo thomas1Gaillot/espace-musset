@@ -6,7 +6,7 @@ import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 const AteliersHebdos = () => {
-    const recentAtelierHebdosEvent = eventList.filter((e) => e.category.name === 'Philosophie' && e.type.name === 'Atelier')
+    const recentAtelierHebdosEvent = eventList.filter((e) => e.category.name === 'Philosophie' && e.type.name === 'Atelier philo')
 
     return (
         <div className="py-12 mx-auto ">
