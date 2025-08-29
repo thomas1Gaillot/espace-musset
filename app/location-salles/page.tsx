@@ -43,14 +43,14 @@ export default function LocationSallesPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              Location de salles
+              Mise à disposition de salles
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Location de Salles
+            Mise à disposition de Salles
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Louez nos espaces chaleureux et modulables pour vos événements, formations,

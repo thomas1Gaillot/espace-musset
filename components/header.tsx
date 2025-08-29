@@ -25,15 +25,24 @@ export const Header = () => {
   ];
 
   const ecologieSubpages = [
-    { name: "Ateliers écologiques", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
-    { name: "Jardinage urbain", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE },
-    { name: "Zéro déchet", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
+    { name: "Ramassage de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
+    { name: "World CleanUp Day", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE },
+    { name: "Maraude", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
+    { name: "Colis de Noël", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
+
   ];
 
   const artsSubpages = [
     { name: "Yoga", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-    { name: "Danse", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE },
-    { name: "Théâtre", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
+    { name: "Méditation", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
+
+
+  ];
+  const activiteArtistiquePages = [
+    { name: "Atelier chant", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE },
+    { name: "Théâtre d'impro", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
+    { name: "Concert", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
+    { name: "Clown socratiques", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
   ];
 
   return (
@@ -80,11 +89,26 @@ export const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-
+            <DropdownMenu>
+              <DropdownMenuTrigger className="nav-link flex items-center space-x-1">
+                <span>Activités artistiques</span>
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border border-border">
+                <DropdownMenuItem asChild>
+                  <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="w-full">Vue d'ensemble</Link>
+                </DropdownMenuItem>
+                {activiteArtistiquePages.map((page) => (
+                  <DropdownMenuItem key={page.path} asChild>
+                    <Link href={page.path} className="w-full">{page.name}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <DropdownMenu>
               <DropdownMenuTrigger className="nav-link flex items-center space-x-1">
-                <span>Écologie</span>
+                <span>Volontariat</span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
@@ -147,10 +171,10 @@ export const Header = () => {
                 Café associatif
               </Link>
               <Link href={ROUTES.LOCATION_SALLES} className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Location de salles
+                Mise à disposition  de salles
               </Link>
               <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Arts du corps
+                Arts
               </Link>
               <Link href={ROUTES.ECOLOGIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Écologie

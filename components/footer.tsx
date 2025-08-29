@@ -76,7 +76,7 @@ export const Footer = () => {
               </Button>
               <Button variant="outline" size="sm" className="h-10" asChild>
                 <a href="https://www.kactus.com/fr/lieux/espace-musset" target="_blank" rel="noopener noreferrer">
-                  Location Salle <ExternalLinkIcon className="size-4" />
+                  Mise à disposition  de Salle <ExternalLinkIcon className="size-4" />
                 </a>
               </Button>
             </div>

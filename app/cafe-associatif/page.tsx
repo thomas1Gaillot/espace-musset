@@ -7,21 +7,22 @@ import Link from "next/link";
 export default function CafeAssociatifPage() {
   const services = [
     {
-      title: "Espace de coworking",
-      description: "Travaillez dans un environnement stimulant et bienveillant"
+      title: "Plats réalisés par nos bénévoles",
+      description: "Un lieu de partage culinaires réalisés par nos bénévoles."
+    },
+    {
+      title: "Soirées jeux",
+      description: "Nous organisons des soirées jeux de société, fléchette, échec"
     },
     {
       title: "Rencontres interculturelles",
       description: "Échangez avec des personnes de tous horizons"
     },
     {
-      title: "Événements communautaires",
-      description: "Participez à nos soirées thématiques et débats spontanés"
+      title: "Événements",
+      description: "Participez à nos spectacles et soirées scène ouverte"
     },
-    {
-      title: "Soutien aux associations",
-      description: "Un lieu de réunion pour les initiatives locales"
-    }
+    
   ];
 
   return (

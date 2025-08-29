@@ -17,7 +17,7 @@ const Yoga = () => {
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
                             <BreadcrumbLink href={ROUTES.ARTS_DU_CORPS.ROOT}>
-                                Arts du corps
+                                Arts
                             </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />

@@ -17,7 +17,7 @@ export default function HomePage() {
     cta: "Découvrir"
   },
   {
-    title: "Arts du corps",
+    title: "Arts",
     description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
     link: ROUTES.ARTS_DU_CORPS.ROOT,
@@ -57,10 +57,10 @@ export default function HomePage() {
               Bienvenue à l'Espace Musset
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground mb-2 leading-relaxed">
-              Un lieu de rencontre, de partage et d'épanouissement au cœur de Toulouse.
+              Un lieu de rencontre, de partage et d'épanouissement au cœur du quartier des Minimes (Toulouse).
             </p>
             <p className="text-xl md:text-2xl text-primary-foreground mb-8 leading-relaxed">
-              Nos bénévoles organisent des conférences, concerts, expositions, ateliers ... dans un esprit d'ouverture et de partage.
+              Lieu inter-associatif, nous organisons avec les associations partenaires l'animation de l'espace dans un esprit d'ouverture et de partage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
@@ -107,8 +107,7 @@ export default function HomePage() {
               Nos Activités
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explorez nos différents univers thématiques et trouvez votre voie d'épanouissement
-            </p>
+              L'Espace Musset est un de ces endroits où tout se maille : le chant, le théâtre, le yoga, les cafés litérraires, cafés histoire et cafés philo... Pour répondre aux besoins essentiels du "vivre ensemble", construire le monde d'aujourd'hui et de demain par la coopération et le partage, en commençant par notre quartier.            </p>
           </div>
           <EventsSection />
 
@@ -149,9 +148,9 @@ export default function HomePage() {
               Rejoignez notre communauté
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L'Espace Musset vous accueille dans un cadre chaleureux et bienveillant.
-              Que vous soyez à la recherche de réflexion philosophique, d'engagement écologique
-              ou simplement d'un moment de convivialité, vous trouverez votre place parmi nous.
+              L’Association Espace Musset est un lieu dédié à la promotion de l’art, de la culture et de la convivialité.
+              Grâce à l’engagement de bénévoles, elle organise des conférences, concerts, expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.
+              Elle anime également, le café associatif « Le Café d’Oc », qui ouvrira ses portes prochainement.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={'default'} size="lg" asChild>
