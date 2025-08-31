@@ -1,4 +1,4 @@
-import { EventData } from "@/types/event-types";
+import { EventData, EventType } from "@/types/event-types";
 import { ROUTES } from "./route";
 
 
@@ -8,6 +8,17 @@ const philosophieEventCategory: { name: string, href: string } = { name: 'Philos
 const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '/arts-du-corps' };
 const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie', href: '/ecologie' };
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
+
+const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
+const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
+const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
+const RencontrePhilo: { name: EventType, href: string } = { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
+const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacle', href: 'cafe-associatif' }
+const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
+const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
+
+
 
 const eventList: EventData[] = [
     {
@@ -23,7 +34,7 @@ const eventList: EventData[] = [
         eventLink: 'https://www.eventbrite.fr/e/billets-cine-philo-kaamelott-et-le-roi-arthur-1459840976659?aff=ebdssbdestsearch',
         dateObj: new Date("2025-08-26"),
         category: philosophieEventCategory,
-        type: { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
+        type: CinéPhilo
     },
     {
         id: 2,
@@ -38,7 +49,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-07-08"),
         eventLink: 'https://www.eventbrite.com/e/billets-la-philosophie-de-la-divine-comedie-de-dante-1434042903929?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
+        type: ConférencesPhilo
     },
     {
         id: 3,
@@ -53,7 +64,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-07-22"),
         eventLink: 'https://www.eventbrite.com/e/billets-sur-les-traces-dulysse-un-periple-en-quete-de-soi-1434216262449?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
+        type: RencontrePhilo
     },
     {
         id: 4,
@@ -68,7 +79,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-07-29"),
         eventLink: 'https://www.eventbrite.com/e/billets-lindifference-est-elle-le-mal-de-notre-siecle-1434429299649?aff=ebdssbdestsearch&keep_tld=1',
         category: philosophieEventCategory,
-        type: { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
+        type: RencontrePhilo
     },
     {
         id: 11,
@@ -83,7 +94,22 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-06-06"),
         eventLink: '',
         category: CafeEventCategory,
-        type: { name: 'Spectacle', href: 'cafe-associatif' }
+        type: SpectacleDuCafeAsso
+    },
+    {
+        id: 409,
+        price: '7,58 €',
+        title: "La réalité virtuelle, illusion ou nouvelle conscience ?",
+        date: "Jeudi 4 Septembre 2025",
+        time: "19:30 à 21:15",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cafe-philo-1er-jeudi.jpg",
+        dateObj: new Date("2025-09-04"),
+        eventLink: 'https://www.eventbrite.fr/e/billets-cafe-philo-la-realite-virtuelle-illusion-ou-nouvelle-conscience-1549423811329?aff=ebdsoporgprofile',
+        category: philosophieEventCategory,
+        type: CaféPhilo
     },
     {
         id: 12,
@@ -98,12 +124,12 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-15"),
         eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
         category: philosophieEventCategory,
-        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: AtelierPhilo
     },
     {
         id: 13,
         price: "6,52 €",
-        title: "Sortir de l'illusion avec la caverne de Platon",
+        title: "Deviens toi-même, une aventure authentique",
         date: "Lundi 22 Septembre 2025",
         time: "19:30 à 22:00",
         location: "Espace Musset",
@@ -111,14 +137,14 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-09-22"),
-        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
+        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-une-aventure-authentique-1467522010839?aff=ebdsoporgprofile',
         category: philosophieEventCategory,
-        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: AtelierPhilo
     },
     {
         id: 14,
         price: "6,52 €",
-        title: "L'art du combat intérieur avec la Bhagavad Gîtâ",
+        title: "Deviens toi-même, une aventure authentique",
         date: "Lundi 29 Septembre 2025",
         time: "19:30 à 22:00",
         location: "Espace Musset",
@@ -126,9 +152,9 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-09-29"),
-        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
+        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-une-aventure-authentique-1467522010839?aff=ebdsoporgprofile',
         category: philosophieEventCategory,
-        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: AtelierPhilo
     },
     {
         id: 15,
@@ -143,22 +169,22 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-13"),
         eventLink: 'https://toulouse.nouvelle-acropole.fr/component/jem/event/3022-journee-portes-ouvertes',
         category: CafeEventCategory,
-        type: { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
+        type: PortesOuvertesDuCafeAsso
     },
     {
         id: 16,
-        price: "6 €",
-        title: "La liberté d’expression est-elle sans limite ? ",
+        price: "7,58 €",
+        title: "Café Philo : Dire la vérité, un devoir ou un risque ?",
         date: "Samedi 13 Septembre 2025",
-        time: "17:00 à 18:00",
+        time: "17:00 à 18:30",
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",
-        image: "/event/cafe-philo.jpg",
+        image: "/event/cafe-philo-13-sep.jpg",
         dateObj: new Date("2025-09-13"),
         eventLink: 'https://toulouse.nouvelle-acropole.fr/component/jem/event/3022-journee-portes-ouvertes',
         category: philosophieEventCategory,
-        type: { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
+        type: CaféPhilo
     },
 
     {
@@ -174,7 +200,7 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-16"),
         eventLink: 'https://toulouse.nouvelle-acropole.fr/component/jem/event/3020-rencontre-philo-la-sagesse-de-socrate-c-est-pas-faux',
         category: philosophieEventCategory,
-        type: { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: RencontrePhilo
     },
     {
         id: 18,
@@ -185,11 +211,11 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",
-        image: "/event/cleanupday.jpg",
+        image: "/event/cleanup-20-sept.jpg",
         dateObj: new Date("2025-09-20"),
-        eventLink: ROUTES.CONTACT,
+        eventLink: "https://www.eventbrite.fr/e/billets-world-cleanup-day-1629072703309?aff=ebdsoporgprofile",
         category: EcologieEventCategory,
-        type: { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
+        type: Volontariat
     },
 
 
@@ -206,22 +232,52 @@ const eventList: EventData[] = [
         dateObj: new Date("2025-09-24"),
         eventLink: ROUTES.CONTACT,
         category: philosophieEventCategory,
-        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: AtelierPhilo
+    },
+      {
+        id: 210,
+        price: '7,58 €',
+        title: "Café Philo :L'engagement : prison ou liberté ?",
+        date: "Jeudi 2 Octobre 2025",
+        time: "19:30 à 21:15",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cafe-philo-1er-jeudi.jpg",
+        dateObj: new Date("2025-10-02"),
+        eventLink: 'https://www.eventbrite.fr/e/billets-cafe-philo-lengagement-prison-ou-liberte-1549624692169?aff=ebdsoporgprofile',
+        category: philosophieEventCategory,
+        type: CaféPhilo
     },
     {
-        id: 20,
+        id: 610,
         price: "6,52 €",
-        title: " 2ème atelier philo : Sortir de la caverne de Platon ",
-        date: "Lundi 29 Septembre 2025",
+        title: "Penser par soi-même, oser la vérité",
+        date: "Lundi 6 Octobre 2025",
         time: "19:30 à 22:00",
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
-        dateObj: new Date("2025-10-01"),
-        eventLink: ROUTES.CONTACT,
+        dateObj: new Date("2025-10-06"),
+        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-une-aventure-authentique-1467522010839?aff=ebdsoporgprofile',
         category: philosophieEventCategory,
-        type: { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
+        type: AtelierPhilo
+    },
+       {
+        id: 412,
+        price: '7,58 €',
+        title: "Café Philo : Penser à la mort est-utile ?",
+        date: "Jeudi 4 Décembre 2025",
+        time: "19:30 à 21:15",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cafe-philo-1er-jeudi.jpg",
+        dateObj: new Date("2025-12-04"),
+        eventLink: 'https://www.eventbrite.fr/e/billets-cafe-philo-penser-a-la-mort-est-utile-1549755342949?aff=ebdsoporgprofile',
+        category: philosophieEventCategory,
+        type: CaféPhilo
     },
 
 ]

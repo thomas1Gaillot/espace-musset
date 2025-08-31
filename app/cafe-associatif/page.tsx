@@ -93,14 +93,14 @@ export default function CafeAssociatifPage() {
           {/* Description */}
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
-              Des activités autour d'un bon repas*
+              Des activités et des bons plats*
             </h2>
             <ul className="space-y-4 text-muted-foreground">
               <li>
                 Notre café associatif est animé par les bénévoles, aussi, pour débuter notre activité nous allons commencer par des choses simples :
               </li>
               <li>
-                - <strong>Le soir des activités</strong> ( voir le programme) : nous proposerons des planches typiques du sud-ouest et teintées de notre voisine l’Espagne : charcuterie, fromage ou végétarienne
+                - <strong>Le soir des activités</strong> (<Link href="#agenda" className="underline">voir le programme</Link>) : nous proposerons des planches typiques du sud-ouest et teintées de notre voisine l’Espagne : charcuterie, fromage ou végétarienne
               </li>
               <li>
                 - <strong>Les lundis et mercredis </strong> : des tartes salées maisons accompagnée de salades
@@ -184,7 +184,7 @@ export default function CafeAssociatifPage() {
           </div>
         </div>
 
-        <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
+        <div id='agenda' className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
           <EventList data={recentCafeEvents} title='Prochains évènements du café' />
         </div>
         <div className="mb-12">
@@ -204,24 +204,6 @@ export default function CafeAssociatifPage() {
                 // placeholder="blur"
                 style={{ aspectRatio: "369/369", objectFit: "cover" }}
               />
-            ))}
-          </div>
-        </div>
-        {/* Services */}
-        <div className="mb-12">
-          <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
-            Ce que nous offrons
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="font-serif text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{service.description}</CardDescription>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
@@ -264,7 +246,7 @@ export default function CafeAssociatifPage() {
             notre café vous accueille dans une atmosphère bienveillante.
           </p>
           <Button size="lg" className="mr-4" asChild>
-            <Link href='contact'>
+            <Link href='contact#map'>
               Nous rendre visite
             </Link>
           </Button>
