@@ -4,9 +4,27 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ROUTES } from "@/data/route";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
+import { OurImageData } from "./cafe-associatif/page";
+import { Instagram } from "lucide-react";
+
+
+const homeImageData: OurImageData[] = [
+  {
+    src: "/gallery/gallery-cafe-0.jpeg",
+    blurredSrc: '/blur/gallery-0.jpeg',
+    alt: "Gallery Image 1"
+  },
+  { src: "/gallery/gallery-cafe-1.jpeg", blurredSrc: '/blur/gallery-1.jpeg', alt: "Gallery Image 2" },
+  { src: "/gallery/gallery-7.jpeg", blurredSrc: '/blur/gallery-2.jpeg', alt: "Gallery Image 3" },
+  { src: "/gallery/gallery-cafe-3.jpeg", blurredSrc: '/blur/gallery-3.jpeg', alt: "Gallery Image 4" },
+  { src: "/gallery/gallery-cafe-4.jpeg", blurredSrc: '/blur/gallery-4.jpeg', alt: "Gallery Image 5" },
+  { src: "/gallery/gallery-cafe-5.jpeg", blurredSrc: '/blur/gallery-5.jpeg', alt: "Gallery Image 6" },
+
+];
 
 export default function HomePage() {
   const activities = [{
@@ -171,7 +189,32 @@ export default function HomePage() {
         </div>
       </section>
 
-
-    </div>
+      {/* Galerie */}
+      <section id="gallerie" className="mb-12">
+        <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+          Gallerie 
+          <Button className="ml-2" variant="outline" size="icon" asChild>
+            <a href="https://instagram.com/espacemussettoulouse" target="_blank" rel="noopener noreferrer">
+              <Instagram className="h-4 w-4" />
+            </a>
+          </Button>
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto p-4 md:p-6">
+          {homeImageData.map((image, index) => (
+            <Image
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              width="369"
+              height="369"
+              className="object-cover rounded-lg"
+              // blurDataURL={image.blurredSrc || ''}
+              // placeholder="blur"
+              style={{ aspectRatio: "369/369", objectFit: "cover" }}
+            />
+          ))}
+        </div>
+      </section>
+    </div >
   );
 };

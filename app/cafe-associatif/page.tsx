@@ -1,20 +1,20 @@
 import EventList from "@/components/event-list";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-type ImageData = {
+export type OurImageData = {
   src: string;
   blurredSrc?: string;
   alt: string;
 };
 
-const imageData: ImageData[] = [
+const imageData: OurImageData[] = [
   {
     src: "/gallery/gallery-cafe-0.jpeg",
     blurredSrc: '/blur/gallery-0.jpeg',
@@ -187,9 +187,16 @@ export default function CafeAssociatifPage() {
         <div id='agenda' className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
           <EventList data={recentCafeEvents} title='Prochains évènements du café' />
         </div>
+
+        {/* Galerie */}
         <div className="mb-12">
           <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
             Gallerie
+            <Button className="ml-2" variant="outline" size="icon" asChild>
+              <a href="https://instagram.com/espacemussettoulouse" target="_blank" rel="noopener noreferrer">
+                <Instagram className="h-4 w-4" />
+              </a>
+            </Button>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto p-4 md:p-6">
             {imageData.map((image, index) => (

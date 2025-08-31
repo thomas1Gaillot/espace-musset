@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ROUTES } from "@/data/route";
-import { Accessibility, AirVentIcon, Lightbulb, MicIcon, PianoIcon, Projector, Snowflake, SpeakerIcon, Sun, Wifi } from "lucide-react";
+import { Accessibility, AirVentIcon, Armchair, Bird, Brackets, Brush, CircleIcon, Drama, EyeOffIcon, GlassWater, Lightbulb, MicIcon, Minus, MoveDiagonal2, PianoIcon, Projector, Scroll, Snowflake, SpeakerIcon, SquareDashed, SquareMenu, Sun, Theater, TreeDeciduous, Wifi } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -20,14 +20,25 @@ export default function LocationSallesPage() {
         { title: "Éclairage avec variateurs et tonalités", Icon: Lightbulb },
         { title: "Climatisation", Icon: Snowflake },
         { title: "Lumière du jour", Icon: Sun },
-        { title: "Micro", Icon: MicIcon }
+        { title: "Micro", Icon: MicIcon },
+        { title: "Plancher chêne", Icon: TreeDeciduous },
+        { title: "Calme", Icon: Bird },
+        { title: "Table et chaises", Icon: Armchair },
+        { title: "Paperboard et feutres", Icon: Scroll },
+        { title: "Verres et carafes d'eau", Icon: GlassWater },
+        { title: "Tapis de Yoga et coussins de méditation", Icon: Minus },
+
       ],
       activity: [
         { title: "Yoga", Icon: AirVentIcon },
         { title: "Conférences", Icon: SpeakerIcon },
         { title: "Piano", Icon: PianoIcon },
+        { title: "Art", Icon: Brush },
+        { title: "Evènements", Icon: Drama },
+
       ],
-      prices: ["Tarif 1/2 Journée - dès XXX € TTC", "Tarif Journée - dès XXX € TTC", "Tarif Soirée - dès XXX € TTC"]
+      prices: [" 1/2 Journée - 120 €", " Journée - 200 €", " Horaire - 50 €/h"],
+      pricesWeekEnd: [" 1/2 Journée - 140 €", " Journée - 240 €", " Horaire - 60 €/h"],
     },
   ];
 
@@ -101,27 +112,37 @@ export default function LocationSallesPage() {
                       <CardDescription className="text-xs font-medium text-primary/60">
                         {salle.capacity}
                       </CardDescription>
+                      <div className="space-y-2 my-6">
+                        <h4 className="font-medium text-foreground">Activités possibles</h4>
+                        <div className="text-xs font-semibold leading-tight flex flex-wrap gap-2">
+                          {salle.activity.map((a, idx) => (
+                            <div key={idx} className="px-4 py-2 flex items-center rounded-md  bg-primary/10">
+                              <a.Icon strokeWidth={1.25} className="size-6 mr-2" />
+                              {a.title}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="grid text-left sm:text-right text-sm">
-                      {salle.prices.map((p, index) =>
-                        <p key={p + index} className="font-light text-foreground">{p}</p>
-                      )}
+                    <div className="flex flex-col items-end gap-1">
+                      <p className="font-semibold text-sm">Tarif Semaine</p>
+                      <div className="grid text-left sm:text-right text-sm">
+                        {salle.prices.map((p, index) =>
+                          <p key={p + index} className="font-light text-foreground">{p}</p>
+                        )}
+                      </div>
+                      <p className="font-semibold text-sm mt-3">Tarif Week-End</p>
+                      <div className="grid text-left sm:text-right text-sm">
+                        {salle.pricesWeekEnd.map((p, index) =>
+                          <p key={p + index} className="font-light text-foreground">{p}</p>
+                        )}
+                      </div>
                     </div>
 
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2 mb-6">
-                    <h4 className="font-medium text-foreground">Activités possibles</h4>
-                    <div className="text-xs font-semibold leading-tight flex flex-wrap gap-2">
-                      {salle.activity.map((a, idx) => (
-                        <div key={idx} className="px-4 py-2 flex items-center rounded-md  bg-primary/10">
-                          <a.Icon strokeWidth={1.25} className="size-6 mr-2" />
-                          {a.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+
                   <div className="space-y-2">
                     <h4 className="font-medium text-foreground ">Équipements inclus :</h4>
                     <div className="text-xs font-semibold leading-tight flex flex-wrap gap-2">
@@ -133,11 +154,36 @@ export default function LocationSallesPage() {
                       ))}
                     </div>
                   </div>
+                  <div className="space-y-2 mt-6 text-xs">
+                    <h4 className="font-medium text-foreground text-base ">Dispositions possibles :</h4>
+                    <div className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                      <SquareDashed strokeWidth={1.25} className="size-6 mr-2" />
+                      Vide
+                    </div>
+                    <div className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                      <Theater strokeWidth={1.25} className="size-6 mr-2" />
+                      Conférences - 50 personnes
+                    </div>
+                    <div className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                      <Brackets strokeWidth={1.25} className="size-6 mr-2" />
+                      en U - 10 à 24 personnes
+                    </div>
+                    <div className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                      <SquareMenu strokeWidth={1.25} className="size-6 mr-2" />
+                      salle de classe - 12 à 24 personnes
+                    </div>
+                    <div className="px-4 py-2 flex items-center rounded-md border border-primary/20">
+                      <MoveDiagonal2 strokeWidth={1.25} className="size-6 mr-2" />
+                      en épis - 12 à 21 personnes
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
+
           </div>
         </div>
+
 
         {/* CTA */}
         <div className="text-center">
