@@ -114,7 +114,7 @@ const eventList: EventData[] = [
     {
         id: 12,
         price: '6,52 €',
-        title: "La philosophie, forme de vie avec Socrate",
+        title: "Rencontre philo - Socrate, ce rebelle.",
         date: "Lundi 15 Septembre 2025",
         time: "19:30 à 22:00",
         location: "Espace Musset",
@@ -122,9 +122,9 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-09-15"),
-        eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-ateliers-de-philosophie-pratique-1467524448129',
+        eventLink: "https://toulouse.nouvelle-acropole.fr/component/jem/event/3020-rencontre-philo-la-sagesse-de-socrate-c-est-pas-faux",
         category: philosophieEventCategory,
-        type: AtelierPhilo
+        type: RencontrePhilo
     },
     {
         id: 13,
@@ -186,22 +186,6 @@ const eventList: EventData[] = [
         category: philosophieEventCategory,
         type: CaféPhilo
     },
-
-    {
-        id: 17,
-        price: '6,00 €',
-        title: " Rencontre philo : 'La sagesse de Socrate, c’est pas faux...!'",
-        date: "mardi 16 Septembre 2025",
-        time: "19:30 à 21:30",
-        location: "Espace Musset",
-        venue: "École de philosophie - ANAT",
-        city: "31200 Toulouse",
-        image: "/event/cours2philo.jpg",
-        dateObj: new Date("2025-09-16"),
-        eventLink: 'https://toulouse.nouvelle-acropole.fr/component/jem/event/3020-rencontre-philo-la-sagesse-de-socrate-c-est-pas-faux',
-        category: philosophieEventCategory,
-        type: RencontrePhilo
-    },
     {
         id: 18,
         price: 'Gratuit',
@@ -234,7 +218,22 @@ const eventList: EventData[] = [
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
-      {
+    {
+        id: 2809,
+        price: 'Gratuit',
+        title: "Maraude auprès des sans abris",
+        date: "Dimanche 28 Septembre 2025",
+        time: "17:30 à 21:00",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cleanup-20-sept.jpg",
+        dateObj: new Date("2025-09-28"),
+        eventLink: ROUTES.CONTACT,
+        category: EcologieEventCategory,
+        type: Volontariat
+    },
+    {
         id: 210,
         price: '7,58 €',
         title: "Café Philo :L'engagement : prison ou liberté ?",
@@ -264,7 +263,37 @@ const eventList: EventData[] = [
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
-       {
+    {
+        id: 1710,
+        price: "10 €",
+        title: "Concert aux chandelles et déclamations",
+        date: "Vendredi 17 Octobre 2025",
+        time: "20:00 à 21:00",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/concert-chandelle.jpeg",
+        dateObj: new Date("2025-10-17"),
+        eventLink: ROUTES.CONTACT,
+        category: CafeEventCategory,
+        type: SpectacleDuCafeAsso
+    },
+    {
+        id: 2610,
+        price: 'Gratuit',
+        title: "Maraude auprès des sans abris",
+        date: "Dimanche 26 Octobre 2025",
+        time: "17:30 à 21:00",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/cleanup-20-sept.jpg",
+        dateObj: new Date("2025-10-26"),
+        eventLink: ROUTES.CONTACT,
+        category: EcologieEventCategory,
+        type: Volontariat
+    },
+    {
         id: 412,
         price: '7,58 €',
         title: "Café Philo : Penser à la mort est-utile ?",
