@@ -12,7 +12,7 @@ export default function LocationSallesPage() {
   const salles = [
     {
       name: "Salle des muses",
-      capacity: "42m² - 24-60 personnes selon disposition",
+      capacity: "42m² - 24-50 personnes selon disposition",
       features: [
         { title: "Vidéoprojecteur", Icon: Projector },
         { title: "WiFi", Icon: Wifi },
