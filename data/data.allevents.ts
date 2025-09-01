@@ -201,23 +201,6 @@ const eventList: EventData[] = [
         category: EcologieEventCategory,
         type: Volontariat
     },
-
-
-    {
-        id: 19,
-        price: "6,52 €",
-        title: " 1er atelier philo : ''Les exercices spirituels de la philosophie'' ",
-        date: "Mercredi 24 Septembre 2025",
-        time: "19:30 à 22:00",
-        location: "Espace Musset",
-        venue: "École de philosophie - ANAT",
-        city: "31200 Toulouse",
-        image: "/event/atelier-philo.jpg",
-        dateObj: new Date("2025-09-24"),
-        eventLink: ROUTES.CONTACT,
-        category: philosophieEventCategory,
-        type: AtelierPhilo
-    },
     {
         id: 2809,
         price: 'Gratuit',
