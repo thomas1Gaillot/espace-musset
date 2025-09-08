@@ -20,7 +20,7 @@ const imageData: OurImageData[] = [
     blurredSrc: '/blur/gallery-0.jpeg',
     alt: "Gallery Image 1"
   },
-  { src: "/gallery/gallery-cafe-1.jpeg", blurredSrc: '/blur/gallery-1.jpeg', alt: "Gallery Image 2" },
+  { src: "/gallery/gallery-cafe-7.jpeg", blurredSrc: '/blur/gallery-7.jpeg', alt: "Gallery Image 2" },
   { src: "/gallery/gallery-cafe-2.jpeg", blurredSrc: '/blur/gallery-2.jpeg', alt: "Gallery Image 3" },
   { src: "/gallery/gallery-cafe-3.jpeg", blurredSrc: '/blur/gallery-3.jpeg', alt: "Gallery Image 4" },
   { src: "/gallery/gallery-cafe-4.jpeg", blurredSrc: '/blur/gallery-4.jpeg', alt: "Gallery Image 5" },

@@ -165,9 +165,9 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",
-        image: "/cafe-asso.jpeg",
+        image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-13"),
-        eventLink: 'https://toulouse.nouvelle-acropole.fr/component/jem/event/3022-journee-portes-ouvertes',
+        eventLink: 'https://www.helloasso.com/associations/association-espace-musset/evenements/portes-ouvertes-espace-musset',
         category: CafeEventCategory,
         type: PortesOuvertesDuCafeAsso
     },

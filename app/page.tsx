@@ -59,7 +59,7 @@ export default function HomePage() {
 
 
   ];
-  const bgImgClass = "bg-[url('/welcome2.jpg')]"
+  const bgImgClass = "bg-[url('/espace-musset.jpeg')]"
   const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat"
   return (
     <div className="min-h-screen">

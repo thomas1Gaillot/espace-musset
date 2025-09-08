@@ -52,7 +52,7 @@ export const Header = () => {
           {/* Logo */}
           <Link href={ROUTES.ACCUEIL} className="flex items-center space-x-2">
             {/* <span className="text-primary-foreground font-serif font-semibold text-xl">EM</span> */}
-            <img src="/logo.png" alt="Espace Musset" className="w-12 h-12" />
+            <img src="/logo.jpeg" alt="Espace Musset" className="w-12 h-12" />
 
             <div className="block">
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
