@@ -36,9 +36,15 @@ const Theatre = () => (
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-12 mb-12">
-        <div className="relative h-80 rounded-lg overflow-hidden bg-gradient-to-br from-earth-200 to-warmBrown-200 flex items-center justify-center">
-          <div className="text-center text-6xl">🎭</div>
+      <div className="flex flex-col  sm:flex-row   gap-12 mb-12">
+        {/* Image principale */}
+        <div className="relative h-[400px] w-full sm:w-[500px] rounded-lg overflow-hidden">
+          <img
+            src="/diseuses-amertume.jpeg"
+            alt={"Théatre d'impro"}
+            className="w-full h-auto object-cover"
+          />
+          <div className="absolute inset-0 bg-transparent" />
         </div>
 
         <div className="flex flex-col justify-center space-y-6">
@@ -66,12 +72,11 @@ const Theatre = () => (
             Notre pédagogie
           </h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>• Improvisation et spontanéité</li>
-            <li>• Travail corporel et vocal</li>
-            <li>• Exercices de confiance en groupe</li>
-            <li>• Exploration des émotions</li>
-            <li>• Création collective</li>
-            <li>• Jeu masqué et démasqué</li>
+            <li>• Section à remplir</li>
+            <li>• Section à remplir</li>
+            <li>• Section à remplir</li>
+            <li>• Section à remplir</li>
+
           </ul>
         </div>
 
@@ -82,15 +87,7 @@ const Theatre = () => (
           <div className="space-y-3 text-muted-foreground">
             <div>
               <p className="font-medium">Improvisation théâtrale</p>
-              <p className="text-sm">Mercredi 19h30-21h</p>
-            </div>
-            <div>
-              <p className="font-medium">Théâtre du corps</p>
-              <p className="text-sm">Vendredi 18h-19h30</p>
-            </div>
-            <div>
-              <p className="font-medium">Atelier création</p>
-              <p className="text-sm">Samedi 14h-16h (mensuel)</p>
+              <p className="text-sm">Nous contacter pour plus d'infos</p>
             </div>
           </div>
         </div>
@@ -128,8 +125,8 @@ const Theatre = () => (
           Débutants bienvenus ! Le théâtre s'apprend en jouant, dans la joie et la bienveillance
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg">
-            Atelier découverte
+          <Button size="lg" asChild>
+            <Link href={ROUTES.CONTACT}>Atelier découverte</Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <Link href={ROUTES.CONTACT}>Nous rejoindre</Link>
