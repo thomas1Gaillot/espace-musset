@@ -114,7 +114,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
               return (
                 <div
                   key={index}
-                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[80px]  w-[54px] sm:h-[80px] sm:w-[80px] lg:h-[100px] lg:w-[120px]  overflow-hidden
+                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[100px]  w-[54px] sm:h-[100px] sm:w-[80px] lg:h-[120px] lg:w-[120px]  overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
@@ -139,7 +139,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                           <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} truncate={visibleEvents.length > 1} />
                         ))}
                         {hasMoreEvents && (
-                          <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autres</div>
+                          <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autre{dateEvents.length - 2 > 1 ? '(s)' : ''}</div>
                         )}
                       </div>
                     </>
