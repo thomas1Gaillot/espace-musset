@@ -14,10 +14,10 @@ const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', hre
 const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
 const RencontrePhilo: { name: EventType, href: string } = { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
 const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacle', href: 'cafe-associatif' }
+const SoireeJeux : { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' }
 const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
 const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
 const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
-
 
 
 const eventList: EventData[] = [
@@ -172,6 +172,21 @@ const eventList: EventData[] = [
         type: PortesOuvertesDuCafeAsso
     },
     {
+        id: 155,
+        price: "Gratuit",
+        title: "Inauguration Café d'Oc",
+        date: "Samedi 13 Septembre 2025",
+        time: "19:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/cafe-doc.png",
+        dateObj: new Date("2025-09-13"),
+        eventLink: '/contact',
+        category: CafeEventCategory,
+        type: PortesOuvertesDuCafeAsso
+    },
+    {
         id: 16,
         price: "7,58 €",
         title: "Café Philo : Dire la vérité, un devoir ou un risque ?",
@@ -191,7 +206,7 @@ const eventList: EventData[] = [
         price: 'Gratuit',
         title: "World CleanUp Day ",
         date: "Samedi 20 Septembre 2025",
-        time: "14:00 à 16:00",
+        time: "10:00 à 12:00",
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",
@@ -201,12 +216,42 @@ const eventList: EventData[] = [
         category: EcologieEventCategory,
         type: Volontariat
     },
+     {
+        id: 2509,
+        price: 'Gratuit',
+        title: "Soirée Jeux + Pizza",
+        date: "Jeudi 25 Septembre 2025",
+        time: "19:30 à 22:00",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/event/jeux-societe.jpg",
+        dateObj: new Date("2025-09-25"),
+        eventLink: ROUTES.CONTACT,
+        category: CafeEventCategory,
+        type: SoireeJeux
+    },
+    {
+        id: 28090,
+        price: 'Gratuit',
+        title: "Je cuisine pour les autres",
+        date: "Dimanche 28 Septembre 2025",
+        time: "14:30 à 16:30",
+        location: "Espace Musset",
+        venue: "École de philosophie - ANAT",
+        city: "31200 Toulouse",
+        image: "/gallery/gallery-cafe-6.jpeg",
+        dateObj: new Date("2025-09-28"),
+        eventLink: ROUTES.CONTACT,
+        category: EcologieEventCategory,
+        type: Volontariat
+    },
     {
         id: 2809,
         price: 'Gratuit',
         title: "Maraude auprès des sans abris",
         date: "Dimanche 28 Septembre 2025",
-        time: "17:30 à 21:00",
+        time: "16:00 à 19:30",
         location: "Espace Musset",
         venue: "École de philosophie - ANAT",
         city: "31200 Toulouse",

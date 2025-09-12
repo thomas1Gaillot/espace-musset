@@ -33,10 +33,6 @@ export default function EventList({ data, title }: {
         : a.dateObj.getTime() - b.dateObj.getTime()
     })
 
-  const pastEvents = data
-    .filter(event => event.dateObj < now)
-    .sort((a, b) => b.dateObj.getTime() - a.dateObj.getTime())
-
 
   return (
     <>
