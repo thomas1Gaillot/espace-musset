@@ -9,9 +9,9 @@ const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '
 const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie', href: '/ecologie' };
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
 
-const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS_DU_CORPS.SUBPAGES.CHANT }
-const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montesorri", href: ROUTES.ARTS_DU_CORPS.ROOT }
-const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE }
+const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS.SUBPAGES.CHANT }
+const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montessori", href: ROUTES.ARTS.ROOT }
+const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS.SUBPAGES.THEATRE }
 const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
 const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
 const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
@@ -21,9 +21,9 @@ const SoireeJeux: { name: EventType, href: string } = { name: 'Soirée Jeux', hr
 const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
 const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
 const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
-const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: 'cafe-associatif' }
-const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href: 'cafe-associatif' }
-const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: 'cafe-associatif' }
+const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: ROUTES.ARTS.SUBPAGES.MEDITATION }
+const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href:ROUTES.ARTS.SUBPAGES.CLOWN }
+const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS }
 
 const eventList: EventData[] = [
     {
@@ -352,7 +352,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/diseuses-amertume.jpeg",
         dateObj: new Date("2025-09-29"),
-        eventLink: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
+        eventLink: ROUTES.ARTS.SUBPAGES.THEATRE,
         category: ArtEventCategory,
         type: TheathreImpro
     },
@@ -367,7 +367,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-06"),
-        eventLink: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
+        eventLink: ROUTES.ARTS.SUBPAGES.THEATRE,
         category: ArtEventCategory,
         type: TheathreImpro
     },
@@ -472,7 +472,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-23"),
-        eventContact: 'Anne-Marie, au 06 21 79 97 50',
+        eventLink: ROUTES.ARTS.SUBPAGES.MEDITATION,
         category: ArtEventCategory,
         type: Meditation
     },
@@ -487,7 +487,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-30"),
-        eventContact: 'Anne-Marie, au 06 21 79 97 50',
+        eventLink: ROUTES.ARTS.SUBPAGES.MEDITATION,
         category: ArtEventCategory,
         type: Meditation
     },
@@ -502,7 +502,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-23"),
-        eventContact: 'Claire, au 06 71 35 31 83',
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
         category: ArtEventCategory,
         type: ClownSocratique
     },
@@ -517,7 +517,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-30"),
-        eventContact: 'Claire, au 06 71 35 31 83',
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
         category: ArtEventCategory,
         type: ClownSocratique
     },
@@ -533,7 +533,7 @@ const eventList: EventData[] = [
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-27"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
-        category: CafeEventCategory,
+        category: ArtEventCategory,
         type: Feldenkrais
     },
     {
@@ -548,7 +548,7 @@ const eventList: EventData[] = [
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-04"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
-        category: CafeEventCategory,
+        category: ArtEventCategory,
         type: Feldenkrais
     },
     {
@@ -563,7 +563,7 @@ const eventList: EventData[] = [
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-11"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
-        category: CafeEventCategory,
+        category: ArtEventCategory,
         type: Feldenkrais
     },
 

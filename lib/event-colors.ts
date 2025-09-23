@@ -48,15 +48,15 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#f0fdfa",
       textColor: "#134e4a"
     },
-    Danse: {
-      borderColor: "#f43f5e",
-      backgroundColor: "#fff1f2",
-      textColor: "#881337"
-    },
     Théâtre: {
       borderColor: "#f59e0b",
       backgroundColor: "#fffbeb",
       textColor: "#78350f"
+    },
+    "Théâtre d'improvisation": {
+      borderColor: "#84cc16",
+      backgroundColor: "#f7fee7",
+      textColor: "#365314"
     },
     Chant: {
       borderColor: "#06b6d4",
@@ -68,10 +68,35 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#f5f3ff",
       textColor: "#4c1d95"
     },
-    "Portes ouvertes" : {
-       borderColor: "#8b5cf6",
-      backgroundColor: "#f5f3ff",
-      textColor: "#4c1d95"
+    "Portes ouvertes": {
+      borderColor: "#0ea5e9",
+      backgroundColor: "#f0f9ff",
+      textColor: "#0c4a6e"
+    },
+    Feldenkrais: {
+      borderColor: "#d946ef",
+      backgroundColor: "#fdf4ff",
+      textColor: "#701a75"
+    },
+    "Clown Socratique": {
+      borderColor: "#f43f5e",
+      backgroundColor: "#fff1f2",
+      textColor: "#881337"
+    },
+    Méditation: {
+      borderColor: "#10b981",
+      backgroundColor: "#ecfdf5",
+      textColor: "#064e3b"
+    },
+    "Mercredi Montessori": {
+      borderColor: "#eab308",
+      backgroundColor: "#fefce8",
+      textColor: "#713f12"
+    },
+    "Soirée Jeux": {
+      borderColor: "#0d9488",
+      backgroundColor: "#ecfdfd",
+      textColor: "#134e4a"
     }
   }
 

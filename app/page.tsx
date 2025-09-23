@@ -36,9 +36,9 @@ export default function HomePage() {
   },
   {
     title: "Arts",
-    description: "Yoga, danse et théâtre pour explorer l'expression corporelle et le bien-être personnel",
+    description: "Yoga, Chant et théâtre d'improvisation pour explorer l'expression corporelle et le bien-être personnel",
     image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
-    link: ROUTES.ARTS_DU_CORPS.ROOT,
+    link: ROUTES.ARTS.ROOT,
     cta: "Voir les cours"
   },
   {

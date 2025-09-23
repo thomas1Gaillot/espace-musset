@@ -28,10 +28,9 @@ const eventData: { type: EventType; icon: React.ComponentType<any>, href: string
   { type: "Cours de philosophie", icon: GraduationCap, href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
   { type: "Volontariat", icon: LeafIcon, href: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
   { type: "Spectacle", icon: Star, href: ROUTES.CAFE_ASSOCIATIF },
-  { type: "Yoga", icon: WindIcon, href: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-  { type: "Danse", icon: HeartPulseIcon, href: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE },
-  { type: "Théâtre", icon: Drama, href: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
-  { type: "Chant", icon: Music2Icon, href: ROUTES.ARTS_DU_CORPS.SUBPAGES.CHANT },
+  { type: "Yoga", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.YOGA },
+  { type: "Théâtre", icon: Drama, href: ROUTES.ARTS.SUBPAGES.THEATRE },
+  { type: "Chant", icon: Music2Icon, href: ROUTES.ARTS.SUBPAGES.CHANT },
 ]
 
 export default function EventsSection() {

@@ -9,19 +9,19 @@ export default function ArtsCorpsPage() {
     {
       title: "Yoga",
       description: "Pratiques douces et dynamiques pour harmoniser corps et esprit",
-      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA,
+      link: ROUTES.ARTS.SUBPAGES.YOGA,
       icon: "🧘"
     },
     {
-      title: "Danse",
+      title: "Chant",
       description: "Expression corporelle libre et créative pour tous niveaux",
-      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE,
+      link: ROUTES.ARTS.SUBPAGES.CHANT,
       icon: "💃"
     },
     {
-      title: "Théâtre",
+      title: "Théâtre d'improvisation",
       description: "Improvisation et jeu théâtral pour explorer sa créativité",
-      link: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
+      link: ROUTES.ARTS.SUBPAGES.THEATRE,
       icon: "🎭"
     }
   ];
@@ -48,7 +48,7 @@ export default function ArtsCorpsPage() {
             Arts du Corps
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explorez l'expression corporelle sous toutes ses formes : yoga, danse et théâtre
+            Explorez l'expression corporelle sous toutes ses formes : yoga et théâtre
             pour reconnecter avec votre corps, libérer votre créativité et cultiver votre bien-être.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function ArtsCorpsPage() {
                 de nouvelles formes d'expression et développer votre conscience corporelle.
               </p>
               <p>
-                Que ce soit par le yoga, la danse ou le théâtre, nous cultivons l'écoute
+                Que ce soit par le yoga ou le théâtre, nous cultivons l'écoute
                 de soi, l'expression authentique et la joie du mouvement partagé.
               </p>
             </div>

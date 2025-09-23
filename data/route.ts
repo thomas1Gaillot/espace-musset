@@ -19,13 +19,16 @@ export const ROUTES = {
       ZERO_DECHET: "/ecologie/zero-dechet"
     }
   },
-  ARTS_DU_CORPS: {
+  ARTS: {
     ROOT: "/arts-du-corps",
     SUBPAGES: {
       YOGA: "/arts-du-corps/yoga",
-      DANSE: "/arts-du-corps/danse",
+      MEDITATION : "/arts-du-corps/meditation",
       THEATRE: "/arts-du-corps/theatre",
-      CHANT: "/arts-du-corps/chant"
+      CHANT: "/arts-du-corps/chant",
+      CLOWN : "/arts-du-corps/clown",
+      MONTESSORI : "/arts-du-corps/montessori",
+      FELDENKRAIS : "/arts-du-corps/feldenkrais"
     }
   },
   LOCATION_SALLES: "/location-salles",

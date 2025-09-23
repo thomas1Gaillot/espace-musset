@@ -26,23 +26,21 @@ export const Header = () => {
 
   const ecologieSubpages = [
     { name: "Ramassage de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
-    { name: "World CleanUp Day", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE },
-    { name: "Maraude", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-    { name: "Colis de Noël", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-
+    { name: "World CleanUp Day", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE }
   ];
 
   const artsSubpages = [
-    { name: "Yoga", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-    { name: "Méditation", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.YOGA },
-
+    { name: "Yoga", path: ROUTES.ARTS.SUBPAGES.YOGA },
+    { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
+    { name: "Feldenkrais", path: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
 
   ];
-  const activiteArtistiquePages = [
-    { name: "Atelier chant", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.DANSE },
-    { name: "Théâtre d'impro", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
-    { name: "Concert", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
-    { name: "Clown socratiques", path: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE },
+  const activitesPages = [
+    { name: "Atelier chant", path: ROUTES.ARTS.SUBPAGES.CHANT },
+    { name: "Théâtre d'impro", path: ROUTES.ARTS.SUBPAGES.THEATRE },
+    { name: "Clown socratiques", path: ROUTES.ARTS.SUBPAGES.CLOWN },
+    { name: "Mercredi Montessori", path: ROUTES.ARTS.SUBPAGES.MONTESSORI },
+
   ];
 
   return (
@@ -80,7 +78,7 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ARTS.ROOT} className="w-full">Vue d'ensemble</Link>
                 </DropdownMenuItem>
                 {artsSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
@@ -91,14 +89,14 @@ export const Header = () => {
             </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger className="nav-link flex items-center space-x-1">
-                <span>Activités artistiques</span>
+                <span>Activités</span>
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ARTS.ROOT} className="w-full">Vue d'ensemble</Link>
                 </DropdownMenuItem>
-                {activiteArtistiquePages.map((page) => (
+                {activitesPages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
                     <Link href={page.path} className="w-full">{page.name}</Link>
                   </DropdownMenuItem>
@@ -173,7 +171,7 @@ export const Header = () => {
               <Link href={ROUTES.LOCATION_SALLES} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Mise à disposition  de salles
               </Link>
-              <Link href={ROUTES.ARTS_DU_CORPS.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link href={ROUTES.ARTS.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Arts
               </Link>
               <Link href={ROUTES.ECOLOGIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
