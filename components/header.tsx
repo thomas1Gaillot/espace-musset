@@ -36,6 +36,7 @@ export const Header = () => {
 
   ];
   const activitesPages = [
+    { name: "Cours de piano", path: ROUTES.ARTS.SUBPAGES.PIANO },
     { name: "Atelier chant", path: ROUTES.ARTS.SUBPAGES.CHANT },
     { name: "Théâtre d'impro", path: ROUTES.ARTS.SUBPAGES.THEATRE },
     { name: "Clown socratiques", path: ROUTES.ARTS.SUBPAGES.CLOWN },

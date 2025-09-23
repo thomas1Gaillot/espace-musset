@@ -5,10 +5,12 @@ import {
   Drama,
   GraduationCap,
   HandshakeIcon,
-  HeartPulseIcon,
   LandmarkIcon,
+  LaughIcon,
   LeafIcon,
+  MoveIcon,
   Music2Icon,
+  PianoIcon,
   PopcornIcon,
   Presentation,
   Star,
@@ -28,9 +30,13 @@ const eventData: { type: EventType; icon: React.ComponentType<any>, href: string
   { type: "Cours de philosophie", icon: GraduationCap, href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
   { type: "Volontariat", icon: LeafIcon, href: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
   { type: "Spectacle", icon: Star, href: ROUTES.CAFE_ASSOCIATIF },
-  { type: "Yoga", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.YOGA },
   { type: "Théâtre", icon: Drama, href: ROUTES.ARTS.SUBPAGES.THEATRE },
   { type: "Chant", icon: Music2Icon, href: ROUTES.ARTS.SUBPAGES.CHANT },
+  { type: "Clown Socratique", icon: LaughIcon, href: ROUTES.ARTS.SUBPAGES.CLOWN },
+  { type: "Feldenkrais", icon: MoveIcon, href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
+  { type: "Méditation", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.MEDITATION },
+  { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ARTS.SUBPAGES.PIANO },
+
 ]
 
 export default function EventsSection() {

@@ -34,3 +34,4 @@ export type EventType =
   | "Spectacle"
   | "Portes ouvertes"
   | "Soirée Jeux"
+  | "Cours de piano"

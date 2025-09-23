@@ -28,7 +28,8 @@ export const ROUTES = {
       CHANT: "/arts-du-corps/chant",
       CLOWN : "/arts-du-corps/clown",
       MONTESSORI : "/arts-du-corps/montessori",
-      FELDENKRAIS : "/arts-du-corps/feldenkrais"
+      FELDENKRAIS : "/arts-du-corps/feldenkrais",
+      PIANO : '/arts-du-corps/piano'
     }
   },
   LOCATION_SALLES: "/location-salles",
