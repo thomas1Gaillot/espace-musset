@@ -342,7 +342,7 @@ const eventList: EventData[] = [
     },
     {
         id: 412,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Théatre d'improvisation",
         date: "Lundi 29 Septembre",
         time: "18:30 à 20:30",
@@ -357,7 +357,7 @@ const eventList: EventData[] = [
     },
     {
         id: 6101,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Théatre d'improvisation",
         date: "Lundi 06 Octobre",
         time: "18:30 à 20:30",
@@ -372,7 +372,7 @@ const eventList: EventData[] = [
     },
     {
         id: 4128,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Atelier Chant",
         date: "Mercredi 24 Septembre",
         time: "18:30 à 20:30",
@@ -381,13 +381,13 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-24"),
-        eventContact:'Béatrice, au 06 19 87 06 90',
+        eventContact: 'Béatrice, au 06 19 87 06 90',
         category: ArtEventCategory,
         type: Chant
     },
     {
         id: 81031,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Atelier chant",
         date: "Mercredi 08 Octobre",
         time: "18:30 à 20:30",
@@ -396,12 +396,12 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-08"),
-        eventContact:'Béatrice, au 06 19 87 06 90',
+        eventContact: 'Béatrice, au 06 19 87 06 90',
         category: ArtEventCategory,
         type: Chant
     }, {
         id: 4129,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Mercredi Montessori",
         date: "Mercredi 24 Septembre",
         time: "18:30 à 20:30",
@@ -410,13 +410,13 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-24"),
-        eventContact:'Claire, au 06 71 35 31 83',
+        eventContact: 'Claire, au 06 71 35 31 83',
         category: ArtEventCategory,
         type: MercrediMontessori
     },
     {
         id: 6181,
-        price: '7,58 €',
+        price: 'Nous contacter',
         title: "Mercredi Montessori",
         date: "Mercredi 08 Octobre",
         time: "18:30 à 20:30",
@@ -425,9 +425,39 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-08"),
-        eventContact:'Claire, au 06 71 35 31 83',
+        eventContact: 'Claire, au 06 71 35 31 83',
         category: ArtEventCategory,
         type: MercrediMontessori
+    },
+    {
+        id: 23090917,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 23 Septembre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-23"),
+        eventContact: 'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: ClownSocratique
+    },
+    {
+        id: 23090918,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 30 Septembre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-08"),
+        eventContact: 'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: ClownSocratique
     },
 ]
 
