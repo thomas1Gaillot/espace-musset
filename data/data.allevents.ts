@@ -23,6 +23,7 @@ const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Por
 const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
 const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: 'cafe-associatif' }
 const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href: 'cafe-associatif' }
+const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: 'cafe-associatif' }
 
 const eventList: EventData[] = [
     {
@@ -371,6 +372,51 @@ const eventList: EventData[] = [
         type: TheathreImpro
     },
     {
+        id: 4129,
+        price: 'Nous contacter',
+        title: "Mercredi Montessori",
+        date: "Mercredi 24 Septembre",
+        time: "16:00 à 18:00",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-24"),
+        eventContact: 'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: MercrediMontessori
+    },
+     {
+        id: 41291,
+        price: 'Nous contacter',
+        title: "Mercredi Montessori",
+        date: "Mercredi 1 Octobre",
+        time: "16:00 à 18:00",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-01"),
+        eventContact: 'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: MercrediMontessori
+    },
+    {
+        id: 6181,
+        price: 'Nous contacter',
+        title: "Mercredi Montessori",
+        date: "Mercredi 08 Octobre",
+        time: "16:00 à 18:00",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-08"),
+        eventContact: 'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: MercrediMontessori
+    },
+    {
         id: 4128,
         price: 'Nous contacter',
         title: "Atelier Chant",
@@ -381,6 +427,21 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-09-24"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: Chant
+    },
+    {
+        id: 81032,
+        price: 'Nous contacter',
+        title: "Atelier chant",
+        date: "Mercredi 1 Octobre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-01"),
         eventContact: 'Béatrice, au 06 19 87 06 90',
         category: ArtEventCategory,
         type: Chant
@@ -399,35 +460,36 @@ const eventList: EventData[] = [
         eventContact: 'Béatrice, au 06 19 87 06 90',
         category: ArtEventCategory,
         type: Chant
-    }, {
-        id: 4129,
-        price: 'Nous contacter',
-        title: "Mercredi Montessori",
-        date: "Mercredi 24 Septembre",
-        time: "18:30 à 20:30",
-        location: "Espace Musset",
-        venue: "52 Bis Rue Alfred de Musset",
-        city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-09-24"),
-        eventContact: 'Claire, au 06 71 35 31 83',
-        category: ArtEventCategory,
-        type: MercrediMontessori
     },
     {
-        id: 6181,
+        id: 23090916,
         price: 'Nous contacter',
-        title: "Mercredi Montessori",
-        date: "Mercredi 08 Octobre",
-        time: "18:30 à 20:30",
+        title: "Méditation",
+        date: "Mardi 23 Septembre",
+        time: "13:00 à 13:45",
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-10-08"),
-        eventContact: 'Claire, au 06 71 35 31 83',
+        dateObj: new Date("2025-09-23"),
+        eventContact: 'Anne-Marie, au 06 21 79 97 50',
         category: ArtEventCategory,
-        type: MercrediMontessori
+        type: Meditation
+    },
+    {
+        id: 23090919,
+        price: 'Nous contacter',
+        title: "Méditation",
+        date: "Mardi 30 Septembre",
+        time: "13:00 à 13:45",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-30"),
+        eventContact: 'Anne-Marie, au 06 21 79 97 50',
+        category: ArtEventCategory,
+        type: Meditation
     },
     {
         id: 23090917,
@@ -454,11 +516,57 @@ const eventList: EventData[] = [
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-10-08"),
+        dateObj: new Date("2025-09-30"),
         eventContact: 'Claire, au 06 71 35 31 83',
         category: ArtEventCategory,
         type: ClownSocratique
     },
+    {
+        id: 23090914,
+        price: 'Nous contacter',
+        title: "Feldenkrais",
+        date: "Samedi 27 Septembre",
+        time: "10:00 à 11:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-27"),
+        eventContact: 'Ghislaine, au 06 21 87 03 85',
+        category: CafeEventCategory,
+        type: Feldenkrais
+    },
+    {
+        id: 23090915,
+        price: 'Nous contacter',
+        title: "Feldenkrais",
+        date: "Samedi 04 Octobre",
+        time: "10:00 à 11:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-04"),
+        eventContact: 'Ghislaine, au 06 21 87 03 85',
+        category: CafeEventCategory,
+        type: Feldenkrais
+    },
+    {
+        id: 11010101130,
+        price: 'Nous contacter',
+        title: "Feldenkrais",
+        date: "Samedi 11 Octobre",
+        time: "10:00 à 11:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-11"),
+        eventContact: 'Ghislaine, au 06 21 87 03 85',
+        category: CafeEventCategory,
+        type: Feldenkrais
+    },
+
 ]
 
 
