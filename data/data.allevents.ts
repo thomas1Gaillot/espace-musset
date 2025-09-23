@@ -326,7 +326,7 @@ const eventList: EventData[] = [
         type: Volontariat
     },
     {
-        id: 412,
+        id: 4121,
         price: '7,58 €',
         title: "Café Philo : Penser à la mort est-utile ?",
         date: "Jeudi 4 Décembre 2025",
@@ -386,7 +386,7 @@ const eventList: EventData[] = [
         type: Chant
     },
     {
-        id: 6181,
+        id: 81031,
         price: '7,58 €',
         title: "Atelier chant",
         date: "Mercredi 08 Octobre",
