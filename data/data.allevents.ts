@@ -9,16 +9,20 @@ const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '
 const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie', href: '/ecologie' };
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
 
+const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS_DU_CORPS.SUBPAGES.CHANT }
+const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montesorri", href: ROUTES.ARTS_DU_CORPS.ROOT }
+const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE }
 const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
 const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
 const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
 const RencontrePhilo: { name: EventType, href: string } = { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
 const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacle', href: 'cafe-associatif' }
-const SoireeJeux : { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' }
+const SoireeJeux: { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' }
 const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
 const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
 const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
-
+const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: 'cafe-associatif' }
+const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href: 'cafe-associatif' }
 
 const eventList: EventData[] = [
     {
@@ -216,17 +220,17 @@ const eventList: EventData[] = [
         category: EcologieEventCategory,
         type: Volontariat
     },
-     {
+    {
         id: 2509,
         price: 'Gratuit',
         title: "Soirée Jeux + Pizza",
-        date: "Jeudi 25 Septembre 2025",
+        date: "Jeudi 23 Octobre 2025",
         time: "19:30 à 22:00",
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
         image: "/event/jeux-societe.jpg",
-        dateObj: new Date("2025-09-25"),
+        dateObj: new Date("2025-10-23"),
         eventLink: ROUTES.CONTACT,
         category: CafeEventCategory,
         type: SoireeJeux
@@ -336,7 +340,95 @@ const eventList: EventData[] = [
         category: philosophieEventCategory,
         type: CaféPhilo
     },
-
+    {
+        id: 412,
+        price: '7,58 €',
+        title: "Théatre d'improvisation",
+        date: "Lundi 29 Septembre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/diseuses-amertume.jpeg",
+        dateObj: new Date("2025-09-29"),
+        eventLink: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
+        category: ArtEventCategory,
+        type: TheathreImpro
+    },
+    {
+        id: 6101,
+        price: '7,58 €',
+        title: "Théatre d'improvisation",
+        date: "Lundi 06 Octobre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-06"),
+        eventLink: ROUTES.ARTS_DU_CORPS.SUBPAGES.THEATRE,
+        category: ArtEventCategory,
+        type: TheathreImpro
+    },
+    {
+        id: 4128,
+        price: '7,58 €',
+        title: "Atelier Chant",
+        date: "Mercredi 24 Septembre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-24"),
+        eventContact:'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: Chant
+    },
+    {
+        id: 6181,
+        price: '7,58 €',
+        title: "Atelier chant",
+        date: "Mercredi 08 Octobre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-08"),
+        eventContact:'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: Chant
+    }, {
+        id: 4129,
+        price: '7,58 €',
+        title: "Mercredi Montessori",
+        date: "Mercredi 24 Septembre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-09-24"),
+        eventContact:'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: MercrediMontessori
+    },
+    {
+        id: 6181,
+        price: '7,58 €',
+        title: "Mercredi Montessori",
+        date: "Mercredi 08 Octobre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-08"),
+        eventContact:'Claire, au 06 71 35 31 83',
+        category: ArtEventCategory,
+        type: MercrediMontessori
+    },
 ]
 
 

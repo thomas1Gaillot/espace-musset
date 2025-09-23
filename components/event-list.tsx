@@ -120,7 +120,7 @@ export default function EventList({ data, title }: {
                 {/* Bouton */}
                 <div className="w-full mt-6 sm:mt-0 sm:w-max flex gap-2 flex-col-reverse sm:flex-row">
 
-                  <Button
+                  {event.eventLink && <Button
                     variant={'outline'}
                     className="w-full sm:w-auto  px-6"
                     id={"contact-button-" + event.id}
@@ -129,8 +129,8 @@ export default function EventList({ data, title }: {
                     <Link href={ROUTES.CONTACT}>
                       {"Nous contacter"}
                     </Link>
-                  </Button>
-                  <Button
+                  </Button>}
+                  {event.eventLink && <Button
                     className="w-full sm:w-auto text-white px-6"
                     id={"reserve-button-" + event.id}
                     asChild
@@ -138,7 +138,9 @@ export default function EventList({ data, title }: {
                     <Link href={event.eventLink} target="_blank">
                       {"Voir"}
                     </Link>
-                  </Button>
+                  </Button>}
+                  {event.eventContact && <p>
+                    {event.eventContact}</p>}
                 </div>
               </div>
             </Card>

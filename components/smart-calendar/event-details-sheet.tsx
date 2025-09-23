@@ -71,15 +71,15 @@ export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetP
 
         {/* Reservation Button */}
         <div className="border-t pt-4 space-y-3">
-          {event.eventLink && (
+          {event?.eventLink && (
             <Button
               className="w-full"
               size="lg"
               onClick={() => {
-                if (event.eventLink.startsWith("http")) {
+                if (event?.eventLink?.startsWith("http")) {
                   window.open(event.eventLink, "_blank")
                 } else {
-                  window.location.href = event.eventLink
+                  window.location.href = event?.eventLink || ''
                 }
               }}
             >
@@ -87,6 +87,7 @@ export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetP
               {"Voir l'annonce"}
             </Button>
           )}
+          {event.eventContact && <p className="w-full text-center p-2 bg-primary/10">CONTACT : {event.eventContact}</p>}
           <Button variant="outline" className="w-full bg-transparent" onClick={onClose}>
             Fermer
           </Button>

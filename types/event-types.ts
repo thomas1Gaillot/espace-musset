@@ -8,7 +8,8 @@ export interface EventData {
   city: string
   image: string
   dateObj: Date
-  eventLink: string
+  eventLink?: string
+  eventContact?: string
   price: string
   type: { name: EventType; href: string }
   category: { name: string; href: string }
@@ -17,6 +18,8 @@ export interface EventData {
 export type EventType =
   | "Café philo"
   | "Atelier philo"
+  | 'Clown Socratique'
+  | "Méditation"
   | "Conférence"
   | "Rencontre philo"
   | "Volontariat"
@@ -25,6 +28,8 @@ export type EventType =
   | "Yoga"
   | "Danse"
   | "Théâtre"
+  | "Théâtre d'improvisation"
+  | "Mercredi Montesorri"
   | "Chant"
   | "Spectacle"
   | "Portes ouvertes"

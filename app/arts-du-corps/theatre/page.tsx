@@ -1,7 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/data/route";
-import Link from "next/link";
 
 const Theatre = () => (
   <div className="min-h-screen py-12 px-4">
@@ -119,19 +117,12 @@ const Theatre = () => (
 
       <div className="text-center">
         <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-          Montez sur les planches
+          Contact
         </h2>
         <p className="text-lg text-muted-foreground mb-6">
-          Débutants bienvenus ! Le théâtre s'apprend en jouant, dans la joie et la bienveillance
+          {"Contactez-nous par email à "}
+          <span className="underline">lesdiseusesdebonneamertume@gmail.com</span>
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" asChild>
-            <Link href={ROUTES.CONTACT}>Atelier découverte</Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild>
-            <Link href={ROUTES.CONTACT}>Nous rejoindre</Link>
-          </Button>
-        </div>
       </div>
     </div>
   </div>

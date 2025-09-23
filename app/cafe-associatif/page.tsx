@@ -116,10 +116,10 @@ export default function CafeAssociatifPage() {
                   - <strong>Les lundis et mercredis </strong> : des tartes salées maisons accompagnée de salades
                 </li>
                 <li>
-                  - <strong>Le dernier jeudi du mois </strong> : soirée pizza avec Thomas à l’occasion de la soirée jeux de sociétés.
+                  - <strong>Le 4ème jeudi du mois </strong> : soirée pizza avec Thomas à l’occasion de la soirée jeux de sociétés.
                 </li>
                 <li>
-                  - <strong>Le dernier dimanche du mois de 15h à 17h</strong> :  c’est l’association «  Ensemble toi et moi » qui propose un concept « JE CUISINE POUR LES AUTRES »
+                  - <strong>Le 4ème dimanche du mois de 15h à 17h</strong> :  c’est l’association «  Ensemble toi et moi » qui propose un concept « JE CUISINE POUR LES AUTRES »
                 </li>
               </ul>
               <span className="text-xs">
