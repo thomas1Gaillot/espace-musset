@@ -87,8 +87,7 @@ const Conferences = () => {
                         Tarif
                     </h3>
                     <p className="text-muted-foreground">
-                        6€ <br />
-                        Gratuit adhérents
+                        6€
                     </p>
                 </div>
             </div>

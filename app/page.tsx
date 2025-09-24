@@ -107,7 +107,7 @@ export default function HomePage() {
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Grâce à l’engagement de bénévoles, elle organise des conférences, concerts, expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.
-              Elle anime également, le café associatif <strong>« Le Café d’Oc »</strong>, qui ouvrira ses portes prochainement.
+              Elle anime également, le café associatif <strong>« Le Café d’Oc »</strong> ! 
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={'default'} size="lg" asChild>

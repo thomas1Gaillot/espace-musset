@@ -127,7 +127,6 @@ export default function ContactPage() {
 
 
 
-
 function ContactSection() {
   const formRef = useRef<HTMLFormElement>(null)
   const [subject, setSubject] = useState("")
@@ -167,9 +166,8 @@ function ContactSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSendMail = async () => {
+  const handleSendMail = () => {
     const { firstname, lastname, email, phone, message } = formData
-
     if (!subject || !message.trim()) {
       toast("Veuillez sélectionner un sujet et écrire un message.")
       return
@@ -177,56 +175,47 @@ function ContactSection() {
 
     const subjectLabel = subjectMap[subject] || "Autre demande"
 
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstname,
-        lastname,
-        email,
-        phone,
-        subject: subjectLabel,
-        message,
-      }),
-    })
+    const body = `
+Prénom: ${firstname}
+Nom: ${lastname}
+Email: ${email}
+Téléphone: ${phone}
 
-    if (res.ok) {
-      toast("Message envoyé avec succès")
-      setFormData({ firstname: "", lastname: "", email: "", phone: "", message: "" })
-      setSubject("")
-    } else {
-      toast.error("Une erreur est survenue")
-    }
+${message}
+    `
+
+    const mailtoLink = `mailto:contact@espace-musset.com?cc=thomas1.gaillot@gmail.com&subject=${encodeURIComponent(subjectLabel)}&body=${encodeURIComponent(body)}`
+
+    window.location.href = mailtoLink
   }
-
 
   return (
     <form ref={formRef} onSubmit={e => { e.preventDefault(); handleSendMail() }}>
       <Card className="space-y-6 mb-8">
         <CardHeader>
-          <CardTitle className="font-serif text-2xl">Nous contacter</CardTitle>
+          <CardTitle className="font-serif text-2xl">{"Nous contacter"}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <Label htmlFor="firstname">Prénom</Label>
+              <Label htmlFor="firstname">{"Prénom"}</Label>
               <Input name='firstname' id="firstname" placeholder="Votre prénom" value={formData.firstname} onChange={handleChange} />
             </div>
             <div>
-              <Label htmlFor="lastname">Nom</Label>
+              <Label htmlFor="lastname">{"Nom"}</Label>
               <Input name="lastname" id="lastname" placeholder="Votre nom" value={formData.lastname} onChange={handleChange} />
             </div>
           </div>
           <div>
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{"Email"}</Label>
             <Input name="email" id="email" type="email" placeholder="votre.email@example.com" value={formData.email} onChange={handleChange} />
           </div>
           <div>
-            <Label htmlFor="phone">Téléphone (optionnel)</Label>
+            <Label htmlFor="phone">{"Téléphone (optionnel)"}</Label>
             <Input name="phone" id="phone" type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={handleChange} />
           </div>
           <div>
-            <Label htmlFor="subject">Sujet</Label>
+            <Label htmlFor="subject">{"Sujet"}</Label>
             <Select
               value={subject}
               onValueChange={(value) => {
@@ -241,21 +230,21 @@ function ContactSection() {
                 <SelectValue placeholder="Choisissez un sujet" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="rencontre">Nous rencontrer – Échanger sur une idée ou projet</SelectItem>
-                <SelectItem value="visite-cafe">Visiter le café – Envie de découvrir le lieu</SelectItem>
-                <SelectItem value="location-salle">Location de salle</SelectItem>
-                <SelectItem value="cafe-philo">Philosophie - Inscription à un café philo</SelectItem>
-                <SelectItem value="atelier-philo">Philosophie - Inscription à un atelier philo</SelectItem>
-                <SelectItem value="cine-philo">Philosophie - Inscription à un ciné philo</SelectItem>
-                <SelectItem value="rencontre-philo">Philosophie - Inscription à une rencontre philo</SelectItem>
-                <SelectItem value="conf-philo">Philosophie - Inscription à une conférence philo</SelectItem>
-                <SelectItem value="autre">Autre demande</SelectItem>
+                <SelectItem value="rencontre">{"Nous rencontrer – Échanger sur une idée ou projet"}</SelectItem>
+                <SelectItem value="visite-cafe">{"Visiter le café – Envie de découvrir le lieu"}</SelectItem>
+                <SelectItem value="location-salle">{"Location de salle"}</SelectItem>
+                <SelectItem value="cafe-philo">{"Philosophie - Inscription à un café philo"}</SelectItem>
+                <SelectItem value="atelier-philo">{"Philosophie - Inscription à un atelier philo"}</SelectItem>
+                <SelectItem value="cine-philo">{"Philosophie - Inscription à un ciné philo"}</SelectItem>
+                <SelectItem value="rencontre-philo">{"Philosophie - Inscription à une rencontre philo"}</SelectItem>
+                <SelectItem value="conf-philo">{"Philosophie - Inscription à une conférence philo"}</SelectItem>
+                <SelectItem value="autre">{"Autre demande"}</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div>
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">{"Message"}</Label>
             <Textarea name="message" id="message" rows={6} placeholder="Décrivez votre demande..." value={formData.message} onChange={handleChange} />
           </div>
 
@@ -263,7 +252,7 @@ function ContactSection() {
             data-id={"send-contact-mailto-button"}
             className="w-full"
             size="lg"
-            onClick={handleSendMail}
+            type="submit"
           >
             {"Envoyer le message"}
           </Button>
@@ -272,4 +261,3 @@ function ContactSection() {
     </form>
   )
 }
-

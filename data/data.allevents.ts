@@ -416,21 +416,7 @@ const eventList: EventData[] = [
         category: ArtEventCategory,
         type: MercrediMontessori
     },
-    {
-        id: 4128,
-        price: 'Nous contacter',
-        title: "Atelier Chant",
-        date: "Mercredi 24 Septembre",
-        time: "18:30 à 20:30",
-        location: "Espace Musset",
-        venue: "52 Bis Rue Alfred de Musset",
-        city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-09-24"),
-        eventContact: 'Béatrice, au 06 19 87 06 90',
-        category: ArtEventCategory,
-        type: Chant
-    },
+   
     {
         id: 81032,
         price: 'Nous contacter',
@@ -457,6 +443,21 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/espace-musset.jpeg",
         dateObj: new Date("2025-10-08"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: Chant
+    },
+     {
+        id: 4128,
+        price: 'Nous contacter',
+        title: "Atelier Chant",
+        date: "Mercredi 15 Octobre",
+        time: "18:30 à 20:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-15"),
         eventContact: 'Béatrice, au 06 19 87 06 90',
         category: ArtEventCategory,
         type: Chant
@@ -521,42 +522,13 @@ const eventList: EventData[] = [
         category: ArtEventCategory,
         type: ClownSocratique
     },
-    {
-        id: 23090914,
-        price: 'Nous contacter',
-        title: "Feldenkrais",
-        date: "Samedi 27 Septembre",
-        time: "10:00 à 11:30",
-        location: "Espace Musset",
-        venue: "52 Bis Rue Alfred de Musset",
-        city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-09-27"),
-        eventContact: 'Ghislaine, au 06 21 87 03 85',
-        category: ArtEventCategory,
-        type: Feldenkrais
-    },
-    {
-        id: 23090915,
-        price: 'Nous contacter',
-        title: "Feldenkrais",
-        date: "Samedi 04 Octobre",
-        time: "10:00 à 11:30",
-        location: "Espace Musset",
-        venue: "52 Bis Rue Alfred de Musset",
-        city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
-        dateObj: new Date("2025-10-04"),
-        eventContact: 'Ghislaine, au 06 21 87 03 85',
-        category: ArtEventCategory,
-        type: Feldenkrais
-    },
+   
     {
         id: 11010101130,
-        price: 'Nous contacter',
+        price: '5 €',
         title: "Feldenkrais",
         date: "Samedi 11 Octobre",
-        time: "10:00 à 11:30",
+        time: "10:30 à 11:30",
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",

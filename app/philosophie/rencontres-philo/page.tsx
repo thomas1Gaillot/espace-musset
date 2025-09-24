@@ -92,7 +92,7 @@ const RencontresPhilo = () => {
                         Tarif
                     </h3>
                     <p className="text-muted-foreground">
-                        à partir de 6 € <br />Gratuit pour les adhérents<br />
+                        à partir de 6 €
                     </p>
                 </div>
             </div>

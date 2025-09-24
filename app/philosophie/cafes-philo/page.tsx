@@ -72,8 +72,8 @@ const CafesPhilo = () => {
               Quand ?
             </h3>
             <p className="text-muted-foreground">
-              ~1 fois par mois<br />
-              17:00 - 18h30
+              Tous les 1er jeudi du mois<br />
+             19h30 à 21h00
             </p>
           </div>
           <div>
@@ -81,8 +81,7 @@ const CafesPhilo = () => {
               Où ?
             </h3>
             <p className="text-muted-foreground">
-              Salle de conférence<br />
-              Dans une ambiance calme 
+              Dans notre café associatif : "Le café d'Oc"
             </p>
           </div>
           <div>

@@ -22,6 +22,7 @@ export const Header = () => {
     { name: "Cafés philo", path: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES },
     { name: "Ciné philo", path: ROUTES.PHILOSOPHIE.SUBPAGES.CINE },
     { name: "Conférences", path: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES },
+    { name: "Rencontres philo", path: ROUTES.PHILOSOPHIE.SUBPAGES.RENCONTRES },
   ];
 
   const ecologieSubpages = [
