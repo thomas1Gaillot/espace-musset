@@ -60,18 +60,8 @@ export const Footer = () => {
             <h3 className="font-serif font-semibold text-lg mb-4">Suivez-nous</h3>
             <div className="flex flex-wrap gap-4 justify-center md:justify-end space-x-4">
               <Button variant="outline" size="icon" asChild>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                  <Facebook className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="icon" asChild>
                 <a href="https://instagram.com/espacemussettoulouse" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="sm" className="h-10" asChild>
-                <a href="https://eventbrite.com" target="_blank" rel="noopener noreferrer">
-                  Evènements <ExternalLinkIcon className="size-4" />
                 </a>
               </Button>
               <Button variant="outline" size="sm" className="h-10" asChild>

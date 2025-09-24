@@ -31,7 +31,6 @@ export const Header = () => {
   ];
 
   const artsSubpages = [
-    { name: "Yoga", path: ROUTES.ARTS.SUBPAGES.YOGA },
     { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
     { name: "Feldenkrais", path: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
 
