@@ -55,13 +55,7 @@ export default function CafeAssociatifPage() {
 
   return (
     <>
-      <div className="relative top-0">
-        <div className="h-8 w-screen bg-primary/90 flex items-center justify-center text-white">
-          <Button variant={'link'} onClick={() => router.push('/cafe-associatif#agenda')} className="text-white ">
-            {"Inauguration du Café d'Oc le 13 Septembre 2025"}
-          </Button>
-        </div>
-      </div>
+
       <div className="min-h-screen py-12 px-4">
         <div className="container mx-auto">
           <Breadcrumb className="mb-8">

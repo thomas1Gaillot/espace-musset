@@ -59,11 +59,23 @@ export default function HomePage() {
 
 
   ];
+
+
   const bgImgClass = "bg-[url('/espace-musset.jpeg')]"
   const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat"
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
+       <div className=" top-[60px] sticky z-50">
+        <div className="h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
+          <Button variant={'link'} asChild className="text-white ">
+            <Link target="_blank"  href="https://www.eventbrite.fr/e/billets-concert-de-musique-baroque-1765835534619?aff=ebdsoporgprofile">
+            {"Concert baroque le vendredi 17 Octobre -> Billets 10€"}
+            </Link>
+
+          </Button>
+        </div>
+      </div>
 
       <section className={cn("hero-section relative py-20 px-4", bgHeroSectionCalass, bgImgClass)}>
         {/* Overlay foncé */}

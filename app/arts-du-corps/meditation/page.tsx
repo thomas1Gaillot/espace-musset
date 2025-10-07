@@ -70,7 +70,7 @@ const Meditation = () => (
                     href="tel:+33612345678"
                     className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition"
                 >
-                    Appeler Anne-Marie au 06 12 34 56 78
+                    Appeler Anne-Marie au 06 21 79 97 50
                 </a>
                 <p className="text-sm text-muted-foreground mt-4">
                     <EuroIcon className="inline-block mr-1 mb-1" size={14} />
