@@ -13,7 +13,9 @@ import {
   PianoIcon,
   PopcornIcon,
   Presentation,
+  SignatureIcon,
   Star,
+  StickerIcon,
   WindIcon
 } from "lucide-react";
 import Link from "next/link";
@@ -36,7 +38,8 @@ const eventData: { type: EventType; icon: React.ComponentType<any>, href: string
   { type: "Feldenkrais", icon: MoveIcon, href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
   { type: "Méditation", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.MEDITATION },
   { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ARTS.SUBPAGES.PIANO },
-
+  { type: "Ecriture spontanée", icon: SignatureIcon, href: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE },
+  { type: "Yoga du rire", icon: StickerIcon, href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
 ]
 
 export default function EventsSection() {

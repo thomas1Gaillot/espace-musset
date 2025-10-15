@@ -41,7 +41,8 @@ export const Header = () => {
     { name: "Théâtre d'impro", path: ROUTES.ARTS.SUBPAGES.THEATRE },
     { name: "Clown socratiques", path: ROUTES.ARTS.SUBPAGES.CLOWN },
     { name: "Mercredi Montessori", path: ROUTES.ARTS.SUBPAGES.MONTESSORI },
-
+    { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
+    { name: "Atelier Ecriture spontanée", path: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE },
   ];
 
   return (

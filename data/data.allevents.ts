@@ -10,6 +10,8 @@ const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie'
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
 
 const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS.SUBPAGES.CHANT }
+const YogaDuRire: { name: EventType, href: string } = { name: "Yoga du rire", href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE }
+const EcritureSpontanee: { name: EventType, href: string } = { name: "Ecriture spontanée", href: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE }
 const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montessori", href: ROUTES.ARTS.ROOT }
 const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS.SUBPAGES.THEATRE }
 const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
@@ -436,7 +438,7 @@ const eventList: EventData[] = [
         price: 'Gratuit',
         title: "Maraude auprès des sans abris",
         date: "Dimanche 26 Octobre 2025",
-        time: "17:30 à 21:00",
+        time: "16:00 à 19:30",
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
@@ -868,6 +870,67 @@ const eventList: EventData[] = [
         category: ArtEventCategory,
         type: Meditation
     },
+    {
+        id: 15102025,
+        price: "",
+        title: "Yoga du Rire",
+        date: "Samedi 18 Octobre 2025",
+        time: "10:00 à 11:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/meditation.jpg",
+        dateObj: new Date("2025-10-18"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: YogaDuRire
+    },
+     {
+        id: 151020251,
+        price: "",
+        title: "Atelier Ecriture spontanée",
+        date: "Jeudi 16 Octobre 2025",
+        time: "19:30 à 31:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/meditation.jpg",
+        dateObj: new Date("2025-10-16"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: EcritureSpontanee
+    },
+     {
+        id: 151020252,
+        price: "",
+        title: "Atelier Ecriture spontanée",
+        date: "Jeudi 13 Novembre 2025",
+        time: "19:30 à 31:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/meditation.jpg",
+        dateObj: new Date("2025-11-13"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: EcritureSpontanee
+    },
+     {
+        id: 151020253,
+        price: "",
+        title: "Atelier Ecriture spontanée",
+        date: "Jeudi 18 Décembre 2025",
+        time: "19:30 à 31:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/meditation.jpg",
+        dateObj: new Date("2025-12-18"),
+        eventContact: 'Béatrice, au 06 19 87 06 90',
+        category: ArtEventCategory,
+        type: EcritureSpontanee
+    },
+    
 
 ]
 

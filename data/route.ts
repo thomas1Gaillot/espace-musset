@@ -29,7 +29,9 @@ export const ROUTES = {
       CLOWN : "/arts-du-corps/clown",
       MONTESSORI : "/arts-du-corps/montessori",
       FELDENKRAIS : "/arts-du-corps/feldenkrais",
-      PIANO : '/arts-du-corps/piano'
+      PIANO : '/arts-du-corps/piano',
+      YOGA_DU_RIRE : '/arts-du-corps/yoga-du-rire',
+      ECRITURE_SPONTANEE : '/arts-du-corps/ecriture-spontanee',
     }
   },
   LOCATION_SALLES: "/location-salles",
