@@ -69,10 +69,13 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
        <div className=" top-[60px] sticky z-50">
-        <div className="h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
+        <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={'link'} asChild className="text-white ">
             <Link target="_blank"  href="https://www.helloasso.com/associations/association-espace-musset/evenements/tournoi-d-echecs-amateurs">
-            {"Tournoi d'échecs amateur Jeudi 30 Octobre !!  -> Billets Gratuits"}
+            <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
+              <p>{"Tournoi d'échecs amateur Jeudi 30 Octobre !! "}</p>
+              <p>{" -> Billets Gratuits"}</p>
+            </div>  
             </Link>
 
           </Button>
