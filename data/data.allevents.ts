@@ -932,6 +932,66 @@ const eventList: EventData[] = [
         category: CafeEventCategory,
         type: SoireeJeux
     },
+    {
+        id: 2010202511,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 11 Novembre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-11-11"),
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
+        category: ArtEventCategory,
+        type: ClownSocratique
+    },
+    {
+        id: 20102025112,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 21 Octobre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-21"),
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
+        category: ArtEventCategory,
+        type: ClownSocratique
+    },
+    {
+        id: 20102025113,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 28 Octobre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-10-28"),
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
+        category: ArtEventCategory,
+        type: ClownSocratique
+    },
+    {
+        id: 20102025114,
+        price: 'Nous contacter',
+        title: "Clown Socratique",
+        date: "Mardi 04 Novembre",
+        time: "19:00 à 21:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/espace-musset.jpeg",
+        dateObj: new Date("2025-11-04"),
+        eventLink: ROUTES.ARTS.SUBPAGES.CLOWN,
+        category: ArtEventCategory,
+        type: ClownSocratique
+    },
 
 ]
 
