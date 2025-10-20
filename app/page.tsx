@@ -23,7 +23,9 @@ const homeImageData: OurImageData[] = [
   { src: "/gallery/gallery-cafe-3.jpeg", blurredSrc: '/blur/gallery-3.jpeg', alt: "Gallery Image 4" },
   { src: "/gallery/gallery-cafe-4.jpeg", blurredSrc: '/blur/gallery-4.jpeg', alt: "Gallery Image 5" },
   { src: "/gallery/gallery-cafe-8.jpeg", blurredSrc: '/blur/gallery-5.jpeg', alt: "Gallery Image 6" },
-
+ { src: "/gallery/gallery-cafe-9.jpeg", blurredSrc: '/blur/gallery-9.jpeg', alt: "Gallery Image 7" },
+  { src: "/gallery/gallery-cafe-10.jpeg", blurredSrc: '/blur/gallery-10.jpeg', alt: "Gallery Image 8" },
+  { src: "/gallery/gallery-cafe-11.jpeg", blurredSrc: '/blur/gallery-11.jpeg', alt: "Gallery Image 9" },
 ];
 
 export default function HomePage() {
