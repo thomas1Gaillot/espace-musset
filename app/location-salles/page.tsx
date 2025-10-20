@@ -193,10 +193,18 @@ export default function LocationSallesPage() {
           <p className="text-lg text-muted-foreground mb-6">
             Contactez-nous pour une visite ou un devis personnalisé
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center"> 
+            <Button variant={"outline"} size='lg' asChild>
+            <a
+                    href="tel:+33612345678"
+                >
+                    Appeler Anne-Marie
+                </a>
+                </Button>
+                ou
             <Button size="lg" asChild>
               <Link href='contact'>
-                Nous contacter
+                Nous contacter par mail
               </Link>
             </Button>
           </div>

@@ -26,7 +26,7 @@ export const Header = () => {
   ];
 
   const ecologieSubpages = [
-    { name: "Récolte de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
+    { name: "Récolte de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
     { name: "Maraudes", path: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE }
   ];
 
