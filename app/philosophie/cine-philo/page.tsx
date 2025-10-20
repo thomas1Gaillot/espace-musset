@@ -74,8 +74,8 @@ const CinePhilo = () => {
             Programmation
           </h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li><strong>Fréquence :</strong> Une fois par mois</li>
-            <li><strong>Horaire :</strong> Vendredi 19h30-21h30</li>
+            <li><strong>Fréquence :</strong> Occasionnel</li>
+            <li><strong>Horaire :</strong> En soirée (ex : jeudi soir 19h-21h)</li>
             <li><strong>Format :</strong> Extraits de film + discussions (2h)</li>
             <li><strong>Tarif :</strong> 6 €</li>
           </ul>

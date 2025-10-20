@@ -1,28 +1,26 @@
+import EventList from "@/components/event-list";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 export default function EcologiePage() {
+    const nextVolontariat =    eventList.filter((e) => e.category.name === "Volontariat")
+
   const subpages = [
     {
-      title: "Ateliers écologiques",
-      description: "Apprenez les gestes du quotidien pour réduire votre impact environnemental",
-      link: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS,
-      icon: "🌱"
-    },
-    {
-      title: "Jardinage urbain",
-      description: "Découvrez comment cultiver en ville et créer votre propre jardin",
-      link: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE,
-      icon: "🌿"
-    },
-    {
-      title: "Zéro déchet",
-      description: "Adoptez un mode de vie durable et réduisez vos déchets",
+      title: "Atelier récolte de mégots",
+      description: "Prenons soin du parc des minimes en prenant soin de soi.",
       link: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET,
       icon: "♻️"
+    },
+    {
+      title: "Maraude pour les sans-abris",
+      description: "Participez à nos actions solidaires pour aider les personnes dans le besoin.",
+      link: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE,
+      icon: "🤝"
     }
   ];
 
@@ -33,23 +31,23 @@ export default function EcologiePage() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href={ROUTES.ACCUEIL}>
-                Accueil
+                {"Accueil"}
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              Ecologie
+              {"Écologie et volontariat"}
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
+
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Écologie
+            {"Écologie & Volontariat"}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Sensibilisation environnementale, actions concrètes et partage de solutions
-            durables pour construire ensemble un avenir plus respectueux de notre planète.
+            {"Des actions concrètes et humaines pour préserver notre planète tout en prenant soin des autres."}
           </p>
         </div>
 
@@ -57,8 +55,8 @@ export default function EcologiePage() {
           {/* Image principale */}
           <div className="relative h-80 rounded-lg overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-              alt="Nature et écologie"
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+              alt={"Écologie et solidarité"}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -67,22 +65,17 @@ export default function EcologiePage() {
           {/* Description */}
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
-              Agir ensemble pour l'environnement
+              {"Agir ensemble pour l’humain et la planète"}
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                L'écologie à l'Espace Musset va au-delà de la simple sensibilisation.
-                Nous proposons des ateliers pratiques, des initiations au jardinage urbain
-                et des solutions concrètes pour adopter un mode de vie plus durable.
+                {"À l’Espace Musset, nous croyons que l’écologie et la solidarité vont de pair. Nos actions allient respect de l’environnement et soutien humain."}
               </p>
               <p>
-                Notre approche privilégie l'action collective et l'entraide. Ensemble,
-                nous explorons des alternatives écologiques accessibles et partageons
-                nos expériences pour créer une communauté engagée.
+                {"Des ateliers zéro déchet aux maraudes solidaires, chaque initiative est une occasion de créer du lien, de partager et de faire une différence concrète."}
               </p>
               <p>
-                Que vous soyez débutant ou déjà sensibilisé aux questions environnementales,
-                vous trouverez ici un espace d'apprentissage et d'échange bienveillant.
+                {"En participant, vous devenez acteur d’un changement collectif : celui d’un monde plus durable, plus juste et plus bienveillant."}
               </p>
             </div>
           </div>
@@ -91,9 +84,9 @@ export default function EcologiePage() {
         {/* Sous-pages */}
         <div className="mb-12">
           <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
-            Nos activités écologiques
+            {"Nos actions de volontariat"}
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {subpages.map((page, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow group">
                 <CardHeader>
@@ -103,57 +96,34 @@ export default function EcologiePage() {
                 </CardHeader>
                 <CardContent>
                   <Button asChild className="w-full">
-                    <Link href={page.link}>En savoir plus</Link>
+                    <Link href={page.link}>{"Découvrir l’activité"}</Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-
-        {/* Valeurs écologiques */}
-        <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
-          <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
-            Nos engagements écologiques
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Consommation responsable</h3>
-              <p className="text-sm text-muted-foreground">Produits locaux et équitables</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Réduction des déchets</h3>
-              <p className="text-sm text-muted-foreground">Zéro déchet et compostage</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Énergie verte</h3>
-              <p className="text-sm text-muted-foreground">Sources renouvelables</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Mobilité douce</h3>
-              <p className="text-sm text-muted-foreground">Vélo et transports partagés</p>
-            </div>
-          </div>
+        <div id='agenda' className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
+        <EventList data={nextVolontariat} title='Prochaines actions de volontariat' />
         </div>
-
         {/* CTA */}
         <div className="text-center">
           <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-            Participez à notre démarche écologique
+            {"Envie d’agir avec nous ?"}
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Rejoignez nos ateliers et initiatives pour agir concrètement en faveur de l'environnement
+            {"Rejoignez nos ateliers, nos maraudes ou nos journées écologiques pour contribuer à un futur plus solidaire."}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg">
-              Participer aux ateliers
+              {"Participer à une activité"}
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href={ROUTES.CONTACT}>Nous contacter</Link>
+            <Button size="lg" variant="outline" asChild >
+              <Link href={ROUTES.CONTACT}>{"Nous contacter"}</Link>
             </Button>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}

@@ -42,11 +42,11 @@ export default function HomePage() {
     cta: "Voir les cours"
   },
   {
-    title: "Écologie",
-    description: "Sensibilisation environnementale, jardinage urbain et ateliers zéro déchet pour un mode de vie durable",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
+    title: "Écologie et Volontariat",
+    description: "Maraudes, jardinage urbain, ateliers zéro déchets et bien d'autres ...",
+    image: "/event/cleanup-20-sept.jpg",
     link: ROUTES.ECOLOGIE.ROOT,
-    cta: "Participer"
+    cta: "En savoir plus"
   },
   {
     title: "Philosophie",
@@ -69,8 +69,8 @@ export default function HomePage() {
        <div className=" top-[60px] sticky z-50">
         <div className="h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={'link'} asChild className="text-white ">
-            <Link target="_blank"  href="https://www.eventbrite.fr/e/billets-concert-de-musique-baroque-1765835534619?aff=ebdsoporgprofile">
-            {"Concert baroque le vendredi 17 Octobre -> Billets 10€"}
+            <Link target="_blank"  href="https://www.helloasso.com/associations/association-espace-musset/evenements/tournoi-d-echecs-amateurs">
+            {"Tournoi d'échecs amateur Jeudi 30 Octobre !!  -> Billets Gratuits"}
             </Link>
 
           </Button>
@@ -96,12 +96,13 @@ export default function HomePage() {
               <Button size="lg" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
                 <Link href="/#agenda">Agenda</Link>
               </Button>
-              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild id={"contact-button"}>
-                <Link href={ROUTES.CONTACT}>Nous Contacter</Link>
-              </Button>
-              <Button size="lg" variant="link" className="text-lg text-white px-8 py-4" asChild id={"reservation-button"}>
+              <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
                 <Link href={ROUTES.LOCATION_SALLES}>Réserver une salle</Link>
               </Button>
+              <Button size="lg" variant="link" className="text-lg  text-white px-8 py-4" asChild id={"contact-button"}>
+                <Link href={ROUTES.CONTACT}>Nous Contacter</Link>
+              </Button>
+              
             </div>
           </div>
         </div>

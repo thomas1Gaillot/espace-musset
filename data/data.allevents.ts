@@ -6,7 +6,7 @@ import { ROUTES } from "./route";
 
 const philosophieEventCategory: { name: string, href: string } = { name: 'Philosophie', href: '/philosophie' };
 const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '/arts-du-corps' };
-const EcologieEventCategory: { name: string, href: string } = { name: 'Ecologie', href: '/ecologie' };
+const VolontariatEventCategory: { name: string, href: string } = { name: 'Volontariat', href: '/ecologie' };
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
 
 const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS.SUBPAGES.CHANT }
@@ -22,7 +22,9 @@ const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacl
 const SoireeJeux: { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' }
 const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
 const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
-const Volontariat: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
+const ZeroDechet: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
+const Maraude: { name: EventType, href: string } = { name: 'Maraude', href: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE }
+
 const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: ROUTES.ARTS.SUBPAGES.MEDITATION }
 const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href:ROUTES.ARTS.SUBPAGES.CLOWN }
 const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS }
@@ -174,7 +176,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-10-13"),
-        eventContact : 'Benjamin',
+        eventContact : 'Benjamin, au 06 30 15 46 48',
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
@@ -189,7 +191,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-11-10"),
-        eventContact : 'Benjamin',
+        eventContact : 'Benjamin, au 06 30 15 46 48',
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
@@ -204,7 +206,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-10-20"),
-        eventContact : 'Benjamin',
+        eventContact : 'Benjamin, au 06 30 15 46 48',
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
@@ -219,7 +221,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-10-27"),
-        eventContact : 'Benjamin',
+        eventContact : 'Benjamin, au 06 30 15 46 48',
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
@@ -234,7 +236,7 @@ const eventList: EventData[] = [
         city: "31200 Toulouse",
         image: "/event/atelier-philo.jpg",
         dateObj: new Date("2025-11-03"),
-        eventContact : 'Benjamin',
+        eventContact : 'Benjamin, au 06 30 15 46 48',
         category: philosophieEventCategory,
         type: AtelierPhilo
     },
@@ -295,23 +297,8 @@ const eventList: EventData[] = [
         image: "/event/cleanup-20-sept.jpg",
         dateObj: new Date("2025-09-20"),
         eventLink: "https://www.eventbrite.fr/e/billets-world-cleanup-day-1629072703309?aff=ebdsoporgprofile",
-        category: EcologieEventCategory,
-        type: Volontariat
-    },
-    {
-        id: 2509,
-        price: 'Gratuit',
-        title: "Tournoi Echecs Amateur",
-        date: "Jeudi 30 Octobre 2025",
-        time: "19:00 à 22:00",
-        location: "Espace Musset",
-        venue: "52 Bis Rue Alfred de Musset",
-        city: "31200 Toulouse",
-        image: "/event/tournoi-echec.png",
-        dateObj: new Date("2025-10-30"),
-        eventLink: "https://www.helloasso.com/associations/association-espace-musset/evenements/tournoi-d-echecs-amateurs",
-        category: CafeEventCategory,
-        type: SoireeJeux
+        category: VolontariatEventCategory,
+        type: ZeroDechet
     },
     {
         id: 28090,
@@ -325,8 +312,8 @@ const eventList: EventData[] = [
         image: "/gallery/gallery-cafe-6.jpeg",
         dateObj: new Date("2025-09-28"),
         eventLink: ROUTES.CONTACT,
-        category: EcologieEventCategory,
-        type: Volontariat
+        category: VolontariatEventCategory,
+        type: Maraude
     },
     {
         id: 2809,
@@ -340,8 +327,8 @@ const eventList: EventData[] = [
         image: "/event/cleanup-20-sept.jpg",
         dateObj: new Date("2025-09-28"),
         eventLink: ROUTES.CONTACT,
-        category: EcologieEventCategory,
-        type: Volontariat
+        category: VolontariatEventCategory,
+        type: Maraude
     },
     {
         id: 210,
@@ -445,8 +432,8 @@ const eventList: EventData[] = [
         image: "/event/cleanup-20-sept.jpg",
         dateObj: new Date("2025-10-26"),
         eventLink: ROUTES.CONTACT,
-        category: EcologieEventCategory,
-        type: Volontariat
+        category: VolontariatEventCategory,
+        type: Maraude
     },
     {
         id: 4121,
@@ -930,7 +917,21 @@ const eventList: EventData[] = [
         category: ArtEventCategory,
         type: EcritureSpontanee
     },
-    
+        {
+        id: 2509,
+        price: 'Gratuit',
+        title: "Tournoi Echecs Amateur",
+        date: "Jeudi 30 Octobre 2025",
+        time: "19:00 à 22:00",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/event/tournoi-echec.png",
+        dateObj: new Date("2025-10-30"),
+        eventLink: "https://www.helloasso.com/associations/association-espace-musset/evenements/tournoi-d-echecs-amateurs",
+        category: CafeEventCategory,
+        type: SoireeJeux
+    },
 
 ]
 

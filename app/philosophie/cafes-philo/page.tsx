@@ -41,7 +41,7 @@ const CafesPhilo = () => {
       <div className="grid lg:grid-cols-2 gap-12 mb-12 container">
         <div className="relative h-80 rounded-lg overflow-hidden">
           <img
-            src="/rencontre-philo.jpeg"
+            src="/conference-philo.jpg"
             alt="Café philosophique"
             className="w-full h-full object-cover"
           />

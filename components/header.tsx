@@ -26,8 +26,8 @@ export const Header = () => {
   ];
 
   const ecologieSubpages = [
-    { name: "Ramassage de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
-    { name: "World CleanUp Day", path: ROUTES.ECOLOGIE.SUBPAGES.JARDINAGE }
+    { name: "Récolte de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
+    { name: "Maraudes", path: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE }
   ];
 
   const artsSubpages = [

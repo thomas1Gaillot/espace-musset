@@ -15,7 +15,7 @@ export const ROUTES = {
     ROOT: "/ecologie",
     SUBPAGES: {
       ATELIERS: "/ecologie/ateliers",
-      JARDINAGE: "/ecologie/jardinage",
+      MARAUDE: "/ecologie/maraude",
       ZERO_DECHET: "/ecologie/zero-dechet"
     }
   },

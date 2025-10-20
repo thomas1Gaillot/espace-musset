@@ -94,9 +94,29 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       textColor: "#713f12"
     },
     "Soirée Jeux": {
-      borderColor: "#0d9488",
-      backgroundColor: "#ecfdfd",
-      textColor: "#134e4a"
+      borderColor: "#FF6F61",
+      backgroundColor: "#ffe8e6ff",
+      textColor: "#FF6F61"
+    },
+    "Yoga du rire": {
+      borderColor: "#f59e0b",
+      backgroundColor: "#fffbeb",
+      textColor: "#78350f"
+    },
+    "Ecriture spontanée": {
+      borderColor: "#ec4899",
+      backgroundColor: "#fdf2f8",
+      textColor: "#831843"
+    },
+    "Cours de piano": {
+      borderColor: "#ec4899",
+      backgroundColor: "#fdf2f8",
+      textColor: "#831843"
+    },
+    Maraude: {
+      borderColor: "#385399",
+      backgroundColor: "#dfe8ffff",
+      textColor: "#23408e"
     }
   }
 

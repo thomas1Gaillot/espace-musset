@@ -37,3 +37,4 @@ export type EventType =
   | "Cours de piano"
   | "Yoga du rire"
   | "Ecriture spontanée"
+  | "Maraude"
