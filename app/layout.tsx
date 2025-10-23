@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "Espace Musset est un lieu de vie associatif à Toulouse dédié à la philosophie, l'écologie, aux arts du corps et au partage culturel.",
   icons: {
     icon: [
-      {url : "favicon/favicon.ico"},
+      {url : "/favicon/favicon.ico"},
       { url: "/favicon/favicon-96x96.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon/favicon-96x96.png", sizes: "16x16", type: "image/png" },
     ],
