@@ -8,26 +8,26 @@ const philosophieEventCategory: { name: string, href: string } = { name: 'Philos
 const ArtEventCategory: { name: string, href: string } = { name: 'Arts', href: '/arts-du-corps' };
 const VolontariatEventCategory: { name: string, href: string } = { name: 'Volontariat', href: '/ecologie' };
 const CafeEventCategory: { name: string, href: string } = { name: 'Café associatif', href: 'cafe-associatif' };
+const QiGong : {name : EventType, href : string} = { name: "Qi Gong", href: ROUTES.ARTS.SUBPAGES.QI_GONG };
+const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS.SUBPAGES.CHANT };
+const YogaDuRire: { name: EventType, href: string } = { name: "Yoga du rire", href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE };
+const EcritureSpontanee: { name: EventType, href: string } = { name: "Ecriture spontanée", href: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE };
+const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montessori", href: ROUTES.ARTS.ROOT };
+const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS.SUBPAGES.THEATRE };
+const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES };
+const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES };
+const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES };
+const RencontrePhilo: { name: EventType, href: string } = { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES };
+const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacle', href: 'cafe-associatif' };
+const SoireeJeux: { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' };
+const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS };
+const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF };
+const ZeroDechet: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET };
+const Maraude: { name: EventType, href: string } = { name: 'Maraude', href: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE };
 
-const Chant: { name: EventType, href: string } = { name: "Chant", href: ROUTES.ARTS.SUBPAGES.CHANT }
-const YogaDuRire: { name: EventType, href: string } = { name: "Yoga du rire", href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE }
-const EcritureSpontanee: { name: EventType, href: string } = { name: "Ecriture spontanée", href: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE }
-const MercrediMontessori: { name: EventType, href: string } = { name: "Mercredi Montessori", href: ROUTES.ARTS.ROOT }
-const TheathreImpro: { name: EventType, href: string } = { name: "Théâtre d'improvisation", href: ROUTES.ARTS.SUBPAGES.THEATRE }
-const CaféPhilo: { name: EventType, href: string } = { name: 'Café philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
-const CinéPhilo: { name: EventType, href: string } = { name: 'Ciné philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES }
-const ConférencesPhilo: { name: EventType, href: string } = { name: 'Conférence', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
-const RencontrePhilo: { name: EventType, href: string } = { name: 'Rencontre philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES }
-const SpectacleDuCafeAsso: { name: EventType, href: string } = { name: 'Spectacle', href: 'cafe-associatif' }
-const SoireeJeux: { name: EventType, href: string } = { name: 'Soirée Jeux', href: 'cafe-associatif' }
-const AtelierPhilo: { name: EventType, href: string } = { name: 'Atelier philo', href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS }
-const PortesOuvertesDuCafeAsso: { name: EventType, href: string } = { name: 'Portes ouvertes', href: ROUTES.CAFE_ASSOCIATIF }
-const ZeroDechet: { name: EventType, href: string } = { name: 'Volontariat', href: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET }
-const Maraude: { name: EventType, href: string } = { name: 'Maraude', href: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE }
-
-const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: ROUTES.ARTS.SUBPAGES.MEDITATION }
-const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href:ROUTES.ARTS.SUBPAGES.CLOWN }
-const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS }
+const Meditation: { name: EventType, href: string } = { name: 'Méditation', href: ROUTES.ARTS.SUBPAGES.MEDITATION };
+const ClownSocratique: { name: EventType, href: string } = { name: 'Clown Socratique', href:ROUTES.ARTS.SUBPAGES.CLOWN };
+const Feldenkrais: { name: EventType, href: string } = { name: 'Feldenkrais', href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS };
 
 const eventList: EventData[] = [
     {
@@ -791,7 +791,7 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
+        image: "/cours/feldenkrais.jpg",
         dateObj: new Date("2025-10-18"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
         category: ArtEventCategory,
@@ -806,7 +806,7 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
+        image: "/cours/feldenkrais.jpg",
         dateObj: new Date("2025-10-25"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
         category: ArtEventCategory,
@@ -821,7 +821,7 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
+        image: "/cours/feldenkrais.jpg",
         dateObj: new Date("2025-11-01"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
         category: ArtEventCategory,
@@ -836,7 +836,7 @@ const eventList: EventData[] = [
         location: "Espace Musset",
         venue: "52 Bis Rue Alfred de Musset",
         city: "31200 Toulouse",
-        image: "/espace-musset.jpeg",
+        image: "/cours/feldenkrais.jpg",
         dateObj: new Date("2025-11-08"),
         eventContact: 'Ghislaine, au 06 21 87 03 85',
         category: ArtEventCategory,
@@ -992,7 +992,81 @@ const eventList: EventData[] = [
         category: ArtEventCategory,
         type: ClownSocratique
     },
-
+     {
+        id: 231020251445,
+        price: "Nous contacter",
+        title: "Qi Gong",
+        date: "Mardi 28 Octobre",
+        time: "18:30 à 19:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/qi-gong.png",
+        dateObj: new Date("2025-10-28"),
+        eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+        category: ArtEventCategory,
+        type: QiGong
+    },
+    {
+        id: 231020251446,
+        price: "Nous contacter",
+        title: "Qi Gong",
+        date: "Mardi 04 Novembre",
+        time: "18:30 à 19:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/qi-gong.png",
+        dateObj: new Date("2025-11-04"),
+        eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+        category: ArtEventCategory,
+        type: QiGong
+    },
+    {
+        id: 231020251447,
+        price: "Nous contacter",
+        title: "Qi Gong",
+        date: "Mardi 11 Novembre",
+        time: "18:30 à 19:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/qi-gong.png",
+        dateObj: new Date("2025-11-11"),
+        eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+        category: ArtEventCategory,
+        type: QiGong
+    },
+    {
+        id: 231020251448,
+        price: "Nous contacter",
+        title: "Qi Gong",
+        date: "Mardi 25 Novembre",
+        time: "18:30 à 19:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/qi-gong.png",
+        dateObj: new Date("2025-11-25"),
+        eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+        category: ArtEventCategory,
+        type: QiGong
+    },
+    {
+        id: 231020251449,
+        price: "Nous contacter",
+        title: "Qi Gong",
+        date: "Mardi 18 Novembre",
+        time: "18:30 à 19:30",
+        location: "Espace Musset",
+        venue: "52 Bis Rue Alfred de Musset",
+        city: "31200 Toulouse",
+        image: "/cours/qi-gong.png",
+        dateObj: new Date("2025-11-18"),
+        eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+        category: ArtEventCategory,
+        type: QiGong
+    },
 ]
 
 

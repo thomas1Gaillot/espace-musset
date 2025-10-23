@@ -31,6 +31,7 @@ export const Header = () => {
   ];
 
   const artsSubpages = [
+     { name: "Qi gong", path: ROUTES.ARTS.SUBPAGES.QI_GONG },
     { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
     { name: "Feldenkrais", path: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
 

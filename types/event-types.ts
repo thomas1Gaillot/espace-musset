@@ -19,7 +19,8 @@ export type EventType =
   | "Café philo"
   | "Feldenkrais"
   | "Atelier philo"
-  | 'Clown Socratique'
+  | "Clown Socratique"
+  | "Qi Gong"
   | "Méditation"
   | "Conférence"
   | "Rencontre philo"

@@ -117,6 +117,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       borderColor: "#385399",
       backgroundColor: "#dfe8ffff",
       textColor: "#23408e"
+    },
+    "Qi Gong":{
+      borderColor: "#fb2c36",
+      backgroundColor: "#ffffffff",
+      textColor: "#fb2c36"
     }
   }
 

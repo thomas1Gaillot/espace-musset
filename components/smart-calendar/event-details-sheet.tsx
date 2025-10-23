@@ -84,7 +84,7 @@ export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetP
               }}
             >
               <ExternalLink className="h-4 w-4 mr-1" />
-              {"Voir l'annonce"}
+              {"En savoir plus"}
             </Button>
           )}
           {event.eventContact && <p className="w-full text-center p-2 bg-primary/10">CONTACT : {event.eventContact}</p>}

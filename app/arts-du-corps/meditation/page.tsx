@@ -1,8 +1,13 @@
+import EventList from "@/components/event-list";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import { EuroIcon, HourglassIcon, MapIcon, SettingsIcon } from "lucide-react";
 
-const Meditation = () => (
+const Meditation = () => {
+    const meditationEvents = eventList.filter((e) => e.category.name === "Arts" && e.type.name === "Méditation");
+    return (
+    
     <div className="min-h-screen py-12 px-4">
         <div className="container mx-auto">
             <Breadcrumb className="mb-8">
@@ -59,6 +64,11 @@ const Meditation = () => (
                     </div>
                 </div>
             </div>
+
+             <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
+                    <EventList data={meditationEvents} title="Nos prochains évènements" />
+            </div>
+                  
             <div className="text-center bg-secondary/10 p-4 rounded-lg flex flex-col items-center">
                 <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
                     Contact
@@ -92,5 +102,6 @@ const Meditation = () => (
         </div>
     </div>
 );
+};
 
 export default Meditation;

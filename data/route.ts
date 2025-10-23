@@ -32,6 +32,7 @@ export const ROUTES = {
       PIANO : '/arts-du-corps/piano',
       YOGA_DU_RIRE : '/arts-du-corps/yoga-du-rire',
       ECRITURE_SPONTANEE : '/arts-du-corps/ecriture-spontanee',
+      QI_GONG:'/arts-du-corps/qi-gong',
     }
   },
   LOCATION_SALLES: "/location-salles",
