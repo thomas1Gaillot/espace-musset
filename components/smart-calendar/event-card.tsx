@@ -7,11 +7,10 @@ import { EventData } from "@/types/event-types"
 interface EventCardProps {
   event: EventData
   onClick?: () => void
-  truncate: boolean
 }
 
 
-export function EventCard({ event, onClick, truncate = false }: EventCardProps) {
+export function EventCard({ event, onClick }: EventCardProps) {
   const { borderColor, backgroundColor, textColor } = getEventColor(event.type.name)
 
   return (
@@ -32,7 +31,7 @@ export function EventCard({ event, onClick, truncate = false }: EventCardProps) 
         {event.type.name}
       </div>
 
-      <div className={cn("opacity-[75%] ", truncate && 'truncate')}>
+      <div className={cn("opacity-[75%]")}>
         <span className="w-max ">
           {event.time.split(" à ")[0]}
         </span>

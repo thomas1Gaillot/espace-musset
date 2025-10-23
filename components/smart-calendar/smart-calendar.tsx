@@ -108,13 +108,13 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
           <div className="grid grid-cols-7 flex-1 overflow-hidden">
             {calendarDays.map((date, index) => {
               const dateEvents = date ? eventsMap.get(date.toDateString()) || [] : []
-              const hasMoreEvents = dateEvents.length > 2
-              const visibleEvents = dateEvents.slice(0, 2)
+              const hasMoreEvents = dateEvents.length > 3
+              const visibleEvents = dateEvents.slice(0, 3)
 
               return (
                 <div
                   key={index}
-                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[100px]  w-[54px] sm:h-[100px] sm:w-[80px] lg:h-[120px] lg:w-[120px]  overflow-hidden
+                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[120px]  w-[54px] sm:h-[120px] sm:w-[80px] lg:h-[140px] lg:w-[120px]  overflow-hidden
                     ${!date ? "bg-gray-50/60" : isCurrentMonth(date) ? "bg-transparent" : "bg-gray-50/60"
                     }`}
                 >
@@ -136,7 +136,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
 
                       <div className="space-y-1  overflow-hidden">
                         {visibleEvents.map((event) => (
-                          <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} truncate={visibleEvents.length > 1} />
+                          <EventCard key={event.id} event={event} onClick={() => handleEventClick(event)} />
                         ))}
                         {hasMoreEvents && (
                           <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">+{dateEvents.length - 2} autre{dateEvents.length - 2 > 1 ? '(s)' : ''}</div>
