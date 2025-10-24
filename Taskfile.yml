@@ -9,11 +9,16 @@ tasks:
   push:
     desc: Préparer le code pour la production et pousser sur main (task push MSG="Mon commit")
     vars:
-      MSG: "Auto commit"
+      MSG: ""
     cmds:
       - pnpm format
       - pnpm lint:fix
       - pnpm build
       - git add .
-      - git commit -m "{{.MSG}}"
+      - |
+        if [ -z "{{.MSG}}" ]; then
+          git commit -m "Auto commit"
+        else
+          git commit -m "{{.MSG}}"
+        fi
       - git push origin main
