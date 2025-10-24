@@ -1,14 +1,26 @@
-'use client'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { ROUTES } from "@/data/route"
-import { useRef, useState } from "react"
-import { toast } from "sonner"
+"use client";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ROUTES } from "@/data/route";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 export default function ContactPage() {
   return (
@@ -30,7 +42,9 @@ export default function ContactPage() {
             {"Contact"}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {"Nous serions ravis d'échanger avec vous. N'hésitez pas à nous contacter pour toute question ou pour rejoindre notre communauté."}
+            {
+              "Nous serions ravis d'échanger avec vous. N'hésitez pas à nous contacter pour toute question ou pour rejoindre notre communauté."
+            }
           </p>
         </div>
 
@@ -44,7 +58,7 @@ export default function ContactPage() {
         </div>
 
         {/* Plan et accès */}
-        <div id='map' className="mt-12">
+        <div id="map" className="mt-12">
           <Card>
             <CardHeader>
               <CardTitle className="font-serif text-2xl text-center">{"Nous trouver"}</CardTitle>
@@ -85,7 +99,11 @@ function ContactInfo() {
           <div>
             <h3 className="font-semibold text-foreground mb-2">{"Adresse"}</h3>
             <p className="text-muted-foreground">
-              {"52 Bis Rue Alfred de Musset"}<br />{"31200 Toulouse"}<br />{"France"}
+              {"52 Bis Rue Alfred de Musset"}
+              <br />
+              {"31200 Toulouse"}
+              <br />
+              {"France"}
             </p>
           </div>
 
@@ -95,9 +113,13 @@ function ContactInfo() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-2">{"Depuis la station de métro, à pied"}</h3>
+            <h3 className="font-semibold text-foreground mb-2">
+              {"Depuis la station de métro, à pied"}
+            </h3>
             <p className="text-muted-foreground">
-              {"Au fond de la place, prendre la rue du Général Bourbaki vers la droite, puis la première à gauche, rue Biot. Au bout de cette rue, prendre la rue Alfred de Musset à gauche. Notre local est à 20 mètres à gauche."}
+              {
+                "Au fond de la place, prendre la rue du Général Bourbaki vers la droite, puis la première à gauche, rue Biot. Au bout de cette rue, prendre la rue Alfred de Musset à gauche. Notre local est à 20 mètres à gauche."
+              }
             </p>
           </div>
 
@@ -119,33 +141,47 @@ function ContactInfo() {
         </CardHeader>
         <CardContent>
           <div className="space-y-2 text-muted-foreground">
-            <p><strong>{"Lundi:"}</strong> {"17h00 - 22h00"}</p>
-            <p><strong>{"Mardi:"}</strong> {"17h00 - 22h00"}</p>
-            <p><strong>{"Mercredi:"}</strong> {"17h00 - 22h00"}</p>
-            <p><strong>{"Jeudi:"}</strong> {"(Lors des activités programmées)"}</p>
-            <p><strong>{"Vendredi:"}</strong> {"(Lors des activités programmées)"}</p>
-            <p><strong>{"Samedi:"}</strong> {"14h00 - 18h00"}</p>
-            <p><strong>{"Dimanche:"}</strong> {"(Lors des activités programmées)"}</p>
+            <p>
+              <strong>{"Lundi:"}</strong> {"17h00 - 22h00"}
+            </p>
+            <p>
+              <strong>{"Mardi:"}</strong> {"17h00 - 22h00"}
+            </p>
+            <p>
+              <strong>{"Mercredi:"}</strong> {"17h00 - 22h00"}
+            </p>
+            <p>
+              <strong>{"Jeudi:"}</strong> {"(Lors des activités programmées)"}
+            </p>
+            <p>
+              <strong>{"Vendredi:"}</strong> {"(Lors des activités programmées)"}
+            </p>
+            <p>
+              <strong>{"Samedi:"}</strong> {"14h00 - 18h00"}
+            </p>
+            <p>
+              <strong>{"Dimanche:"}</strong> {"(Lors des activités programmées)"}
+            </p>
           </div>
         </CardContent>
       </Card>
     </>
-  )
+  );
 }
 
 // ---------------------------
 // 📧 Formulaire de contact
 // ---------------------------
 function ContactSection() {
-  const formRef = useRef<HTMLFormElement>(null)
-  const [subject, setSubject] = useState("")
+  const formRef = useRef<HTMLFormElement>(null);
+  const [subject, setSubject] = useState("");
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
   const subjectMap: Record<string, string> = {
     "cafe-philo": "Inscription à un Café philo",
@@ -153,20 +189,20 @@ function ContactSection() {
     "cine-philo": "Inscription à un Ciné philo",
     "rencontre-philo": "Inscription à une Rencontre philo",
     "conference-philo": "Inscription à une Conférence philo",
-    "chant": "Inscription à un atelier Chant",
+    chant: "Inscription à un atelier Chant",
     "yoga-du-rire": "Inscription à un atelier Yoga du rire",
     "ecriture-spontanee": "Inscription à un atelier d'Écriture spontanée",
     "theatre-impro": "Inscription à un atelier Théâtre d’improvisation",
-    "feldenkrais": "Inscription à un atelier Feldenkrais",
+    feldenkrais: "Inscription à un atelier Feldenkrais",
     "clown-socratique": "Inscription à un atelier Clown Socratique",
-    "meditation": "Inscription à une séance de Méditation",
+    meditation: "Inscription à une séance de Méditation",
     "mercredi-montessori": "Inscription à un Mercredi Montessori",
-    "volontariat": "Demande pour participer au Volontariat",
+    volontariat: "Demande pour participer au Volontariat",
     "portes-ouvertes": "Inscription aux Portes ouvertes",
     "soiree-jeux": "Participation à une Soirée Jeux",
-    "spectacle": "Informations sur un Spectacle",
-    "autre": "Autre demande"
-  }
+    spectacle: "Informations sur un Spectacle",
+    autre: "Autre demande",
+  };
 
   const defaultMessages: Record<string, string> = {
     "cafe-philo": "Bonjour,\nJe souhaite m'inscrire à un Café philo.",
@@ -174,33 +210,33 @@ function ContactSection() {
     "cine-philo": "Bonjour,\nJe souhaite assister à un Ciné philo.",
     "rencontre-philo": "Bonjour,\nJe souhaite participer à une Rencontre philo.",
     "conference-philo": "Bonjour,\nJe souhaite assister à une Conférence philo.",
-    "chant": "Bonjour,\nJe souhaite m'inscrire à un atelier de Chant.",
+    chant: "Bonjour,\nJe souhaite m'inscrire à un atelier de Chant.",
     "yoga-du-rire": "Bonjour,\nJe souhaite participer à un atelier de Yoga du rire.",
     "ecriture-spontanee": "Bonjour,\nJe souhaite participer à un atelier d'Écriture spontanée.",
     "theatre-impro": "Bonjour,\nJe souhaite participer à un atelier de Théâtre d’improvisation.",
-    "feldenkrais": "Bonjour,\nJe souhaite découvrir la méthode Feldenkrais.",
+    feldenkrais: "Bonjour,\nJe souhaite découvrir la méthode Feldenkrais.",
     "clown-socratique": "Bonjour,\nJe souhaite participer à un atelier de Clown Socratique.",
-    "meditation": "Bonjour,\nJe souhaite participer à une séance de Méditation.",
+    meditation: "Bonjour,\nJe souhaite participer à une séance de Méditation.",
     "mercredi-montessori": "Bonjour,\nJe souhaite inscrire mon enfant à un Mercredi Montessori.",
-    "volontariat": "Bonjour,\nJe souhaite participer à une activité de Volontariat.",
+    volontariat: "Bonjour,\nJe souhaite participer à une activité de Volontariat.",
     "portes-ouvertes": "Bonjour,\nJe souhaite venir aux Portes ouvertes.",
     "soiree-jeux": "Bonjour,\nJe souhaite participer à une Soirée Jeux.",
-    "spectacle": "Bonjour,\nJe souhaite obtenir des informations sur un Spectacle.",
-    "autre": ""
-  }
+    spectacle: "Bonjour,\nJe souhaite obtenir des informations sur un Spectacle.",
+    autre: "",
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSendMail = () => {
-    const { firstname, lastname, email, phone, message } = formData
+    const { firstname, lastname, email, phone, message } = formData;
     if (!subject || !message.trim()) {
-      toast("Veuillez sélectionner un sujet et écrire un message.")
-      return
+      toast("Veuillez sélectionner un sujet et écrire un message.");
+      return;
     }
 
-    const subjectLabel = subjectMap[subject] || "Autre demande"
+    const subjectLabel = subjectMap[subject] || "Autre demande";
     const body = `
 Prénom: ${firstname}
 Nom: ${lastname}
@@ -208,13 +244,19 @@ Email: ${email}
 Téléphone: ${phone}
 
 ${message}
-    `
-    const mailtoLink = `mailto:contact@espace-musset.com?subject=${encodeURIComponent(subjectLabel)}&body=${encodeURIComponent(body)}`
-    window.location.href = mailtoLink
-  }
+    `;
+    const mailtoLink = `mailto:contact@espace-musset.com?subject=${encodeURIComponent(subjectLabel)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
+  };
 
   return (
-    <form ref={formRef} onSubmit={e => { e.preventDefault(); handleSendMail() }}>
+    <form
+      ref={formRef}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSendMail();
+      }}
+    >
       <Card className="space-y-6 mb-8">
         <CardHeader>
           <CardTitle className="font-serif text-2xl">{"Nous contacter"}</CardTitle>
@@ -223,20 +265,46 @@ ${message}
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <Label htmlFor="firstname">{"Prénom"}</Label>
-              <Input name='firstname' id="firstname" placeholder="Votre prénom" value={formData.firstname} onChange={handleChange} />
+              <Input
+                name="firstname"
+                id="firstname"
+                placeholder="Votre prénom"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
             </div>
             <div>
               <Label htmlFor="lastname">{"Nom"}</Label>
-              <Input name="lastname" id="lastname" placeholder="Votre nom" value={formData.lastname} onChange={handleChange} />
+              <Input
+                name="lastname"
+                id="lastname"
+                placeholder="Votre nom"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
             </div>
           </div>
           <div>
             <Label htmlFor="email">{"Email"}</Label>
-            <Input name="email" id="email" type="email" placeholder="votre.email@example.com" value={formData.email} onChange={handleChange} />
+            <Input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="votre.email@example.com"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </div>
           <div>
             <Label htmlFor="phone">{"Téléphone (optionnel)"}</Label>
-            <Input name="phone" id="phone" type="tel" placeholder="06 XX XX XX XX" value={formData.phone} onChange={handleChange} />
+            <Input
+              name="phone"
+              id="phone"
+              type="tel"
+              placeholder="06 XX XX XX XX"
+              value={formData.phone}
+              onChange={handleChange}
+            />
           </div>
 
           {/* Select dynamique */}
@@ -245,11 +313,11 @@ ${message}
             <Select
               value={subject}
               onValueChange={(value) => {
-                setSubject(value)
+                setSubject(value);
                 setFormData((prev) => ({
                   ...prev,
                   message: defaultMessages[value] || prev.message,
-                }))
+                }));
               }}
             >
               <SelectTrigger id="subject">
@@ -273,7 +341,9 @@ ${message}
                 <SelectItem value="meditation">{"Arts - Méditation"}</SelectItem>
 
                 {/* Café associatif */}
-                <SelectItem value="portes-ouvertes">{"Café associatif - Portes ouvertes"}</SelectItem>
+                <SelectItem value="portes-ouvertes">
+                  {"Café associatif - Portes ouvertes"}
+                </SelectItem>
                 <SelectItem value="soiree-jeux">{"Café associatif - Soirée Jeux"}</SelectItem>
                 <SelectItem value="spectacle">{"Café associatif - Spectacle"}</SelectItem>
 
@@ -290,19 +360,21 @@ ${message}
 
           <div>
             <Label htmlFor="message">{"Message"}</Label>
-            <Textarea name="message" id="message" rows={6} placeholder="Décrivez votre demande..." value={formData.message} onChange={handleChange} />
+            <Textarea
+              name="message"
+              id="message"
+              rows={6}
+              placeholder="Décrivez votre demande..."
+              value={formData.message}
+              onChange={handleChange}
+            />
           </div>
 
-          <Button
-            data-id={"send-contact-mailto-button"}
-            className="w-full"
-            size="lg"
-            type="submit"
-          >
+          <Button data-id={"send-contact-mailto-button"} className="w-full" size="lg" type="submit">
             {"Envoyer le message"}
           </Button>
         </CardContent>
       </Card>
     </form>
-  )
+  );
 }

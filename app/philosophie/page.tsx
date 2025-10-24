@@ -1,13 +1,26 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { eventList } from "@/data/data.allevents";
 import { philosophieContent } from "@/data/philosophie.data";
 import Link from "next/link";
 import EventList from "../../components/event-list";
 
 export default function PhilosophiePage() {
-  const philoEvents = eventList.filter((e) => e.category.name === 'Philosophie')
+  const philoEvents = eventList.filter((e) => e.category.name === "Philosophie");
 
   const { breadcrumb, hero, intro, subpages, approche, cta } = philosophieContent;
 
@@ -17,9 +30,7 @@ export default function PhilosophiePage() {
       <Breadcrumb className="mb-8 container">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href={breadcrumb.home.link}>
-              {breadcrumb.home.label}
-            </BreadcrumbLink>
+            <BreadcrumbLink href={breadcrumb.home.link}>{breadcrumb.home.label}</BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>{breadcrumb.current}</BreadcrumbItem>
@@ -38,18 +49,12 @@ export default function PhilosophiePage() {
 
       <div className="grid lg:grid-cols-2 gap-12 mb-12 container">
         <div className="relative h-80 rounded-lg overflow-hidden">
-          <img
-            src={hero.image.url}
-            alt={hero.image.alt}
-            className="w-full h-full object-cover"
-          />
+          <img src={hero.image.url} alt={hero.image.alt} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
 
         <div className="flex flex-col justify-center space-y-6">
-          <h2 className="font-serif text-2xl font-semibold text-foreground">
-            {intro.title}
-          </h2>
+          <h2 className="font-serif text-2xl font-semibold text-foreground">{intro.title}</h2>
           <div className="space-y-4 text-muted-foreground">
             {intro.paragraphs.map((p, idx) => (
               <p key={idx}>{p}</p>
@@ -74,7 +79,11 @@ export default function PhilosophiePage() {
                 <CardDescription className="text-sm">{page.description}</CardDescription>
               </CardContent>
               <CardFooter>
-                <Button asChild className="w-full" id={`philo-${page.title.toLowerCase().replace(/\s/g, "-")}-button`}>
+                <Button
+                  asChild
+                  className="w-full"
+                  id={`philo-${page.title.toLowerCase().replace(/\s/g, "-")}-button`}
+                >
                   <Link href={page.link}>{page.buttonLabel}</Link>
                 </Button>
               </CardFooter>
@@ -83,7 +92,7 @@ export default function PhilosophiePage() {
         </div>
       </div>
       <div className="w-full ml-[24px] mr-[4px] max-w-[calc(100vw-28px)]  mb-8 grid justify-center">
-        <EventList data={philoEvents} title='Événements philo à venir' />
+        <EventList data={philoEvents} title="Événements philo à venir" />
       </div>
 
       {/* Approche */}
@@ -106,9 +115,7 @@ export default function PhilosophiePage() {
 
       {/* CTA */}
       <div className="text-center container">
-        <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-          {cta.title}
-        </h2>
+        <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">{cta.title}</h2>
         <p className="text-lg text-muted-foreground mb-6">{cta.description}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button size="lg" id={"cta-ateliers-button"}>

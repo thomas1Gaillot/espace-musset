@@ -1,17 +1,10 @@
-// eslint.config.js
 import nextPlugin from "@next/eslint-plugin-next";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 
 export default [
   {
-    ignores: [
-      "node_modules",
-      ".next",
-      "dist",
-      "build",
-      "out",
-    ],
+    ignores: ["node_modules", ".next", "dist", "build", "out", "eslint.config.js"],
   },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
@@ -30,10 +23,22 @@ export default [
     rules: {
       ...nextPlugin.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
+      semi: ["error", "always"],
+      quotes: ["error", "double"],
 
-      // Tes règles custom ici
-      "semi": ["error", "always"],
-      "quotes": ["error", "double"],
+      // Désactiver le warning sur <img>
+      "@next/next/no-img-element": "off",
+
+      // Tolérance sur les cas de props inutilisées (ex. hooks UI)
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ],
+
+      "@typescript-eslint/no-explicit-any": "warn",
     },
   },
 ];

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,23 +27,22 @@ export const Header = () => {
 
   const ecologieSubpages = [
     { name: "Récolte de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
-    { name: "Maraudes", path: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE }
+    { name: "Maraudes", path: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE },
   ];
 
   const artsSubpages = [
-     { name: "Qi gong", path: ROUTES.ARTS.SUBPAGES.QI_GONG },
+    { name: "Qi gong", path: ROUTES.ARTS.SUBPAGES.QI_GONG },
     { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
     { name: "Feldenkrais", path: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
-
+    { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
   ];
   const activitesPages = [
-    { name: "Cours de piano", path: ROUTES.ARTS.SUBPAGES.PIANO },
-    { name: "Atelier chant", path: ROUTES.ARTS.SUBPAGES.CHANT },
-    { name: "Théâtre d'impro", path: ROUTES.ARTS.SUBPAGES.THEATRE },
-    { name: "Clown socratiques", path: ROUTES.ARTS.SUBPAGES.CLOWN },
-    { name: "Mercredi Montessori", path: ROUTES.ARTS.SUBPAGES.MONTESSORI },
-    { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
-    { name: "Atelier Ecriture spontanée", path: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE },
+    { name: "Cours de piano", path: ROUTES.ACTIVITES.SUBPAGES.PIANO },
+    { name: "Atelier chant", path: ROUTES.ACTIVITES.SUBPAGES.CHANT },
+    { name: "Théâtre d'impro", path: ROUTES.ACTIVITES.SUBPAGES.THEATRE },
+    { name: "Clown socratiques", path: ROUTES.ACTIVITES.SUBPAGES.CLOWN },
+    { name: "Mercredi Montessori", path: ROUTES.ACTIVITES.SUBPAGES.MONTESSORI },
+    { name: "Atelier Ecriture spontanée", path: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE },
   ];
 
   return (
@@ -59,19 +58,24 @@ export const Header = () => {
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
               <p className="text-xs text-muted-foreground">Centre culturel & associatif</p>
             </div>
-
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href={ROUTES.ACCUEIL} className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+            <Link href={ROUTES.ACCUEIL} className={`nav-link ${isActive("/") ? "active" : ""}`}>
               Accueil
             </Link>
 
-            <Link href={ROUTES.CAFE_ASSOCIATIF} className={`nav-link ${isActive('/cafe-associatif') ? 'active' : ''}`}>
+            <Link
+              href={ROUTES.CAFE_ASSOCIATIF}
+              className={`nav-link ${isActive("/cafe-associatif") ? "active" : ""}`}
+            >
               Café associatif
             </Link>
-            <Link href={ROUTES.LOCATION_SALLES} className={`nav-link ${isActive('/location-salles') ? 'active' : ''}`}>
+            <Link
+              href={ROUTES.LOCATION_SALLES}
+              className={`nav-link ${isActive("/location-salles") ? "active" : ""}`}
+            >
               Location de salles
             </Link>
             <DropdownMenu>
@@ -81,11 +85,15 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.ARTS.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ARTS.ROOT} className="w-full">
+                    Vue d'ensemble
+                  </Link>
                 </DropdownMenuItem>
                 {artsSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
-                    <Link href={page.path} className="w-full">{page.name}</Link>
+                    <Link href={page.path} className="w-full">
+                      {page.name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -97,11 +105,15 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.ARTS.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ACTIVITES.ROOT} className="w-full">
+                    Vue d'ensemble
+                  </Link>
                 </DropdownMenuItem>
                 {activitesPages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
-                    <Link href={page.path} className="w-full">{page.name}</Link>
+                    <Link href={page.path} className="w-full">
+                      {page.name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -114,11 +126,15 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.ECOLOGIE.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.ECOLOGIE.ROOT} className="w-full">
+                    Vue d'ensemble
+                  </Link>
                 </DropdownMenuItem>
                 {ecologieSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
-                    <Link href={page.path} className="w-full">{page.name}</Link>
+                    <Link href={page.path} className="w-full">
+                      {page.name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -130,23 +146,26 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-border">
                 <DropdownMenuItem asChild>
-                  <Link href={ROUTES.PHILOSOPHIE.ROOT} className="w-full">Vue d'ensemble</Link>
+                  <Link href={ROUTES.PHILOSOPHIE.ROOT} className="w-full">
+                    Vue d'ensemble
+                  </Link>
                 </DropdownMenuItem>
                 {philosophieSubpages.map((page) => (
                   <DropdownMenuItem key={page.path} asChild>
-                    <Link href={page.path} className="w-full">{page.name}</Link>
+                    <Link href={page.path} className="w-full">
+                      {page.name}
+                    </Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
-
-
-
-            <Link href={ROUTES.CONTACT} className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>
+            <Link
+              href={ROUTES.CONTACT}
+              className={`nav-link ${isActive("/contact") ? "active" : ""}`}
+            >
               Contact
             </Link>
-
           </nav>
 
           {/* Mobile Menu Button */}
@@ -168,19 +187,39 @@ export const Header = () => {
               <Link href={ROUTES.ACCUEIL} className="nav-link" onClick={() => setIsMenuOpen(false)}>
                 Accueil
               </Link>
-              <Link href={ROUTES.CAFE_ASSOCIATIF} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href={ROUTES.CAFE_ASSOCIATIF}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Café associatif
               </Link>
-              <Link href={ROUTES.LOCATION_SALLES} className="nav-link" onClick={() => setIsMenuOpen(false)}>
-                Mise à disposition  de salles
+              <Link
+                href={ROUTES.LOCATION_SALLES}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Mise à disposition de salles
               </Link>
-              <Link href={ROUTES.ARTS.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href={ROUTES.ARTS.ROOT}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Arts
               </Link>
-              <Link href={ROUTES.ECOLOGIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href={ROUTES.ECOLOGIE.ROOT}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Écologie
               </Link>
-              <Link href={ROUTES.PHILOSOPHIE.ROOT} className="nav-link" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href={ROUTES.PHILOSOPHIE.ROOT}
+                className="nav-link"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Philosophie
               </Link>
               <Link href={ROUTES.CONTACT} className="nav-link" onClick={() => setIsMenuOpen(false)}>

@@ -8,6 +8,7 @@ import {
   LandmarkIcon,
   LaughIcon,
   LeafIcon,
+  LucideProps,
   MoveIcon,
   Music2Icon,
   PianoIcon,
@@ -16,14 +17,18 @@ import {
   SignatureIcon,
   Star,
   StickerIcon,
-  WindIcon
+  WindIcon,
 } from "lucide-react";
 import Link from "next/link";
 import type React from "react";
 
-
-
-const eventData: { type: EventType; icon: React.ComponentType<any>, href: string }[] = [
+const eventData: {
+  type: EventType;
+  icon: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
+  href: string;
+}[] = [
   { type: "Café philo", icon: Coffee, href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES },
   { type: "Atelier philo", icon: LandmarkIcon, href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
   { type: "Conférence", icon: Presentation, href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES },
@@ -32,21 +37,25 @@ const eventData: { type: EventType; icon: React.ComponentType<any>, href: string
   { type: "Cours de philosophie", icon: GraduationCap, href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
   { type: "Volontariat", icon: LeafIcon, href: ROUTES.ECOLOGIE.SUBPAGES.ATELIERS },
   { type: "Spectacle", icon: Star, href: ROUTES.CAFE_ASSOCIATIF },
-  { type: "Théâtre", icon: Drama, href: ROUTES.ARTS.SUBPAGES.THEATRE },
-  { type: "Chant", icon: Music2Icon, href: ROUTES.ARTS.SUBPAGES.CHANT },
-  { type: "Clown Socratique", icon: LaughIcon, href: ROUTES.ARTS.SUBPAGES.CLOWN },
+  { type: "Théâtre", icon: Drama, href: ROUTES.ACTIVITES.SUBPAGES.THEATRE },
+  { type: "Chant", icon: Music2Icon, href: ROUTES.ACTIVITES.SUBPAGES.CHANT },
+  { type: "Clown Socratique", icon: LaughIcon, href: ROUTES.ACTIVITES.SUBPAGES.CLOWN },
   { type: "Feldenkrais", icon: MoveIcon, href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
   { type: "Méditation", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.MEDITATION },
-  { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ARTS.SUBPAGES.PIANO },
-  { type: "Ecriture spontanée", icon: SignatureIcon, href: ROUTES.ARTS.SUBPAGES.ECRITURE_SPONTANEE },
+  { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ACTIVITES.SUBPAGES.PIANO },
+  {
+    type: "Ecriture spontanée",
+    icon: SignatureIcon,
+    href: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
+  },
   { type: "Yoga du rire", icon: StickerIcon, href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
-]
+];
 
 export default function EventsSection() {
   return (
     <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 mx-auto container">
       {eventData.map((event) => {
-        const IconComponent = event.icon
+        const IconComponent = event.icon;
         return (
           <Link
             key={event.type}
@@ -60,8 +69,8 @@ export default function EventsSection() {
               {event.type}
             </h3>
           </Link>
-        )
+        );
       })}
     </div>
-  )
+  );
 }

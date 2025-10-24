@@ -1,4 +1,11 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/data/route";
 import Link from "next/link";
@@ -10,15 +17,11 @@ const AteliersEcologiques = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href={ROUTES.ACCUEIL}>
-                Accueil
-              </BreadcrumbLink>
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>Accueil</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={ROUTES.ECOLOGIE.ROOT}>
-                Ecologie
-              </BreadcrumbLink>
+              <BreadcrumbLink href={ROUTES.ECOLOGIE.ROOT}>Ecologie</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -32,8 +35,8 @@ const AteliersEcologiques = () => {
             Ateliers Écologiques
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Apprenez les gestes concrets du quotidien pour réduire votre impact
-            environnemental et adopter un mode de vie plus durable.
+            Apprenez les gestes concrets du quotidien pour réduire votre impact environnemental et
+            adopter un mode de vie plus durable.
           </p>
         </div>
 
@@ -53,13 +56,12 @@ const AteliersEcologiques = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Nos ateliers écologiques vous accompagnent dans l'adoption de pratiques
-                respectueuses de l'environnement. Avec des approches pratiques et
-                accessibles, nous explorons ensemble les solutions durables.
+                respectueuses de l'environnement. Avec des approches pratiques et accessibles, nous
+                explorons ensemble les solutions durables.
               </p>
               <p>
-                Chaque atelier allie théorie et pratique : comprendre les enjeux
-                environnementaux et apprendre des techniques concrètes à appliquer
-                immédiatement dans votre quotidien.
+                Chaque atelier allie théorie et pratique : comprendre les enjeux environnementaux et
+                apprendre des techniques concrètes à appliquer immédiatement dans votre quotidien.
               </p>
             </div>
           </div>
@@ -69,28 +71,28 @@ const AteliersEcologiques = () => {
           {[
             {
               title: "Cosmétiques naturels",
-              description: "Créez vos produits de beauté sans produits chimiques"
+              description: "Créez vos produits de beauté sans produits chimiques",
             },
             {
               title: "Produits ménagers écologiques",
-              description: "Fabriquez vos nettoyants naturels et efficaces"
+              description: "Fabriquez vos nettoyants naturels et efficaces",
             },
             {
               title: "Réparation d'objets",
-              description: "Donnez une seconde vie à vos appareils et textiles"
+              description: "Donnez une seconde vie à vos appareils et textiles",
             },
             {
               title: "Compostage urbain",
-              description: "Transformez vos déchets organiques en ressource"
+              description: "Transformez vos déchets organiques en ressource",
             },
             {
               title: "Alimentation durable",
-              description: "Adoptez une alimentation respectueuse de la planète"
+              description: "Adoptez une alimentation respectueuse de la planète",
             },
             {
               title: "Économies d'énergie",
-              description: "Réduisez votre consommation énergétique au quotidien"
-            }
+              description: "Réduisez votre consommation énergétique au quotidien",
+            },
           ].map((atelier, index) => (
             <div key={index} className="bg-sage-50/50 rounded-lg p-6">
               <h3 className="font-serif text-lg font-semibold text-foreground mb-2">
@@ -109,21 +111,24 @@ const AteliersEcologiques = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Fréquence</h3>
               <p className="text-muted-foreground">
-                2 ateliers par mois<br />
+                2 ateliers par mois
+                <br />
                 Samedi 14h-17h
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-2">Tarif</h3>
               <p className="text-muted-foreground">
-                25€ par atelier<br />
+                25€ par atelier
+                <br />
                 (matériaux inclus)
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-2">Public</h3>
               <p className="text-muted-foreground">
-                Adultes et adolescents<br />
+                Adultes et adolescents
+                <br />
                 12 participants max
               </p>
             </div>

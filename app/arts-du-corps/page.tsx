@@ -1,5 +1,11 @@
 import EventList from "@/components/event-list";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { eventList } from "@/data/data.allevents";
@@ -7,30 +13,42 @@ import { ROUTES } from "@/data/route";
 import Link from "next/link";
 
 export default function ArtsCorpsPage() {
-  const artsDuCorpsEvents = eventList.filter((e) => e.category.name === "Arts" && (
-    e.type.name === "Feldenkrais" ||
-  e.type.name === "Qi Gong" ||
-   e.type.name === "Méditation"
- ));
+  const artsDuCorpsEvents = eventList.filter(
+    (e) =>
+      e.category.name === "Arts" &&
+      (e.type.name === "Feldenkrais" ||
+        e.type.name === "Qi Gong" ||
+        e.type.name === "Méditation" ||
+        e.type.name === "Yoga du rire")
+  );
   const subpages = [
     {
       title: "Qi Gong",
-      description: "Venez découvrir le Qi Gong et les arts Taoistes périphériques à cette pratique avec Martial Gontrand, enseignant en Qi Gong depuis 3 ans chez Leçon du Gong.",
+      description:
+        "Venez découvrir le Qi Gong et les arts Taoistes périphériques à cette pratique avec Martial Gontrand, enseignant en Qi Gong depuis 3 ans chez Leçon du Gong.",
       link: ROUTES.ARTS.SUBPAGES.QI_GONG,
-      icon: "⛩️"
+      icon: "⛩️",
     },
     {
       title: "Méditation",
-      description: "Cultivez la sérénité et gérez vos émotions lors de nos séances de méditation guidée, par Anne-Marie, sophrologue certifiée R.N.C.P.",
+      description:
+        "Cultivez la sérénité et gérez vos émotions lors de nos séances de méditation guidée, par Anne-Marie, sophrologue certifiée R.N.C.P.",
       link: ROUTES.ARTS.SUBPAGES.MEDITATION,
-      icon: "🧘🏼"
+      icon: "🧘🏼",
     },
     {
       title: "Feldenkrais",
       description: "La méthode Feldenkrais : Bouger mieux pour vivre mieux ! ",
       link: ROUTES.ARTS.SUBPAGES.FELDENKRAIS,
-      icon: "🧎🏻‍♀️"
-    }
+      icon: "🧎🏻‍♀️",
+    },
+    {
+      title: "Yoga Du Rire",
+      description:
+        "Dans le chaleureux quartier des Minimes, découvrez comment retrouver équilibre, vitalité et bonne humeur… grâce au Yoga du Rire.",
+      link: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE,
+      icon: "😄",
+    },
   ];
 
   return (
@@ -39,14 +57,10 @@ export default function ArtsCorpsPage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href={ROUTES.ACCUEIL}>
-                Accueil
-              </BreadcrumbLink>
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>Accueil</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              Arts du corps
-            </BreadcrumbItem>
+            <BreadcrumbItem>Arts du corps</BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         {/* Hero */}
@@ -55,8 +69,8 @@ export default function ArtsCorpsPage() {
             Arts du Corps
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explorez l'expression corporelle sous toutes ses formes
-            pour reconnecter avec votre corps, libérer votre créativité et cultiver votre bien-être.
+            Explorez l'expression corporelle sous toutes ses formes pour reconnecter avec votre
+            corps, libérer votre créativité et cultiver votre bien-être.
           </p>
         </div>
 
@@ -83,9 +97,9 @@ export default function ArtsCorpsPage() {
           </div>
         </div>
 
-      <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
-        <EventList data={artsDuCorpsEvents} title="Nos prochains évènements d'arts du corps" />
-      </div>
+        <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
+          <EventList data={artsDuCorpsEvents} title="Nos prochains évènements d'arts du corps" />
+        </div>
 
         {/* CTA */}
         <div className="text-center">
@@ -96,9 +110,7 @@ export default function ArtsCorpsPage() {
             Découvrez nos cours et ateliers pour tous niveaux dans une ambiance conviviale
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              Voir les cours
-            </Button>
+            <Button size="lg">Voir les cours</Button>
             <Button size="lg" variant="outline" asChild>
               <Link href={ROUTES.CONTACT}>Essayer gratuitement</Link>
             </Button>
@@ -107,4 +119,4 @@ export default function ArtsCorpsPage() {
       </div>
     </div>
   );
-};
+}

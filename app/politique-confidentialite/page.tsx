@@ -1,4 +1,10 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
 
 export default function PolitiqueConfidentialitePage() {
@@ -8,14 +14,10 @@ export default function PolitiqueConfidentialitePage() {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href={ROUTES.ACCUEIL}>
-                Accueil
-              </BreadcrumbLink>
+              <BreadcrumbLink href={ROUTES.ACCUEIL}>Accueil</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              Politique de Confidentialité
-            </BreadcrumbItem>
+            <BreadcrumbItem>Politique de Confidentialité</BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         <h1 className="font-serif text-4xl font-bold text-foreground mb-8">
@@ -28,9 +30,9 @@ export default function PolitiqueConfidentialitePage() {
               Collecte des informations
             </h2>
             <p className="text-muted-foreground">
-              Nous recueillons des informations lorsque vous vous inscrivez à nos activités,
-              vous abonnez à notre newsletter ou remplissez un formulaire. Les informations
-              recueillies incluent votre nom, votre adresse e-mail et votre numéro de téléphone.
+              Nous recueillons des informations lorsque vous vous inscrivez à nos activités, vous
+              abonnez à notre newsletter ou remplissez un formulaire. Les informations recueillies
+              incluent votre nom, votre adresse e-mail et votre numéro de téléphone.
             </p>
           </section>
 
@@ -51,16 +53,14 @@ export default function PolitiqueConfidentialitePage() {
               Protection des informations
             </h2>
             <p className="text-muted-foreground">
-              Nous mettons en œuvre une variété de mesures de sécurité pour préserver la sécurité
-              de vos informations personnelles. Nous utilisons un cryptage à la pointe de la
+              Nous mettons en œuvre une variété de mesures de sécurité pour préserver la sécurité de
+              vos informations personnelles. Nous utilisons un cryptage à la pointe de la
               technologie pour protéger les informations sensibles transmises en ligne.
             </p>
           </section>
 
           <section>
-            <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">
-              Vos droits
-            </h2>
+            <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">Vos droits</h2>
             <p className="text-muted-foreground">
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de
               suppression de vos données personnelles. Vous pouvez exercer ces droits en nous
@@ -71,4 +71,4 @@ export default function PolitiqueConfidentialitePage() {
       </div>
     </div>
   );
-};
+}

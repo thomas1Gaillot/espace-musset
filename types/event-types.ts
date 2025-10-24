@@ -1,18 +1,18 @@
 export interface EventData {
-  id: number
-  title: string
-  date: string
-  time: string
-  location: string
-  venue: string
-  city: string
-  image: string
-  dateObj: Date
-  eventLink?: string
-  eventContact?: string
-  price: string
-  type: { name: EventType; href: string }
-  category: { name: string; href: string }
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  venue: string;
+  city: string;
+  image: string;
+  dateObj: Date;
+  eventLink?: string;
+  eventContact?: string;
+  price: string;
+  type: { name: EventType; href: string };
+  category: { name: string; href: string };
 }
 
 export type EventType =
@@ -38,4 +38,4 @@ export type EventType =
   | "Cours de piano"
   | "Yoga du rire"
   | "Ecriture spontanée"
-  | "Maraude"
+  | "Maraude";
