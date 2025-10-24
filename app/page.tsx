@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ROUTES } from "@/data/route";
 import { cn } from "@/lib/utils";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
 import { OurImageData } from "./cafe-associatif/page";
-import { Instagram } from "lucide-react";
 
 const homeImageData: OurImageData[] = [
   {
@@ -68,7 +68,7 @@ export default function HomePage() {
     {
       title: "Arts",
       description:
-        "Yoga, Chant et théâtre d'improvisation pour explorer l'expression corporelle et le bien-être personnel",
+        "Yoga, Chant et Théâtre d'improvisation pour explorer l'expression corporelle et le bien-être personnel",
       image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843",
       link: ROUTES.ARTS.ROOT,
       cta: "Voir les cours",
