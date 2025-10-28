@@ -233,7 +233,7 @@ export default function LocationSallesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant={"outline"} size="lg" asChild>
-              <a href="tel:+33612345678">Appeler Anne-Marie</a>
+              <a href="tel:+33621799750">Appeler Anne-Marie</a>
             </Button>
             ou
             <Button size="lg" asChild>

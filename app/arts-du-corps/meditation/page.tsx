@@ -81,7 +81,7 @@ const Meditation = () => {
             Anne-Marie Magri, Sophrologue certifiée R.N.C.P.
           </p>
           <a
-            href="tel:+33612345678"
+            href="tel:+33621799750"
             className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition"
           >
             Appeler Anne-Marie au 06 21 79 97 50
