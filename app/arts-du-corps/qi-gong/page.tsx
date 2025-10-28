@@ -11,13 +11,13 @@ import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import {
   EuroIcon,
-  HourglassIcon,
-  MapIcon,
-  SettingsIcon,
   GlobeIcon,
+  HourglassIcon,
   InstagramIcon,
-  PhoneIcon,
   MailIcon,
+  MapIcon,
+  PhoneIcon,
+  SettingsIcon,
 } from "lucide-react";
 
 const QiGong = () => {
@@ -99,7 +99,7 @@ const QiGong = () => {
           </a>
           <a
             href="mailto:leçondugong@gmail.com"
-            className="inline-flex items-center gap-2 mt-3 bg-white text-primary/80 hover:text-primary text-white px-6 py-3 rounded-lg font-medium transition"
+            className="inline-flex items-center gap-2 mt-3 bg-white text-primary  px-6 py-3 rounded-lg font-medium transition"
           >
             <MailIcon size={18} />
             {"Envoyer un email"}
