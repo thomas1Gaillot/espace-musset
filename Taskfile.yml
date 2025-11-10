@@ -6,6 +6,11 @@ tasks:
     cmds:
       - pnpm dev
 
+  create-recettes:
+    desc: Générer les recettes et builder le projet
+    cmds:
+      - pnpm generate:recettes
+
   push:
     desc: Préparer le code et pousser
     cmds:

@@ -699,7 +699,6 @@ const eventList: EventData[] = [
     type: MercrediMontessori,
   },
 
-
   {
     id: 810321,
     price: "Nous contacter",
@@ -881,8 +880,7 @@ const eventList: EventData[] = [
     category: ArtEventCategory,
     type: Feldenkrais,
   },
-  
- 
+
   {
     id: 20251030,
     price: "",
@@ -974,7 +972,7 @@ const eventList: EventData[] = [
     category: CafeEventCategory,
     type: SoireeJeux,
   },
- 
+
   {
     id: 20102025112,
     price: "Nous contacter",
@@ -1005,7 +1003,7 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: ClownSocratique,
   },
- 
+
   {
     id: 231020251445,
     price: "Nous contacter",
@@ -1190,7 +1188,6 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: Chant,
   },
-
 
   {
     id: 6101303,

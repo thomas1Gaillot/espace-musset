@@ -1,5 +1,6 @@
 "use client";
 import EventList from "@/components/event-list";
+import Recipe from "@/components/recipe/recipe";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -265,6 +266,14 @@ export default function CafeAssociatifPage() {
             </div>
           </div>
 
+          {/* Recettes */}
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl font-semibold text-center text-foreground mb-8">
+              Nos Recettes
+            </h2>
+
+            <Recipe />
+          </div>
           {/* Horaires et infos pratiques */}
           <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
             <div className="grid md:grid-cols-2 gap-8">
