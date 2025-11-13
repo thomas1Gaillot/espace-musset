@@ -100,11 +100,10 @@ export default function HomePage() {
           <Button variant={"link"} asChild className="text-white ">
             <Link
               target="_blank"
-              href="https://www.helloasso.com/associations/association-espace-musset/evenements/tournoi-d-echecs-amateurs"
+              href={ROUTES.CONTACT}
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Tournoi d'échecs amateur Jeudi 30 Octobre !! "}</p>
-                <p>{" -> Billets Gratuits"}</p>
+                <p>{"Soirée Jeux de sociétés Jeudi 27 Novembre !! "}</p>
               </div>
             </Link>
           </Button>

@@ -972,6 +972,21 @@ const eventList: EventData[] = [
     category: CafeEventCategory,
     type: SoireeJeux,
   },
+  {
+    id: 250941,
+    price: "Gratuit",
+    title: "Soirée Jeux de société",
+    date: "Jeudi 27 Novembre 2025",
+    time: "19:00 à 22:00",
+    location: "Espace Musset",
+    venue: "52 Bis Rue Alfred de Musset",
+    city: "31200 Toulouse",
+    image: "/event/jeu-societe.jpg",
+    dateObj: new Date("2025-11-27"),
+    eventLink: ROUTES.CONTACT,
+    category: CafeEventCategory,
+    type: SoireeJeux,
+  },
 
   {
     id: 20102025112,
