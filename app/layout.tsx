@@ -1,11 +1,11 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Crimson_Text, Inter } from "next/font/google";
 import Head from "next/head";
 import type React from "react";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -47,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <Toaster />
         <Head>
+          <script defer src="https://cloud.umami.is/script.js" data-website-id="f125975c-d2bc-45d8-91af-c147329a6fd4"></script>
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
