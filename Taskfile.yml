@@ -1,6 +1,17 @@
 version: "3"
 
 tasks:
+  clean-workspace:
+    desc: Clean le projet si pb de compréhension typescript
+    cmds:
+      - rm -rf node_modules
+      - rm -rf .next
+      - rm -rf out
+      - rm pnpm-lock.yaml
+      - pnpm store prune
+      - pnpm install
+      - rm -rf .vscode/.tsbuildinfo
+      - rm -rf **/*.tsbuildinfo
   dev:
     desc: Lancer le serveur de développement
     cmds:

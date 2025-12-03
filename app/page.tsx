@@ -100,10 +100,12 @@ export default function HomePage() {
           <Button variant={"link"} asChild className="text-white ">
             <Link
               target="_blank"
-              href={ROUTES.CONTACT}
+              href={
+                "https://www.eventbrite.fr/e/billets-journee-mondiale-du-volontariat-atelier-volontariat-1909364112459"
+              }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Soirée Jeux de sociétés Jeudi 27 Novembre !! "}</p>
+                <p>{"Journée du volontariat ce samedi (06 Décembre)"} </p>
               </div>
             </Link>
           </Button>
@@ -124,12 +126,12 @@ export default function HomePage() {
               (Toulouse).
             </p>
             <p className="text-xl md:text-2xl text-primary-foreground mb-8 leading-relaxed">
-              Lieu inter-associatif, nous organisons avec les associations partenaires l'animation
+              Lieu inter - associatif, nous organisons avec les associations partenaires l'animation
               de l'espace dans un esprit d'ouverture et de partage.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
-                <Link href="/#agenda">Agenda</Link>
+                <Link href="/#agenda"> Agenda </Link>
               </Button>
               <Button
                 size="lg"
@@ -138,7 +140,7 @@ export default function HomePage() {
                 asChild
                 id={"reservation-button"}
               >
-                <Link href={ROUTES.LOCATION_SALLES}>Réserver une salle</Link>
+                <Link href={ROUTES.LOCATION_SALLES}> Réserver une salle </Link>
               </Button>
               <Button
                 size="lg"
@@ -147,7 +149,7 @@ export default function HomePage() {
                 asChild
                 id={"contact-button"}
               >
-                <Link href={ROUTES.CONTACT}>Nous Contacter</Link>
+                <Link href={ROUTES.CONTACT}> Nous Contacter </Link>
               </Button>
             </div>
           </div>
@@ -163,19 +165,19 @@ export default function HomePage() {
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               L’association Espace Musset est un lieu dédié à la promotion de{" "}
-              <strong>l’art, de la culture et de la convivialité</strong>.
+              <strong>l’art, de la culture et de la convivialité </strong>.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Grâce à l’engagement de bénévoles, elle organise des conférences, concerts,
-              expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage. Elle
-              anime également, le café associatif <strong>« Le Café d’Oc »</strong> !
+              expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.Elle
+              anime également, le café associatif<strong>« Le Café d’Oc »</strong> !
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={"default"} size="lg" asChild>
-                <Link href={ROUTES.CONTACT}>Nous contacter</Link>
+                <Link href={ROUTES.CONTACT}> Nous contacter </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href={ROUTES.ACCUEIL + "#agenda"}>Prochains évènements</Link>
+                <Link href={ROUTES.ACCUEIL + "#agenda"}> Prochains évènements </Link>
               </Button>
             </div>
           </div>
@@ -215,9 +217,9 @@ export default function HomePage() {
               le théâtre, le yoga, les cafés litérraires, cafés histoire et cafés philo...
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Pour répondre aux besoins essentiels du <strong>"vivre ensemble"</strong>, construire
-              le monde d'aujourd'hui et de demain par la coopération et le partage, en commençant{" "}
-              <strong>par notre quartier</strong>.
+              Pour répondre aux besoins essentiels du <strong> "vivre ensemble" </strong>,
+              construire le monde d'aujourd'hui et de demain par la coopération et le partage, en
+              commençant <strong>par notre quartier </strong>.
             </p>
           </div>
           <EventsSection />
@@ -234,14 +236,14 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-serif text-xl">{activity.title}</CardTitle>
+                  <CardTitle className="font-serif text-xl"> {activity.title} </CardTitle>
                   <CardDescription className="text-base leading-relaxed">
                     {activity.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button className="w-full" asChild>
-                    <Link href={activity.link}>{activity.cta}</Link>
+                    <Link href={activity.link}> {activity.cta} </Link>
                   </Button>
                 </CardContent>
               </Card>

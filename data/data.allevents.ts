@@ -1,4 +1,5 @@
 import { EventData, EventType } from "@/types/event-types";
+import { createEvent } from "./create-event";
 import { ROUTES } from "./route";
 
 const philosophieEventCategory: { name: string; href: string } = {
@@ -83,7 +84,6 @@ const Maraude: { name: EventType; href: string } = {
   name: "Maraude",
   href: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE,
 };
-
 
 const Meditation: { name: EventType; href: string } = {
   name: "Méditation",
@@ -380,7 +380,7 @@ const eventList: EventData[] = [
     category: VolontariatEventCategory,
     type: ZeroDechet,
   },
-   {
+  {
     id: 2411251225,
     price: "Gratuit",
     title: "Journée Volontariat - Atelier écogeste",
@@ -396,7 +396,7 @@ const eventList: EventData[] = [
     category: VolontariatEventCategory,
     type: ZeroDechet,
   },
-   {
+  {
     id: 2411251226,
     price: "Gratuit",
     title: "Atelier nettoyage de notre cité",
@@ -412,7 +412,7 @@ const eventList: EventData[] = [
     category: VolontariatEventCategory,
     type: ZeroDechet,
   },
-   {
+  {
     id: 2411251227,
     price: "Gratuit",
     title: "Colis de Noël pour les plus démunis",
@@ -487,6 +487,22 @@ const eventList: EventData[] = [
     dateObj: new Date("2025-10-02"),
     eventLink:
       "https://www.eventbrite.fr/e/billets-cafe-philo-lengagement-prison-ou-liberte-1549624692169?aff=ebdsoporgprofile",
+    category: philosophieEventCategory,
+    type: CaféPhilo,
+  },
+  {
+    id: 203122025,
+    price: "7,58 €",
+    title: "Café Philo : La justice suit-elle la loi ou la conscience ?",
+    date: "Jeudi 08 Janvier 2026",
+    time: "19:30 à 21:15",
+    location: "Espace Musset",
+    venue: "52 Bis Rue Alfred de Musset",
+    city: "31200 Toulouse",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    dateObj: new Date("2026-01-08"),
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-la-justice-suit-elle-la-loi-ou-la-conscience-1976509953477",
     category: philosophieEventCategory,
     type: CaféPhilo,
   },
@@ -567,22 +583,7 @@ const eventList: EventData[] = [
     category: CafeEventCategory,
     type: SpectacleDuCafeAsso,
   },
-  {
-    id: 2411251230,
-    price: "10 €",
-    title: "Concert de Noël",
-    date: "Vendredi 12 Décembre 2025",
-    time: "20:00 à 21:30",
-    location: "Espace Musset",
-    venue: "52 Bis Rue Alfred de Musset",
-    city: "31200 Toulouse",
-    image: "/event/concert-noel.jpg",
-    dateObj: new Date("2025-12-12"),
-    eventLink:
-      "https://www.eventbrite.fr/e/billets-concert-de-noel-1975264055964",
-    category: CafeEventCategory,
-    type: SpectacleDuCafeAsso,
-  },
+
   {
     id: 2610,
     price: "Gratuit",
@@ -1069,7 +1070,7 @@ const eventList: EventData[] = [
     type: SoireeJeux,
   },
 
-    {
+  {
     id: 250942,
     price: "Gratuit",
     title: "Soirée Impro",
@@ -1080,7 +1081,8 @@ const eventList: EventData[] = [
     city: "31200 Toulouse",
     image: "/diseuses-amertume.jpeg",
     dateObj: new Date("2025-11-29"),
-    eventLink: "https://www.helloasso.com/associations/les-diseuses-de-bonne-amertume/evenements/impact-emoi-a-l-espace-musset-29-11-25",
+    eventLink:
+      "https://www.helloasso.com/associations/les-diseuses-de-bonne-amertume/evenements/impact-emoi-a-l-espace-musset-29-11-25",
     category: CafeEventCategory,
     type: SpectacleDuCafeAsso,
   },
@@ -1251,6 +1253,16 @@ const eventList: EventData[] = [
     category: ArtEventCategory,
     type: QiGong,
   },
+  createEvent({
+    title: "Qi Gong",
+    dateObj: new Date("2025-12-23"),
+    time: "18:30 à 19:30",
+    image: "/cours/qi-gong.png",
+    price: "Nous contacter",
+    category: ArtEventCategory,
+    type: QiGong,
+    eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
+  }),
   {
     id: 231020251751,
     price: "6,00 €",
@@ -1406,7 +1418,7 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: TheathreImpro,
   },
-   {
+  {
     id: 61013171,
     price: "Nous contacter",
     title: "Théatre d'improvisation",
@@ -1421,7 +1433,7 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: TheathreImpro,
   },
-   {
+  {
     id: 61013172,
     price: "Nous contacter",
     title: "Théatre d'improvisation",
@@ -1436,7 +1448,7 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: TheathreImpro,
   },
-   {
+  {
     id: 610131715,
     price: "Nous contacter",
     title: "Théatre d'improvisation",
@@ -1451,7 +1463,7 @@ const eventList: EventData[] = [
     category: ActivitésEventCategory,
     type: TheathreImpro,
   },
-   {
+  {
     id: 610131722,
     price: "Nous contacter",
     title: "Théatre d'improvisation",

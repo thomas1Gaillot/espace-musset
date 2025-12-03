@@ -21,7 +21,8 @@ const crimsonText = Crimson_Text({
 
 export const metadata: Metadata = {
   title: "Espace Musset - Lieu de vie associatif à Toulouse",
-  description: "Espace Musset est un lieu de vie associatif à Toulouse dédié à la philosophie, l'écologie, aux arts du corps et au partage culturel.",
+  description:
+    "Espace Musset est un lieu de vie associatif à Toulouse dédié à la philosophie, l'écologie, aux arts du corps et au partage culturel.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
