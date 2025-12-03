@@ -1,5 +1,5 @@
 import { EventData, EventType } from "@/types/event-types";
-import { createEvent } from "./create-event";
+import { createEvent } from "./create.event";
 import { ROUTES } from "./route";
 
 const philosophieEventCategory: { name: string; href: string } = {
