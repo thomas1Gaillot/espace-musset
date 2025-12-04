@@ -65,33 +65,9 @@ const Theatre = () => (
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-12">
-        <div className="bg-earth-50/50 rounded-lg p-6">
-          <h3 className="font-serif text-xl font-semibold text-foreground mb-4">Notre pédagogie</h3>
-          <ul className="space-y-2 text-muted-foreground">
-            <li>• Section à remplir</li>
-            <li>• Section à remplir</li>
-            <li>• Section à remplir</li>
-            <li>• Section à remplir</li>
-          </ul>
-        </div>
-
-        <div className="bg-warmBrown-50/30 rounded-lg p-6">
-          <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-            Ateliers proposés
-          </h3>
-          <div className="space-y-3 text-muted-foreground">
-            <div>
-              <p className="font-medium">Improvisation théâtrale</p>
-              <p className="text-sm">Nous contacter pour plus d'infos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="bg-sage-50/50 rounded-lg p-8 mb-12">
         <h2 className="font-serif text-2xl font-semibold text-center text-foreground mb-6">
-          Ce que vous développerez
+          Le théatre d'impro pour créer et se découvrir
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <div>

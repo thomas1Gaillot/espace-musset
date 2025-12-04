@@ -210,6 +210,7 @@ const eventList: EventData[] = [
     category: philosophieEventCategory,
     type: RencontrePhilo,
   },
+
   {
     id: 13,
     price: "6,52 €",
@@ -1494,6 +1495,17 @@ const eventList: EventData[] = [
     category: ArtEventCategory,
     type: YogaDuRire,
   },
+
+  createEvent({
+    title: "L'art d'agir à l'orientale",
+    dateObj: new Date("2025-12-10"),
+    time: "19:30 à 22:00",
+    image: "/event/cours1012.jpg",
+    price: "6,00 €",
+    category: philosophieEventCategory,
+    type: AtelierPhilo,
+    eventLink: "https://www.eventbrite.fr/e/billets-atelier-de-philosophie-pratique-1976893701277",
+  }),
 ];
 
 export { eventList };

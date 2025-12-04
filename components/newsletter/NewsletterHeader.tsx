@@ -18,24 +18,23 @@ export function NewsletterHeader({ month, year }: NewsletterHeaderProps) {
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-newsletter-accent rounded-full translate-y-1/2 -translate-x-1/2" />
       </div>
 
-      <div className="relative px-6 py-8 sm:px-8 sm:py-10">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-            <Mail className="w-5 h-5" />
-          </div>
-          <div>
-            <h1 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
-              Espace Musset
-            </h1>
-            <p className="text-sm opacity-80">Centre culturel & associatif</p>
-          </div>
-        </div>
-
-        <div className="border-t border-primary-foreground/20 pt-4 mt-4">
-          <p className="text-sm opacity-80 mb-1">Votre rendez-vous culturel mensuel</p>
+      <div className="flex justify-between items-start px-6 py-8  ">
+        <div>
+          <p className="text-xs opacity-80 mb-1 uppercase">
+            Newsletter : Votre rendez-vous culturel mensuel
+          </p>
           <p className="font-display text-xl capitalize">
             {displayMonth} {displayYear}
           </p>
+        </div>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="space-y-0">
+            <p className="font-display text-end text-lg font-bold">Espace Musset</p>
+            <p className="text-xs opacity-80 text-end">Centre culturel & associatif</p>
+          </div>
+          <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center">
+            <img src="/logoEM.png" alt="Espace Musset" className="min-w-10 h-10" />
+          </div>
         </div>
       </div>
     </header>

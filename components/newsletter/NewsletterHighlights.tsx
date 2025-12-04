@@ -8,13 +8,15 @@ export function NewsletterHighlights() {
         <div className="w-10 h-10 bg-newsletter-accent/20 rounded-full flex items-center justify-center">
           <Sparkles className="w-5 h-5 text-newsletter-accent" />
         </div>
-        <h2 className="font-display text-xl font-semibold text-foreground">En prime ce mois-ci</h2>
+        <h2 className="font-display text-xl font-semibold text-foreground">
+          Informations Pratiques
+        </h2>
       </div>
 
       <div className="grid gap-3">
         <HighlightItem
           icon={<Instagram className="w-4 h-4" />}
-          title="Suivez-nous"
+          title="Suivez-nous, on post régulièrement"
           buttonLabel={"Nous suivre"}
           buttonHref="https://www.instagram.com/espacemussettoulouse/"
           description={

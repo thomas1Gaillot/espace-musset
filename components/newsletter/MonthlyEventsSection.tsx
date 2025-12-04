@@ -16,9 +16,9 @@ export function MonthlyEventsSection({ events }: MonthlyEventsSectionProps) {
           <Calendar className="w-5 h-5 text-primary" />
         </div>
         <div>
-          <h2 className="font-display text-xl font-semibold text-foreground">Événements du mois</h2>
+          <h2 className="font-display text-xl font-semibold text-primary">Événements du mois</h2>
           <p className="text-sm text-muted-foreground">
-            {events.length} événement{events.length > 1 ? "s" : ""} à ne pas manquer
+            {events.length} événement{events.length > 1 ? "s" : ""}
           </p>
         </div>
       </div>
