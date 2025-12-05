@@ -8,7 +8,7 @@ const philosophieEventCategory: { name: string; href: string } = {
 };
 const ArtEventCategory: { name: string; href: string } = { name: "Arts", href: ROUTES.ARTS.ROOT };
 const ActivitésEventCategory: { name: string; href: string } = {
-  name: "Activités",
+  name: "Activités, Culture, Art",
   href: ROUTES.ACTIVITES.ROOT,
 };
 

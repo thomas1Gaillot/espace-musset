@@ -37,9 +37,14 @@ export const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Restez informé de nos événements et ateliers
             </p>
-            <Button asChild>
-              <Link href={ROUTES.CONTACT}>Nous contacter</Link>
-            </Button>
+            <div className="flex items-center justify-center w-full gap-2">
+              <Button asChild>
+                <Link href={ROUTES.CONTACT}>Nous contacter</Link>
+              </Button>
+              <Button variant={"outline"} asChild>
+                <Link href={ROUTES.NEWSLETTER}>Newsletter</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Social Links */}

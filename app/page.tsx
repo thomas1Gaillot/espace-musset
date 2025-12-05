@@ -199,7 +199,10 @@ export default function HomePage() {
           <div className="max-w-4xl mx-2 ">
             <SmartCalendar events={eventList} />
           </div>
-          <div className="w-full ml-[24px] mr-[4px] max-w-[calc(100vw-28px)] grid justify-center">
+          <div
+            id="evenements"
+            className="w-full ml-[24px] mr-[4px] max-w-[calc(100vw-28px)] grid justify-center"
+          >
             <EventList data={eventList} title="Événements à venir" />
           </div>
         </div>

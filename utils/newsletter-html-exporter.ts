@@ -11,23 +11,12 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
     body: "margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f9fafb;",
     container:
       "max-width: 672px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);",
-    header: "position: relative; background-color: #8B2635; color: #ffffff; overflow: hidden;",
-    headerPattern: "position: absolute; inset: 0; opacity: 0.1;",
-    headerCircle1:
-      "position: absolute; top: 0; right: 0; width: 256px; height: 256px; background-color: #a78bfa; border-radius: 50%; transform: translate(50%, -50%);",
-    headerCircle2:
-      "position: absolute; bottom: 0; left: 0; width: 192px; height: 192px; background-color: #a78bfa; border-radius: 50%; transform: translate(-50%, 50%);",
-    headerContent:
-      "position: relative; display: flex; justify-content: space-between; align-items: start; padding: 32px 24px;",
-    logo: "width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;",
     section: "padding: 24px;",
     sectionTitle: "display: flex; align-items: center; gap: 12px; margin-bottom: 24px;",
     iconCircle:
       "width: 40px; height: 40px; background-color: #8b263521; border-radius: 50%; display: flex; align-items: center; justify-content: center;",
     eventCard:
       "background-color: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; overflow: hidden; margin-bottom: 16px;",
-    eventCardHover: "transition: all 0.3s;",
-    eventImage: "width: 100%; height: 128px; object-fit: cover;",
     eventContent: "padding: 16px;",
     eventTitle: "font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;",
     eventDetail:
@@ -58,29 +47,24 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                 <div style="${styles.container}">
                     
                     <!-- Header -->
-                    <div style="${styles.header}">
-                        <div style="${styles.headerPattern}">
-                            <div style="${styles.headerCircle1}"></div>
-                            <div style="${styles.headerCircle2}"></div>
-                        </div>
-                        <div style="${styles.headerContent}">
-                            <div>
-                                <p style="font-size: 12px; opacity: 0.8; margin: 0 0 4px 0; text-transform: uppercase;">Newsletter : Votre rendez-vous culturel mensuel</p>
-                                <p style="font-size: 20px; margin: 0; text-transform: capitalize; font-weight: 600;">${displayMonth} ${displayYear}</p>
-                            </div>
-                            <div style="text-align: right;">
-                                <div style="display: flex; align-items: center; gap: 8px;">
-                                    <div>
-                                        <p style="font-size: 18px; font-weight: bold; margin: 0;">Espace Musset</p>
-                                        <p style="font-size: 12px; opacity: 0.8; margin: 0;">Centre culturel & associatif</p>
-                                    </div>
-                                    <div style="${styles.logo}">
-                                      <img src="https://www.espace-musset.com/logoEM.png" alt="Espace Musset" style="width: 40px; height: 40px; border-radius: 50%;" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <table role="presentation" style="width: 100%; background-color: #8B2635; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 32px 24px;">
+                                <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="vertical-align: top;">
+                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0 0 4px 0; text-transform: uppercase;">Newsletter : Votre rendez-vous culturel mensuel</p>
+                                            <p style="font-size: 20px; color: #ffffff; margin: 0; text-transform: capitalize; font-weight: 600;">${displayMonth} ${displayYear}</p>
+                                        </td>
+                                        <td style="text-align: right; vertical-align: top;">
+                                            <p style="font-size: 18px; font-weight: bold; color: #ffffff; margin: 0;">Espace Musset</p>
+                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0;">Centre culturel & associatif</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
 
                     <!-- Events Section -->
                     <div style="${styles.section}">
@@ -98,13 +82,15 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                           .map(
                             (event) => `
                        <div style="${styles.eventCard}">
-                            <div style="position: relative; background: linear-gradient(135deg, #8B2635 0%, #B33A4A 50%, #8b263544 100%); padding: 8px; border-radius: 8px 8px 0 0; overflow: hidden;">
-                                <div style="position: absolute; inset: 0; opacity: 0.15;">
-                                    <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background-color: rgba(255, 255, 255, 0.3); border-radius: 50%;"></div>
-                                    <div style="position: absolute; bottom: -15px; left: -15px; width: 60px; height: 60px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%;"></div>
-                                </div>
-                                <span style="position: relative; display: inline-block; font-size: 12px; font-weight: 500; padding: 6px 12px; background-color: rgba(255, 255, 255, 0.95); color: #8B2635; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">${event.type.name}</span>
-                            </div>
+                            <table role="presentation" style="width: 100%; background: #8b263521; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 8px;">
+                                        <span style="display: inline-block; font-size: 14px; font-weight: 400; padding: 6px 12px; color: #530f1aff; border-radius: 20px;">
+                                        ${event.category.name} : ${event.type.name} 
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
                             <div style="${styles.eventContent}; background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);">
                                 <h3 style="${styles.eventTitle}">${event.title}</h3>
                                 <div style="${styles.eventDetail}">
@@ -119,19 +105,19 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                     <span>📍</span>
                                     <span>${event.location}</span>
                                 </div>
-                                <div style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="${styles.eventPrice}">
-                                        <span>💶</span>
-                                        ${event.price}
-                                    </span>
-                                    ${
-                                      event.eventLink
-                                        ? `<a 
-                                        href="https://www.espace-musset.com/#agenda"
-                                        style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Voir l'événement →</a>`
-                                        : ""
-                                    }
-                                </div>
+                                <table role="presentation" style="width: 100%; margin-top: 12px; border-collapse: collapse;">
+                                    <tr>
+                                        <td style="vertical-align: middle;">
+                                            <span style="${styles.eventPrice}">
+                                                <span>💶</span>
+                                                ${event.price}
+                                            </span>
+                                        </td>
+                                       <td style="text-align: right; vertical-align: middle;">
+                                                <a href="https://www.espace-musset.com/#evenements" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Voir →</a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
 
@@ -161,63 +147,78 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                         </div>
 
                         <div style="${styles.highlight}">
-                            <div style="display: flex; align-items: start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <span style="color: #8B2635;">📷</span>
-                                </div>
-                                <div style="flex: 1;">
-                                    <h3 style="font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 4px 0;">Suivez-nous, on post régulièrement</h3>
-                                    <p style="font-size: 14px; color: #6b7280; margin: 0;">Sur Instagram <a href="https://www.instagram.com/espacemussettoulouse/" style="color: #8B2635; font-weight: 500; text-decoration: underline;">@espacemussettoulouse</a></p>
-                                </div>
-                                <a href="https://www.instagram.com/espacemussettoulouse/" style="${styles.button}; padding: 8px 16px; font-size: 14px;">Nous suivre</a>
-                            </div>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 32px; vertical-align: top;">
+                                        <div style="width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                            <span style="color: #8B2635;">📷</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding-left: 12px; vertical-align: middle;">
+                                        <h3 style="font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 4px 0;">Suivez-nous, on post régulièrement</h3>
+                                        <p style="font-size: 14px; color: #6b7280; margin: 0;">Sur Instagram <a href="https://www.instagram.com/espacemussettoulouse/" style="color: #8B2635; font-weight: 500; text-decoration: underline;">@espacemussettoulouse</a></p>
+                                    </td>
+                                    <td style="text-align: right; vertical-align: middle; padding-left: 12px;">
+                                        <a href="https://www.instagram.com/espacemussettoulouse/" style="${styles.button}; padding: 8px 16px; font-size: 14px;">Nous suivre</a>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
 
                         <div style="${styles.highlight}">
-                            <div style="display: flex; align-items: start; gap: 12px;">
-                                <div style="width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <span style="color: #8B2635;">ℹ️</span>
-                                </div>
-                                <div>
-                                    <h3 style="font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 8px 0;">Horaires d'ouverture</h3>
-                                    <div style="font-size: 14px; color: #6b7280;">
-                                        <p style="margin: 4px 0;">• Lundi : 17h00 - 22h00</p>
-                                        <p style="margin: 4px 0;">• Mardi : 17h00 - 22h00</p>
-                                        <p style="margin: 4px 0;">• Mercredi : 17h00 - 22h00</p>
-                                        <p style="margin: 4px 0;">• Samedi : 14h00 - 18h00</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 32px; vertical-align: top;">
+                                        <div style="width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                            <span style="color: #8B2635;">ℹ️</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding-left: 12px; vertical-align: top;">
+                                        <h3 style="font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 8px 0;">Horaires d'ouverture</h3>
+                                        <div style="font-size: 14px; color: #6b7280;">
+                                            <p style="margin: 4px 0;">• Lundi : 17h00 - 22h00</p>
+                                            <p style="margin: 4px 0;">• Mardi : 17h00 - 22h00</p>
+                                            <p style="margin: 4px 0;">• Mercredi : 17h00 - 22h00</p>
+                                            <p style="margin: 4px 0;">• Samedi : 14h00 - 18h00</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
 
+                        <div style="${styles.highlight}">
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 32px; vertical-align: top;">
+                                        <div style="width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                            <span style="color: #8B2635;">📍</span>
+                                        </div>
+                                    </td>
+                                    <td style="padding-left: 12px; vertical-align: top;">
+                                        <div style="font-size: 14px; color: #6b7280;">
+                                            <h3 style="font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 8px 0;">Nos coordonnées</h3>
+                                            
+                                            <p style="font-weight: 500; color: #111827; margin: 8px 0 4px 0;">Adresse</p>
+                                            <p style="margin: 2px 0;">52 Bis Rue Alfred de Musset</p>
+                                            <p style="margin: 2px 0;">31200 Toulouse</p>
+                                            <p style="margin: 2px 0;">France</p>
 
-                        <div style="${styles.highlight}">            
-                            <div style=\"display: flex; align-items: start; gap: 12px;\">
-                                <div style=\"width: 32px; height: 32px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;\">
-                                    <span style=\"color: #8B2635;\">📍</span>
-                                </div>
-                                <div style="font-size: 14px; color: #6b7280;">
-                                    <h3 style=\"font-weight: 500; color: #111827; font-size: 14px; margin: 0 0 8px 0;\">Nos coordonnées</h3>
-                                    
-                                    <p style=\"font-weight: 500; color: #111827; margin: 8px 0 4px 0;\">Adresse</p>
-                                    <p style=\"margin: 2px 0;\">52 Bis Rue Alfred de Musset</p>
-                                    <p style=\"margin: 2px 0;\">31200 Toulouse</p>
-                                    <p style=\"margin: 2px 0;\">France</p>
+                                            <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Transport</p>
+                                            <p style="margin: 2px 0;">Métro ligne A - Minimes - Claude Nougaro</p>
+                                            <p style="margin: 2px 0;">Depuis la station de métro, à pied :</p>
+                                            <p style="font-size: 12px; line-height: 1.5; opacity: 0.9; margin: 4px 0 0 0;">
+                                                Au fond de la place, prendre la rue du Général Bourbaki vers la droite, puis la première à gauche, rue Biot. Au bout de cette rue, prendre la rue Alfred de Musset à gauche. Notre local est à 20 mètres à gauche.
+                                            </p>
 
-                                    <p style=\"font-weight: 500; color: #111827; margin: 12px 0 4px 0;\">Transport</p>
-                                    <p style=\"margin: 2px 0;\">Métro ligne A - Minimes - Claude Nougaro</p>
-                                    <p style=\"margin: 2px 0;\">Depuis la station de métro, à pied :</p>
-                                    <p style=\"font-size: 12px; line-height: 1.5; opacity: 0.9; margin: 4px 0 0 0;\">
-                                        Au fond de la place, prendre la rue du Général Bourbaki vers la droite, puis la première à gauche, rue Biot. Au bout de cette rue, prendre la rue Alfred de Musset à gauche. Notre local est à 20 mètres à gauche.
-                                    </p>
+                                            <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Téléphone</p>
+                                            <p style="margin: 2px 0;">06 30 15 46 48</p>
 
-                                    <p style=\"font-weight: 500; color: #111827; margin: 12px 0 4px 0;\">Téléphone</p>
-                                    <p style=\"margin: 2px 0;\">06 30 15 46 48</p>
-
-                                    <p style=\"font-weight: 500; color: #111827; margin: 12px 0 4px 0;\">Email</p>
-                                    <p style=\"margin: 2px 0;\">contact@espace-musset.com</p>
-                                </div>
-                            </div>
+                                            <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Email</p>
+                                            <p style="margin: 2px 0;">contact@espace-musset.com</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
 
                     </div>
@@ -239,20 +240,32 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                     <!-- Footer -->
                     <div style="${styles.footer}">
                         <div style="margin-bottom: 16px;">
-                            <div style="display: flex; align-items: start; gap: 12px;">
-                                <span>📍</span>
-                                <div style="font-size: 14px;">
-                                    <p style="font-weight: 500; margin: 0 0 4px 0;">Espace Musset</p>
-                                    <p style="margin: 0;">52 bis rue Alfred de Musset</p>
-                                    <p style="margin: 0;">31200 Toulouse</p>
-                                </div>
-                            </div>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 20px; vertical-align: top;">
+                                        <span>📍</span>
+                                    </td>
+                                    <td style="padding-left: 12px; vertical-align: top;">
+                                        <div style="font-size: 14px;">
+                                            <p style="font-weight: 500; margin: 0 0 4px 0;">Espace Musset</p>
+                                            <p style="margin: 0;">52 bis rue Alfred de Musset</p>
+                                            <p style="margin: 0;">31200 Toulouse</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <div style="margin-bottom: 16px;">
-                            <div style="display: flex; align-items: center; gap: 12px; font-size: 14px;">
-                                <span>✉️</span>
-                                <p style="margin: 0;">Pour ne plus recevoir nos emails : <a href="mailto:contact@espace-musset.com" style="color: #ffffff; text-decoration: underline;">contactez-nous</a></p>
-                            </div>
+                            <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                                <tr>
+                                    <td style="width: 20px; vertical-align: middle;">
+                                        <span>✉️</span>
+                                    </td>
+                                    <td style="padding-left: 12px; vertical-align: middle;">
+                                        <p style="font-size: 14px; margin: 0;">Pour ne plus recevoir nos emails : <a href="mailto:contact@espace-musset.com" style="color: #ffffff; text-decoration: underline;">contactez-nous</a></p>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <div style="padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.2); text-align: center;">
                             <p style="font-size: 12px; margin: 0;">Fait avec ❤️ à Toulouse</p>
@@ -286,20 +299,4 @@ export function downloadNewsletterHTML(events: EventData[], month?: string, year
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
-}
-
-// Fonction pour copier dans le presse-papiers
-export async function copyNewsletterHTML(
-  events: EventData[],
-  month?: string,
-  year?: number
-): Promise<boolean> {
-  try {
-    const html = exportNewsletterToHTML(events, month, year);
-    await navigator.clipboard.writeText(html);
-    return true;
-  } catch (error) {
-    console.error("Erreur lors de la copie:", error);
-    return false;
-  }
 }

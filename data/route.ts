@@ -1,5 +1,6 @@
 export const ROUTES = {
   ACCUEIL: "/",
+  NEWSLETTER: "/newsletter",
   CAFE_ASSOCIATIF: "/cafe-associatif",
   PHILOSOPHIE: {
     ROOT: "/philosophie",
