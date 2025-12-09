@@ -1,8 +1,14 @@
+import next from "eslint-config-next";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 import nextPlugin from "@next/eslint-plugin-next";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 
 export default [
+  ...next,
+  ...nextCoreWebVitals,
+  ...nextTypescript,
   {
     ignores: ["node_modules", ".next", "dist", "build", "out", "eslint.config.js", "scripts/*.js"],
   },
