@@ -1,5 +1,3 @@
-import { Mail } from "lucide-react";
-
 interface NewsletterHeaderProps {
   month?: string;
   year?: number;

@@ -8,7 +8,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
 
   // Styles inline pour la compatibilité email
   const styles = {
-    body: "margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f9fafb;",
+    body: "margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f9fafb !important;",
     container:
       "max-width: 672px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);",
     section: "padding: 24px;",

@@ -101,11 +101,11 @@ export default function HomePage() {
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-journee-mondiale-du-volontariat-atelier-volontariat-1909364112459"
+                "https://www.eventbrite.fr/e/billets-colis-de-noel-pour-les-enfants-de-4-a-12-ans-1909344032399"
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Journée du volontariat ce samedi (06 Décembre)"} </p>
+                <p>{"Evenement Gratuit : Colis de Noël pour les enfants, Jeudi 18/12"} </p>
               </div>
             </Link>
           </Button>
