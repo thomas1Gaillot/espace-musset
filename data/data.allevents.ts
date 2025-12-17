@@ -1542,6 +1542,17 @@ const eventList: EventData[] = [
     eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
   }),
   createEvent({
+    title: "Rencontre philo : La Voix du silence",
+    dateObj: new Date("2026-01-27"),
+    time: "19:30 à 21:30",
+    image: "/event/voix_silence.jpg",
+    price: "6€, nous contacter",
+    category: philosophieEventCategory,
+    type: RencontrePhilo,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-la-voix-du-silence-dans-un-monde-assourdissant-1976552416485",
+  }),
+  createEvent({
     title: "Qi Gong",
     dateObj: new Date("2026-01-27"),
     time: "19:30 à 22:00",
