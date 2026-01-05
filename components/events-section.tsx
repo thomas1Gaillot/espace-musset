@@ -29,7 +29,7 @@ const eventData: {
   >;
   href: string;
 }[] = [
-  { type: "Café philo", icon: Coffee, href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES },
+  { type: "Café philo socratique", icon: Coffee, href: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES },
   { type: "Atelier philo", icon: LandmarkIcon, href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS },
   { type: "Conférence", icon: Presentation, href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES },
   { type: "Rencontre philo", icon: HandshakeIcon, href: ROUTES.PHILOSOPHIE.SUBPAGES.RENCONTRES },

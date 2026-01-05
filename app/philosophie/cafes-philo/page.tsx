@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const CafesPhilo = () => {
   const cafePhilosEvent = eventList.filter(
-    (e) => e.category.name === "Philosophie" && e.type.name === "Café philo"
+    (e) => e.category.name === "Philosophie" && e.type.name === "Café philo socratique"
   );
 
   return (
@@ -30,7 +30,7 @@ const CafesPhilo = () => {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{"Café philo"}</BreadcrumbPage>
+            <BreadcrumbPage> {"Café philo socratique"}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

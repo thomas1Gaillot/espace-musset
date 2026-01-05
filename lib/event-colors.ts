@@ -8,7 +8,7 @@ type ColorScheme = {
 
 export const getEventColor = (eventType: EventType): ColorScheme => {
   const colorMap: Record<EventType, ColorScheme> = {
-    "Café philo": {
+    "Café philo socratique": {
       borderColor: "#ec4899",
       backgroundColor: "#fdf2f8",
       textColor: "#831843",

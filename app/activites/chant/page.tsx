@@ -55,7 +55,7 @@ const Chant = () => (
               guidée.
             </p>
             <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-              Cours avec Béatrice les mercredis de 19h30 à 20h30
+              Cours avec Béatrice les mercredis de 18h15 à 19h15
             </div>
           </div>
         </div>
