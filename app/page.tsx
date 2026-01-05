@@ -105,7 +105,7 @@ export default function HomePage() {
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Café philo tout les 1er jeudis du mois"} </p>
+                <p>{"Café philo tous les 1er jeudi du mois"} </p>
               </div>
             </Link>
           </Button>
