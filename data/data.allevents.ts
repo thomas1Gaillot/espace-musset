@@ -1679,7 +1679,8 @@ const eventList: EventData[] = [
     price: "6 €",
     category: philosophieEventCategory,
     type: AtelierPhilo,
-    eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367',
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367",
   }),
   createEvent({
     title: "Penser par soi-même : oser la vérité avec la caverne de Platon",
@@ -1689,7 +1690,8 @@ const eventList: EventData[] = [
     price: "6 €",
     category: philosophieEventCategory,
     type: AtelierPhilo,
-    eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367',
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367",
   }),
   createEvent({
     title: "Etre ou paraître : la vision de l'être humain en orient",
@@ -1699,7 +1701,8 @@ const eventList: EventData[] = [
     price: "6 €",
     category: philosophieEventCategory,
     type: AtelierPhilo,
-    eventLink: 'https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367',
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367",
   }),
   createEvent({
     title: "Qi Gong",
