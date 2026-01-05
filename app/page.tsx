@@ -101,11 +101,11 @@ export default function HomePage() {
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-colis-de-noel-pour-les-enfants-de-4-a-12-ans-1909344032399"
+                "https://www.eventbrite.fr/e/billets-cafe-philo-la-justice-suit-elle-la-loi-ou-la-conscience-1976509953477"
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Evenement Gratuit : Colis de Noël pour les enfants, Jeudi 18/12"} </p>
+                <p>{"Café philo tout les 1er jeudis du mois"} </p>
               </div>
             </Link>
           </Button>
