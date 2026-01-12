@@ -389,7 +389,7 @@ const volunteerEvents: EventData[] = [
   ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE, [
     new Date("2025-09-28"),
     new Date("2025-10-26"),
-    new Date("2026-01-30"),
+    new Date("2026-01-25"),
   ]),
 
   createEvent({

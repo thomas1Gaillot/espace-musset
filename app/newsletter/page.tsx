@@ -8,12 +8,14 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { eventList } from "@/data/data.allevents";
-import { getMonthlyEvents } from "@/data/get-monthly.events";
+import { getMonthlyEventsGrouped } from "@/data/get-monthly.events";
 import { ROUTES } from "@/data/route";
 
 import { ExportButton } from "@/components/newsletter/ExportButtons";
 
 export default function NewsLetter() {
+  const eventsData = getMonthlyEventsGrouped(eventList);
+
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -29,10 +31,10 @@ export default function NewsLetter() {
 
         <div className="w-full flex justify-between">
           <h1 className="font-serif text-4xl font-bold text-foreground mb-8">Newsletter</h1>
-          <ExportButton events={getMonthlyEvents(eventList)} />
+          <ExportButton eventsData={eventsData} />
         </div>
         <div className="prose prose-lg max-w-none space-y-8">
-          <NewsletterTemplate events={getMonthlyEvents(eventList)} />
+          <NewsletterTemplate eventsData={eventsData} />
         </div>
       </div>
     </div>

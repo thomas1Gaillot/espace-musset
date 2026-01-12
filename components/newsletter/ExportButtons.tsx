@@ -9,15 +9,24 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { EventData } from "@/types/event-types";
-import { downloadNewsletterHTML } from "@/utils/newsletter-html-exporter";
+import { MonthlyEventsData } from "@/data/get-monthly.events";
+import { downloadNewsletterHTML, downloadNewsletterHTMLGrouped } from "@/utils/newsletter-html-exporter";
 
 interface ExportButtonsProps {
-  events: EventData[];
+  events?: EventData[];
+  eventsData?: MonthlyEventsData;
   month?: string;
   year?: number;
 }
 
-export function ExportButton({ events, month, year }: ExportButtonsProps) {
+export function ExportButton({ events, eventsData, month, year }: ExportButtonsProps) {
+  const handleDownload = () => {
+    if (eventsData) {
+      downloadNewsletterHTMLGrouped(eventsData, month, year);
+    } else if (events) {
+      downloadNewsletterHTML(events, month, year);
+    }
+  };
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -47,7 +56,7 @@ export function ExportButton({ events, month, year }: ExportButtonsProps) {
                 newsletter.
               </p>
               <Button
-                onClick={() => downloadNewsletterHTML(events, month, year)}
+                onClick={handleDownload}
                 variant="outline"
                 size="sm"
               >
