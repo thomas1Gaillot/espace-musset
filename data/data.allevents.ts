@@ -282,37 +282,28 @@ const atelierChantOctNov = generateEventsFromDates(
 );
 
 // Atelier Philosophie - Specific Monday dates
-const atelierPhiloMondays = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.ATELIER_PHILO,
-  [
-    new Date("2025-10-13"),
-    new Date("2025-10-20"),
-    new Date("2025-10-27"),
-    new Date("2025-11-03"),
-    new Date("2025-11-10"),
-  ]
-);
+const atelierPhiloMondays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ATELIER_PHILO, [
+  new Date("2025-10-13"),
+  new Date("2025-10-20"),
+  new Date("2025-10-27"),
+  new Date("2025-11-03"),
+  new Date("2025-11-10"),
+]);
 
 // Meditation - Specific Thursday dates
-const meditationThursdays = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.MEDITATION,
-  [
-    new Date("2025-10-09"),
-    new Date("2025-10-16"),
-    new Date("2025-10-23"),
-    new Date("2025-10-30"),
-  ]
-);
+const meditationThursdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MEDITATION, [
+  new Date("2025-10-09"),
+  new Date("2025-10-16"),
+  new Date("2025-10-23"),
+  new Date("2025-10-30"),
+]);
 
 // Clown Socratique - February 2026
-const clownSocratiqueEvents = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.CLOWN_SOCRATIQUE,
-  [
-    new Date("2026-02-10"),
-    new Date("2026-02-17"),
-    new Date("2026-02-24"),
-  ]
-);
+const clownSocratiqueEvents = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CLOWN_SOCRATIQUE, [
+  new Date("2026-02-10"),
+  new Date("2026-02-17"),
+  new Date("2026-02-24"),
+]);
 
 // Clown Socratique - Tuesday sessions (Sept-Oct)
 const clownSocratiqueTuesdays = generateEventsFromDates(
@@ -320,31 +311,26 @@ const clownSocratiqueTuesdays = generateEventsFromDates(
     title: "Clown Socratique",
     time: "19:00 à 21:30",
   }),
-  [
-    new Date("2025-09-23"),
-    new Date("2025-09-30"),
-    new Date("2025-10-21"),
-    new Date("2025-10-28"),
-  ]
+  [new Date("2025-09-23"), new Date("2025-09-30"), new Date("2025-10-21"), new Date("2025-10-28")]
 );
 
 // Meditation Midi - Tuesday sessions
-const meditationMidiTuesdays = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.MEDITATION_MIDI,
-  [new Date("2025-09-23"), new Date("2025-09-30")]
-);
+const meditationMidiTuesdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MEDITATION_MIDI, [
+  new Date("2025-09-23"),
+  new Date("2025-09-30"),
+]);
 
 // Feldenkrais - Saturday sessions
-const feldenkraisSaturdays = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.FELDENKRAIS,
-  [new Date("2025-10-18"), new Date("2025-10-25")]
-);
+const feldenkraisSaturdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.FELDENKRAIS, [
+  new Date("2025-10-18"),
+  new Date("2025-10-25"),
+]);
 
 // Ecriture Spontanée
-const ecritureSpontanee = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.ECRITURE_SPONTANEE,
-  [new Date("2025-10-16"), new Date("2025-11-20")]
-);
+const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRITURE_SPONTANEE, [
+  new Date("2025-10-16"),
+  new Date("2025-11-20"),
+]);
 
 /**
  * VOLUNTEER ACTIVITIES

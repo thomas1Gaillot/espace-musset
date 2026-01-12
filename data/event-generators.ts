@@ -153,10 +153,7 @@ export function generateMonthlyEvents(
  *   new Date("2025-11-10"),
  * ])
  */
-export function generateEventsFromDates(
-  template: EventTemplate,
-  dates: Date[]
-): EventData[] {
+export function generateEventsFromDates(template: EventTemplate, dates: Date[]): EventData[] {
   return dates.map((date) =>
     createEvent({
       ...template,

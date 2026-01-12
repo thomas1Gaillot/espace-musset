@@ -10,7 +10,10 @@ import {
 } from "@/components/ui/sheet";
 import { EventData } from "@/types/event-types";
 import { MonthlyEventsData } from "@/data/get-monthly.events";
-import { downloadNewsletterHTML, downloadNewsletterHTMLGrouped } from "@/utils/newsletter-html-exporter";
+import {
+  downloadNewsletterHTML,
+  downloadNewsletterHTMLGrouped,
+} from "@/utils/newsletter-html-exporter";
 
 interface ExportButtonsProps {
   events?: EventData[];
@@ -55,11 +58,7 @@ export function ExportButton({ events, eventsData, month, year }: ExportButtonsP
                 Cliquez sur le bouton ci-dessous pour télécharger le fichier HTML de votre
                 newsletter.
               </p>
-              <Button
-                onClick={handleDownload}
-                variant="outline"
-                size="sm"
-              >
+              <Button onClick={handleDownload} variant="outline" size="sm">
                 <Download className="w-4 h-4 mr-2" />
                 Télécharger la Newsletter
               </Button>

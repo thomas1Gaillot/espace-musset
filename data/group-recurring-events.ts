@@ -126,14 +126,17 @@ export function formatRecurringDates(dates: Date[]): string {
   }
 
   // Grouper par mois si possible
-  const byMonth = dates.reduce((acc, date) => {
-    const monthKey = date.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
-    if (!acc[monthKey]) {
-      acc[monthKey] = [];
-    }
-    acc[monthKey].push(date);
-    return acc;
-  }, {} as Record<string, Date[]>);
+  const byMonth = dates.reduce(
+    (acc, date) => {
+      const monthKey = date.toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
+      if (!acc[monthKey]) {
+        acc[monthKey] = [];
+      }
+      acc[monthKey].push(date);
+      return acc;
+    },
+    {} as Record<string, Date[]>
+  );
 
   const monthKeys = Object.keys(byMonth);
 
