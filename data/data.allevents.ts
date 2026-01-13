@@ -592,7 +592,7 @@ const cafeEvents: EventData[] = [
 
   ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.SOIREE_JEUX, [
     new Date("2025-11-27"),
-    new Date("2026-01-22"),
+    new Date("2026-01-29"),
   ]),
 ];
 
