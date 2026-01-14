@@ -149,6 +149,17 @@ const oneTimeEvents: EventData[] = [
     type: EVENT_TYPES.CONFERENCE_PHILO,
     eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES,
   }),
+  createEvent({
+    title: "Hathor : la puissance de la joie au cœur de la spiritualité égyptienne.",
+    dateObj: new Date("2026-03-13"),
+    time: "20:00 à 22:00",
+    image: "event/hator.png",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-hathor-la-puissance-de-la-joie-au-cur-de-la-spiritualite-egyptienne-1980548869985",
+  }),
 ];
 
 /**
