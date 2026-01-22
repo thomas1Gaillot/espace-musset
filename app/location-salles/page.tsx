@@ -30,6 +30,7 @@ import {
   MicIcon,
   Minus,
   MoveDiagonal2,
+  PencilRuler,
   PianoIcon,
   Projector,
   Scroll,
@@ -66,6 +67,7 @@ export default function LocationSallesPage() {
         { title: "Tapis de Yoga et coussins de méditation", Icon: Minus },
       ],
       activity: [
+        { title: "Séminaire", Icon: PencilRuler },
         { title: "Yoga", Icon: AirVentIcon },
         { title: "Conférences", Icon: SpeakerIcon },
         { title: "Piano", Icon: PianoIcon },
@@ -100,7 +102,7 @@ export default function LocationSallesPage() {
             <br />
             vos événements
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-3xl px-4 mx-auto leading-relaxed">
             Louez nos espaces chaleureux et modulables pour vos événements, formations, réunions ou
             célébrations. Des lieux inspirants qui reflètent nos valeurs de convivialité et de
             partage.
@@ -477,7 +479,7 @@ function CarouselSalleDesMuses() {
   }, [api]);
 
   return (
-    <div className="mx-auto w-full relative rounded-xl overflow-hidden shadow-2xl">
+    <div className="mx-auto w-full relative rounded-sm overflow-hidden shadow-xl">
       <Carousel setApi={setApi} className="w-full">
         <CarouselContent>
           {images.map((image, index) => (
@@ -524,7 +526,7 @@ function CarouselSalleDesMuses() {
       </Carousel>
 
       {/* Indicateurs de pagination */}
-      <div className="bg-white px-4 py-4 sm:py-3">
+      <div className="bg-white px-4 py-2 sm:py-3">
         <div className="flex items-center justify-center gap-2">
           {Array.from({ length: count }).map((_, idx) => (
             <button
@@ -536,11 +538,6 @@ function CarouselSalleDesMuses() {
               aria-label={`Aller à l'image ${idx + 1}`}
             />
           ))}
-        </div>
-
-        {/* Compteur mobile - visible uniquement sur petits écrans */}
-        <div className="sm:hidden text-center mt-2 text-xs text-muted-foreground font-medium">
-          {current} / {count}
         </div>
       </div>
     </div>
