@@ -9,7 +9,7 @@ export function NewsletterRoomPromo() {
       <section className="py-6 border-b border-border">
         <p className="text-lg text-foreground leading-relaxed">
           Ce mois-ci à l'Espace Musset : découvrez notre{" "}
-          <strong>salle disponible à la location</strong>, et retrouvez tous nos{" "}
+          <strong>mise à disposition de salles</strong>, et retrouvez tous nos{" "}
           <strong>événements de janvier</strong> — conférences, philosophie, soirées jeux, ateliers
           chant, théâtre et bien plus encore !
         </p>
@@ -28,7 +28,8 @@ export function NewsletterRoomPromo() {
           </div>
         </div>
 
-        <div className="flex rounded-xl overflow-hidden bg-primary/10 border border-primary/20">
+        {/* Salle des Muses */}
+        <div className="flex rounded-xl overflow-hidden bg-primary/10 border border-primary/20 mb-4">
           {/* Image */}
           <div className="relative w-2/5 min-h-[200px]">
             <Image
@@ -67,14 +68,68 @@ export function NewsletterRoomPromo() {
 
             <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
               <PhoneIcon className="w-4 h-4 text-primary" />
-              <span>06 30 15 46 48</span>
+              <span>06 21 79 97 50</span>
             </div>
             <div className="flex items-center gap-1.5 mb-3 text-sm text-muted-foreground">
               <Mail className="w-4 h-4 text-primary" />
               <span>contact@espace-musset.com</span>
             </div>
             <a
-              href="https://www.espace-musset.com/location-salles"
+              href="https://www.espace-musset.com/mise-a-disposition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="default" size="sm" className="w-full">
+                En savoir plus
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        {/* Café d'Oc */}
+        <div className="flex rounded-xl overflow-hidden bg-primary/10 border border-primary/20">
+          {/* Image */}
+          <div className="relative w-2/5 min-h-[200px]">
+            <Image
+              src="/mise-a-disposition/cafe_durant_cafephilo.jpeg"
+              alt="Café d'Oc"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center center" }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex-1 p-4">
+            <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+              Le Café d'Oc
+            </h3>
+
+            <div className="flex flex-wrap gap-2 mb-3">
+              <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Users className="w-4 h-4 text-primary" />
+                <span>18 places</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Euro className="w-4 h-4 text-primary" />
+                <span>Nous contacter</span>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground mb-3">
+              Espace convivial idéal pour conférences et ateliers en petit comité.
+            </p>
+
+            <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <PhoneIcon className="w-4 h-4 text-primary" />
+              <span>06 21 79 97 50</span>
+            </div>
+            <div className="flex items-center gap-1.5 mb-3 text-sm text-muted-foreground">
+              <Mail className="w-4 h-4 text-primary" />
+              <span>contact@espace-musset.com</span>
+            </div>
+            <a
+              href="https://www.espace-musset.com/mise-a-disposition"
               target="_blank"
               rel="noopener noreferrer"
             >

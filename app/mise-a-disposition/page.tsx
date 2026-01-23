@@ -24,6 +24,8 @@ import {
   Bird,
   Brackets,
   Brush,
+  Coffee,
+  CookingPot,
   Drama,
   GlassWater,
   Lightbulb,
@@ -41,14 +43,16 @@ import {
   Sun,
   Theater,
   TreeDeciduous,
+  Users,
   Wifi,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
-export default function LocationSallesPage() {
+export default function MiseADispositionPage() {
   const salles = [
     {
+      id: "salle-des-muses",
       name: "Salle des muses",
       capacity: "42m² - 24-50 personnes selon disposition",
       features: [
@@ -76,6 +80,32 @@ export default function LocationSallesPage() {
       ],
       prices: [" 1/2 Journée - 120 €", " Journée - 200 €", " Horaire - 50 €/h"],
       pricesWeekEnd: [" 1/2 Journée - 140 €", " Journée - 240 €", " Horaire - 60 €/h"],
+      contactForPrice: false,
+      showDispositions: true,
+    },
+
+    {
+      id: "cafe-doc",
+      name: "Le café d'Oc",
+      capacity: "18 places assises",
+      features: [
+        { title: "WiFi", Icon: Wifi },
+        { title: "Toilettes PMR", Icon: Accessibility },
+        { title: "Lumière du jour", Icon: Sun },
+        { title: "Calme", Icon: Bird },
+        { title: "Café, Thé", Icon: Coffee },
+      ],
+      activity: [
+        { title: "Conférences", Icon: SpeakerIcon },
+        { title: "Ateliers", Icon: PencilRuler },
+        { title: "Evènements", Icon: Drama },
+        { title: "Art", Icon: Brush },
+        { title: "Séminaire", Icon: PencilRuler },
+      ],
+      prices: null,
+      pricesWeekEnd: null,
+      contactForPrice: true,
+      showDispositions: false,
     },
   ];
 
@@ -103,36 +133,61 @@ export default function LocationSallesPage() {
             vos événements
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl px-4 mx-auto leading-relaxed">
-            Louez nos espaces chaleureux et modulables pour vos événements, formations, réunions ou
-            célébrations. Des lieux inspirants qui reflètent nos valeurs de convivialité et de
-            partage.
+            Nous mettons à disposition nos espaces chaleureux et modulables pour vos événements,
+            formations, réunions ou célébrations.
           </p>
         </div>
 
         {/* Description générale */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
-          <CarouselSalleDesMuses />
-
-          <div className="flex flex-col justify-center space-y-6">
-            <h2 className="font-serif text-3xl font-bold text-foreground">
-              Des espaces à votre image
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                L'Espace Musset met à disposition ses différentes salles pour accueillir vos projets
-                associatifs, professionnels ou personnels. Nos espaces reflètent nos valeurs
-                d'ouverture et de bienveillance.
-              </p>
-              <p>
-                Que ce soit pour une conférence, un atelier, une formation ou une célébration, nous
-                vous proposons des environnements adaptés et équipés selon vos besoins.
-              </p>
+        <div className="mb-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col justify-center space-y-6 order-2 lg:order-1">
+              <h2 className="font-serif text-3xl font-bold text-foreground">La salle des muses</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  L'Espace Musset met à disposition ses différentes salles pour accueillir vos
+                  projets associatifs, professionnels ou personnels. Nos espaces reflètent nos
+                  valeurs d'ouverture et de bienveillance.
+                </p>
+                <p>
+                  Que ce soit pour une conférence, un atelier, une formation ou une célébration,
+                  nous vous proposons des environnements adaptés et équipés selon vos besoins.
+                </p>
+              </div>
+              <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
+                <p className="text-sm font-medium text-foreground">
+                  Nos tarifs préférentiels pour les associations et les projets à vocation sociale
+                  témoignent de notre engagement communautaire.
+                </p>
+              </div>
             </div>
-            <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
-              <p className="text-sm font-medium text-foreground">
-                Nos tarifs préférentiels pour les associations et les projets à vocation sociale
-                témoignent de notre engagement communautaire.
-              </p>
+
+            <div className="order-1 lg:order-2">
+              <CarouselSalleDesMuses />
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <CarouselCafeDoc />
+
+            <div className="flex flex-col justify-center space-y-6">
+              <h2 className="font-serif text-3xl font-bold text-foreground">Le café d'Oc</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Un espace chaleureux et convivial au coeur de l'Espace Musset, idéal pour vos
+                  conférences et ateliers dans une ambiance café.
+                </p>
+                <p>
+                  Avec ses 18 places assises, le café d'Oc offre un cadre intimiste parfait pour des
+                  échanges de qualité, comme nos célèbres Cafés Philo.
+                </p>
+              </div>
+              <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
+                <p className="text-sm font-medium text-foreground">
+                  Nos tarifs préférentiels pour les associations et les projets à vocation sociale
+                  témoignent de notre engagement communautaire.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +235,7 @@ export default function LocationSallesPage() {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl flex flex-col gap-12 mx-auto">
             {salles.map((salle, index) => (
               <Card key={index} className="overflow-hidden border-2 shadow-lg">
                 <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10 pb-6">
@@ -219,53 +274,66 @@ export default function LocationSallesPage() {
                   {/* Tarifs */}
                   <div className="space-y-4">
                     <h3 className="font-serif text-2xl font-semibold text-foreground">Tarifs</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {/* Tarif Semaine */}
-                      <div className="bg-white border-2 rounded-lg overflow-hidden">
-                        <div className="bg-primary text-primary-foreground px-4 py-3 text-center">
-                          <h4 className="font-bold text-lg">Tarif Semaine</h4>
-                          <p className="text-xs opacity-90">Lundi au Vendredi</p>
-                        </div>
-                        <div className="p-6 space-y-3">
-                          {salle.prices.map((p, idx) => (
-                            <div
-                              key={idx}
-                              className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
-                            >
-                              <span className="font-medium text-muted-foreground">
-                                {p.split(" - ")[0].trim()}
-                              </span>
-                              <span className="font-bold text-xl text-foreground">
-                                {p.split(" - ")[1].trim()}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                    {salle.contactForPrice ? (
+                      <div className="bg-primary/10 border-2 border-primary/20 rounded-lg p-6 text-center">
+                        <p className="text-lg font-semibold text-foreground mb-2">Nous contacter</p>
+                        <p className="text-muted-foreground text-sm">
+                          Pour connaître nos tarifs et disponibilités, n'hésitez pas à nous
+                          contacter
+                        </p>
+                        <Button variant="outline" size="sm" className="mt-4" asChild>
+                          <Link href="/contact">Demander un devis</Link>
+                        </Button>
                       </div>
+                    ) : (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {/* Tarif Semaine */}
+                        <div className="bg-white border-2 rounded-lg overflow-hidden">
+                          <div className="bg-primary text-primary-foreground px-4 py-3 text-center">
+                            <h4 className="font-bold text-lg">Tarif Semaine</h4>
+                            <p className="text-xs opacity-90">Lundi au Vendredi</p>
+                          </div>
+                          <div className="p-6 space-y-3">
+                            {salle.prices?.map((p, idx) => (
+                              <div
+                                key={idx}
+                                className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
+                              >
+                                <span className="font-medium text-muted-foreground">
+                                  {p.split(" - ")[0].trim()}
+                                </span>
+                                <span className="font-bold text-xl text-foreground">
+                                  {p.split(" - ")[1].trim()}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
 
-                      {/* Tarif Week-End */}
-                      <div className="bg-white border-2 rounded-lg overflow-hidden">
-                        <div className="bg-secondary text-secondary-foreground px-4 py-3 text-center">
-                          <h4 className="font-bold text-lg">Tarif Week-End</h4>
-                          <p className="text-xs opacity-90">Samedi et Dimanche</p>
-                        </div>
-                        <div className="p-6 space-y-3">
-                          {salle.pricesWeekEnd.map((p, idx) => (
-                            <div
-                              key={idx}
-                              className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
-                            >
-                              <span className="font-medium text-muted-foreground">
-                                {p.split(" - ")[0].trim()}
-                              </span>
-                              <span className="font-bold text-xl text-foreground">
-                                {p.split(" - ")[1].trim()}
-                              </span>
-                            </div>
-                          ))}
+                        {/* Tarif Week-End */}
+                        <div className="bg-white border-2 rounded-lg overflow-hidden">
+                          <div className="bg-secondary text-secondary-foreground px-4 py-3 text-center">
+                            <h4 className="font-bold text-lg">Tarif Week-End</h4>
+                            <p className="text-xs opacity-90">Samedi et Dimanche</p>
+                          </div>
+                          <div className="p-6 space-y-3">
+                            {salle.pricesWeekEnd?.map((p, idx) => (
+                              <div
+                                key={idx}
+                                className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
+                              >
+                                <span className="font-medium text-muted-foreground">
+                                  {p.split(" - ")[0].trim()}
+                                </span>
+                                <span className="font-bold text-xl text-foreground">
+                                  {p.split(" - ")[1].trim()}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    )}
                   </div>
 
                   {/* Équipements */}
@@ -290,57 +358,65 @@ export default function LocationSallesPage() {
                   </div>
 
                   {/* Dispositions */}
-                  <div className="space-y-4">
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Dispositions possibles
-                    </h3>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                      <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        <SquareDashed
-                          strokeWidth={1.5}
-                          className="size-6 text-primary flex-shrink-0"
-                        />
-                        <div className="text-sm">
-                          <p className="font-semibold">Espace vide</p>
-                          <p className="text-xs text-muted-foreground">Configuration libre</p>
+                  {salle.showDispositions && (
+                    <div className="space-y-4">
+                      <h3 className="font-serif text-2xl font-semibold text-foreground">
+                        Dispositions possibles
+                      </h3>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
+                          <SquareDashed
+                            strokeWidth={1.5}
+                            className="size-6 text-primary flex-shrink-0"
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold">Espace vide</p>
+                            <p className="text-xs text-muted-foreground">Configuration libre</p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        <Theater strokeWidth={1.5} className="size-6 text-primary flex-shrink-0" />
-                        <div className="text-sm">
-                          <p className="font-semibold">Conférence</p>
-                          <p className="text-xs text-muted-foreground">Jusqu'à 50 personnes</p>
+                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
+                          <Theater
+                            strokeWidth={1.5}
+                            className="size-6 text-primary flex-shrink-0"
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold">Conférence</p>
+                            <p className="text-xs text-muted-foreground">Jusqu'à 50 personnes</p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        <Brackets strokeWidth={1.5} className="size-6 text-primary flex-shrink-0" />
-                        <div className="text-sm">
-                          <p className="font-semibold">En U</p>
-                          <p className="text-xs text-muted-foreground">10 à 24 personnes</p>
+                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
+                          <Brackets
+                            strokeWidth={1.5}
+                            className="size-6 text-primary flex-shrink-0"
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold">En U</p>
+                            <p className="text-xs text-muted-foreground">10 à 24 personnes</p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        <SquareMenu
-                          strokeWidth={1.5}
-                          className="size-6 text-primary flex-shrink-0"
-                        />
-                        <div className="text-sm">
-                          <p className="font-semibold">Salle de classe</p>
-                          <p className="text-xs text-muted-foreground">12 à 24 personnes</p>
+                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
+                          <SquareMenu
+                            strokeWidth={1.5}
+                            className="size-6 text-primary flex-shrink-0"
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold">Salle de classe</p>
+                            <p className="text-xs text-muted-foreground">12 à 24 personnes</p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                        <MoveDiagonal2
-                          strokeWidth={1.5}
-                          className="size-6 text-primary flex-shrink-0"
-                        />
-                        <div className="text-sm">
-                          <p className="font-semibold">En épis</p>
-                          <p className="text-xs text-muted-foreground">12 à 21 personnes</p>
+                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
+                          <MoveDiagonal2
+                            strokeWidth={1.5}
+                            className="size-6 text-primary flex-shrink-0"
+                          />
+                          <div className="text-sm">
+                            <p className="font-semibold">En épis</p>
+                            <p className="text-xs text-muted-foreground">12 à 21 personnes</p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -432,6 +508,112 @@ export default function LocationSallesPage() {
               </p>
             </CardContent>
           </Card>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CarouselCafeDoc() {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
+  const images = [
+    {
+      src: "/mise-a-disposition/cafe_durant_cafephilo.jpeg",
+      title: "Le café d'Oc",
+      config: "Café Philo",
+      capacity: "18 personnes",
+      icon: Users,
+    },
+    {
+      src: "/mise-a-disposition/cafe_allee.jpeg",
+      title: "Le café d'Oc",
+      config: "Vue allée",
+      capacity: "18 personnes",
+      icon: Coffee,
+    },
+    {
+      src: "/mise-a-disposition/cafe_comptoir.jpeg",
+      title: "Le café d'Oc",
+      config: "Comptoir",
+      capacity: "18 personnes",
+      icon: Coffee,
+    },
+  ];
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  return (
+    <div className="mx-auto w-full relative rounded-sm overflow-hidden shadow-xl mt-6">
+      <Carousel setApi={setApi} className="w-full">
+        <CarouselContent>
+          {images.map((image, index) => (
+            <CarouselItem key={index} className="relative">
+              <div className="aspect-[4/3] w-full relative group">
+                <img
+                  src={image.src}
+                  alt={`${image.title} - ${image.config}`}
+                  className="w-full h-full object-cover"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                {/* Légende en overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex-shrink-0">
+                      <image.icon className="w-6 h-6" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif text-lg sm:text-2xl font-bold mb-1 truncate">
+                        {image.title}
+                      </h3>
+                      <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
+                        <span className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full font-medium">
+                          {image.config}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <span className="hidden sm:inline">•</span>
+                          <span className="font-medium">{image.capacity}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+
+        {/* Boutons de navigation - cachés sur mobile, visibles sur desktop */}
+        <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
+        <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
+      </Carousel>
+
+      {/* Indicateurs de pagination */}
+      <div className="bg-white px-4 py-2 sm:py-3">
+        <div className="flex items-center justify-center gap-2">
+          {Array.from({ length: count }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => api?.scrollTo(idx)}
+              className={`h-2 rounded-full transition-all ${
+                idx === current - 1 ? "w-8 bg-primary" : "w-2 bg-gray-300 hover:bg-gray-400"
+              }`}
+              aria-label={`Aller à l'image ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>

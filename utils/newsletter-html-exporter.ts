@@ -71,7 +71,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                     <!-- Intro Section -->
                     <div style="${styles.section}; border-bottom: 1px solid #e5e7eb;">
                         <p style="font-size: 18px; line-height: 1.6; color: #111827; margin: 0;">
-                            Ce mois-ci à l'Espace Musset : découvrez notre <strong>salle disponible à la location</strong>,
+                            Ce mois-ci à l'Espace Musset : découvrez notre <strong>mise à disposition de salles</strong>,
                             et retrouvez tous nos <strong>événements de janvier</strong> — conférences, soirées jeux,
                             ateliers chant, théâtre et bien plus encore !
                         </p>
@@ -86,7 +86,8 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                             <h2 style="font-size: 20px; font-weight: 600; color: #111827; margin: 0;">Mise à disposition de salle</h2>
                         </div>
 
-                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; border: 1px solid #8b263530;">
+                        <!-- Salle des Muses -->
+                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; border: 1px solid #8b263530; margin-bottom: 16px;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
                                     <img src="https://www.espace-musset.com/salle-des-muses-3.jpg" alt="Salle des Muses" style="width: 100%; height: 220px; object-fit: cover; object-position: 80% center; display: block;" />
@@ -100,12 +101,36 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Salle de réunion, lieu de séminaire, espace de formation…</p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
-                                        <span style="color: #8B2635;">📞</span> 06 30 15 46 48
+                                        <span style="color: #8B2635;">📞</span> 06 21 79 97 50
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 12px 0;">
                                         <span style="color: #8B2635;">✉️</span> contact@espace-musset.com
                                     </p>
-                                    <a href="https://www.espace-musset.com/location-salles" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
+                                    <a href="https://www.espace-musset.com/mise-a-disposition" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Café d'Oc -->
+                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; border: 1px solid #8b263530;">
+                            <tr>
+                                <td style="width: 40%; vertical-align: top;">
+                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_durant_cafephilo.jpeg" alt="Café d'Oc" style="width: 100%; height: 220px; object-fit: cover; object-position: center center; display: block;" />
+                                </td>
+                                <td style="width: 60%; vertical-align: top; padding: 16px;">
+                                    <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">
+                                        <span style="color: #8B2635;">👥</span> 18 places &nbsp;
+                                        <span style="color: #8B2635;">💶</span> Nous contacter
+                                    </p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Espace convivial idéal pour conférences et ateliers en petit comité.</p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
+                                        <span style="color: #8B2635;">📞</span> 06 21 79 97 50
+                                    </p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 12px 0;">
+                                        <span style="color: #8B2635;">✉️</span> contact@espace-musset.com
+                                    </p>
+                                    <a href="https://www.espace-musset.com/mise-a-disposition" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
                                 </td>
                             </tr>
                         </table>
@@ -481,7 +506,7 @@ export function exportNewsletterToHTMLGrouped(
                     <!-- Intro Section -->
                     <div style="${styles.section}; border-bottom: 1px solid #e5e7eb;">
                         <p style="font-size: 18px; line-height: 1.6; color: #111827; margin: 0;">
-                            Ce mois-ci à l'Espace Musset : découvrez notre <strong>salle disponible à la location</strong>,
+                            Ce mois-ci à l'Espace Musset : découvrez notre <strong>mise à disposition de salles</strong>,
                             et retrouvez tous nos <strong>événements de janvier</strong> — conférences, philosophie, soirées jeux,
                             ateliers chant, théâtre et bien plus encore !
                         </p>
@@ -496,7 +521,8 @@ export function exportNewsletterToHTMLGrouped(
                             <h2 style="font-size: 20px; font-weight: 600; color: #111827; margin: 0;">Mise à disposition de salle</h2>
                         </div>
 
-                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515;">
+                        <!-- Salle des Muses -->
+                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; margin-bottom: 16px;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
                                     <img src="https://www.espace-musset.com/salle-des-muses-3.jpg" alt="Salle des Muses" style="width: 100%; height: 240px; object-fit: cover; object-position: 80% center; display: block;" />
@@ -510,12 +536,36 @@ export function exportNewsletterToHTMLGrouped(
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Salle de réunion, lieu de séminaire, espace de formation…</p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
-                                        <span style="color: #8B2635;">📞</span> 06 30 15 46 48
+                                        <span style="color: #8B2635;">📞</span> 06 21 79 97 50
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 12px 0;">
                                         <span style="color: #8B2635;">✉️</span> contact@espace-musset.com
                                     </p>
-                                    <a href="https://www.espace-musset.com/location-salles" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
+                                    <a href="https://www.espace-musset.com/mise-a-disposition" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Café d'Oc -->
+                        <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515;">
+                            <tr>
+                                <td style="width: 40%; vertical-align: top;">
+                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_durant_cafephilo.jpeg" alt="Café d'Oc" style="width: 100%; height: 240px; object-fit: cover; object-position: center center; display: block;" />
+                                </td>
+                                <td style="width: 60%; vertical-align: top; padding: 16px;">
+                                    <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">
+                                        <span style="color: #8B2635;">👥</span> 18 places &nbsp;
+                                        <span style="color: #8B2635;">💶</span> Nous contacter
+                                    </p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Espace convivial idéal pour conférences et ateliers en petit comité.</p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
+                                        <span style="color: #8B2635;">📞</span> 06 21 79 97 50
+                                    </p>
+                                    <p style="font-size: 14px; color: #6b7280; margin: 0 0 12px 0;">
+                                        <span style="color: #8B2635;">✉️</span> contact@espace-musset.com
+                                    </p>
+                                    <a href="https://www.espace-musset.com/mise-a-disposition" style="${styles.button}; display: block; width: 100%; box-sizing: border-box; font-size: 14px; padding: 10px 16px;">En savoir plus</a>
                                 </td>
                             </tr>
                         </table>

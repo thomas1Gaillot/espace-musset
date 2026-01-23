@@ -73,10 +73,10 @@ export const Header = () => {
               Café associatif
             </Link>
             <Link
-              href={ROUTES.LOCATION_SALLES}
-              className={`nav-link ${isActive("/location-salles") ? "active" : ""}`}
+              href={ROUTES.MISE_A_DISPOSITION}
+              className={`nav-link ${isActive("/mise-a-disposition") ? "active" : ""}`}
             >
-              Location de salles
+              Mise à disposition de salles
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="nav-link flex items-center space-x-1">
@@ -195,7 +195,7 @@ export const Header = () => {
                 Café associatif
               </Link>
               <Link
-                href={ROUTES.LOCATION_SALLES}
+                href={ROUTES.MISE_A_DISPOSITION}
                 className="nav-link"
                 onClick={() => setIsMenuOpen(false)}
               >
