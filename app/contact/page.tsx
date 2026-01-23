@@ -125,7 +125,7 @@ function ContactInfo() {
 
           <div>
             <h3 className="font-semibold text-foreground mb-2">{"Téléphone"}</h3>
-            <p className="text-muted-foreground">{"06 30 15 46 48"}</p>
+            <p className="text-muted-foreground">{"06 21 79 97 50"}</p>
           </div>
 
           <div>

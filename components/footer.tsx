@@ -26,7 +26,7 @@ export const Footer = () => {
               <p>52 Bis Rue Alfred de Musset</p>
               <p>31200 Toulouse</p>
               <p>Métro: Minimes - Claude Nougaro</p>
-              <p>Tél: 06 30 15 46 48</p>
+              <p>Tél: 06 21 79 97 50</p>
               <p>contact@espace-musset.com</p>
             </div>
           </div>

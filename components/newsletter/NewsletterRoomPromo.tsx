@@ -91,7 +91,7 @@ export function NewsletterRoomPromo() {
           {/* Image */}
           <div className="relative w-2/5 min-h-[200px]">
             <Image
-              src="/mise-a-disposition/cafe_durant_cafephilo.jpeg"
+              src="/mise-a-disposition/cafe_classe.jpeg"
               alt="Café d'Oc"
               fill
               className="object-cover"
@@ -107,12 +107,16 @@ export function NewsletterRoomPromo() {
 
             <div className="flex flex-wrap gap-2 mb-3">
               <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Ruler className="w-4 h-4 text-primary" />
+                <span>28 m²</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <Users className="w-4 h-4 text-primary" />
-                <span>18 places</span>
+                <span>25 pers.</span>
               </div>
               <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
                 <Euro className="w-4 h-4 text-primary" />
-                <span>Nous contacter</span>
+                <span>Dès 30 €</span>
               </div>
             </div>
 

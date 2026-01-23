@@ -74,7 +74,7 @@ export function NewsletterHighlights() {
                 </p>
 
                 <p className="font-medium mt-3">{"Téléphone"}</p>
-                <p>{"06 30 15 46 48"}</p>
+                <p>{"06 21 79 97 50"}</p>
 
                 <p className="font-medium mt-3">{"Email"}</p>
                 <p>{"contact@espace-musset.com"}</p>

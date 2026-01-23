@@ -43,7 +43,6 @@ import {
   Sun,
   Theater,
   TreeDeciduous,
-  Users,
   Wifi,
 } from "lucide-react";
 import Link from "next/link";
@@ -87,7 +86,7 @@ export default function MiseADispositionPage() {
     {
       id: "cafe-doc",
       name: "Le café d'Oc",
-      capacity: "18 places assises",
+      capacity: "28m² - 25 personnes en mode conférence",
       features: [
         { title: "WiFi", Icon: Wifi },
         { title: "Toilettes PMR", Icon: Accessibility },
@@ -102,9 +101,9 @@ export default function MiseADispositionPage() {
         { title: "Art", Icon: Brush },
         { title: "Séminaire", Icon: PencilRuler },
       ],
-      prices: null,
-      pricesWeekEnd: null,
-      contactForPrice: true,
+      prices: [" Journée - 100 €", " 1/2 Journée - 60 €", " Horaire - 30 €/h"],
+      pricesWeekEnd: [" Journée - 120 €", " 1/2 Journée - 75 €", " Horaire - 40 €/h"],
+      contactForPrice: false,
       showDispositions: false,
     },
   ];
@@ -178,8 +177,9 @@ export default function MiseADispositionPage() {
                   conférences et ateliers dans une ambiance café.
                 </p>
                 <p>
-                  Avec ses 18 places assises, le café d'Oc offre un cadre intimiste parfait pour des
-                  échanges de qualité, comme nos célèbres Cafés Philo.
+                  Avec ses 28m² et une capacité de 25 personnes en mode conférence, le café d'Oc
+                  offre un cadre intimiste parfait pour des échanges de qualité, comme nos célèbres
+                  Cafés Philo.
                 </p>
               </div>
               <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
@@ -521,24 +521,38 @@ function CarouselCafeDoc() {
 
   const images = [
     {
-      src: "/mise-a-disposition/cafe_durant_cafephilo.jpeg",
+      src: "/mise-a-disposition/cafe_classe.jpeg",
       title: "Le café d'Oc",
-      config: "Café Philo",
-      capacity: "18 personnes",
-      icon: Users,
+      config: "Classe",
+      capacity: "12 personnes",
+      icon: SquareMenu,
     },
     {
-      src: "/mise-a-disposition/cafe_allee.jpeg",
+      src: "/mise-a-disposition/cafe_conf.jpeg",
       title: "Le café d'Oc",
-      config: "Vue allée",
-      capacity: "18 personnes",
-      icon: Coffee,
+      config: "Conférence",
+      capacity: "25 personnes",
+      icon: Theater,
     },
     {
-      src: "/mise-a-disposition/cafe_comptoir.jpeg",
+      src: "/mise-a-disposition/cafe_U.jpeg",
       title: "Le café d'Oc",
-      config: "Comptoir",
-      capacity: "18 personnes",
+      config: "En Bloc",
+      capacity: "12 personnes",
+      icon: Brackets,
+    },
+    {
+      src: "/mise-a-disposition/cafe_U2.jpeg",
+      title: "Le café d'Oc",
+      config: "En Bloc",
+      capacity: "12 personnes",
+      icon: Brackets,
+    },
+    {
+      src: "/mise-a-disposition/cafe_oc.jpeg",
+      title: "Le café d'Oc",
+      config: "Vue générale",
+      capacity: "18 couverts",
       icon: Coffee,
     },
   ];

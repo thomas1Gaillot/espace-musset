@@ -35,7 +35,7 @@ export default function MentionsLegalesPage() {
                 <strong>Siège social :</strong> 52 Bis Rue Alfred de Musset, 31200 Toulouse
               </p>
               <p>
-                <strong>Téléphone :</strong> 06 30 15 46 48 XX XX XX
+                <strong>Téléphone :</strong> 06 21 79 97 50
               </p>
               <p>
                 <strong>Email :</strong> contact@espace-musset.com

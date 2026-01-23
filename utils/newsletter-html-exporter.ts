@@ -115,13 +115,14 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                         <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; border: 1px solid #8b263530;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
-                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_durant_cafephilo.jpeg" alt="Café d'Oc" style="width: 100%; height: 220px; object-fit: cover; object-position: center center; display: block;" />
+                                    <img src="https://www.espace-musset.com/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 220px; object-fit: cover; object-position: center center; display: block;" />
                                 </td>
                                 <td style="width: 60%; vertical-align: top; padding: 16px;">
                                     <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">
-                                        <span style="color: #8B2635;">👥</span> 18 places &nbsp;
-                                        <span style="color: #8B2635;">💶</span> Nous contacter
+                                        <span style="color: #8B2635;">📐</span> 28 m² &nbsp;
+                                        <span style="color: #8B2635;">👥</span> 25 pers. &nbsp;
+                                        <span style="color: #8B2635;">💶</span> Dès 30 €
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Espace convivial idéal pour conférences et ateliers en petit comité.</p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
@@ -281,7 +282,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                             </p>
 
                                             <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Téléphone</p>
-                                            <p style="margin: 2px 0;">06 30 15 46 48</p>
+                                            <p style="margin: 2px 0;">06 21 79 97 50</p>
 
                                             <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Email</p>
                                             <p style="margin: 2px 0;">contact@espace-musset.com</p>
@@ -550,13 +551,14 @@ export function exportNewsletterToHTMLGrouped(
                         <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
-                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_durant_cafephilo.jpeg" alt="Café d'Oc" style="width: 100%; height: 240px; object-fit: cover; object-position: center center; display: block;" />
+                                    <img src="https://www.espace-musset.com/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 240px; object-fit: cover; object-position: center center; display: block;" />
                                 </td>
                                 <td style="width: 60%; vertical-align: top; padding: 16px;">
                                     <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">
-                                        <span style="color: #8B2635;">👥</span> 18 places &nbsp;
-                                        <span style="color: #8B2635;">💶</span> Nous contacter
+                                        <span style="color: #8B2635;">📐</span> 28 m² &nbsp;
+                                        <span style="color: #8B2635;">👥</span> 25 pers. &nbsp;
+                                        <span style="color: #8B2635;">💶</span> Dès 30 €
                                     </p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 8px 0;">Espace convivial idéal pour conférences et ateliers en petit comité.</p>
                                     <p style="font-size: 14px; color: #6b7280; margin: 0 0 4px 0;">
@@ -700,7 +702,7 @@ export function exportNewsletterToHTMLGrouped(
                                             </p>
 
                                             <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Téléphone</p>
-                                            <p style="margin: 2px 0;">06 30 15 46 48</p>
+                                            <p style="margin: 2px 0;">06 21 79 97 50</p>
 
                                             <p style="font-weight: 500; color: #111827; margin: 12px 0 4px 0;">Email</p>
                                             <p style="margin: 2px 0;">contact@espace-musset.com</p>
