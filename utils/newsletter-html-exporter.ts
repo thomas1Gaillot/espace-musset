@@ -115,7 +115,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                         <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515; border: 1px solid #8b263530;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
-                                    <img src="https://www.espace-musset.com/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 220px; object-fit: cover; object-position: center center; display: block;" />
+                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 220px; object-fit: cover; object-position: center center; display: block;" />
                                 </td>
                                 <td style="width: 60%; vertical-align: top; padding: 16px;">
                                     <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
@@ -551,7 +551,7 @@ export function exportNewsletterToHTMLGrouped(
                         <table role="presentation" style="width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; background-color: #8b263515;">
                             <tr>
                                 <td style="width: 40%; vertical-align: top;">
-                                    <img src="https://www.espace-musset.com/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 240px; object-fit: cover; object-position: center center; display: block;" />
+                                    <img src="https://www.espace-musset.com/mise-a-disposition/cafe_classe.jpeg" alt="Café d'Oc" style="width: 100%; height: 240px; object-fit: cover; object-position: center center; display: block;" />
                                 </td>
                                 <td style="width: 60%; vertical-align: top; padding: 16px;">
                                     <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">Le Café d'Oc</h3>
