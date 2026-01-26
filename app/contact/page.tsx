@@ -184,6 +184,7 @@ function ContactSection() {
   });
 
   const subjectMap: Record<string, string> = {
+    "mise-a-disposition": "Demande de mise à disposition de salle",
     "cafe-philo": "Inscription à un Café philo",
     "atelier-philo": "Inscription à un Atelier philo",
     "cine-philo": "Inscription à un Ciné philo",
@@ -201,6 +202,7 @@ function ContactSection() {
     "portes-ouvertes": "Inscription aux Portes ouvertes",
     "soiree-jeux": "Participation à une Soirée Jeux",
     spectacle: "Informations sur un Spectacle",
+    
     autre: "Autre demande",
   };
 
@@ -222,6 +224,8 @@ function ContactSection() {
     "portes-ouvertes": "Bonjour,\nJe souhaite venir aux Portes ouvertes.",
     "soiree-jeux": "Bonjour,\nJe souhaite participer à une Soirée Jeux.",
     spectacle: "Bonjour,\nJe souhaite obtenir des informations sur un Spectacle.",
+    "mise-a-disposition":
+      "Bonjour,\nJe souhaite louer une salle pour un événement (formation, réunion, célébration...).\n\nDate souhaitée :\nType d'événement :\nNombre de participants :",
     autre: "",
   };
 
@@ -324,6 +328,10 @@ ${message}
                 <SelectValue placeholder="Choisissez un sujet" />
               </SelectTrigger>
               <SelectContent>
+
+                       {/* Mise à disposition */}
+                <SelectItem value="mise-a-disposition">{"Mise à disposition de salle"}</SelectItem>
+                
                 {/* Philosophie */}
                 <SelectItem value="cafe-philo">{"Philosophie - Café philo"}</SelectItem>
                 <SelectItem value="atelier-philo">{"Philosophie - Atelier philo"}</SelectItem>
@@ -352,6 +360,8 @@ ${message}
 
                 {/* Montessori */}
                 <SelectItem value="mercredi-montessori">{"Mercredi Montessori"}</SelectItem>
+
+         
 
                 <SelectItem value="autre">{"Autre demande"}</SelectItem>
               </SelectContent>
