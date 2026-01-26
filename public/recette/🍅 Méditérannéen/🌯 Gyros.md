@@ -35,7 +35,7 @@
 | 1        | oignon rouge            |          |         |
 | 2cc      | sumac                   |          |         |
 | 2 cs     | [[🍶 Tzatziki]]         |          |         |
-| 1        | [[🫓 Naan]]             |          |         |
+| 1        | [[🌮Naan]]              |          |         |
 
 ## 🔪 Ustensiles nécessaires
 

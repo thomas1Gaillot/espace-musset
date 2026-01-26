@@ -3,261 +3,1047 @@
     {
       "name": "🐔 Mafé au poulet",
       "file": "🐔 Mafé au poulet.md",
-      "path": "☀️ Africain/🐔 Mafé au poulet.md"
+      "path": "☀️ Africain/🐔 Mafé au poulet.md",
+      "tags": ["sénégal", "confort"],
+      "ingredients": ["cuisses poulet", "riz", "0,00", "ail", "oignon", "piment"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "☀️ Africain"
     },
     {
       "name": "🐔 Poulet Yassa",
       "file": "🐔 Poulet Yassa.md",
-      "path": "☀️ Africain/🐔 Poulet Yassa.md"
+      "path": "☀️ Africain/🐔 Poulet Yassa.md",
+      "tags": ["sénégal", "confort"],
+      "ingredients": [
+        "cuisses poulet",
+        "riz",
+        "gros oignon",
+        "jus citron",
+        "gousses ail ecrasé",
+        "moutarde dijon",
+        "olives vertes"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "☀️ Africain"
     }
   ],
   "🍅 Méditérannéen": [
     {
-      "name": "Aioli",
-      "file": "Aioli.md",
-      "path": "🍅 Méditérannéen/Aioli.md"
-    },
-    {
       "name": "🌯 Gyros",
       "file": "🌯 Gyros.md",
-      "path": "🍅 Méditérannéen/🌯 Gyros.md"
+      "path": "🍅 Méditérannéen/🌯 Gyros.md",
+      "tags": ["grec", "fastfood"],
+      "ingredients": [
+        "cuisses désosés",
+        "gousses ail",
+        "gros oignon",
+        "échalotte",
+        "yaourt grec",
+        "huile olive",
+        "citron + son zeste",
+        "paprika",
+        "moutarde",
+        "herbes (origan, thym, )",
+        "poivre",
+        "piment",
+        "cumin",
+        "tomate",
+        "oignon rouge",
+        "sumac",
+        "[[🍶 tzatziki]]",
+        "[[🌮naan]]"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,20 € / personnes",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍃 Pesto alla Genovese",
       "file": "🍃 Pesto alla Genovese.md",
-      "path": "🍅 Méditérannéen/🍃 Pesto alla Genovese.md"
+      "path": "🍅 Méditérannéen/🍃 Pesto alla Genovese.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🍄🍶 Sauce champignons",
+      "file": "🍄🍶 Sauce champignons.md",
+      "path": "🍅 Méditérannéen/🍄🍶 Sauce champignons.md",
+      "tags": [],
+      "ingredients": [
+        "1kg",
+        "pleurottes",
+        "ail",
+        "echalottes",
+        "beurre",
+        "persil",
+        "vin blanc",
+        "sauce soja",
+        "crême liquide"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "1,56 € / personnes",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍅 Dakos",
       "file": "🍅 Dakos.md",
-      "path": "🍅 Méditérannéen/🍅 Dakos.md"
+      "path": "🍅 Méditérannéen/🍅 Dakos.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍅 Ratatouille",
       "file": "🍅 Ratatouille.md",
-      "path": "🍅 Méditérannéen/🍅 Ratatouille.md"
+      "path": "🍅 Méditérannéen/🍅 Ratatouille.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍆 Aubergine Milanaise",
       "file": "🍆 Aubergine Milanaise.md",
-      "path": "🍅 Méditérannéen/🍆 Aubergine Milanaise.md"
+      "path": "🍅 Méditérannéen/🍆 Aubergine Milanaise.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍆 Pasta alla Norma",
       "file": "🍆 Pasta alla Norma.md",
-      "path": "🍅 Méditérannéen/🍆 Pasta alla Norma.md"
+      "path": "🍅 Méditérannéen/🍆 Pasta alla Norma.md",
+      "tags": [],
+      "ingredients": ["gousses ail", "aubergine"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍕 Pizza Napolitaine - Margarita",
       "file": "🍕 Pizza Napolitaine - Margarita.md",
-      "path": "🍅 Méditérannéen/🍕 Pizza Napolitaine - Margarita.md"
+      "path": "🍅 Méditérannéen/🍕 Pizza Napolitaine - Margarita.md",
+      "tags": ["italien", "pizza"],
+      "ingredients": [
+        "farine de blé typo 00<br>(marque caputo cuoco c'est la meilleure pour commencer, ça se trouve en store italien. sinon il faut une farine avec > 11g de protéine aux 100g)",
+        "eau froide",
+        "levure sèche réhydraté dans de l'eau chaude (entre 35 et 45°c)",
+        "sel fin",
+        "sauce tomate écrasé à la main (san marzano c'est la meilleure marque mais la plus chère). de préférence prendre une conserve avec tomate pelée.",
+        "assaisonner de  sel",
+        "peu importe la marque, il faut qu'elle soit sèche (le contraire d'une burrata).<br>la meilleure mozza est de type \"fior de latte de bufflone\".<br>si la mozza est mouillée, essuyer avec du sopalin",
+        "huile d'olive",
+        "parmesan (parmigiano regiano > grana padano)",
+        "basilic frais"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🍝 Pasta Bolognaise",
+      "file": "🍝 Pasta Bolognaise.md",
+      "path": "🍅 Méditérannéen/🍝 Pasta Bolognaise.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍝Pasta al ragù",
       "file": "🍝Pasta al ragù.md",
-      "path": "🍅 Méditérannéen/🍝Pasta al ragù.md"
+      "path": "🍅 Méditérannéen/🍝Pasta al ragù.md",
+      "tags": [],
+      "ingredients": [
+        "3kg",
+        "ragù*",
+        "carottes",
+        "branches celeri",
+        "oignon",
+        "gousses ail",
+        "tomate concentrée",
+        "tomate pelée",
+        "lait entier",
+        "vin rouge",
+        "saucisse",
+        "parmesan"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "30 € (~3€/personnes)",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍞 Foccacia",
       "file": "🍞 Foccacia.md",
-      "path": "🍅 Méditérannéen/🍞 Foccacia.md"
-    },
-    {
-      "name": "🍟 Panisses",
-      "file": "🍟 Panisses.md",
-      "path": "🍅 Méditérannéen/🍟 Panisses.md"
+      "path": "🍅 Méditérannéen/🍞 Foccacia.md",
+      "tags": [],
+      "ingredients": [
+        "farine à pain",
+        "eau",
+        "sel",
+        "huile olive",
+        "levure sèche",
+        "gros sel, thym",
+        "pesto",
+        "tomates",
+        "stracciatella",
+        "nocciolata"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🍶 Tzatziki",
       "file": "🍶 Tzatziki.md",
-      "path": "🍅 Méditérannéen/🍶 Tzatziki.md"
+      "path": "🍅 Méditérannéen/🍶 Tzatziki.md",
+      "tags": ["libanais", "fastfood", "apéro", "végétarien"],
+      "ingredients": [
+        "concombre",
+        "menthe fraîche",
+        "petite gousse d'ail",
+        "citron vert",
+        "yaourth grec épais",
+        "0,00 €",
+        "€",
+        "€"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,41 € /p",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🥒Pasta alla Nerano",
       "file": "🥒Pasta alla Nerano.md",
-      "path": "🍅 Méditérannéen/🥒Pasta alla Nerano.md"
+      "path": "🍅 Méditérannéen/🥒Pasta alla Nerano.md",
+      "tags": [],
+      "ingredients": ["gousses ail", "courgette"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🥒🥟 Gratin Courgettes Ravioles",
       "file": "🥒🥟 Gratin Courgettes Ravioles.md",
-      "path": "🍅 Méditérannéen/🥒🥟 Gratin Courgettes Ravioles.md"
+      "path": "🍅 Méditérannéen/🥒🥟 Gratin Courgettes Ravioles.md",
+      "tags": [],
+      "ingredients": [
+        "ravioles",
+        "courgettes moyenne",
+        "lait coco",
+        "fromage râpé",
+        "salade",
+        "échalotte",
+        "citron"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "3,50 €/P",
+      "category": "🍅 Méditérannéen"
     },
     {
-      "name": "🥟🥔 Gnocci Gorgonzola",
-      "file": "🥟🥔 Gnocci Gorgonzola.md",
-      "path": "🍅 Méditérannéen/🥟🥔 Gnocci Gorgonzola.md"
+      "name": "🥔🍲 Gratin Dauphinois",
+      "file": "🥔🍲 Gratin Dauphinois.md",
+      "path": "🍅 Méditérannéen/🥔🍲 Gratin Dauphinois.md",
+      "tags": [],
+      "ingredients": ["1kg", "350g", "150g", "beurre", "ail, laurier, thym"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0.67 € / Personnes",
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥔🥟 Gnocci Gorgonzola",
+      "file": "🥔🥟 Gnocci Gorgonzola.md",
+      "path": "🍅 Méditérannéen/🥔🥟 Gnocci Gorgonzola.md",
+      "tags": [],
+      "ingredients": [
+        "500g",
+        "sauce",
+        "champignon",
+        "oignon",
+        "gousses ail",
+        "crême fleurette ou crême liquide",
+        "quelques noix",
+        "feuilles épinards / ciboulette / oignon nouveaux",
+        "gorgonzola"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "3,125 €/p => 12,50€/4P",
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥔🧀 Patate Hasselback & Raclette",
+      "file": "🥔🧀 Patate Hasselback & Raclette.md",
+      "path": "🍅 Méditérannéen/🥔🧀 Patate Hasselback & Raclette.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥔🧀 Pomme de terre Farcie",
+      "file": "🥔🧀 Pomme de terre Farcie.md",
+      "path": "🍅 Méditérannéen/🥔🧀 Pomme de terre Farcie.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥚 Brouillade",
+      "file": "🥚 Brouillade.md",
+      "path": "🍅 Méditérannéen/🥚 Brouillade.md",
+      "tags": [],
+      "ingredients": ["40"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "1,00 € / Personnes",
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥣Hummus",
+      "file": "🥣Hummus.md",
+      "path": "🍅 Méditérannéen/🥣Hummus.md",
+      "tags": ["libanais", "fastfood", "apéro", "végétarien"],
+      "ingredients": [
+        "ail",
+        "pois chiche égoutté",
+        "tahini",
+        "eau",
+        "jus de citron",
+        "poivre noir + sel + huile olive",
+        "8,00 €",
+        "0,80 €"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,80 € / personnes",
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥣🧄 Aioli",
+      "file": "🥣🧄 Aioli.md",
+      "path": "🍅 Méditérannéen/🥣🧄 Aioli.md",
+      "tags": [],
+      "ingredients": ["gousses ail", "citron", "oeuf (jaune)", "huile tournesol", "huile olive"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🥦 Soupe Poireaux",
       "file": "🥦 Soupe Poireaux.md",
-      "path": "🍅 Méditérannéen/🥦 Soupe Poireaux.md"
+      "path": "🍅 Méditérannéen/🥦 Soupe Poireaux.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🥧Tourte Poulet Champignons",
       "file": "🥧Tourte Poulet Champignons.md",
-      "path": "🍅 Méditérannéen/🥧Tourte Poulet Champignons.md"
+      "path": "🍅 Méditérannéen/🥧Tourte Poulet Champignons.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥩🍷 Boeuf Bourgignon",
+      "file": "🥩🍷 Boeuf Bourgignon.md",
+      "path": "🍅 Méditérannéen/🥩🍷 Boeuf Bourgignon.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🥬 Choux rotis",
+      "file": "🥬 Choux rotis.md",
+      "path": "🍅 Méditérannéen/🥬 Choux rotis.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍅 Méditérannéen"
+    },
+    {
+      "name": "🧀🥘Croziflette",
+      "file": "🧀🥘Croziflette.md",
+      "path": "🍅 Méditérannéen/🧀🥘Croziflette.md",
+      "tags": [],
+      "ingredients": [
+        "6",
+        "oignon",
+        "crozets sarrasin",
+        "reblochon",
+        "lards fumés",
+        "crême épaisse"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍅 Méditérannéen"
     },
     {
       "name": "🧆 Falafels",
       "file": "🧆 Falafels.md",
-      "path": "🍅 Méditérannéen/🧆 Falafels.md"
-    },
-    {
-      "name": "🫘 Hummus",
-      "file": "🫘 Hummus.md",
-      "path": "🍅 Méditérannéen/🫘 Hummus.md"
+      "path": "🍅 Méditérannéen/🧆 Falafels.md",
+      "tags": ["libanais", "fastfood", "apéro", "végétarien"],
+      "ingredients": [
+        "pois chiches secs",
+        "petits oignons",
+        "ail",
+        "persil ou coriandre",
+        "menthe",
+        "graine sésame torréfié",
+        "fleur de sel",
+        "coriandre, cumin, paprika fumé, poivre, levure, piment, huile olive",
+        "huile friture",
+        "11,25€",
+        "1,13 €"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "1,13 €/ personnes",
+      "category": "🍅 Méditérannéen"
     }
   ],
   "🍔 Américain": [
     {
       "name": "🍔 Chicken Burger",
       "file": "🍔 Chicken Burger.md",
-      "path": "🍔 Américain/🍔 Chicken Burger.md"
+      "path": "🍔 Américain/🍔 Chicken Burger.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍔 Américain"
     },
     {
       "name": "🍔 Potato Buns",
       "file": "🍔 Potato Buns.md",
-      "path": "🍔 Américain/🍔 Potato Buns.md"
+      "path": "🍔 Américain/🍔 Potato Buns.md",
+      "tags": [],
+      "ingredients": [
+        "oeuf",
+        "farine",
+        "sucre",
+        "lait",
+        "levure",
+        "beurre mou",
+        "sel",
+        "pomme de terre en purée"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,80 € / personnes",
+      "category": "🍔 Américain"
     },
     {
       "name": "🍟 Frites Maison",
       "file": "🍟 Frites Maison.md",
-      "path": "🍔 Américain/🍟 Frites Maison.md"
+      "path": "🍔 Américain/🍟 Frites Maison.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍔 Américain"
     },
     {
       "name": "🥔 Potatoes au four",
       "file": "🥔 Potatoes au four.md",
-      "path": "🍔 Américain/🥔 Potatoes au four.md"
+      "path": "🍔 Américain/🥔 Potatoes au four.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍔 Américain"
     },
     {
       "name": "🥬 Coleslaw",
       "file": "🥬 Coleslaw.md",
-      "path": "🍔 Américain/🥬 Coleslaw.md"
+      "path": "🍔 Américain/🥬 Coleslaw.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍔 Américain"
     }
   ],
   "🍚 Asiatique": [
     {
       "name": "🍗 Poulet Frit Coréen",
       "file": "🍗 Poulet Frit Coréen.md",
-      "path": "🍚 Asiatique/🍗 Poulet Frit Coréen.md"
+      "path": "🍚 Asiatique/🍗 Poulet Frit Coréen.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🍗 Poulet Karaage",
       "file": "🍗 Poulet Karaage.md",
-      "path": "🍚 Asiatique/🍗 Poulet Karaage.md"
+      "path": "🍚 Asiatique/🍗 Poulet Karaage.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🍚 Riz Frit Japonais",
       "file": "🍚 Riz Frit Japonais.md",
-      "path": "🍚 Asiatique/🍚 Riz Frit Japonais.md"
+      "path": "🍚 Asiatique/🍚 Riz Frit Japonais.md",
+      "tags": ["japonais", "rapide", "fastfood"],
+      "ingredients": ["riz (10p)", "gousses ail", "oeufs"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🍚🐟Poke Bowl Thon",
       "file": "🍚🐟Poke Bowl Thon.md",
-      "path": "🍚 Asiatique/🍚🐟Poke Bowl Thon.md"
+      "path": "🍚 Asiatique/🍚🐟Poke Bowl Thon.md",
+      "tags": ["japonais", "rapide", "fastfood"],
+      "ingredients": ["riz (10p)", "3€ / canette (dispute oiseaux)"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🍛 Curry Japonais légumes d'automne",
       "file": "🍛 Curry Japonais légumes d'automne.md",
-      "path": "🍚 Asiatique/🍛 Curry Japonais légumes d'automne.md"
+      "path": "🍚 Asiatique/🍛 Curry Japonais légumes d'automne.md",
+      "tags": [],
+      "ingredients": [
+        "riz (10p)",
+        "blocs de golden curry",
+        "sauce soja",
+        "petites courges",
+        "pommes de terre",
+        "carottes",
+        "oignons",
+        "gousses ail râpé",
+        "gingembre râpé",
+        "concentré tomate",
+        "saké, vin blanc",
+        "bouillon de légume ou eau",
+        "coriandre"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "2,54 € / personnes",
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🍜 Pad Thai",
       "file": "🍜 Pad Thai.md",
-      "path": "🍚 Asiatique/🍜 Pad Thai.md"
+      "path": "🍚 Asiatique/🍜 Pad Thai.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🥟 Bao Dumplings",
       "file": "🥟 Bao Dumplings.md",
-      "path": "🍚 Asiatique/🥟 Bao Dumplings.md"
+      "path": "🍚 Asiatique/🥟 Bao Dumplings.md",
+      "tags": ["japonais", "rapide", "fastfood"],
+      "ingredients": [
+        "farine",
+        "sucre",
+        "levure",
+        "eau",
+        "chaire à saucisse",
+        "oignon nouveaux",
+        "choux chinoix",
+        "oeufs",
+        "ail",
+        "gingembre",
+        "soja",
+        "huile sésame",
+        "graines sésame",
+        "vinaigre riz"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🥟 Gyozas",
       "file": "🥟 Gyozas.md",
-      "path": "🍚 Asiatique/🥟 Gyozas.md"
+      "path": "🍚 Asiatique/🥟 Gyozas.md",
+      "tags": ["japonais", "longmaisgourmand"],
+      "ingredients": [
+        "0,00",
+        "farine de blé",
+        "eau juste bouillante",
+        "sel",
+        "fécule de maïs",
+        "porc, saucisse",
+        "choux chinoix",
+        "oignon blanc",
+        "oignon vert, oignon nouveau",
+        "saké",
+        "sauce soja",
+        "huile sésame",
+        "sauce huitre",
+        "féculé maïs",
+        "sucre",
+        "ail écrasé",
+        "gingembre écrasé",
+        "vinaigre de riz (ou vinaigre noir)",
+        "sauce soja"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🥬 Pak choi",
       "file": "🥬 Pak choi.md",
-      "path": "🍚 Asiatique/🥬 Pak choi.md"
+      "path": "🍚 Asiatique/🥬 Pak choi.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     },
     {
       "name": "🧈 Tofu Frit",
       "file": "🧈 Tofu Frit.md",
-      "path": "🍚 Asiatique/🧈 Tofu Frit.md"
+      "path": "🍚 Asiatique/🧈 Tofu Frit.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍚 Asiatique"
     }
   ],
   "🍛 Indien": [
     {
+      "name": "🌮Naan",
+      "file": "🌮Naan.md",
+      "path": "🍛 Indien/🌮Naan.md",
+      "tags": ["libanais", "fastfood", "apéro", "végétarien", "indien"],
+      "ingredients": [
+        "farine",
+        "sucre",
+        "eau tiède",
+        "levure sèche",
+        "sel",
+        "yaourth grec",
+        "2,00 €",
+        "1,80 €"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,20 € / personnes",
+      "category": "🍛 Indien"
+    },
+    {
       "name": "🍚Riz Basmati",
       "file": "🍚Riz Basmati.md",
-      "path": "🍛 Indien/🍚Riz Basmati.md"
+      "path": "🍛 Indien/🍚Riz Basmati.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍛 Indien"
     },
     {
       "name": "🍛Butter Chicken",
       "file": "🍛Butter Chicken.md",
-      "path": "🍛 Indien/🍛Butter Chicken.md"
+      "path": "🍛 Indien/🍛Butter Chicken.md",
+      "tags": ["indien", "confort"],
+      "ingredients": [
+        "riz (10p)",
+        "blanc de poulet",
+        "gingembre",
+        "gousse d'ail",
+        "yaourt",
+        "citron",
+        "epices : garam massala, piment doux, coriandre, cumin (epices curry)",
+        "concentré de tomate",
+        "oignon",
+        "tomate concassée",
+        "noix de cajou",
+        "beurre",
+        "crême liquide"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "2,6 € / p",
+      "category": "🍛 Indien"
     },
     {
       "name": "🥘Dhal de lentilles",
       "file": "🥘Dhal de lentilles.md",
-      "path": "🍛 Indien/🥘Dhal de lentilles.md"
-    },
-    {
-      "name": "🫓 Naan",
-      "file": "🫓 Naan.md",
-      "path": "🍛 Indien/🫓 Naan.md"
+      "path": "🍛 Indien/🥘Dhal de lentilles.md",
+      "tags": [],
+      "ingredients": [
+        "lentilles corail",
+        "ail",
+        "oignon jaune",
+        "gingembre",
+        "pulpe tomate",
+        "lait coco",
+        "curry",
+        "epinard frais",
+        "0,00 €",
+        "citron",
+        "0,00 €",
+        "riz"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "1,67€/P",
+      "category": "🍛 Indien"
     }
   ],
   "🍦Dessert": [
     {
-      "name": "🍌🍫Gateau banane chocolat",
-      "file": "🍌🍫Gateau banane chocolat.md",
-      "path": "🍦Dessert/🍌🍫Gateau banane chocolat.md"
+      "name": "🍞Brioche de tante Isabelle",
+      "file": "🍞Brioche de tante Isabelle.md",
+      "path": "🍦Dessert/🍞Brioche de tante Isabelle.md",
+      "tags": [],
+      "ingredients": [
+        "sucre",
+        "farine",
+        "œufs",
+        "beurre",
+        "levure boulangère fraiche",
+        "sel fin",
+        "eau froide"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "4,45 € - ~0,50 cts / portion |",
+      "category": "🍦Dessert"
     },
     {
       "name": "🍪 Cookies",
       "file": "🍪 Cookies.md",
-      "path": "🍦Dessert/🍪 Cookies.md"
+      "path": "🍦Dessert/🍪 Cookies.md",
+      "tags": ["cookie"],
+      "ingredients": [
+        "beurre salé",
+        "farine",
+        "bicarbonate soude",
+        "sel",
+        "sucre",
+        "oeufs",
+        "lait",
+        "chocolat"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "13,00 € - 0,87 €/u",
+      "category": "🍦Dessert"
     },
     {
       "name": "🍫 Fondant au chocolat",
       "file": "🍫 Fondant au chocolat.md",
-      "path": "🍦Dessert/🍫 Fondant au chocolat.md"
+      "path": "🍦Dessert/🍫 Fondant au chocolat.md",
+      "tags": ["fondant", "chocolat"],
+      "ingredients": ["sucre", "farine", "œufs", "beurre", "chocolat"],
+      "prepTime": "10 min",
+      "cookTime": "10 min",
+      "servings": "4",
+      "budget": "4,90 € – 1,23 €/pers",
+      "category": "🍦Dessert"
+    },
+    {
+      "name": "🍫🍌Gateau banane chocolat",
+      "file": "🍫🍌Gateau banane chocolat.md",
+      "path": "🍦Dessert/🍫🍌Gateau banane chocolat.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍦Dessert"
+    },
+    {
+      "name": "🍫🍫 Mousse au chocolat",
+      "file": "🍫🍫 Mousse au chocolat.md",
+      "path": "🍦Dessert/🍫🍫 Mousse au chocolat.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍦Dessert"
+    },
+    {
+      "name": "🍮 Crême brulée",
+      "file": "🍮 Crême brulée.md",
+      "path": "🍦Dessert/🍮 Crême brulée.md",
+      "tags": [],
+      "ingredients": [
+        "sucre blanc",
+        "gousse vanille",
+        "jaunes d'œufs bio",
+        "crème entière liquide 30 % (fleurette)",
+        "cassonnade",
+        "9,00€"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "9 € / 2,25 € par parts                     |",
+      "category": "🍦Dessert"
     },
     {
       "name": "🍰 Tiramisu",
       "file": "🍰 Tiramisu.md",
-      "path": "🍦Dessert/🍰 Tiramisu.md"
+      "path": "🍦Dessert/🍰 Tiramisu.md",
+      "tags": ["tiramisu", "italien"],
+      "ingredients": [
+        "mascarpone",
+        "sucre",
+        "œufs",
+        "biscuits boudoirs",
+        "espresso (café froid)",
+        "cacao en poudre"
+      ],
+      "prepTime": "25 min",
+      "cookTime": "0 min",
+      "servings": "8",
+      "budget": "9,00 € – 1,12 €/pers",
+      "category": "🍦Dessert"
+    },
+    {
+      "name": "🍰 Tres Leche",
+      "file": "🍰 Tres Leche.md",
+      "path": "🍦Dessert/🍰 Tres Leche.md",
+      "tags": [],
+      "ingredients": [
+        "farine",
+        "levure chimique",
+        "sel",
+        "gros oeufs",
+        "sucre",
+        "lait",
+        "extrait vanille",
+        "beurre",
+        "lait concentré sucré",
+        "lait concentré non sucré",
+        "lait",
+        "crême à fouetter / chantilly"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "---",
+      "category": "🍦Dessert"
     },
     {
       "name": "🥧🍎 Tarte aux pommes",
       "file": "🥧🍎 Tarte aux pommes.md",
-      "path": "🍦Dessert/🥧🍎 Tarte aux pommes.md"
+      "path": "🍦Dessert/🥧🍎 Tarte aux pommes.md",
+      "tags": ["tarte", "facile", "pascher"],
+      "ingredients": ["pommes", "sucre", "canelle", "pâte feuilletée"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "6,15 € - 0,80 €/u",
+      "category": "🍦Dessert"
+    },
+    {
+      "name": "🥧🍎 Tarte tatin pommes",
+      "file": "🥧🍎 Tarte tatin pommes.md",
+      "path": "🍦Dessert/🥧🍎 Tarte tatin pommes.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍦Dessert"
     }
   ],
   "🍸Sud Américain": [
     {
       "name": "🥑Guacamole",
       "file": "🥑Guacamole.md",
-      "path": "🍸Sud Américain/🥑Guacamole.md"
+      "path": "🍸Sud Américain/🥑Guacamole.md",
+      "tags": [],
+      "ingredients": [],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍸Sud Américain"
     },
     {
       "name": "🥗 Vinagrete",
       "file": "🥗 Vinagrete.md",
-      "path": "🍸Sud Américain/🥗 Vinagrete.md"
+      "path": "🍸Sud Américain/🥗 Vinagrete.md",
+      "tags": ["brésil", "végétarien"],
+      "ingredients": [
+        "poivron",
+        "tomate",
+        "oignon",
+        "piment, persil, coriandre",
+        "huile olive",
+        "citron",
+        "vinaigre"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍸Sud Américain"
     },
     {
       "name": "🥟 Pasteis",
       "file": "🥟 Pasteis.md",
-      "path": "🍸Sud Américain/🥟 Pasteis.md"
+      "path": "🍸Sud Américain/🥟 Pasteis.md",
+      "tags": ["brésil", "fastfood"],
+      "ingredients": [
+        "0,00",
+        "farine de blé",
+        "huile neutre",
+        "eau",
+        "sel",
+        "cachaca",
+        "viande hâchée",
+        "oignon",
+        "ail",
+        "olives",
+        "tomate",
+        "poivron",
+        "citron"
+      ],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": null,
+      "category": "🍸Sud Américain"
     }
   ],
   "🍹 Boissons": [
     {
       "name": "🫚 Ginger Beer",
       "file": "🫚 Ginger Beer.md",
-      "path": "🍹 Boissons/🫚 Ginger Beer.md"
+      "path": "🍹 Boissons/🫚 Ginger Beer.md",
+      "tags": [],
+      "ingredients": ["gingembre", "sucre", "eau", "gingembre", "sucre", "eau", "levain", "15 €"],
+      "prepTime": null,
+      "cookTime": null,
+      "servings": null,
+      "budget": "0,17€ le verre;",
+      "category": "🍹 Boissons"
     }
   ]
 }

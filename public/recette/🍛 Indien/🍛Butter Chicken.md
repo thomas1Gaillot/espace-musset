@@ -28,7 +28,7 @@
 | une grosse noix   | beurre                                                               |          |                                                                |
 | un trait          | crême liquide                                                        |          |                                                                |
 |                   | **TOTAL**                                                            | ~26,00 € |                                                                |
-|                   | **Naan** : [[🫓 Naan]]                                               |          |                                                                |
+|                   | **Naan** : [[🌮Naan]]                                                |          |                                                                |
 
 ## 👨‍🍳 Étapes
 
@@ -41,7 +41,7 @@
 **_Curry_** 3. **Faire revenir un oignon en dés, ail, gingembre, epices** 4. **Ajouter le liquide**
 Ajouter 1/2 verre d'eau, 1 boite de tomate concassée, 5. **Ajouter les noix de cajoux et faire mijoter 15 min** 6. **Mixer le tout** 7. Mélanger au poulet et ajouter un trait de crême + des aromates
 
-**Naan** : [[🫓 Naan]]
+**Naan** : [[🌮Naan]]
 
 **Naan**
 Voir la recette ici :
