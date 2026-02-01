@@ -39,7 +39,9 @@ Lien vers Whoogys, le chef qui fait la recette !! https://www.instagram.com/p/DP
 
 ## 🔪 Ustensiles nécessaires
 
-- ***
+-
+
+---
 
 ## 💡 Conseils
 

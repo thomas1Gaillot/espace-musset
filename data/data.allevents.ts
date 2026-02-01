@@ -178,7 +178,7 @@ const atelierChantJanFev = generateWeeklyEvents(
 const theatreImproMonday = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
   new Date("2025-09-29"),
-  new Date("2026-01-26"),
+  new Date("2026-05-30"),
   1 // Monday
 );
 
@@ -186,7 +186,7 @@ const theatreImproMonday = generateEventsByDayOfWeek(
 const theatreImproNuit = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
   new Date("2026-01-05"),
-  new Date("2026-01-26"),
+  new Date("2026-05-30"),
   1 // Monday
 );
 
@@ -194,7 +194,7 @@ const theatreImproNuit = generateEventsByDayOfWeek(
 const qiGongTuesday = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.QI_GONG,
   new Date("2025-10-28"),
-  new Date("2026-01-27"),
+  new Date("2026-05-30"),
   2 // Tuesday
 );
 
@@ -374,7 +374,7 @@ const volunteerEvents: EventData[] = [
   // Maraude events
   createEvent({
     title: "Je cuisine pour les autres",
-    dateObj: new Date("2025-09-28"),
+    dateObj: new Date("2026-02-22"),
     time: "14:30 à 16:30",
     image: "/gallery/gallery-cafe-6.jpeg",
     price: "Gratuit",
@@ -387,6 +387,7 @@ const volunteerEvents: EventData[] = [
     new Date("2025-09-28"),
     new Date("2025-10-26"),
     new Date("2026-01-25"),
+    new Date("2026-02-22"),
   ]),
 
   createEvent({
@@ -604,6 +605,7 @@ const cafeEvents: EventData[] = [
   ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.SOIREE_JEUX, [
     new Date("2025-11-27"),
     new Date("2026-01-29"),
+    new Date("2026-02-26"),
   ]),
 ];
 

@@ -32,7 +32,9 @@
 
 ## 🔪 Ustensiles nécessaires
 
-- ***
+-
+
+---
 
 ## 👨‍🍳 Étapes
 

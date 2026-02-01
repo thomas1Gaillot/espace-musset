@@ -41,6 +41,6 @@ export const ROUTES = {
       ECRITURE_SPONTANEE: "/activites/ecriture-spontanee",
     },
   },
-  LOCATION_SALLES: "/location-salles",
+  MISE_A_DISPOSITION: "/mise-a-disposition",
   CONTACT: "/contact",
 };

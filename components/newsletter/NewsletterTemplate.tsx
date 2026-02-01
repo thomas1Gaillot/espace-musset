@@ -1,4 +1,5 @@
 import { NewsletterHeader } from "./NewsletterHeader";
+import { NewsletterRoomPromo } from "./NewsletterRoomPromo";
 import { MonthlyEventsSection } from "./MonthlyEventsSection";
 import { RecurringEventsSection } from "./RecurringEventsSection";
 import { NewsletterHighlights } from "./NewsletterHighlights";
@@ -29,6 +30,9 @@ export function NewsletterTemplate({ events, eventsData, month, year }: Newslett
           <NewsletterHeader month={month} year={year} />
 
           <div className="px-6 sm:px-8">
+            {/* Mise en avant mise-a-disposition de salle */}
+            <NewsletterRoomPromo />
+
             {/* Événements spéciaux (non-récurrents) */}
             <MonthlyEventsSection
               events={uniqueEvents}

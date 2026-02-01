@@ -1,6 +1,6 @@
 "use client";
 import EventList from "@/components/event-list";
-import Recipe from "@/components/recipe/recipe";
+import { RecipeApp } from "@/components/recipe";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -272,7 +272,7 @@ export default function CafeAssociatifPage() {
               Nos Recettes
             </h2>
 
-            <Recipe />
+            <RecipeApp />
           </div>
           {/* Horaires et infos pratiques */}
           <div className="bg-sage-50/50 rounded-lg p-8 mb-12">

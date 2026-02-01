@@ -140,7 +140,7 @@ export default function HomePage() {
                 asChild
                 id={"reservation-button"}
               >
-                <Link href={ROUTES.LOCATION_SALLES}> Réserver une salle </Link>
+                <Link href={ROUTES.MISE_A_DISPOSITION}> Réserver une salle </Link>
               </Button>
               <Button
                 size="lg"
