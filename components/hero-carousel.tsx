@@ -154,12 +154,15 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
               className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/40 shadow-xl shrink-0"
             />
           )}
-          <div className="flex flex-col items-center md:items-start gap-2 md:gap-3">
+          <div className="flex flex-col items-center md:items-start gap-1 md:gap-2">
+            <p className="text-xs md:text-sm text-white tracking-wide uppercase text-center md:text-left">
+              <span className="px-2.5 py-1 rounded-md md:px-3">à l&apos;Espace Musset</span>
+            </p>
             <h2 className="text-sm md:text-xl font-sans font-bold text-white text-center md:text-left uppercase tracking-widest">
-              <span className="bg-black/50 text-2xl px-3 py-1 font-light rounded-md md:px-4 md:py-1.5">{currentImage.label}</span>
+              <span className="bg-black/50 text-lg px-3 py-1 font-light rounded-md md:px-4 md:py-1.5">{currentImage.label}</span>
             </h2>
             <p className="text-xs md:text-sm text-white/80 tracking-wide uppercase text-center md:text-left">
-              <span className="px-2.5 py-1 rounded-md md:px-3">à l&apos;Espace Musset — Lieu inter-associatif — Toulouse</span>
+              <span className="px-2.5 py-1 rounded-md md:px-3">Lieu inter-associatif — Toulouse</span>
             </p>
           </div>
         </div>
