@@ -141,7 +141,7 @@ const oneTimeEvents: EventData[] = [
 
   createEvent({
     title: "La conscience dans tous ses états ...",
-    dateObj: new Date("2026-02-14"),
+    dateObj: new Date("2026-02-13"),
     time: "19:30 à 22:00",
     image: "conference-philo.jpg",
     price: "Nous contacter",
