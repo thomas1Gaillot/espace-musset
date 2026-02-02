@@ -92,10 +92,9 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-    { src: "/salle-des-muses-3.jpg", alt: "Mise à disposition de salles", label: "Mise à disposition de salles" },
-    { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Spectacle" },
-    { src: "/mise-a-disposition/cafe_oc.jpeg", alt: "Le Café d'Oc", label: "Le Café d'Oc", logo: "/cafe-doc.png" },
-    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Conférence", label: "Conférence", logo: "/logo_acropole.png" },
+    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Conférence", label: "Conférences", logo: "/logo_acropole.png" },
+    { src: "/salle-des-muses-3.jpg", alt: "Mise à disposition de salles", label: "Mise à disposition de salles", logo: "/logoEM.png" },
+    { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Spectacles", logo: "/logoEM.png"  },
     { src: "/diseuses_profil.webp", alt: "Théâtre d'improvisation", label: "Théâtre d'impro", logo: "/diseuses-amertume.jpeg" },
     { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif", logo: "/cafe-doc.png" },
   ];
@@ -103,7 +102,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Announcement Bar */}
-      <div className=" top-[60px] sticky z-50">
+      <div className=" top-[60px] sticky w-full max-w-[100vw] z-50">
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
             <Link
@@ -113,7 +112,7 @@ export default function HomePage() {
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Prochain évènement : Atelier philo (mercredi 4 Février, 19h30)"} </p>
+                <p>{"Atelier philo ce mercredi 04 Février, 19h30"} </p>
               </div>
             </Link>
           </Button>
@@ -128,19 +127,8 @@ export default function HomePage() {
         {/* Lighter overlay — let images breathe */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/20 to-black/30 pointer-events-none" />
 
-        {/* Content — compact, bottom-weighted */}
+        {/* Buttons — bottom */}
         <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-end h-[85vh] pb-16 pointer-events-none">
-          <img
-            src="/logoEM.png"
-            alt="Espace Musset"
-            className="w-16 h-16 mb-4 animate-scale-in drop-shadow-2xl"
-          />
-          <p
-            className="text-sm md:text-base text-white/80 mb-6 animate-fade-in-up tracking-wide uppercase"
-            style={{ animationDelay: "0.15s" }}
-          >
-            Lieu inter-associatif · Toulouse
-          </p>
           <div
             className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up pointer-events-auto"
             style={{ animationDelay: "0.3s" }}

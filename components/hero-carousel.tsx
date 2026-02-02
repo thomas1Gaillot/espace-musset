@@ -31,30 +31,7 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
   const getIndex = (offset: number) =>
     (current + offset + images.length) % images.length;
 
-  const LabelWithLogo = ({
-    img,
-    logoSize,
-    textClass,
-  }: {
-    img: HeroImage;
-    logoSize: string;
-    textClass: string;
-  }) => (
-    <div className="absolute top-6 left-6 md:top-8 md:left-8 flex items-center gap-3">
-      {img.logo && (
-        <img
-          src={img.logo}
-          alt=""
-          className={`${logoSize} rounded-full object-cover border-2 border-white/40 shadow-lg`}
-        />
-      )}
-      <span
-        className={`inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-black/30 backdrop-blur-sm text-white/80 font-medium tracking-[0.15em] uppercase ${textClass}`}
-      >
-        {img.label}
-      </span>
-    </div>
-  );
+  const currentImage = images[current];
 
   return (
     <div className="absolute inset-0 z-[5] overflow-hidden">
@@ -71,7 +48,6 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
               alt={img.alt}
               className="w-full h-full object-cover"
             />
-            <LabelWithLogo img={img} logoSize="w-20 h-20" textClass="text-xs" />
           </div>
         ))}
       </div>
@@ -147,13 +123,6 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
                 alt={img.alt}
                 className="w-full h-full object-cover"
               />
-              {isCenter && (
-                <LabelWithLogo
-                  img={img}
-                  logoSize="w-28 h-28"
-                  textClass="text-sm"
-                />
-              )}
             </div>
           );
         })}
@@ -174,6 +143,27 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
       >
         <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
       </button>
+
+      {/* Centered label + logo overlay */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4 pb-40 md:pb-24">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:gap-6 max-w-[90vw] md:max-w-none">
+          {currentImage.logo && (
+            <img
+              src={currentImage.logo}
+              alt=""
+              className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/40 shadow-xl shrink-0"
+            />
+          )}
+          <div className="flex flex-col items-center md:items-start gap-2 md:gap-3">
+            <h2 className="text-sm md:text-xl font-sans font-bold text-white text-center md:text-left uppercase tracking-widest">
+              <span className="bg-black/50 text-2xl px-3 py-1 font-light rounded-md md:px-4 md:py-1.5">{currentImage.label}</span>
+            </h2>
+            <p className="text-xs md:text-sm text-white/80 tracking-wide uppercase text-center md:text-left">
+              <span className="px-2.5 py-1 rounded-md md:px-3">à l&apos;Espace Musset — Lieu inter-associatif — Toulouse</span>
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
