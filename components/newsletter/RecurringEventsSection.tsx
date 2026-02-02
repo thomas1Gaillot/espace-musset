@@ -101,7 +101,7 @@ function RecurringEventCard({ group }: RecurringEventCardProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Voir les détails →
+            Je réserve →
           </a>
         </div>
       </div>

@@ -24,7 +24,6 @@ export const ROUTES = {
     ROOT: "/arts-du-corps",
     SUBPAGES: {
       MEDITATION: "/arts-du-corps/meditation",
-      FELDENKRAIS: "/arts-du-corps/feldenkrais",
       QI_GONG: "/arts-du-corps/qi-gong",
       YOGA_DU_RIRE: "/arts-du-corps/yoga-du-rire",
     },

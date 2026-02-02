@@ -1,10 +1,11 @@
 import EventsSection from "@/components/events-section";
+import { HeroCarousel } from "@/components/hero-carousel";
 import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ROUTES } from "@/data/route";
 import { cn } from "@/lib/utils";
-import { Instagram } from "lucide-react";
+import { Instagram, Users, DoorOpen, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import EventList from "../components/event-list";
@@ -90,47 +91,67 @@ export default function HomePage() {
     },
   ];
 
-  const bgImgClass = "bg-[url('/espace-musset.jpeg')]";
-  const bgHeroSectionCalass = "h-full  w-full flex flex-col  bg-cover bg-center bg-no-repeat";
+  const heroImages = [
+    { src: "/cafe-doc.png", alt: "Café d'Oc", label: "Café d'Oc" },
+    { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Spectacle" },
+    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif" },
+    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Philosophie", label: "Philosophie" },
+    { src: "/diseuses-amertume.jpeg", alt: "Théâtre d'improvisation", label: "Théâtre d'impro" },
+  ];
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Announcement Bar */}
       <div className=" top-[60px] sticky z-50">
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-cafe-philo-la-justice-suit-elle-la-loi-ou-la-conscience-1976509953477"
+                "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367"
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Café philo tous les 1er jeudi du mois"} </p>
+                <p>{"Prochain évènement : Atelier philo (mercredi 4 Février, 19h30)"} </p>
               </div>
             </Link>
           </Button>
         </div>
       </div>
 
-      <section className={cn("hero-section relative py-20 px-4", bgHeroSectionCalass, bgImgClass)}>
-        {/* Overlay foncé */}
-        <div className="absolute inset-0 bg-black/20 z-0" aria-hidden="true" />
+      {/* Hero Section */}
+      <section className="hero-section relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-gray-950">
+        {/* Carousel background - crossfade every 4s */}
+        <HeroCarousel images={heroImages} />
 
-        <div className="relative z-10 container mx-auto text-center">
-          <div className="max-w-4xl mx-auto animate-fade-in">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-              Bienvenue à l'Espace Musset
+        {/* Dark overlay */}
+        <div className="absolute inset-0 z-[1] bg-black/45" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto text-center px-4">
+          <div className="max-w-3xl mx-auto">
+            <img
+              src="/logoEM.png"
+              alt="Espace Musset"
+              className="w-24 h-24 mx-auto mb-8 animate-scale-in drop-shadow-2xl"
+            />
+            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up tracking-tight">
+              Espace Musset
             </h1>
-            <p className="text-xl md:text-2xl text-primary-foreground mb-2 leading-relaxed">
-              Un lieu de rencontre, de partage et d'épanouissement au cœur du quartier des Minimes
-              (Toulouse).
+            <p
+              className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed animate-fade-in-up max-w-xl mx-auto"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Lieu inter-associatif de formation et d'échange
+              <br className="hidden sm:block" />
+              <span className="text-white/70">Toulouse — Quartier des Minimes</span>
             </p>
-            <p className="text-xl md:text-2xl text-primary-foreground mb-8 leading-relaxed">
-              Lieu inter - associatif, nous organisons avec les associations partenaires l'animation
-              de l'espace dans un esprit d'ouverture et de partage.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-4" asChild id={"reservation-button"}>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
+              <Button size="lg" className="text-lg px-8 py-4" asChild>
                 <Link href="/#agenda"> Agenda </Link>
               </Button>
               <Button
@@ -138,16 +159,14 @@ export default function HomePage() {
                 variant="secondary"
                 className="text-lg px-8 py-4"
                 asChild
-                id={"reservation-button"}
               >
                 <Link href={ROUTES.MISE_A_DISPOSITION}> Réserver une salle </Link>
               </Button>
               <Button
                 size="lg"
                 variant="link"
-                className="text-lg  text-white px-8 py-4"
+                className="text-lg text-white px-8 py-4"
                 asChild
-                id={"contact-button"}
               >
                 <Link href={ROUTES.CONTACT}> Nous Contacter </Link>
               </Button>
@@ -156,21 +175,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* Lieu inter-associatif Section */}
       <section className="py-16 px-4 bg-primary/5">
         <div className="container mx-auto text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              L'Association
+              Un lieu inter-associatif
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L’association Espace Musset est un lieu dédié à la promotion de{" "}
-              <strong>l’art, de la culture et de la convivialité </strong>.
+              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des
+              associations viennent proposer leurs activités : philosophie, théâtre d'improvisation,
+              yoga, écriture, café associatif et bien d'autres.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Grâce à l’engagement de bénévoles, elle organise des conférences, concerts,
-              expositions, ateliers… et plus encore, dans un esprit d’ouverture et de partage.Elle
-              anime également, le café associatif<strong>« Le Café d’Oc »</strong> !
+              Grâce à l'engagement de bénévoles et de nos associations partenaires, l'espace
+              accueille conférences, ateliers, formations et rencontres dans un esprit d'ouverture.
+              Venez également découvrir notre café associatif <strong>« Le Café d'Oc »</strong> !
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={"default"} size="lg" asChild>
@@ -180,6 +200,49 @@ export default function HomePage() {
                 <Link href={ROUTES.ACCUEIL + "#agenda"}> Prochains évènements </Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mise à disposition de salles Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-4">
+              Mise à disposition de salles
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Vous cherchez un espace pour vos formations, ateliers ou événements ? Nos salles
+              modulables et équipées sont à votre disposition.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center p-6 rounded-xl bg-primary/5">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <DoorOpen className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-serif text-lg font-bold mb-2">Salle des Muses</h3>
+              <p className="text-sm text-muted-foreground">42m² — jusqu'à 50 personnes, vidéoprojecteur, climatisation</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-primary/5">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <Users className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-serif text-lg font-bold mb-2">Le Café d'Oc</h3>
+              <p className="text-sm text-muted-foreground">28m² — 25 personnes, ambiance conviviale, café & thé</p>
+            </div>
+            <div className="text-center p-6 rounded-xl bg-primary/5">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <GraduationCap className="w-7 h-7 text-primary" />
+              </div>
+              <h3 className="font-serif text-lg font-bold mb-2">Tarifs associatifs</h3>
+              <p className="text-sm text-muted-foreground">Tarifs préférentiels pour les associations et projets à vocation sociale</p>
+            </div>
+          </div>
+          <div className="text-center mt-10">
+            <Button size="lg" asChild>
+              <Link href={ROUTES.MISE_A_DISPOSITION}>Découvrir nos espaces</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -216,13 +279,12 @@ export default function HomePage() {
               Nos Activités
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              L'Espace Musset est <strong>un de ces endroits où tout se maille </strong>: le chant,
-              le théâtre, le yoga, les cafés litérraires, cafés histoire et cafés philo...
+              Nos associations partenaires proposent <strong>des formations et ateliers variés</strong> : chant,
+              théâtre, yoga, cafés philo, écriture, piano et bien d'autres.
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Pour répondre aux besoins essentiels du <strong> "vivre ensemble" </strong>,
-              construire le monde d'aujourd'hui et de demain par la coopération et le partage, en
-              commençant <strong>par notre quartier </strong>.
+              Un lieu où les associations se retrouvent pour <strong>faire vivre le quartier</strong>,
+              partager leurs savoirs et construire ensemble.
             </p>
           </div>
           <EventsSection />

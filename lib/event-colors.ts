@@ -73,11 +73,6 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#f0f9ff",
       textColor: "#0c4a6e",
     },
-    Feldenkrais: {
-      borderColor: "#d946ef",
-      backgroundColor: "#fdf4ff",
-      textColor: "#701a75",
-    },
     "Clown Socratique": {
       borderColor: "#f43f5e",
       backgroundColor: "#fff1f2",

@@ -194,7 +194,6 @@ function ContactSection() {
     "yoga-du-rire": "Inscription à un atelier Yoga du rire",
     "ecriture-spontanee": "Inscription à un atelier d'Écriture spontanée",
     "theatre-impro": "Inscription à un atelier Théâtre d’improvisation",
-    feldenkrais: "Inscription à un atelier Feldenkrais",
     "clown-socratique": "Inscription à un atelier Clown Socratique",
     meditation: "Inscription à une séance de Méditation",
     "mercredi-montessori": "Inscription à un Mercredi Montessori",
@@ -216,7 +215,6 @@ function ContactSection() {
     "yoga-du-rire": "Bonjour,\nJe souhaite participer à un atelier de Yoga du rire.",
     "ecriture-spontanee": "Bonjour,\nJe souhaite participer à un atelier d'Écriture spontanée.",
     "theatre-impro": "Bonjour,\nJe souhaite participer à un atelier de Théâtre d’improvisation.",
-    feldenkrais: "Bonjour,\nJe souhaite découvrir la méthode Feldenkrais.",
     "clown-socratique": "Bonjour,\nJe souhaite participer à un atelier de Clown Socratique.",
     meditation: "Bonjour,\nJe souhaite participer à une séance de Méditation.",
     "mercredi-montessori": "Bonjour,\nJe souhaite inscrire mon enfant à un Mercredi Montessori.",
@@ -344,7 +342,6 @@ ${message}
                 <SelectItem value="yoga-du-rire">{"Arts - Yoga du rire"}</SelectItem>
                 <SelectItem value="ecriture-spontanee">{"Arts - Écriture spontanée"}</SelectItem>
                 <SelectItem value="theatre-impro">{"Arts - Théâtre d’improvisation"}</SelectItem>
-                <SelectItem value="feldenkrais">{"Arts - Feldenkrais"}</SelectItem>
                 <SelectItem value="clown-socratique">{"Arts - Clown Socratique"}</SelectItem>
                 <SelectItem value="meditation">{"Arts - Méditation"}</SelectItem>
 

@@ -521,6 +521,13 @@ function CarouselCafeDoc() {
 
   const images = [
     {
+      src: "/mise-a-disposition/cafe_oc.jpeg",
+      title: "Le café d'Oc",
+      config: "Bar",
+      capacity: "18 couverts",
+      icon: Coffee,
+    },
+    {
       src: "/mise-a-disposition/cafe_classe.jpeg",
       title: "Le café d'Oc",
       config: "Classe",
@@ -547,13 +554,6 @@ function CarouselCafeDoc() {
       config: "En Bloc",
       capacity: "12 personnes",
       icon: Brackets,
-    },
-    {
-      src: "/mise-a-disposition/cafe_oc.jpeg",
-      title: "Le café d'Oc",
-      config: "Vue générale",
-      capacity: "18 couverts",
-      icon: Coffee,
     },
   ];
 
@@ -641,6 +641,13 @@ function CarouselSalleDesMuses() {
 
   const images = [
     {
+      src: "/salle-des-muses-3.jpg",
+      title: "Salle des muses",
+      config: "en U",
+      capacity: "24 personnes",
+      icon: Brackets,
+    },
+    {
       src: "/salle-des-muses.jpg",
       title: "Salle des muses",
       config: "Conférence",
@@ -653,13 +660,6 @@ function CarouselSalleDesMuses() {
       config: "Classe",
       capacity: "24 personnes",
       icon: SquareMenu,
-    },
-    {
-      src: "/salle-des-muses-3.jpg",
-      title: "Salle des muses",
-      config: "en U",
-      capacity: "24 personnes",
-      icon: Brackets,
     },
   ];
 

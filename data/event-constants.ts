@@ -103,9 +103,9 @@ export const EVENT_TYPES = {
     name: "Clown Socratique" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.CLOWN,
   },
-  FELDENKRAIS: {
-    name: "Feldenkrais" as EventType,
-    href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS,
+  YOGA: {
+    name: "Yoga" as EventType,
+    href: ROUTES.ACTIVITES.SUBPAGES.YOGA,
   },
 } as const;
 

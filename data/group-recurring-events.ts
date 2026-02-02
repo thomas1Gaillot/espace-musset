@@ -28,7 +28,6 @@ function areSameRecurringActivity(event1: EventData, event2: EventData): boolean
   const recurringByTypeOnly = [
     "Qi Gong",
     "Méditation",
-    "Feldenkrais",
     "Yoga",
     "Théâtre d'improvisation",
     "Mercredi Montessori",

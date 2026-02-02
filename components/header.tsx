@@ -26,14 +26,13 @@ export const Header = () => {
   ];
 
   const ecologieSubpages = [
-    { name: "Récolte de mégot", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
+    { name: "Écologie", path: ROUTES.ECOLOGIE.SUBPAGES.ZERO_DECHET },
     { name: "Maraudes", path: ROUTES.ECOLOGIE.SUBPAGES.MARAUDE },
   ];
 
   const artsSubpages = [
     { name: "Qi gong", path: ROUTES.ARTS.SUBPAGES.QI_GONG },
     { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
-    { name: "Feldenkrais", path: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
     { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
   ];
   const activitesPages = [
@@ -56,7 +55,7 @@ export const Header = () => {
 
             <div className="block">
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
-              <p className="text-xs text-muted-foreground">Centre culturel & associatif</p>
+              <p className="text-xs text-muted-foreground">Lieu inter-associatif</p>
             </div>
           </Link>
 

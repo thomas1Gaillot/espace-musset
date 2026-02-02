@@ -167,11 +167,19 @@ const oneTimeEvents: EventData[] = [
  * Events that happen every week on the same day
  */
 
-// Atelier Chant - Every Wednesday (January & February 2026)
-const atelierChantJanFev = generateWeeklyEvents(
+// Atelier Chant - Every Wednesday (January & February 2026, except Feb 4)
+const atelierChantJanFev = generateEventsFromDates(
   RECURRING_EVENT_TEMPLATES.CHANT_ATELIER,
-  new Date("2026-01-07"),
-  new Date("2026-02-25")
+  [
+    new Date("2026-01-07"),
+    new Date("2026-01-14"),
+    new Date("2026-01-21"),
+    new Date("2026-01-28"),
+    // Feb 4 removed
+    new Date("2026-02-11"),
+    new Date("2026-02-18"),
+    new Date("2026-02-25"),
+  ]
 );
 
 // Théâtre d'Improvisation - Every Monday (multiple time slots)
@@ -309,6 +317,31 @@ const meditationThursdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ME
   new Date("2025-10-30"),
 ]);
 
+// Yoga - Every Thursday in February 2026
+const yogaThursdaysFeb = generateEventsFromDates(
+  RECURRING_EVENT_TEMPLATES.YOGA,
+  [
+    new Date("2026-02-05"),
+    new Date("2026-02-12"),
+    new Date("2026-02-19"),
+    new Date("2026-02-26"),
+  ]
+);
+
+// Atelier écriture "Libérez votre plume" - February 19, 2026
+const atelierEcritureFeb = [
+  createEvent({
+    title: "Libérez votre plume",
+    dateObj: new Date("2026-02-19"),
+    time: "19:30 à 21:30",
+    image: "/cours/ecriture.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.ECRITURE_SPONTANEE,
+    eventLink: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
+  }),
+];
+
 // Clown Socratique - February 2026
 const clownSocratiqueEvents = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CLOWN_SOCRATIQUE, [
   new Date("2026-02-10"),
@@ -329,12 +362,6 @@ const clownSocratiqueTuesdays = generateEventsFromDates(
 const meditationMidiTuesdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MEDITATION_MIDI, [
   new Date("2025-09-23"),
   new Date("2025-09-30"),
-]);
-
-// Feldenkrais - Saturday sessions
-const feldenkraisSaturdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.FELDENKRAIS, [
-  new Date("2025-10-18"),
-  new Date("2025-10-25"),
 ]);
 
 // Ecriture Spontanée
@@ -626,7 +653,6 @@ const eventList: EventData[] = [
   ...meditationMidiTuesdays,
   ...clownSocratiqueEvents,
   ...clownSocratiqueTuesdays,
-  ...feldenkraisSaturdays,
   ...ecritureSpontanee,
   ...volunteerEvents,
   ...philosophyWorkshops,
@@ -634,6 +660,8 @@ const eventList: EventData[] = [
   ...novemberPhiloWorkshop2,
   ...februaryPhiloWorkshops,
   ...cafeEvents,
+  ...yogaThursdaysFeb,
+  ...atelierEcritureFeb,
 ];
 
 export { eventList };

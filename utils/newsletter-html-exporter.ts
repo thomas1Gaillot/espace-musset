@@ -60,7 +60,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                         </td>
                                         <td style="text-align: right; vertical-align: top;">
                                             <p style="font-size: 18px; font-weight: bold; color: #ffffff; margin: 0;">Espace Musset</p>
-                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0;">Centre culturel & associatif</p>
+                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0;">Lieu inter-associatif</p>
                                         </td>
                                     </tr>
                                 </table>
@@ -185,7 +185,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                             </span>
                                         </td>
                                        <td style="text-align: right; vertical-align: middle;">
-                                                <a href="https://www.espace-musset.com/#evenements" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Voir →</a>
+                                                <a href="${event.eventLink || 'https://www.espace-musset.com/contact'}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -462,7 +462,7 @@ export function exportNewsletterToHTMLGrouped(
               </span>
             </td>
             <td style="text-align: right; vertical-align: middle;">
-              <a href="https://www.espace-musset.com/#evenements" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Voir →</a>
+              <a href="${event.eventLink || 'https://www.espace-musset.com/contact'}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
             </td>
           </tr>
         </table>
@@ -496,7 +496,7 @@ export function exportNewsletterToHTMLGrouped(
                                         </td>
                                         <td style="text-align: right; vertical-align: top;">
                                             <p style="font-size: 18px; font-weight: bold; color: #ffffff; margin: 0;">Espace Musset</p>
-                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0;">Centre culturel & associatif</p>
+                                            <p style="font-size: 12px; opacity: 0.8; color: #ffffff; margin: 0;">Lieu inter-associatif</p>
                                         </td>
                                     </tr>
                                 </table>

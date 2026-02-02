@@ -17,7 +17,6 @@ export interface EventData {
 
 export type EventType =
   | "Café philo socratique"
-  | "Feldenkrais"
   | "Atelier philo"
   | "Clown Socratique"
   | "Qi Gong"

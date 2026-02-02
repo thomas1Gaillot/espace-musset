@@ -40,7 +40,6 @@ const eventData: {
   { type: "Théâtre", icon: Drama, href: ROUTES.ACTIVITES.SUBPAGES.THEATRE },
   { type: "Chant", icon: Music2Icon, href: ROUTES.ACTIVITES.SUBPAGES.CHANT },
   { type: "Clown Socratique", icon: LaughIcon, href: ROUTES.ACTIVITES.SUBPAGES.CLOWN },
-  { type: "Feldenkrais", icon: MoveIcon, href: ROUTES.ARTS.SUBPAGES.FELDENKRAIS },
   { type: "Méditation", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.MEDITATION },
   { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ACTIVITES.SUBPAGES.PIANO },
   {

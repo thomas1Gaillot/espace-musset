@@ -50,16 +50,6 @@ export const RECURRING_EVENT_TEMPLATES = {
     eventLink: ROUTES.ARTS.SUBPAGES.MEDITATION,
   } as EventTemplate,
 
-  FELDENKRAIS: {
-    title: "Feldenkrais",
-    time: "10:30 à 11:30",
-    image: "/cours/feldenkrais.jpg",
-    price: "5 €",
-    category: EVENT_CATEGORIES.ARTS,
-    type: EVENT_TYPES.FELDENKRAIS,
-    eventContact: "Ghislaine, au 06 21 87 03 85",
-  } as EventTemplate,
-
   CLOWN_SOCRATIQUE: {
     title: "Atelier Clown Socratique",
     time: "19:00 à 21:00",
@@ -78,6 +68,17 @@ export const RECURRING_EVENT_TEMPLATES = {
     category: EVENT_CATEGORIES.ARTS,
     type: EVENT_TYPES.YOGA_DU_RIRE,
     eventContact: "Béatrice, au 06 19 87 06 90",
+  } as EventTemplate,
+
+  YOGA: {
+    title: "Yoga",
+    time: "12:15 à 13:15",
+    image: "/espace-musset.jpeg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.YOGA,
+    eventContact: "Medha",
+    eventLink: ROUTES.ACTIVITES.SUBPAGES.YOGA,
   } as EventTemplate,
 
   // Activities

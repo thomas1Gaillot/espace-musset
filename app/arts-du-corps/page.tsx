@@ -16,8 +16,7 @@ export default function ArtsCorpsPage() {
   const artsDuCorpsEvents = eventList.filter(
     (e) =>
       e.category.name === "Arts" &&
-      (e.type.name === "Feldenkrais" ||
-        e.type.name === "Qi Gong" ||
+      (e.type.name === "Qi Gong" ||
         e.type.name === "Méditation" ||
         e.type.name === "Yoga du rire")
   );
@@ -35,12 +34,6 @@ export default function ArtsCorpsPage() {
         "Cultivez la sérénité et gérez vos émotions lors de nos séances de méditation guidée, par Anne-Marie, sophrologue certifiée R.N.C.P.",
       link: ROUTES.ARTS.SUBPAGES.MEDITATION,
       icon: "🧘🏼",
-    },
-    {
-      title: "Feldenkrais",
-      description: "La méthode Feldenkrais : Bouger mieux pour vivre mieux ! ",
-      link: ROUTES.ARTS.SUBPAGES.FELDENKRAIS,
-      icon: "🧎🏻‍♀️",
     },
     {
       title: "Yoga Du Rire",
