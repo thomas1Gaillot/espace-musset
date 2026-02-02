@@ -22,6 +22,13 @@ export default function ArtsCorpsPage() {
   );
   const subpages = [
     {
+      title: "Yoga",
+      description:
+        "Offrez-vous une parenthèse de douceur chaque jeudi avec Medha. Postures, respiration et relaxation pour tous niveaux.",
+      link: ROUTES.ACTIVITES.SUBPAGES.YOGA,
+      icon: "🧘‍♀️",
+    },
+    {
       title: "Qi Gong",
       description:
         "Venez découvrir le Qi Gong et les arts Taoistes périphériques à cette pratique avec Martial Gontrand, enseignant en Qi Gong depuis 3 ans chez Leçon du Gong.",

@@ -48,6 +48,7 @@ const eventData: {
     href: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
   },
   { type: "Yoga du rire", icon: StickerIcon, href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
+  { type: "Yoga", icon: MoveIcon, href: ROUTES.ACTIVITES.SUBPAGES.YOGA },
 ];
 
 export default function EventsSection() {
