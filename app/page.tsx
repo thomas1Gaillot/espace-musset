@@ -92,11 +92,12 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-    { src: "/cafe-doc.png", alt: "Café d'Oc", label: "Café d'Oc" },
+    { src: "/salle-des-muses-3.jpg", alt: "Salle des Muses", label: "Salle des Muses" },
     { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Spectacle" },
-    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif" },
+    { src: "/mise-a-disposition/cafe_oc.jpeg", alt: "Le Café d'Oc", label: "Le Café d'Oc" },
     { src: "/gallery/gallery-cafe-11.jpeg", alt: "Philosophie", label: "Philosophie" },
     { src: "/diseuses-amertume.jpeg", alt: "Théâtre d'improvisation", label: "Théâtre d'impro" },
+    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif" },
   ];
 
   return (
@@ -124,53 +125,45 @@ export default function HomePage() {
         {/* Carousel background - crossfade every 4s */}
         <HeroCarousel images={heroImages} />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 z-[1] bg-black/45" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+        {/* Lighter overlay — let images breathe */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto text-center px-4">
-          <div className="max-w-3xl mx-auto">
-            <img
-              src="/logoEM.png"
-              alt="Espace Musset"
-              className="w-24 h-24 mx-auto mb-8 animate-scale-in drop-shadow-2xl"
-            />
-            <h1 className="font-serif text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up tracking-tight">
-              Espace Musset
-            </h1>
-            <p
-              className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed animate-fade-in-up max-w-xl mx-auto"
-              style={{ animationDelay: "0.2s" }}
+        {/* Content — compact, bottom-weighted */}
+        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-end h-[85vh] pb-16">
+          <img
+            src="/logoEM.png"
+            alt="Espace Musset"
+            className="w-16 h-16 mb-4 animate-scale-in drop-shadow-2xl"
+          />
+          <p
+            className="text-sm md:text-base text-white/80 mb-6 animate-fade-in-up tracking-wide uppercase"
+            style={{ animationDelay: "0.15s" }}
+          >
+            Lieu inter-associatif · Toulouse
+          </p>
+          <div
+            className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <Button size="lg" className="px-8 py-3" asChild>
+              <Link href="/#agenda"> Agenda </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="px-8 py-3"
+              asChild
             >
-              Lieu inter-associatif de formation et d'échange
-              <br className="hidden sm:block" />
-              <span className="text-white/70">Toulouse — Quartier des Minimes</span>
-            </p>
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
-              style={{ animationDelay: "0.4s" }}
+              <Link href={ROUTES.MISE_A_DISPOSITION}> Réserver une salle </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="link"
+              className="text-white px-8 py-3"
+              asChild
             >
-              <Button size="lg" className="text-lg px-8 py-4" asChild>
-                <Link href="/#agenda"> Agenda </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="secondary"
-                className="text-lg px-8 py-4"
-                asChild
-              >
-                <Link href={ROUTES.MISE_A_DISPOSITION}> Réserver une salle </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="link"
-                className="text-lg text-white px-8 py-4"
-                asChild
-              >
-                <Link href={ROUTES.CONTACT}> Nous Contacter </Link>
-              </Button>
-            </div>
+              <Link href={ROUTES.CONTACT}> Contact </Link>
+            </Button>
           </div>
         </div>
       </section>
