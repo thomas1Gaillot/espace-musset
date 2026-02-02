@@ -92,12 +92,12 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-    { src: "/salle-des-muses-3.jpg", alt: "Salle des Muses", label: "Salle des Muses" },
+    { src: "/salle-des-muses-3.jpg", alt: "Mise à disposition de salles", label: "Mise à disposition de salles" },
     { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Spectacle" },
-    { src: "/mise-a-disposition/cafe_oc.jpeg", alt: "Le Café d'Oc", label: "Le Café d'Oc" },
-    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Philosophie", label: "Philosophie" },
-    { src: "/diseuses-amertume.jpeg", alt: "Théâtre d'improvisation", label: "Théâtre d'impro" },
-    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif" },
+    { src: "/mise-a-disposition/cafe_oc.jpeg", alt: "Le Café d'Oc", label: "Le Café d'Oc", logo: "/cafe-doc.png" },
+    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Conférence", label: "Conférence", logo: "/logo_acropole.png" },
+    { src: "/diseuses_profil.webp", alt: "Théâtre d'improvisation", label: "Théâtre d'impro", logo: "/diseuses-amertume.jpeg" },
+    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Café associatif", logo: "/cafe-doc.png" },
   ];
 
   return (
@@ -126,10 +126,10 @@ export default function HomePage() {
         <HeroCarousel images={heroImages} />
 
         {/* Lighter overlay — let images breathe */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/20 to-black/30 pointer-events-none" />
 
         {/* Content — compact, bottom-weighted */}
-        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-end h-[85vh] pb-16">
+        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-end h-[85vh] pb-16 pointer-events-none">
           <img
             src="/logoEM.png"
             alt="Espace Musset"
@@ -142,7 +142,7 @@ export default function HomePage() {
             Lieu inter-associatif · Toulouse
           </p>
           <div
-            className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up"
+            className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up pointer-events-auto"
             style={{ animationDelay: "0.3s" }}
           >
             <Button size="lg" className="px-8 py-3" asChild>
@@ -175,13 +175,13 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
               Un lieu inter-associatif
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des
+             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des partenaires et
               associations viennent proposer leurs activités : philosophie, théâtre d'improvisation,
               yoga, écriture, café associatif et bien d'autres.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Grâce à l'engagement de bénévoles et de nos associations partenaires, l'espace
+              Grâce à l'engagement de bénévoles, associations et partenaires, l'espace
               accueille conférences, ateliers, formations et rencontres dans un esprit d'ouverture.
               Venez également découvrir notre café associatif <strong>« Le Café d'Oc »</strong> !
             </p>
