@@ -2,6 +2,20 @@ import { EventData } from "@/types/event-types";
 import { MonthlyEventsData } from "@/data/get-monthly.events";
 import { formatRecurringDates } from "@/data/group-recurring-events";
 
+const BASE_URL = "https://www.espace-musset.com";
+
+function getFullEventLink(eventLink: string | undefined): string {
+  if (!eventLink) {
+    return `${BASE_URL}/contact`;
+  }
+  // Si c'est déjà une URL absolue, la retourner telle quelle
+  if (eventLink.startsWith("http://") || eventLink.startsWith("https://")) {
+    return eventLink;
+  }
+  // Sinon, c'est un chemin relatif, ajouter le domaine
+  return `${BASE_URL}${eventLink.startsWith("/") ? "" : "/"}${eventLink}`;
+}
+
 export function exportNewsletterToHTML(events: EventData[], month?: string, year?: number): string {
   const currentDate = new Date();
   const displayMonth = month || currentDate.toLocaleDateString("fr-FR", { month: "long" });
@@ -116,7 +130,7 @@ export function exportNewsletterToHTML(events: EventData[], month?: string, year
                                             </span>
                                         </td>
                                        <td style="text-align: right; vertical-align: middle;">
-                                                <a href="${event.eventLink || 'www.espace-musset.com/contact'}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
+                                                <a href="${getFullEventLink(event.eventLink)}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
                                         </td>
                                     </tr>
                                 </table>
@@ -393,7 +407,7 @@ export function exportNewsletterToHTMLGrouped(
               </span>
             </td>
             <td style="text-align: right; vertical-align: middle;">
-              <a href="${event.eventLink || 'www.espace-musset.com/contact'}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
+              <a href="${getFullEventLink(event.eventLink)}" style="color: #8B2635; font-size: 14px; font-weight: 500; text-decoration: underline;">Je réserve →</a>
             </td>
           </tr>
         </table>
