@@ -147,7 +147,7 @@ const oneTimeEvents: EventData[] = [
     price: "Nous contacter",
     category: EVENT_CATEGORIES.PHILOSOPHIE,
     type: EVENT_TYPES.CONFERENCE_PHILO,
-    eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES,
+    eventLink:"https://www.eventbrite.fr/e/billets-la-conscience-dans-tous-ses-etats-1982281492305",
   }),
   createEvent({
     title: "Hathor : la puissance de la joie au cœur de la spiritualité égyptienne.",
@@ -334,7 +334,7 @@ const atelierEcritureFeb = [
     title: "Libérez votre plume",
     dateObj: new Date("2026-02-19"),
     time: "19:30 à 21:30",
-    image: "/cours/ecriture.jpg",
+    image: "/cours/ecriture.jpeg",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.ECRITURE_SPONTANEE,

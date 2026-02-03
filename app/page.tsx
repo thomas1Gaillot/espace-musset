@@ -96,7 +96,7 @@ export default function HomePage() {
     { src: "/salle-des-muses-3.jpg", alt: "Mise à disposition de salles", label: "Des salles à disposition ...", logo: "/logoEM.png" },
     { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Des spectacles ...", logo: "/logoEM.png"  },
     { src: "/diseuses_profil.webp", alt: "Théâtre d'improvisation", label: "Du théâtre d'impro ...", logo: "/diseuses-amertume.jpeg" },
-    { src: "/gallery/gallery-cafe-8.jpeg", alt: "Café associatif", label: "Un café associatif ...", logo: "/cafe-doc.png" },
+    { src: "/gallerie/3.JPG", alt: "Café associatif", label: "Un café associatif ...", logo: "/cafe-doc.png" },
   ];
 
   return (

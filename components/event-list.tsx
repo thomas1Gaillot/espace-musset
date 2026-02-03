@@ -160,7 +160,10 @@ export default function EventList({ data, title }: { data: EventData[]; title: s
                         id={"reserve-button-" + event.id}
                         asChild
                       >
-                        <Link href={event.eventLink} target="_blank">
+                        <Link
+                          href={event.eventLink}
+                          target={event.eventLink.startsWith("http") ? "_blank" : undefined}
+                        >
                           {"Voir"}
                         </Link>
                       </Button>

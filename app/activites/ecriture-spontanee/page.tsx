@@ -47,7 +47,7 @@ const EcritureSpontanee = () => {
           {/* Image principale */}
           <div className="relative h-[600px] w-full sm:min-w-[400px] rounded-lg overflow-hidden">
             <img
-              src="/cours/ecriture.jpg"
+              src="/cours/ecriture.jpeg"
               alt={"ecriture spontanée"}
               className="w-full h-auto object-cover"
             />
@@ -60,24 +60,17 @@ const EcritureSpontanee = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                À l’Espace Musset, au cœur du quartier des Minimes, découvrez un atelier d'écriture
-                spontanée où liberté, créativité et découverte de soi se rencontrent. Cet espace
-                bienveillant vous invite à écrire sans contrainte, à explorer votre imaginaire et à
-                libérer votre expression personnelle.
+                L'atelier d'écriture spontanée qui réveille votre créativité !
               </p>
               <p>
-                Cet atelier stimule également la concentration, la réflexion et l’éveil de
-                l'imagination créatrice, tout en favorisant l'autonomie de pensée. Vous apprendrez à
-                exprimer vos idées sans filtre, à dépasser le perfectionnisme et à retrouver le
-                simple plaisir d'écrire.
+                2h pour aller à la rencontre des trésors cachés de votre univers intérieur, explorer votre imaginaire, libérer votre expression.
+                Retrouver le simple plaisir d'écrire. 
               </p>
               <p>
-                Chaque séance est une invitation à puiser en vous, à faire émerger des trésors
-                cachés de votre univers intérieur. Écrivez des fragments d'histoire, des morceaux de
-                vie, partagez vos mots et laissez la magie collective de l'écriture opérer.
+                Vous pourrez partager vos mots si vous le souhaitez et laisser la magie collective opérer.
               </p>
               <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-                Rejoignez-nous chaque troisième jeudi du mois
+                Rejoignez-nous chaque 3ème jeudi du mois pour vivre un moment d'inspiration et d'expression authentique par l'écriture !
               </div>
               <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
                 <EventList data={ecritureEvent} title="Nos prochains évènements" />
@@ -99,8 +92,8 @@ const EcritureSpontanee = () => {
             10 € l'atelier
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            <Building className="inline-block mr-1 mb-1" size={14} />+ 10 € pour l'année, pour
-            adhérer à l'association VDRS
+            <Building className="inline-block mr-1 mb-1" size={14} />+ 5 € pour l'année, pour
+            adhérer à l'association "Voie de Renais-Sens"
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             <HourglassIcon className="inline-block mr-1 mb-1" size={14} />

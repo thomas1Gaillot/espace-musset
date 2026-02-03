@@ -30,50 +30,46 @@ export type OurImageData = {
 
 const imageData: OurImageData[] = [
   {
-    src: "/gallery/gallery-cafe-0.jpeg",
+    src: "/gallerie/1.JPG",
     blurredSrc: "/blur/gallery-0.jpeg",
     alt: "Gallery Image 1",
   },
   {
-    src: "/gallery/gallery-cafe-7.jpeg",
+    src: "/gallerie/2.JPG",
     blurredSrc: "/blur/gallery-7.jpeg",
     alt: "Gallery Image 2",
   },
   {
-    src: "/gallery/gallery-cafe-2.jpeg",
+    src: "/gallerie/3.JPG",
     blurredSrc: "/blur/gallery-2.jpeg",
     alt: "Gallery Image 3",
   },
   {
-    src: "/gallery/gallery-cafe-3.jpeg",
+    src: "/gallerie/4.JPG",
     blurredSrc: "/blur/gallery-3.jpeg",
     alt: "Gallery Image 4",
   },
   {
-    src: "/gallery/gallery-cafe-4.jpeg",
+    src: "/gallerie/5.JPG",
     blurredSrc: "/blur/gallery-4.jpeg",
     alt: "Gallery Image 5",
   },
   {
-    src: "/gallery/gallery-cafe-5.jpeg",
+    src: "/gallerie/6.JPG",
     blurredSrc: "/blur/gallery-5.jpeg",
     alt: "Gallery Image 6",
   },
   {
-    src: "/gallery/gallery-cafe-9.jpeg",
+    src: "/gallerie/7.JPG",
     blurredSrc: "/blur/gallery-9.jpeg",
     alt: "Gallery Image 7",
   },
   {
-    src: "/gallery/gallery-cafe-10.jpeg",
+    src: "/gallerie/8.JPG",
     blurredSrc: "/blur/gallery-10.jpeg",
     alt: "Gallery Image 8",
   },
-  {
-    src: "/gallery/gallery-cafe-11.jpeg",
-    blurredSrc: "/blur/gallery-11.jpeg",
-    alt: "Gallery Image 9",
-  },
+
 ];
 
 export default function CafeAssociatifPage() {

@@ -39,7 +39,7 @@ export default function ActivitesPage() {
     {
       title: "Ecriture spontanée",
       description:
-        "À l’Espace Musset, au cœur du quartier des Minimes, découvrez un atelier d'écriture spontanée où liberté, créativité et découverte de soi se rencontrent.",
+        "L'atelier d'écriture spontanée qui réveille votre créativité !",
       link: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
       icon: "✍️💭",
     },

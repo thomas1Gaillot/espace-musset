@@ -115,7 +115,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   ECRITURE_SPONTANEE: {
     title: "Atelier Ecriture spontanée",
     time: "19:30 à 21:00",
-    image: "/cours/ecriture.jpg",
+    image: "/cours/ecriture.jpeg",
     price: "10 €",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.ECRITURE_SPONTANEE,

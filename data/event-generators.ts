@@ -70,7 +70,7 @@ export function generateWeeklyEvents(
  *   category: EVENT_CATEGORIES.ACTIVITES,
  *   type: EVENT_TYPES.ECRITURE_SPONTANEE,
  *   price: "10 €",
- *   image: "/cours/ecriture.jpg",
+ *   image: "/cours/ecriture.jpeg",
  * }, new Date("2025-10-16"), 5)
  */
 export function generateBiWeeklyEvents(

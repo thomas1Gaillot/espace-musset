@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { EventData } from "@/types/event-types";
 import { Calendar, Clock, Euro, ExternalLink, MapPin } from "lucide-react";
 import { Badge } from "../ui/badge";
+import { useRouter } from "next/navigation";
 
 interface EventDetailsSheetProps {
   event: EventData | null;
@@ -13,6 +14,7 @@ interface EventDetailsSheetProps {
 }
 
 export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetProps) {
+  const router = useRouter();
   if (!event) return null;
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -82,8 +84,8 @@ export function EventDetailsSheet({ event, isOpen, onClose }: EventDetailsSheetP
               onClick={() => {
                 if (event?.eventLink?.startsWith("http")) {
                   window.open(event.eventLink, "_blank");
-                } else {
-                  window.location.href = event?.eventLink || "";
+                } else if (event?.eventLink) {
+                  router.push(event.eventLink);
                 }
               }}
             >
