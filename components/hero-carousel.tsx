@@ -28,8 +28,7 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
     return () => clearInterval(interval);
   }, [next]);
 
-  const getIndex = (offset: number) =>
-    (current + offset + images.length) % images.length;
+  const getIndex = (offset: number) => (current + offset + images.length) % images.length;
 
   const currentImage = images[current];
 
@@ -43,11 +42,7 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
             className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
             style={{ opacity: i === current ? 1 : 0 }}
           >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover"
-            />
+            <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
           </div>
         ))}
       </div>
@@ -118,11 +113,7 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
                   "left 0.8s cubic-bezier(0.4,0,0.2,1), width 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1), filter 0.8s cubic-bezier(0.4,0,0.2,1)",
               }}
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover"
-              />
+              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
             </div>
           );
         })}
@@ -159,10 +150,14 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
               <span className="px-2.5 py-1 rounded-md md:px-3">à l&apos;Espace Musset</span>
             </p>
             <h2 className="text-sm md:text-xl font-sans font-bold text-white text-center md:text-left uppercase tracking-widest">
-              <span className="bg-black/50 text-lg px-3 py-1 font-light rounded-md md:px-4 md:py-1.5">{currentImage.label}</span>
+              <span className="bg-black/50 text-lg px-3 py-1 font-light rounded-md md:px-4 md:py-1.5">
+                {currentImage.label}
+              </span>
             </h2>
             <p className="text-xs md:text-sm text-white/80 tracking-wide uppercase text-center md:text-left">
-              <span className="px-2.5 py-1 rounded-md md:px-3">Lieu inter-associatif — Toulouse</span>
+              <span className="px-2.5 py-1 rounded-md md:px-3">
+                Lieu inter-associatif — Toulouse
+              </span>
             </p>
           </div>
         </div>

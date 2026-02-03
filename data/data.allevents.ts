@@ -147,7 +147,8 @@ const oneTimeEvents: EventData[] = [
     price: "Nous contacter",
     category: EVENT_CATEGORIES.PHILOSOPHIE,
     type: EVENT_TYPES.CONFERENCE_PHILO,
-    eventLink:"https://www.eventbrite.fr/e/billets-la-conscience-dans-tous-ses-etats-1982281492305",
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-la-conscience-dans-tous-ses-etats-1982281492305",
   }),
   createEvent({
     title: "Hathor : la puissance de la joie au cœur de la spiritualité égyptienne.",
@@ -168,19 +169,16 @@ const oneTimeEvents: EventData[] = [
  */
 
 // Atelier Chant - Every Wednesday (January & February 2026, except Feb 4)
-const atelierChantJanFev = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.CHANT_ATELIER,
-  [
-    new Date("2026-01-07"),
-    new Date("2026-01-14"),
-    new Date("2026-01-21"),
-    new Date("2026-01-28"),
-    // Feb 4 removed
-    new Date("2026-02-11"),
-    new Date("2026-02-18"),
-    new Date("2026-02-25"),
-  ]
-);
+const atelierChantJanFev = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHANT_ATELIER, [
+  new Date("2026-01-07"),
+  new Date("2026-01-14"),
+  new Date("2026-01-21"),
+  new Date("2026-01-28"),
+  // Feb 4 removed
+  new Date("2026-02-11"),
+  new Date("2026-02-18"),
+  new Date("2026-02-25"),
+]);
 
 // Théâtre d'Improvisation - Every Monday (multiple time slots)
 const theatreImproMonday = generateEventsByDayOfWeek(
@@ -318,15 +316,12 @@ const meditationThursdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ME
 ]);
 
 // Yoga - Every Thursday in February 2026
-const yogaThursdaysFeb = generateEventsFromDates(
-  RECURRING_EVENT_TEMPLATES.YOGA,
-  [
-    new Date("2026-02-05"),
-    new Date("2026-02-12"),
-    new Date("2026-02-19"),
-    new Date("2026-02-26"),
-  ]
-);
+const yogaThursdaysFeb = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.YOGA, [
+  new Date("2026-02-05"),
+  new Date("2026-02-12"),
+  new Date("2026-02-19"),
+  new Date("2026-02-26"),
+]);
 
 // Atelier écriture "Libérez votre plume" - February 19, 2026
 const atelierEcritureFeb = [

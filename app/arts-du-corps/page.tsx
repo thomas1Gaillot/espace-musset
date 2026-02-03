@@ -16,9 +16,7 @@ export default function ArtsCorpsPage() {
   const artsDuCorpsEvents = eventList.filter(
     (e) =>
       e.category.name === "Arts" &&
-      (e.type.name === "Qi Gong" ||
-        e.type.name === "Méditation" ||
-        e.type.name === "Yoga du rire")
+      (e.type.name === "Qi Gong" || e.type.name === "Méditation" || e.type.name === "Yoga du rire")
   );
   const subpages = [
     {

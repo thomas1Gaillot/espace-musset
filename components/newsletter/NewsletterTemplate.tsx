@@ -30,7 +30,6 @@ export function NewsletterTemplate({ events, eventsData, month, year }: Newslett
           <NewsletterHeader month={month} year={year} />
 
           <div className="px-6 sm:px-8">
-
             {/* Événements spéciaux (non-récurrents) */}
             <MonthlyEventsSection
               events={uniqueEvents}

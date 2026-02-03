@@ -51,8 +51,8 @@ const YogaMedha = () => {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Medha vous guide dans une pratique de yoga accessible à tous, mêlant postures,
-                respiration et relaxation. Ses cours sont pensés pour vous aider à relâcher le stress
-                du quotidien et à vous reconnecter à votre corps en profondeur.
+                respiration et relaxation. Ses cours sont pensés pour vous aider à relâcher le
+                stress du quotidien et à vous reconnecter à votre corps en profondeur.
               </p>
               <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
                 Nous contacter pour en savoir plus
@@ -79,7 +79,7 @@ const YogaMedha = () => {
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             <EuroIcon className="inline-block mr-1 mb-1" size={14} />
-             Nous contacter
+            Nous contacter
           </p>
         </div>
       </div>

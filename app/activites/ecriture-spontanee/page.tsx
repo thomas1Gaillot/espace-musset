@@ -59,18 +59,18 @@ const EcritureSpontanee = () => {
               Écrire en toute liberté
             </h2>
             <div className="space-y-4 text-muted-foreground">
+              <p>L'atelier d'écriture spontanée qui réveille votre créativité !</p>
               <p>
-                L'atelier d'écriture spontanée qui réveille votre créativité !
+                2h pour aller à la rencontre des trésors cachés de votre univers intérieur, explorer
+                votre imaginaire, libérer votre expression. Retrouver le simple plaisir d'écrire.
               </p>
               <p>
-                2h pour aller à la rencontre des trésors cachés de votre univers intérieur, explorer votre imaginaire, libérer votre expression.
-                Retrouver le simple plaisir d'écrire. 
-              </p>
-              <p>
-                Vous pourrez partager vos mots si vous le souhaitez et laisser la magie collective opérer.
+                Vous pourrez partager vos mots si vous le souhaitez et laisser la magie collective
+                opérer.
               </p>
               <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-                Rejoignez-nous chaque 3ème jeudi du mois pour vivre un moment d'inspiration et d'expression authentique par l'écriture !
+                Rejoignez-nous chaque 3ème jeudi du mois pour vivre un moment d'inspiration et
+                d'expression authentique par l'écriture !
               </div>
               <div className="w-full ml-[24px] mr-[4px]  mb-8 max-w-[calc(100vw-28px)] grid justify-center">
                 <EventList data={ecritureEvent} title="Nos prochains évènements" />

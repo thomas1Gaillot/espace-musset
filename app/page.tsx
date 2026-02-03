@@ -92,11 +92,36 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-    { src: "/gallery/gallery-cafe-11.jpeg", alt: "Conférence", label: "Des conférences ...", logo: "/logo_acropole.png" },
-    { src: "/salle-des-muses-3.jpg", alt: "Mise à disposition de salles", label: "Des salles à disposition ...", logo: "/logoEM.png" },
-    { src: "/gallery/gallery-cafe-3.jpeg", alt: "Spectacle", label: "Des spectacles ...", logo: "/logoEM.png"  },
-    { src: "/diseuses_profil.webp", alt: "Théâtre d'improvisation", label: "Du théâtre d'impro ...", logo: "/diseuses-amertume.jpeg" },
-    { src: "/gallerie/3.JPG", alt: "Café associatif", label: "Un café associatif ...", logo: "/cafe-doc.png" },
+    {
+      src: "/gallery/gallery-cafe-11.jpeg",
+      alt: "Conférence",
+      label: "Des conférences ...",
+      logo: "/logo_acropole.png",
+    },
+    {
+      src: "/salle-des-muses-3.jpg",
+      alt: "Mise à disposition de salles",
+      label: "Des salles à disposition ...",
+      logo: "/logoEM.png",
+    },
+    {
+      src: "/gallery/gallery-cafe-3.jpeg",
+      alt: "Spectacle",
+      label: "Des spectacles ...",
+      logo: "/logoEM.png",
+    },
+    {
+      src: "/diseuses_profil.webp",
+      alt: "Théâtre d'improvisation",
+      label: "Du théâtre d'impro ...",
+      logo: "/diseuses-amertume.jpeg",
+    },
+    {
+      src: "/gallerie/3.JPG",
+      alt: "Café associatif",
+      label: "Un café associatif ...",
+      logo: "/cafe-doc.png",
+    },
   ];
 
   return (
@@ -136,20 +161,10 @@ export default function HomePage() {
             <Button size="lg" className="px-8 py-3" asChild>
               <Link href="/#agenda"> Agenda </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="px-8 py-3"
-              asChild
-            >
+            <Button size="lg" variant="secondary" className="px-8 py-3" asChild>
               <Link href={ROUTES.MISE_A_DISPOSITION}> Réserver une salle </Link>
             </Button>
-            <Button
-              size="lg"
-              variant="link"
-              className="text-white px-8 py-3"
-              asChild
-            >
+            <Button size="lg" variant="link" className="text-white px-8 py-3" asChild>
               <Link href={ROUTES.CONTACT}> Contact </Link>
             </Button>
           </div>
@@ -163,15 +178,15 @@ export default function HomePage() {
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-foreground mb-6">
               Un lieu inter-associatif
             </h2>
-             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des partenaires et
-              associations viennent proposer leurs activités : philosophie, théâtre d'improvisation,
-              yoga, écriture, café associatif et bien d'autres.
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des
+              partenaires et associations viennent proposer leurs activités : philosophie, théâtre
+              d'improvisation, yoga, écriture, café associatif et bien d'autres.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Grâce à l'engagement de bénévoles, associations et partenaires, l'espace
-              accueille conférences, ateliers, formations et rencontres dans un esprit d'ouverture.
-              Venez également découvrir notre café associatif <strong>« Le Café d'Oc »</strong> !
+              Grâce à l'engagement de bénévoles, associations et partenaires, l'espace accueille
+              conférences, ateliers, formations et rencontres dans un esprit d'ouverture. Venez
+              également découvrir notre café associatif <strong>« Le Café d'Oc »</strong> !
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={"default"} size="lg" asChild>
@@ -203,21 +218,27 @@ export default function HomePage() {
                 <DoorOpen className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-serif text-lg font-bold mb-2">Salle des Muses</h3>
-              <p className="text-sm text-muted-foreground">42m² — jusqu'à 50 personnes, vidéoprojecteur, climatisation</p>
+              <p className="text-sm text-muted-foreground">
+                42m² — jusqu'à 50 personnes, vidéoprojecteur, climatisation
+              </p>
             </div>
             <div className="text-center p-6 rounded-xl bg-primary/5">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <Users className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-serif text-lg font-bold mb-2">Le Café d'Oc</h3>
-              <p className="text-sm text-muted-foreground">28m² — 25 personnes, ambiance conviviale, café & thé</p>
+              <p className="text-sm text-muted-foreground">
+                28m² — 25 personnes, ambiance conviviale, café & thé
+              </p>
             </div>
             <div className="text-center p-6 rounded-xl bg-primary/5">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <GraduationCap className="w-7 h-7 text-primary" />
               </div>
               <h3 className="font-serif text-lg font-bold mb-2">Tarifs associatifs</h3>
-              <p className="text-sm text-muted-foreground">Tarifs préférentiels pour les associations et projets à vocation sociale</p>
+              <p className="text-sm text-muted-foreground">
+                Tarifs préférentiels pour les associations et projets à vocation sociale
+              </p>
             </div>
           </div>
           <div className="text-center mt-10">
@@ -260,12 +281,14 @@ export default function HomePage() {
               Nos Activités
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Nos associations partenaires proposent <strong>des formations et ateliers variés</strong> : chant,
-              théâtre, yoga, cafés philo, écriture, piano et bien d'autres.
+              Nos associations partenaires proposent{" "}
+              <strong>des formations et ateliers variés</strong> : chant, théâtre, yoga, cafés
+              philo, écriture, piano et bien d'autres.
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Un lieu où les associations se retrouvent pour <strong>faire vivre le quartier</strong>,
-              partager leurs savoirs et construire ensemble.
+              Un lieu où les associations se retrouvent pour{" "}
+              <strong>faire vivre le quartier</strong>, partager leurs savoirs et construire
+              ensemble.
             </p>
           </div>
           <EventsSection />

@@ -69,7 +69,6 @@ const imageData: OurImageData[] = [
     blurredSrc: "/blur/gallery-10.jpeg",
     alt: "Gallery Image 8",
   },
-
 ];
 
 export default function CafeAssociatifPage() {

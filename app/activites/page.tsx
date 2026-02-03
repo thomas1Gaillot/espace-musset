@@ -38,8 +38,7 @@ export default function ActivitesPage() {
     },
     {
       title: "Ecriture spontanée",
-      description:
-        "L'atelier d'écriture spontanée qui réveille votre créativité !",
+      description: "L'atelier d'écriture spontanée qui réveille votre créativité !",
       link: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
       icon: "✍️💭",
     },

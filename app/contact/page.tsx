@@ -201,7 +201,7 @@ function ContactSection() {
     "portes-ouvertes": "Inscription aux Portes ouvertes",
     "soiree-jeux": "Participation à une Soirée Jeux",
     spectacle: "Informations sur un Spectacle",
-    
+
     autre: "Autre demande",
   };
 
@@ -326,10 +326,9 @@ ${message}
                 <SelectValue placeholder="Choisissez un sujet" />
               </SelectTrigger>
               <SelectContent>
-
-                       {/* Mise à disposition */}
+                {/* Mise à disposition */}
                 <SelectItem value="mise-a-disposition">{"Mise à disposition de salle"}</SelectItem>
-                
+
                 {/* Philosophie */}
                 <SelectItem value="cafe-philo">{"Philosophie - Café philo"}</SelectItem>
                 <SelectItem value="atelier-philo">{"Philosophie - Atelier philo"}</SelectItem>
@@ -357,8 +356,6 @@ ${message}
 
                 {/* Montessori */}
                 <SelectItem value="mercredi-montessori">{"Mercredi Montessori"}</SelectItem>
-
-         
 
                 <SelectItem value="autre">{"Autre demande"}</SelectItem>
               </SelectContent>
