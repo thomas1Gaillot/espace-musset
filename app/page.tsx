@@ -137,7 +137,7 @@ export default function HomePage() {
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Atelier philo ce mercredi 04 Février, 19h30"} </p>
+                <p>{"Atelier philo ce mercredi 11 Février, 19h30"} </p>
               </div>
             </Link>
           </Button>
