@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ROUTES } from "@/data/route";
 import { cn } from "@/lib/utils";
-import { Instagram, Users, DoorOpen, GraduationCap } from "lucide-react";
+import { Instagram, Users, DoorOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import EventList from "../components/event-list";
@@ -179,14 +179,23 @@ export default function HomePage() {
               Un lieu inter-associatif
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              L'Espace Musset est un <strong>lieu de formation et de partage</strong> où des
-              partenaires et associations viennent proposer leurs activités : philosophie, théâtre
-              d'improvisation, yoga, écriture, café associatif et bien d'autres.
+              L'Espace Musset est un <strong>lieu de formation et de transmission</strong>{" "}
+              accueillant des formations, ateliers, conférences et rencontres proposés par des
+              partenaires, associations et intervenants du territoire.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Grâce à l'engagement de bénévoles, associations et partenaires, l'espace accueille
-              conférences, ateliers, formations et rencontres dans un esprit d'ouverture. Venez
-              également découvrir notre café associatif <strong>« Le Café d'Oc »</strong> !
+              Il met à disposition des salles accueillantes pour des formations, réunions et
+              événements, dans un environnement fonctionnel et accessible, pensé pour le travail
+              collectif et la créativité.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Espace inter-associatif animé par des bénévoles, l'Espace Musset encourage les
+              coopérations et la vie locale.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Sur place, le café associatif <strong>« Le Café d'Oc »</strong> est un véritable lieu
+              de convivialité, où l'on se retrouve avant ou après les activités pour échanger et
+              créer du lien.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant={"default"} size="lg" asChild>
@@ -208,11 +217,13 @@ export default function HomePage() {
               Mise à disposition de salles
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Vous cherchez un espace pour vos formations, ateliers ou événements ? Nos salles
-              modulables et équipées sont à votre disposition.
+              Vous cherchez un lieu pour vos réunions, formations ou événements professionnels ?
+              L'Espace Musset met à votre disposition des salles modulables et équipées, adaptées
+              aux besoins des entreprises, dans un cadre calme, fonctionnel et propice au travail
+              collaboratif.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-center p-6 rounded-xl bg-primary/5">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <DoorOpen className="w-7 h-7 text-primary" />
@@ -229,15 +240,6 @@ export default function HomePage() {
               <h3 className="font-serif text-lg font-bold mb-2">Le Café d'Oc</h3>
               <p className="text-sm text-muted-foreground">
                 28m² — 25 personnes, ambiance conviviale, café & thé
-              </p>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-primary/5">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
-                <GraduationCap className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-serif text-lg font-bold mb-2">Tarifs associatifs</h3>
-              <p className="text-sm text-muted-foreground">
-                Tarifs préférentiels pour les associations et projets à vocation sociale
               </p>
             </div>
           </div>

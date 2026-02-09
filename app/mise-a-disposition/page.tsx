@@ -132,8 +132,13 @@ export default function MiseADispositionPage() {
             vos événements
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl px-4 mx-auto leading-relaxed">
-            Nous mettons à disposition nos espaces chaleureux et modulables pour vos événements,
-            formations, réunions ou célébrations.
+            L'Espace Musset met à votre disposition des salles modulables et entièrement équipées,
+            offrant un cadre soigné et confortable, idéal pour des échanges efficaces et
+            constructifs.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl px-4 mx-auto leading-relaxed mt-4">
+            Au cœur du quartier des Minimes, l'Espace Musset bénéficie d'un accès facile et d'un
+            environnement calme, propice au travail collectif et aux échanges.
           </p>
         </div>
 
@@ -144,19 +149,18 @@ export default function MiseADispositionPage() {
               <h2 className="font-serif text-3xl font-bold text-foreground">La salle des muses</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  L'Espace Musset met à disposition ses différentes salles pour accueillir vos
-                  projets associatifs, professionnels ou personnels. Nos espaces reflètent nos
-                  valeurs d'ouverture et de bienveillance.
+                  La Salle des Muses est une salle de 42 m² lumineuse et calme, offrant une vue
+                  agréable sur un jardin privatif.
                 </p>
                 <p>
-                  Que ce soit pour une conférence, un atelier, une formation ou une célébration,
-                  nous vous proposons des environnements adaptés et équipés selon vos besoins.
+                  Pensée pour être chaleureuse, elle dispose d'un plancher en chêne et d'un
+                  environnement apaisant, propice au travail et aux échanges. L'éclairage modulable
+                  et la climatisation réversible garantissent un confort optimal en toute saison.
                 </p>
-              </div>
-              <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
-                <p className="text-sm font-medium text-foreground">
-                  Nos tarifs préférentiels pour les associations et les projets à vocation sociale
-                  témoignent de notre engagement communautaire.
+                <p>
+                  Idéale pour formations, réunions, ateliers ou tout autre événement professionnel
+                  ou associatif. Une personne dédiée est disponible pour vous accompagner selon vos
+                  besoins.
                 </p>
               </div>
             </div>
@@ -170,22 +174,11 @@ export default function MiseADispositionPage() {
             <CarouselCafeDoc />
 
             <div className="flex flex-col justify-center space-y-6">
-              <h2 className="font-serif text-3xl font-bold text-foreground">Le café d'Oc</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground">Café d'Oc – 28 m²</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Un espace chaleureux et convivial au coeur de l'Espace Musset, idéal pour vos
-                  conférences et ateliers dans une ambiance café.
-                </p>
-                <p>
-                  Avec ses 28m² et une capacité de 25 personnes en mode conférence, le café d'Oc
-                  offre un cadre intimiste parfait pour des échanges de qualité, comme nos célèbres
-                  Cafés Philo.
-                </p>
-              </div>
-              <div className="bg-primary/5 border-l-4 border-primary p-4 rounded-r-lg">
-                <p className="text-sm font-medium text-foreground">
-                  Nos tarifs préférentiels pour les associations et les projets à vocation sociale
-                  témoignent de notre engagement communautaire.
+                  Idéal pour vos rencontres, ateliers, réunions ou événements professionnels ou
+                  associatifs, dans un cadre convivial et chaleureux.
                 </p>
               </div>
             </div>
@@ -487,14 +480,15 @@ export default function MiseADispositionPage() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="font-serif text-xl">Tarifs préférentiels</CardTitle>
+              <CardTitle className="font-serif text-xl">Contactez-nous</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Nous proposons des tarifs avantageux pour les associations et les projets à vocation
-                sociale. N'hésitez pas à nous contacter pour en savoir plus sur nos conditions
-                spéciales.
+                Contactez-nous pour en savoir plus et découvrir nos offres adaptées à vos besoins.
               </p>
+              <Button asChild>
+                <Link href={ROUTES.CONTACT}>Nous contacter</Link>
+              </Button>
             </CardContent>
           </Card>
           <Card className="border-2">
