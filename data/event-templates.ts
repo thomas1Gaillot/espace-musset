@@ -12,7 +12,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   CHANT_ATELIER: {
     title: "Atelier chant",
     time: "18:15 à 19:15",
-    image: "/espace-musset.jpeg",
+    image: "/cours/chant.jpg",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.CHANT,
@@ -53,7 +53,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   CLOWN_SOCRATIQUE: {
     title: "Atelier Clown Socratique",
     time: "19:00 à 21:00",
-    image: "/espace-musset.jpeg",
+    image: "/cours/clown.jpg",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.CLOWN_SOCRATIQUE,
@@ -73,11 +73,11 @@ export const RECURRING_EVENT_TEMPLATES = {
   YOGA: {
     title: "Yoga",
     time: "12:15 à 13:15",
-    image: "/espace-musset.jpeg",
+    image: "/cours/yoga.jpg",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.YOGA,
-    eventContact: "Medha",
+    eventContact: "Medha, au 06 52 62 99 49",
     eventLink: ROUTES.ACTIVITES.SUBPAGES.YOGA,
   } as EventTemplate,
 
@@ -85,7 +85,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   THEATRE_IMPRO_SOIR: {
     title: "Théatre d'improvisation",
     time: "18:30 à 20:30",
-    image: "/espace-musset.jpeg",
+    image: "/diseuses_profil.webp",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.THEATRE_IMPRO,
@@ -174,7 +174,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   MARAUDE: {
     title: "Maraude auprès des sans abris",
     time: "16:00 à 19:30",
-    image: "/event/cleanup-20-sept.jpg",
+    image: "/event/maraude.jpg",
     price: "Gratuit",
     category: EVENT_CATEGORIES.VOLONTARIAT,
     type: EVENT_TYPES.MARAUDE,

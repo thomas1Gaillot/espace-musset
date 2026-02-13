@@ -32,7 +32,6 @@ function areSameRecurringActivity(event1: EventData, event2: EventData): boolean
     "Théâtre d'improvisation",
     "Mercredi Montessori",
     "Chant",
-    "Cours de piano",
     "Yoga du rire",
     "Ecriture spontanée",
     "Clown Socratique",

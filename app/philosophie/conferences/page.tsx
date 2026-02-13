@@ -72,7 +72,7 @@ const Conferences = () => {
         </div>
       </div>
 
-      <div className="container grid md:grid-cols-3 gap-6 mb-12">
+      <div className="container grid md:grid-cols-2 gap-6 mb-12">
         <div className="bg-warmBrown-50/30 rounded-lg p-6 text-center">
           <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Fréquence</h3>
           <p className="text-muted-foreground">
@@ -88,10 +88,6 @@ const Conferences = () => {
             <br />
             Questions et échanges (30min)
           </p>
-        </div>
-        <div className="bg-earth-50/50 rounded-lg p-6 text-center">
-          <h3 className="font-serif text-lg font-semibold text-foreground mb-2">Tarif</h3>
-          <p className="text-muted-foreground">6€</p>
         </div>
       </div>
 

@@ -337,11 +337,10 @@ const atelierEcritureFeb = [
   }),
 ];
 
-// Clown Socratique - February 2026
+// Clown Socratique - Monthly Saturday sessions (Feb-Mar 2026)
 const clownSocratiqueEvents = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CLOWN_SOCRATIQUE, [
-  new Date("2026-02-10"),
-  new Date("2026-02-17"),
-  new Date("2026-02-24"),
+  new Date("2026-02-28"),
+  new Date("2026-03-28"),
 ]);
 
 // Clown Socratique - Tuesday sessions (Sept-Oct)
@@ -398,7 +397,7 @@ const volunteerEvents: EventData[] = [
     title: "Je cuisine pour les autres",
     dateObj: new Date("2026-02-22"),
     time: "14:30 à 16:30",
-    image: "/gallery/gallery-cafe-6.jpeg",
+    image:  "/event/cuisine.jpeg",
     price: "Gratuit",
     category: EVENT_CATEGORIES.VOLONTARIAT,
     type: EVENT_TYPES.MARAUDE,

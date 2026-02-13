@@ -118,8 +118,10 @@ export default function PhilosophiePage() {
         <h2 className="font-serif text-2xl font-semibold text-foreground mb-4">{cta.title}</h2>
         <p className="text-lg text-muted-foreground mb-6">{cta.description}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" id={"cta-ateliers-button"}>
-            <Link href={cta.primaryLink}>{cta.primaryLabel}</Link>
+          <Button size="lg" asChild id={"cta-ateliers-button"}>
+            <a href="https://deviens-philosophe.fr/" target="_blank" rel="noopener noreferrer">
+              Découvrir sur deviens-philosophe.fr
+            </a>
           </Button>
           <Button size="lg" variant="outline" asChild id={"cta-contact-button"}>
             <Link href={cta.secondaryLink}>{cta.secondaryLabel}</Link>

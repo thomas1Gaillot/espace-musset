@@ -39,7 +39,7 @@ const Chant = () => (
 
       <div className="flex flex-col  sm:flex-row   gap-12 mb-12">
         {/* Image principale */}
-        <div className="relative h-[600px] w-full sm:w-[600px] rounded-lg overflow-hidden">
+        <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
           <img src="/cours/chant.jpg" alt={"chant"} className="w-full h-auto object-cover" />
           <div className="absolute inset-0 bg-transparent" />
         </div>
@@ -77,7 +77,7 @@ const Chant = () => (
         </p>
         <p className="text-sm text-muted-foreground mt-2">
           <HourglassIcon className="inline-block mr-1 mb-1" size={14} />
-          Tous les mercredis de 19h30 à 20h30
+          Tous les mercredis de 18h15 à 19h15
         </p>
         <p className="text-sm text-muted-foreground mt-2">
           <MapIcon className="inline-block mr-1 mb-1" size={14} />

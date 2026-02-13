@@ -37,8 +37,7 @@ export const Header = () => {
     { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
   ];
   const activitesPages = [
-    { name: "Cours de piano", path: ROUTES.ACTIVITES.SUBPAGES.PIANO },
-    { name: "Atelier chant", path: ROUTES.ACTIVITES.SUBPAGES.CHANT },
+{ name: "Atelier chant", path: ROUTES.ACTIVITES.SUBPAGES.CHANT },
     { name: "Théâtre d'impro", path: ROUTES.ACTIVITES.SUBPAGES.THEATRE },
     { name: "Clown socratiques", path: ROUTES.ACTIVITES.SUBPAGES.CLOWN },
     { name: "Mercredi Montessori", path: ROUTES.ACTIVITES.SUBPAGES.MONTESSORI },

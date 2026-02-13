@@ -19,8 +19,7 @@ export default function ActivitesPage() {
       e.type.name === "Clown Socratique" ||
       e.type.name === "Ecriture spontanée" ||
       e.type.name === "Mercredi Montessori" ||
-      e.type.name === "Cours de piano" ||
-      e.type.name === "Théâtre d'improvisation"
+e.type.name === "Théâtre d'improvisation"
   );
   const subpages = [
     {
@@ -47,13 +46,6 @@ export default function ActivitesPage() {
       description: "Avec votre enfant, venez découvrir la méthode Montessori.",
       link: ROUTES.ACTIVITES.SUBPAGES.MONTESSORI,
       icon: "👪",
-    },
-    {
-      title: "Cours de Piano",
-      description:
-        "Que vous soyez débutant ou que vous souhaitiez perfectionner votre technique, nos cours de piano sont adaptés à tous les niveaux et âges.",
-      link: ROUTES.ACTIVITES.SUBPAGES.PIANO,
-      icon: "🎹",
     },
     {
       title: "Théatre d'improvisation",

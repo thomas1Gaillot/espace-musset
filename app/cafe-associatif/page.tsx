@@ -35,11 +35,6 @@ const imageData: OurImageData[] = [
     alt: "Gallery Image 1",
   },
   {
-    src: "/gallerie/2.JPG",
-    blurredSrc: "/blur/gallery-7.jpeg",
-    alt: "Gallery Image 2",
-  },
-  {
     src: "/gallerie/3.JPG",
     blurredSrc: "/blur/gallery-2.jpeg",
     alt: "Gallery Image 3",
@@ -126,10 +121,6 @@ export default function CafeAssociatifPage() {
                   </Link>
                   ) : nous proposerons des planches typiques du sud-ouest et teintées de notre
                   voisine l’Espagne : charcuterie, fromage ou végétarienne
-                </li>
-                <li>
-                  - <strong>Les lundis et mercredis </strong> : des tartes salées maisons
-                  accompagnée de salades
                 </li>
                 <li>
                   - <strong>Le 4ème jeudi du mois </strong> : soirée pizza avec Thomas à l’occasion
@@ -278,25 +269,19 @@ export default function CafeAssociatifPage() {
                 </h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p>
-                    <strong>Lundi:</strong> 17h00 - 22h00
+                    <strong>Lundi:</strong> 18h00 - 22h00
                   </p>
                   <p>
-                    <strong>Mardi:</strong> 17h00 - 22h00
+                    <strong>Mercredi:</strong> 18h00 - 22h00
                   </p>
                   <p>
-                    <strong>Mercredi:</strong> 17h00 - 22h00
+                    <strong>Jeudi:</strong> 15h00 - 18h00
                   </p>
                   <p>
-                    <strong>Jeudi:</strong> (Lors des activités programmées)
+                    <strong>Samedi:</strong> 15h00 - 18h00
                   </p>
-                  <p>
-                    <strong>Vendredi:</strong> (Lors des activités programmées)
-                  </p>
-                  <p>
-                    <strong>Samedi:</strong> 14h00 - 18h00
-                  </p>
-                  <p>
-                    <strong>Dimanche:</strong> (Lors des activités programmées)
+                  <p className="text-xs italic mt-2">
+                    Ou les jours et soirs des activités de nos partenaires
                   </p>
                 </div>
               </div>

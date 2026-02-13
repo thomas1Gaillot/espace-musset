@@ -92,17 +92,23 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-    {
-      src: "/gallery/gallery-cafe-11.jpeg",
-      alt: "Conférence",
-      label: "Des conférences ...",
-      logo: "/logo_acropole.png",
+     {
+      src: "/gallerie/3.JPG",
+      alt: "Café associatif",
+      label: "Un café associatif ...",
+      logo: "/cafe-doc.png",
     },
     {
       src: "/salle-des-muses-3.jpg",
       alt: "Mise à disposition de salles",
       label: "Des salles à disposition ...",
       logo: "/logoEM.png",
+    },
+    {
+      src: "/gallery/gallery-cafe-11.jpeg",
+      alt: "Conférence",
+      label: "Des conférences ...",
+      logo: "/logo_acropole.png",
     },
     {
       src: "/gallery/gallery-cafe-3.jpeg",
@@ -116,12 +122,7 @@ export default function HomePage() {
       label: "Du théâtre d'impro ...",
       logo: "/diseuses-amertume.jpeg",
     },
-    {
-      src: "/gallerie/3.JPG",
-      alt: "Café associatif",
-      label: "Un café associatif ...",
-      logo: "/cafe-doc.png",
-    },
+   
   ];
 
   return (

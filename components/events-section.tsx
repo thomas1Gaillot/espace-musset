@@ -11,7 +11,6 @@ import {
   LucideProps,
   MoveIcon,
   Music2Icon,
-  PianoIcon,
   PopcornIcon,
   Presentation,
   SignatureIcon,
@@ -41,7 +40,6 @@ const eventData: {
   { type: "Chant", icon: Music2Icon, href: ROUTES.ACTIVITES.SUBPAGES.CHANT },
   { type: "Clown Socratique", icon: LaughIcon, href: ROUTES.ACTIVITES.SUBPAGES.CLOWN },
   { type: "Méditation", icon: WindIcon, href: ROUTES.ARTS.SUBPAGES.MEDITATION },
-  { type: "Cours de piano", icon: PianoIcon, href: ROUTES.ACTIVITES.SUBPAGES.PIANO },
   {
     type: "Ecriture spontanée",
     icon: SignatureIcon,

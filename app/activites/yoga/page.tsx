@@ -7,7 +7,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
-import { CalendarIcon, EuroIcon, MapIcon, UserIcon } from "lucide-react";
+import { CalendarIcon, EuroIcon, ExternalLinkIcon, MapIcon, PhoneIcon, UserIcon } from "lucide-react";
 
 const YogaMedha = () => {
   return (
@@ -40,9 +40,10 @@ const YogaMedha = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-12 mb-12">
-          <div className="relative h-[300px] w-full sm:w-[900px] rounded-lg overflow-hidden bg-gradient-to-br from-sage-200 to-warmBrown-200 flex items-center justify-center">
-            <div className="text-center text-6xl">🧘‍♀️</div>
-          </div>
+           <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
+          <img src="/cours/yoga.jpg" alt={"chant"} className="w-full h-auto object-cover" />
+          <div className="absolute inset-0 bg-transparent" />
+        </div>
 
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
@@ -55,7 +56,7 @@ const YogaMedha = () => {
                 stress du quotidien et à vous reconnecter à votre corps en profondeur.
               </p>
               <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-                Nous contacter pour en savoir plus
+                YOGA SHRI VIVEK France
               </div>
             </div>
           </div>
@@ -78,8 +79,22 @@ const YogaMedha = () => {
             Espace Musset, 52 Bis Rue Alfred de Musset, 31200 Toulouse
           </p>
           <p className="text-sm text-muted-foreground mt-2">
-            <EuroIcon className="inline-block mr-1 mb-1" size={14} />
-            Nous contacter
+            <PhoneIcon className="inline-block mr-1 mb-1" size={14} />
+            Contact :{" "}
+            <a href="tel:+33652629949" className="underline hover:no-underline">
+              06 52 62 99 49
+            </a>
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            <ExternalLinkIcon className="inline-block mr-1 mb-1" size={14} />
+            <a
+              href="https://www.yogashrivivekfrance.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline"
+            >
+              www.yogashrivivekfrance.com
+            </a>
           </p>
         </div>
       </div>

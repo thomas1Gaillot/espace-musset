@@ -86,8 +86,7 @@ const AteliersHebdos = () => {
               31200 Toulouse
             </li>
             <li>
-              <strong>Tarif :</strong> 6€ les séance découverte, et ~250€ pour le cycle entier (18
-              ateliers)
+              <strong>Tarif :</strong> 5€ la séance découverte, tarif 55€/40€ par mois
             </li>
             <li>
               <strong>Public :</strong> Tout type de public
@@ -106,9 +105,16 @@ const AteliersHebdos = () => {
         <p className="text-lg text-muted-foreground mb-6">
           Aucun prérequis nécessaire, juste l'envie de questionner et d'apprendre
         </p>
-        <Button size="lg" asChild>
-          <Link href={ROUTES.CONTACT}>S'inscrire</Link>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" asChild>
+            <a href="https://deviens-philosophe.fr/" target="_blank" rel="noopener noreferrer">
+              En savoir plus sur deviens-philosophe.fr
+            </a>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <Link href={ROUTES.CONTACT}>S'inscrire</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

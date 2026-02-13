@@ -39,7 +39,7 @@ const Clown = () => (
 
       <div className="flex flex-col  sm:flex-row   gap-12 mb-12">
         {/* Image principale */}
-        <div className="relative h-[600px] w-full sm:w-[600px] rounded-lg overflow-hidden">
+        <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
           <img src="/cours/clown.jpg" alt={"Clown"} className="w-full h-auto object-cover" />
           <div className="absolute inset-0 bg-transparent" />
         </div>
@@ -54,7 +54,7 @@ const Clown = () => (
               en apprenant à se connaître.
             </p>
             <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-              Cours avec Claire tout les mardi de 19h00 à 21h30
+              Cours avec Claire un samedi par mois de 19h00 à 21h00
             </div>
           </div>
         </div>
@@ -69,15 +69,11 @@ const Clown = () => (
         </a>
         <p className="text-sm text-muted-foreground mt-4">
           <EuroIcon className="inline-block mr-1 mb-1" size={14} />
-          90€ les 8 séances
-        </p>
-        <p className="text-sm text-muted-foreground mt-2">
-          <CoffeeIcon className="inline-block mr-1 mb-1" size={14} />5 € / an pour adhérer au café
-          associatif
+          Contacter Claire
         </p>
         <p className="text-sm text-muted-foreground mt-2">
           <HourglassIcon className="inline-block mr-1 mb-1" size={14} />
-          Tous les mardi de 19h00 à 21h30
+          Un samedi par mois de 19h00 à 21h00
         </p>
         <p className="text-sm text-muted-foreground mt-2">
           <MapIcon className="inline-block mr-1 mb-1" size={14} />
