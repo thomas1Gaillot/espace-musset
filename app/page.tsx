@@ -134,11 +134,11 @@ export default function HomePage() {
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367"
+                "https://www.eventbrite.fr/e/billets-atelier-de-philosophie-pratique-1983563054492"
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Atelier philo ce mercredi 11 Février, 19h30"} </p>
+                <p>{"Atelier philo ce mercredi 25 Février, 19h30"} </p>
               </div>
             </Link>
           </Button>

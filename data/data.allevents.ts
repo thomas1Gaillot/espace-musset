@@ -200,8 +200,8 @@ const theatreImproNuit = generateEventsByDayOfWeek(
 const qiGongTuesday = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.QI_GONG,
   new Date("2025-10-28"),
-  new Date("2026-05-30"),
-  2 // Tuesday
+  new Date("2026-05-29"),
+  5 // Tuesday
 );
 
 // Mercredi Montessori - Every Wednesday
@@ -544,6 +544,7 @@ const novemberPhiloWorkshops = generateEventsFromDates(
   [new Date("2025-11-12"), new Date("2025-11-19")]
 );
 
+
 const novemberPhiloWorkshop2 = [
   createEvent({
     title: "Atelier philo : Penser par soi-même",
@@ -581,6 +582,17 @@ const februaryPhiloWorkshops = [
     type: EVENT_TYPES.ATELIER_PHILO,
     eventLink:
       "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1979518582367",
+  }),
+  createEvent({
+    title: "Atelier de philo pratique : L'art d'agir",
+    dateObj: new Date("2026-02-25"),
+    time: "19:30 à 22:00",
+    image: "event/atelierbg.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.ATELIER_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-atelier-de-philosophie-pratique-1983563054492",
   }),
 ];
 
