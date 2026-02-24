@@ -161,6 +161,30 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-hathor-la-puissance-de-la-joie-au-cur-de-la-spiritualite-egyptienne-1980548869985",
   }),
+
+  createEvent({
+    title: "Café Philo Socratique : Égalité homme-femme, utopie ou réalité ?",
+    dateObj: new Date("2026-03-05"),
+    time: "19:30 à 21:15",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-socratique-egalite-homme-femme-utopie-ou-realite-1982283114156",
+  }),
+
+  createEvent({
+    title: "CES TOULOUSAINNES QUI ONT FAIT L'HISTOIRE !",
+    dateObj: new Date("2026-03-20"),
+    time: "19:30 à 21:30",
+    image: "conference-philo.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-ces-toulousainnes-qui-ont-fait-lhistoire-1982292622596",
+  }),
 ];
 
 /**
@@ -168,8 +192,8 @@ const oneTimeEvents: EventData[] = [
  * Events that happen every week on the same day
  */
 
-// Atelier Chant - Every Wednesday (January & February 2026, except Feb 4)
-const atelierChantJanFev = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHANT_ATELIER, [
+// Atelier Chant - Every Wednesday (January to June 2026, except Feb 4)
+const atelierChantJanJun = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHANT_ATELIER, [
   new Date("2026-01-07"),
   new Date("2026-01-14"),
   new Date("2026-01-21"),
@@ -178,23 +202,56 @@ const atelierChantJanFev = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHA
   new Date("2026-02-11"),
   new Date("2026-02-18"),
   new Date("2026-02-25"),
+  new Date("2026-03-04"),
+  new Date("2026-03-11"),
+  new Date("2026-03-18"),
+  new Date("2026-03-25"),
+  new Date("2026-04-01"),
+  new Date("2026-04-08"),
+  new Date("2026-04-15"),
+  new Date("2026-04-22"),
+  new Date("2026-04-29"),
+  new Date("2026-05-06"),
+  new Date("2026-05-13"),
+  new Date("2026-05-20"),
+  new Date("2026-05-27"),
+  new Date("2026-06-03"),
+  new Date("2026-06-10"),
+  new Date("2026-06-17"),
+  new Date("2026-06-24"),
 ]);
 
-// Théâtre d'Improvisation - Every Monday (multiple time slots)
-const theatreImproMonday = generateEventsByDayOfWeek(
-  RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-  new Date("2025-09-29"),
-  new Date("2026-05-30"),
-  1 // Monday
-);
+// Théâtre d'Improvisation - Every Monday (multiple time slots), excluding March 2
+const theatreImproMonday = [
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
+    new Date("2025-09-29"),
+    new Date("2026-02-23"),
+    1 // Monday
+  ),
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
+    new Date("2026-03-09"),
+    new Date("2026-05-30"),
+    1 // Monday
+  ),
+];
 
-// Théâtre d'Improvisation - Evening session
-const theatreImproNuit = generateEventsByDayOfWeek(
-  RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
-  new Date("2026-01-05"),
-  new Date("2026-05-30"),
-  1 // Monday
-);
+// Théâtre d'Improvisation - Evening session, excluding March 2
+const theatreImproNuit = [
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
+    new Date("2026-01-05"),
+    new Date("2026-02-23"),
+    1 // Monday
+  ),
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
+    new Date("2026-03-09"),
+    new Date("2026-05-30"),
+    1 // Monday
+  ),
+];
 
 // Qi Gong - Every Tuesday
 const qiGongTuesday = generateEventsByDayOfWeek(
@@ -315,12 +372,29 @@ const meditationThursdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ME
   new Date("2025-10-30"),
 ]);
 
-// Yoga - Every Thursday in February 2026
-const yogaThursdaysFeb = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.YOGA, [
+// Yoga - Every Thursday February to June 2026
+const yogaThursdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.YOGA, [
   new Date("2026-02-05"),
   new Date("2026-02-12"),
   new Date("2026-02-19"),
   new Date("2026-02-26"),
+  new Date("2026-03-05"),
+  new Date("2026-03-12"),
+  new Date("2026-03-19"),
+  new Date("2026-03-26"),
+  new Date("2026-04-02"),
+  new Date("2026-04-09"),
+  new Date("2026-04-16"),
+  new Date("2026-04-23"),
+  new Date("2026-04-30"),
+  new Date("2026-05-07"),
+  new Date("2026-05-14"),
+  new Date("2026-05-21"),
+  new Date("2026-05-28"),
+  new Date("2026-06-04"),
+  new Date("2026-06-11"),
+  new Date("2026-06-18"),
+  new Date("2026-06-25"),
 ]);
 
 // Atelier écriture "Libérez votre plume" - February 19, 2026
@@ -397,18 +471,63 @@ const volunteerEvents: EventData[] = [
     title: "Je cuisine pour les autres",
     dateObj: new Date("2026-02-22"),
     time: "14:30 à 16:30",
-    image:  "/event/cuisine.jpeg",
+    image: "/event/cuisine.jpeg",
     price: "Gratuit",
     category: EVENT_CATEGORIES.VOLONTARIAT,
     type: EVENT_TYPES.MARAUDE,
     eventLink: ROUTES.CONTACT,
   }),
+  createEvent({
+    title: "Je cuisine pour les autres",
+    dateObj: new Date("2026-03-15"),
+    time: "14:30 à 16:30",
+    image: "/event/cuisine.jpeg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink: ROUTES.CONTACT,
+  }),
+  createEvent({
+    title: "Je cuisine pour les autres",
+    dateObj: new Date("2026-04-19"),
+    time: "14:30 à 16:30",
+    image: "/event/cuisine.jpeg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink: ROUTES.CONTACT,
+  }),
+  createEvent({
+    title: "Je cuisine pour les autres",
+    dateObj: new Date("2026-05-17"),
+    time: "14:30 à 16:30",
+    image: "/event/cuisine.jpeg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink: ROUTES.CONTACT,
+  }),
+  createEvent({
+    title: "Je cuisine pour les autres",
+    dateObj: new Date("2026-06-21"),
+    time: "14:30 à 16:30",
+    image: "/event/cuisine.jpeg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink: ROUTES.CONTACT,
+  }),
+  
 
   ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE, [
     new Date("2025-09-28"),
     new Date("2025-10-26"),
     new Date("2026-01-25"),
     new Date("2026-02-22"),
+    new Date("2026-03-15"),
+    new Date("2026-04-19"),
+    new Date("2026-05-17"),
+    new Date("2026-06-21"),
   ]),
 
   createEvent({
@@ -639,6 +758,10 @@ const cafeEvents: EventData[] = [
     new Date("2025-11-27"),
     new Date("2026-01-29"),
     new Date("2026-02-26"),
+    new Date("2026-03-26"),
+    new Date("2026-04-30"),
+    new Date("2026-05-28"),
+    new Date("2026-06-25"),
   ]),
 ];
 
@@ -647,7 +770,7 @@ const cafeEvents: EventData[] = [
  */
 const eventList: EventData[] = [
   ...oneTimeEvents,
-  ...atelierChantJanFev,
+  ...atelierChantJanJun,
   ...atelierChantOctNov,
   ...theatreImproMonday,
   ...theatreImproNuit,
@@ -666,7 +789,7 @@ const eventList: EventData[] = [
   ...novemberPhiloWorkshop2,
   ...februaryPhiloWorkshops,
   ...cafeEvents,
-  ...yogaThursdaysFeb,
+  ...yogaThursdays,
   ...atelierEcritureFeb,
 ];
 
