@@ -173,7 +173,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   // Volunteer Activities
   MARAUDE: {
     title: "Maraude auprès des sans abris",
-    time: "16:00 à 19:30",
+    time: "14:30 à 19:30",
     image: "/event/maraude.jpg",
     price: "Gratuit",
     category: EVENT_CATEGORIES.VOLONTARIAT,
