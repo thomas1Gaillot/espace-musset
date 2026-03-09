@@ -134,11 +134,11 @@ export default function HomePage() {
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-cafe-philo-socratique-egalite-homme-femme-utopie-ou-realite-1982283114156"
+                "https://www.eventbrite.fr/e/billets-hathor-la-puissance-de-la-joie-au-cur-de-la-spiritualite-egyptienne-1980548869985"
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Café philo ce jeudi 06 Mars, 19h30"} </p>
+                <p>{"Conférence Egypte Antique ce vendredi 13 Mars 20h !!"} </p>
               </div>
             </Link>
           </Button>

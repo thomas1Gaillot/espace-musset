@@ -514,7 +514,7 @@ const volunteerEvents: EventData[] = [
     new Date("2025-10-26"),
     new Date("2026-01-25"),
     new Date("2026-02-22"),
-    new Date("2026-03-29"),
+    new Date("2026-03-22"),
     new Date("2026-04-19"),
     new Date("2026-05-17"),
     new Date("2026-06-21"),
@@ -530,6 +530,18 @@ const volunteerEvents: EventData[] = [
     type: EVENT_TYPES.MARAUDE,
     eventLink:
       "https://www.eventbrite.fr/e/billets-journee-mondiale-du-volontariat-atelier-volontariat-1909364112459",
+  }),
+
+  createEvent({
+    title: "Atelier Cuisine Paléstinienne",
+    dateObj: new Date("2026-03-29"),
+    time: "16:00",
+    image: "/event/cuisine_palestine.png",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.ATELIER_CUISINE,
+    eventLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSc9TNw-42qMCOvtDs0TShxLuzrVlWVvu8ow5ElqpYLVzNVTfg/viewform",
   }),
 
   createEvent({

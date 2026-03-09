@@ -78,6 +78,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#fff1f2",
       textColor: "#881337",
     },
+     "Atelier Cuisine": {
+      borderColor: "#F59E0B", 
+      backgroundColor: "#FFF7ED", 
+      textColor: "#C2410C", 
+    },
     Méditation: {
       borderColor: "#10b981",
       backgroundColor: "#ecfdf5",

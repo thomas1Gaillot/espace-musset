@@ -79,6 +79,10 @@ export const EVENT_TYPES = {
     name: "Soirée Jeux" as EventType,
     href: "cafe-associatif",
   },
+   ATELIER_CUISINE: {
+    name: "Atelier Cuisine" as EventType,
+    href: "atelier-cuisine",
+  },
   ATELIER_PHILO: {
     name: "Atelier philo" as EventType,
     href: ROUTES.PHILOSOPHIE.SUBPAGES.ATELIERS,
