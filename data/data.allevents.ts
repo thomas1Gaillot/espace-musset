@@ -436,6 +436,7 @@ const meditationMidiTuesdays = generateEventsFromDates(RECURRING_EVENT_TEMPLATES
 const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRITURE_SPONTANEE, [
   new Date("2025-10-16"),
   new Date("2025-11-20"),
+  new Date("2026-03-19"),
 ]);
 
 /**
