@@ -78,10 +78,10 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#fff1f2",
       textColor: "#881337",
     },
-     "Atelier Cuisine": {
-      borderColor: "#F59E0B", 
-      backgroundColor: "#FFF7ED", 
-      textColor: "#C2410C", 
+    "Atelier Cuisine": {
+      borderColor: "#10b981",
+      backgroundColor: "#ecfdf5",
+      textColor: "#064e3b",
     },
     Méditation: {
       borderColor: "#10b981",
@@ -122,6 +122,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       borderColor: "#fb2c36",
       backgroundColor: "#ffffffff",
       textColor: "#fb2c36",
+    },
+    "Atelier Vocal": {
+      borderColor: "#f59e0b",
+      backgroundColor: "#fffbeb",
+      textColor: "#78350f",
     },
   };
 

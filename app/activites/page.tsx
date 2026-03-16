@@ -19,7 +19,7 @@ export default function ActivitesPage() {
       e.type.name === "Clown Socratique" ||
       e.type.name === "Ecriture spontanée" ||
       e.type.name === "Mercredi Montessori" ||
-e.type.name === "Théâtre d'improvisation"
+      e.type.name === "Théâtre d'improvisation"
   );
   const subpages = [
     {

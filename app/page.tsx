@@ -92,7 +92,7 @@ export default function HomePage() {
   ];
 
   const heroImages = [
-     {
+    {
       src: "/gallerie/3.JPG",
       alt: "Café associatif",
       label: "Un café associatif ...",
@@ -122,7 +122,6 @@ export default function HomePage() {
       label: "Du théâtre d'impro ...",
       logo: "/diseuses-amertume.jpeg",
     },
-   
   ];
 
   return (

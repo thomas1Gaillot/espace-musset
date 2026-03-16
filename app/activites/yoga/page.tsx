@@ -7,7 +7,14 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
-import { CalendarIcon, EuroIcon, ExternalLinkIcon, MapIcon, PhoneIcon, UserIcon } from "lucide-react";
+import {
+  CalendarIcon,
+  EuroIcon,
+  ExternalLinkIcon,
+  MapIcon,
+  PhoneIcon,
+  UserIcon,
+} from "lucide-react";
 
 const YogaMedha = () => {
   return (
@@ -40,10 +47,10 @@ const YogaMedha = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-12 mb-12">
-           <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
-          <img src="/cours/yoga.jpg" alt={"chant"} className="w-full h-auto object-cover" />
-          <div className="absolute inset-0 bg-transparent" />
-        </div>
+          <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
+            <img src="/cours/yoga.jpg" alt={"chant"} className="w-full h-auto object-cover" />
+            <div className="absolute inset-0 bg-transparent" />
+          </div>
 
           <div className="flex flex-col justify-center space-y-6">
             <h2 className="font-serif text-2xl font-semibold text-foreground">

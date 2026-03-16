@@ -38,4 +38,5 @@ export type EventType =
   | "Yoga du rire"
   | "Ecriture spontanée"
   | "Maraude"
-  | "Atelier Cuisine";
+  | "Atelier Cuisine"
+  | "Atelier Vocal";

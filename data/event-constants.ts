@@ -43,6 +43,10 @@ export const EVENT_TYPES = {
     name: "Yoga du rire" as EventType,
     href: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE,
   },
+  ATELIER_VOCAL: {
+    name: "Atelier Vocal" as EventType,
+    href: ROUTES.ACTIVITES.SUBPAGES.ATELIER_VOCAL,
+  },
   ECRITURE_SPONTANEE: {
     name: "Ecriture spontanée" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,
@@ -79,7 +83,7 @@ export const EVENT_TYPES = {
     name: "Soirée Jeux" as EventType,
     href: "cafe-associatif",
   },
-   ATELIER_CUISINE: {
+  ATELIER_CUISINE: {
     name: "Atelier Cuisine" as EventType,
     href: "atelier-cuisine",
   },

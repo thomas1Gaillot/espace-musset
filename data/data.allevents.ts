@@ -508,7 +508,6 @@ const volunteerEvents: EventData[] = [
     type: EVENT_TYPES.MARAUDE,
     eventLink: ROUTES.CONTACT,
   }),
-  
 
   ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE, [
     new Date("2025-09-28"),
@@ -532,10 +531,19 @@ const volunteerEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-journee-mondiale-du-volontariat-atelier-volontariat-1909364112459",
   }),
-
   createEvent({
-    title: "Atelier Cuisine Paléstinienne",
-    dateObj: new Date("2026-03-29"),
+    title: "Atelier Vocal",
+    dateObj: new Date("2026-03-28"),
+    time: "10:30",
+    image: "/event/atelier_vocal.png",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.ATELIER_VOCAL,
+    eventLink: ROUTES.CONTACT,
+  }),
+  createEvent({
+    title: "Cuisine Paléstinienne",
+    dateObj: new Date("2026-03-28"),
     time: "16:00",
     image: "/event/cuisine_palestine.png",
     price: "Nous contacter",
@@ -666,7 +674,6 @@ const novemberPhiloWorkshops = generateEventsFromDates(
   [new Date("2025-11-12"), new Date("2025-11-19")]
 );
 
-
 const novemberPhiloWorkshop2 = [
   createEvent({
     title: "Atelier philo : Penser par soi-même",
@@ -713,8 +720,7 @@ const februaryPhiloWorkshops = [
     price: "6 €",
     category: EVENT_CATEGORIES.PHILOSOPHIE,
     type: EVENT_TYPES.ATELIER_PHILO,
-    eventLink:
-      "https://www.eventbrite.fr/e/billets-atelier-de-philosophie-pratique-1983563054492",
+    eventLink: "https://www.eventbrite.fr/e/billets-atelier-de-philosophie-pratique-1983563054492",
   }),
 ];
 
@@ -783,7 +789,7 @@ const eventList: EventData[] = [
   ...atelierPhiloMondays,
   ...meditationThursdays,
   ...meditationMidiTuesdays,
-  ...clownSocratiqueEvents,
+
   ...clownSocratiqueTuesdays,
   ...ecritureSpontanee,
   ...volunteerEvents,
@@ -794,6 +800,7 @@ const eventList: EventData[] = [
   ...cafeEvents,
   ...yogaThursdays,
   ...atelierEcritureFeb,
+  ...clownSocratiqueEvents,
 ];
 
 export { eventList };
