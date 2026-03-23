@@ -47,6 +47,10 @@ export const EVENT_TYPES = {
     name: "Atelier Vocal" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.ATELIER_VOCAL,
   },
+  EXPLORATION_VOCALE: {
+    name: "Exploration Vocale" as EventType,
+    href: ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE,
+  },
   ECRITURE_SPONTANEE: {
     name: "Ecriture spontanée" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.ECRITURE_SPONTANEE,

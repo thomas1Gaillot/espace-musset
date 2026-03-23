@@ -16,7 +16,7 @@ export default function ArtsCorpsPage() {
   const artsDuCorpsEvents = eventList.filter(
     (e) =>
       e.category.name === "Arts" &&
-      (e.type.name === "Qi Gong" || e.type.name === "Méditation" || e.type.name === "Yoga du rire")
+      (e.type.name === "Qi Gong" || e.type.name === "Méditation" || e.type.name === "Yoga du rire" || e.type.name === "Exploration Vocale")
   );
   const subpages = [
     {
@@ -46,6 +46,13 @@ export default function ArtsCorpsPage() {
         "Dans le chaleureux quartier des Minimes, découvrez comment retrouver équilibre, vitalité et bonne humeur… grâce au Yoga du Rire.",
       link: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE,
       icon: "😄",
+    },
+    {
+      title: "Exploration vocale",
+      description:
+        "Explorez votre voix en jouant, en savourant ! Un atelier voix en mouvement, à l'écoute du cœur et du sensible.",
+      link: ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE,
+      icon: "🎶",
     },
   ];
 

@@ -39,4 +39,5 @@ export type EventType =
   | "Ecriture spontanée"
   | "Maraude"
   | "Atelier Cuisine"
-  | "Atelier Vocal";
+  | "Atelier Vocal"
+  | "Exploration Vocale";

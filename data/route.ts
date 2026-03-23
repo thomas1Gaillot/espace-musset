@@ -26,6 +26,7 @@ export const ROUTES = {
       MEDITATION: "/arts-du-corps/meditation",
       QI_GONG: "/arts-du-corps/qi-gong",
       YOGA_DU_RIRE: "/arts-du-corps/yoga-du-rire",
+      EXPLORATION_VOCALE: "/arts-du-corps/exploration-vocale",
     },
   },
   ACTIVITES: {

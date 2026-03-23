@@ -35,6 +35,7 @@ export const Header = () => {
     { name: "Qi gong", path: ROUTES.ARTS.SUBPAGES.QI_GONG },
     { name: "Méditation", path: ROUTES.ARTS.SUBPAGES.MEDITATION },
     { name: "Yoga du rire", path: ROUTES.ARTS.SUBPAGES.YOGA_DU_RIRE },
+    { name: "Exploration vocale", path: ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE },
   ];
   const activitesPages = [
     { name: "Atelier chant", path: ROUTES.ACTIVITES.SUBPAGES.CHANT },
