@@ -536,7 +536,7 @@ const volunteerEvents: EventData[] = [
     dateObj: new Date("2026-03-28"),
     time: "10:30",
     image: "/event/atelier_vocal.png",
-    price: "12€ (atelier découverte)",
+    price: "Prix libre (atelier découverte)",
     category: EVENT_CATEGORIES.ARTS,
     type: EVENT_TYPES.EXPLORATION_VOCALE,
     eventLink: ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE,

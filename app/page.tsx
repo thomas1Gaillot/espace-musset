@@ -133,11 +133,11 @@ export default function HomePage() {
             <Link
               target="_blank"
               href={
-                "https://www.eventbrite.fr/e/billets-hathor-la-puissance-de-la-joie-au-cur-de-la-spiritualite-egyptienne-1980548869985"
+                ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Conférence Egypte Antique ce vendredi 13 Mars 20h !!"} </p>
+                <p>{"Atelier Exploration Vocale ce samedi 28 Mars, 10h30"} </p>
               </div>
             </Link>
           </Button>

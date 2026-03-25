@@ -66,11 +66,18 @@ const ExplorationVocale = () => {
                 Plaisir, écoute profonde, partage.
               </p>
               <div className="bg-secondary/20 p-4 rounded-lg text-center font-medium text-foreground">
-                Tarif atelier découverte : 12€ par personne. La June (monnaie libre) est également acceptée.
+                Tarif atelier découverte : prix libre. La June (monnaie libre) est également acceptée.
               </div>
               <p className="text-sm">
                 Merci de réserver à l'avance pour l'organisation.
               </p>
+            </div>
+            <div className="rounded-lg overflow-hidden">
+              <video
+                src="/event/exploration_vocale_demo.mp4"
+                controls
+                className="w-full rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -92,7 +99,7 @@ const ExplorationVocale = () => {
           </a>
           <p className="text-sm text-muted-foreground mt-4">
             <EuroIcon className="inline-block mr-1 mb-1" size={14} />
-            12€ par personne (atelier découverte) — June acceptée
+            Prix libre (atelier découverte) — June acceptée
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             <UsersIcon className="inline-block mr-1 mb-1" size={14} />
