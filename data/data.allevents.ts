@@ -185,6 +185,18 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-ces-toulousainnes-qui-ont-fait-lhistoire-1982292622596",
   }),
+
+  createEvent({
+    title: "Nietzsche : Dire oui à la vie",
+    dateObj: new Date("2026-04-09"),
+    time: "20:00 à 22:00",
+    image: "event/nietzsche.jpg",
+    price: "10 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-nietzsche-dire-oui-a-la-vie-1984387606750",
+  }),
 ];
 
 /**
@@ -253,12 +265,12 @@ const theatreImproNuit = [
   ),
 ];
 
-// Qi Gong - Every Tuesday
+// Qi Gong - Every Friday (Oct 2025 - Mar 2026, pause Apr-Mai)
 const qiGongTuesday = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.QI_GONG,
   new Date("2025-10-28"),
-  new Date("2026-05-29"),
-  5 // Tuesday
+  new Date("2026-03-31"),
+  5 // Friday
 );
 
 // Mercredi Montessori - Every Wednesday
@@ -329,6 +341,17 @@ const cafePhiloMonthly = [
     category: EVENT_CATEGORIES.PHILOSOPHIE,
     type: EVENT_TYPES.CAFE_PHILO,
     eventLink: ROUTES.PHILOSOPHIE.SUBPAGES.CAFES,
+  }),
+  createEvent({
+    title: "Café Philo : La liberté d'expression est-elle sans limites ?",
+    dateObj: new Date("2026-04-02"),
+    time: "19:30 à 21:15",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-la-liberte-dexpression-est-elle-sans-limites-1985379201637",
   }),
 ];
 
@@ -480,16 +503,6 @@ const volunteerEvents: EventData[] = [
   }),
   createEvent({
     title: "Je cuisine pour les autres",
-    dateObj: new Date("2026-04-19"),
-    time: "14:30 à 16:30",
-    image: "/event/cuisine.jpeg",
-    price: "Gratuit",
-    category: EVENT_CATEGORIES.VOLONTARIAT,
-    type: EVENT_TYPES.MARAUDE,
-    eventLink: ROUTES.CONTACT,
-  }),
-  createEvent({
-    title: "Je cuisine pour les autres",
     dateObj: new Date("2026-05-17"),
     time: "14:30 à 16:30",
     image: "/event/cuisine.jpeg",
@@ -515,7 +528,6 @@ const volunteerEvents: EventData[] = [
     new Date("2026-01-25"),
     new Date("2026-02-22"),
     new Date("2026-03-22"),
-    new Date("2026-04-19"),
     new Date("2026-05-17"),
     new Date("2026-06-21"),
   ]),
@@ -551,6 +563,67 @@ const volunteerEvents: EventData[] = [
     type: EVENT_TYPES.ATELIER_CUISINE,
     eventLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSc9TNw-42qMCOvtDs0TShxLuzrVlWVvu8ow5ElqpYLVzNVTfg/viewform",
+  }),
+
+  createEvent({
+    title: "#1 - La Géobiologie, un autre regard sur la terre, l'univers et le vivant",
+    dateObj: new Date("2026-04-17"),
+    time: "20:00 à 21:30",
+    image: "/event/geobiologie.jpg",
+    price: "10 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-1-la-geobiologie-un-autre-regard-sur-la-terre-lunivers-et-le-vivant-1985455555012",
+  }),
+
+  createEvent({
+    title: "Concert - 7 siècles de chansons",
+    dateObj: new Date("2026-04-18"),
+    time: "20:00 à 21:00",
+    image: "/event/concert-tim.jpg",
+    price: "12 €",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SPECTACLE,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-concert-7-siecles-de-chansons-1985678450699",
+  }),
+
+  
+  createEvent({
+    title: "Journée de la Terre Mère #2 - Nettoyons notre cité, ramassage de mégots",
+    dateObj: new Date("2026-04-18"),
+    time: "14:30 à 16:30",
+    image: "/event/terre-merre.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.ZERO_DECHET,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-journee-de-la-terre-mere-2-nettoyons-notre-cite-ramassage-de-megots-1985677670365",
+  }),
+
+  createEvent({
+    title: "Journée de la Terre Mère #3 - Contes et Sagesse de la Terre Sacrée",
+    dateObj: new Date("2026-04-18"),
+    time: "17:00 à 18:30",
+    image: "/event/terre-merre.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SPECTACLE,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-journee-de-la-terre-mere-3-contes-et-sagesse-de-la-terre-sacree-1985678279186",
+  }),
+
+  createEvent({
+    title: "Journée de la Terre Mère #5 - Maraude auprès des sans abris",
+    dateObj: new Date("2026-04-19"),
+    time: "16:30 à 19:30",
+    image: "/event/terre-merre.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-journee-de-la-terre-mere-5-maraude-aupres-des-sans-abris-1985679028427",
   }),
 
   createEvent({

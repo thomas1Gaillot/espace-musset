@@ -72,7 +72,7 @@ export const RECURRING_EVENT_TEMPLATES = {
 
   YOGA: {
     title: "Yoga",
-    time: "12:15 à 13:15",
+    time: "12:15 à 13:30",
     image: "/cours/yoga.jpg",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
@@ -95,7 +95,7 @@ export const RECURRING_EVENT_TEMPLATES = {
   THEATRE_IMPRO_NUIT: {
     title: "Théatre d'improvisation",
     time: "20:45 à 22h45",
-    image: "/espace-musset.jpeg",
+    image: "/diseuses_profil.webp",
     price: "Nous contacter",
     category: EVENT_CATEGORIES.ACTIVITES,
     type: EVENT_TYPES.THEATRE_IMPRO,
