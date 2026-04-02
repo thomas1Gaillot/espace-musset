@@ -841,7 +841,7 @@ const cafeEvents: EventData[] = [
     new Date("2026-01-29"),
     new Date("2026-02-26"),
     new Date("2026-03-26"),
-    new Date("2026-04-30"),
+    new Date("2026-04-23"),
     new Date("2026-05-28"),
     new Date("2026-06-25"),
   ]),
