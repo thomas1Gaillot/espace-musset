@@ -460,6 +460,7 @@ const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRI
   new Date("2025-10-16"),
   new Date("2025-11-20"),
   new Date("2026-03-19"),
+  new Date("2026-05-28"),
 ]);
 
 /**
