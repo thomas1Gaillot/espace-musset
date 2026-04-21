@@ -798,6 +798,66 @@ const februaryPhiloWorkshops = [
 ];
 
 /**
+ * MAY 2026 EVENTS
+ */
+const mayEvents: EventData[] = [
+  createEvent({
+    title: "Atelier art vibrant",
+    dateObj: new Date("2026-05-02"),
+    time: "10:30 à 12:00",
+    image: "/event/02mai.jpg",
+    price: "20 €",
+    category: EVENT_CATEGORIES.ARTS,
+    type: EVENT_TYPES.ATELIER_VOCAL,
+    eventLink: ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE,
+  }),
+
+  createEvent({
+    title: "Atelier clown socratiques",
+    dateObj: new Date("2026-05-02"),
+    time: "13:00 à 15:00",
+    image: "/event/02mai.jpg",
+    price: "25 €",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.CLOWN_SOCRATIQUE,
+    eventLink: ROUTES.ACTIVITES.SUBPAGES.CLOWN,
+  }),
+
+  createEvent({
+    title: "Café Philo : Vivons-nous dans une société de l'indifférence ?",
+    dateObj: new Date("2026-05-07"),
+    time: "19:30 à 21:15",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink: "https://www.eventbrite.fr/e/billets-cafe-philo-vivons-nous-dans-une-societe-de-lindifference-1985383528579",
+  }),
+
+  createEvent({
+    title: "Rûmi, à l'écoute du coeur - Conférence",
+    dateObj: new Date("2026-05-21"),
+    time: "20:00",
+    image: "/event/rumi.webp",
+    price: "8 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink: "https://www.eventbrite.fr/e/billets-rumi-a-lecoute-du-coeur-1987610393191",
+  }),
+
+  createEvent({
+    title: "Café Philo : La discipline contrainte ou liberté ?",
+    dateObj: new Date("2026-06-04"),
+    time: "19:30 à 21:15",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink: "https://www.eventbrite.fr/e/billets-cafe-philo-la-discipline-contrainte-ou-liberte-1985383961875",
+  }),
+];
+
+/**
  * CAFÉ ASSOCIATIF EVENTS
  */
 const cafeEvents: EventData[] = [
@@ -870,6 +930,7 @@ const eventList: EventData[] = [
   ...novemberPhiloWorkshops,
   ...novemberPhiloWorkshop2,
   ...februaryPhiloWorkshops,
+  ...mayEvents,
   ...cafeEvents,
   ...yogaThursdays,
   ...atelierEcritureFeb,

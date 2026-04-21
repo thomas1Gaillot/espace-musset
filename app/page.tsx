@@ -131,13 +131,12 @@ export default function HomePage() {
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
             <Link
-              target="_blank"
               href={
-                ROUTES.ARTS.SUBPAGES.EXPLORATION_VOCALE
+                ROUTES.CONTACT
               }
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Atelier Exploration Vocale ce samedi 28 Mars, 10h30"} </p>
+                <p>{"02 mai : deux ateliers pour ton enfant intérieur 🎨🤡"} </p>
               </div>
             </Link>
           </Button>
