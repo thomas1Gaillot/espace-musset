@@ -504,7 +504,7 @@ const volunteerEvents: EventData[] = [
   }),
   createEvent({
     title: "Je cuisine pour les autres",
-    dateObj: new Date("2026-05-17"),
+    dateObj: new Date("2026-05-31"),
     time: "14:30 à 16:30",
     image: "/event/cuisine.jpeg",
     price: "Gratuit",
@@ -529,7 +529,7 @@ const volunteerEvents: EventData[] = [
     new Date("2026-01-25"),
     new Date("2026-02-22"),
     new Date("2026-03-22"),
-    new Date("2026-05-17"),
+    new Date("2026-05-31"),
     new Date("2026-06-21"),
   ]),
 
