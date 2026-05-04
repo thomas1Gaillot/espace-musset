@@ -43,6 +43,7 @@ export const contactData = [
   createContact("DECROUEZ", "Gaelle", "Gdecrouez@yahoo.fr"),
   createContact("DURAND", "Christel", "christel.durand31780@gmail.com"),
   createContact("DEBACHE", "Elies", "Elies.Debache@gmail.com"),
+  createContact("DURIS","Paulette","duris.paulette@gmail.com"),
   createContact("DOLEZ", "Nathalie", "nathaliedolez@hotmail.com"),
   createContact("FLOCH", "Ryan", "ryan.floch@gmail.com"),
   createContact("FERNANDEZ", "Iris", "iris.fernandez.31@yahoo.fr"),
@@ -98,5 +99,5 @@ export const contactData = [
   createContact("VERBIGUIE", "Adeline", "verbiguieadeline@yahoo.fr"),
   createContact("VISSEUR", "Xander", "xandervisseur@gmail.com"),
   createContact("WUHRMANN", "Corinne", "wuhrmann@orange.fr"),
-  createContact("ZAPATA", "Juan", "Juando.zapatac@gmail.com"),
+  createContact("ZAPATA", "Juan", "Juando.zapata@gmail.com"),
 ];
