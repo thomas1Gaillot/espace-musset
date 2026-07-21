@@ -247,6 +247,13 @@ const theatreImproMonday = [
     new Date("2026-05-30"),
     1 // Monday
   ),
+  // Tous les lundis de juin 2026 (1, 8, 15, 22, 29)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
+    new Date("2026-06-01"),
+    new Date("2026-06-29"),
+    1 // Monday
+  ),
 ];
 
 // Théâtre d'Improvisation - Evening session, excluding March 2
@@ -261,6 +268,13 @@ const theatreImproNuit = [
     RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
     new Date("2026-03-09"),
     new Date("2026-05-30"),
+    1 // Monday
+  ),
+  // Tous les lundis de juin 2026 (1, 8, 15, 22, 29)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
+    new Date("2026-06-01"),
+    new Date("2026-06-29"),
     1 // Monday
   ),
 ];
@@ -855,6 +869,51 @@ const mayEvents: EventData[] = [
     category: EVENT_CATEGORIES.PHILOSOPHIE,
     type: EVENT_TYPES.CAFE_PHILO,
     eventLink: "https://www.eventbrite.fr/e/billets-cafe-philo-la-discipline-contrainte-ou-liberte-1985383961875",
+  }),
+
+  // JUIN 2026 - Rencontre & Journée des arts
+  createEvent({
+    title: "Rencontre avec Gilles Colliard",
+    dateObj: new Date("2026-06-19"),
+    time: "20:00 à 21:00",
+    image: "/event/gilles-colliar.webp",
+    price: "10 €",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SPECTACLE,
+    eventLink: "https://www.eventbrite.fr/e/billets-rencontre-avec-gilles-colliard-1990119133902",
+  }),
+
+  createEvent({
+    title: "Journée des arts : Atelier Chant",
+    dateObj: new Date("2026-06-20"),
+    time: "16:00 à 17:00",
+    image: "/event/art-atelier-chant.webp",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.CHANT,
+    eventLink: "https://www.eventbrite.fr/e/billets-journee-des-arts-la-beaute-a-portee-de-sens-1990792526036",
+  }),
+
+  createEvent({
+    title: "Journée des arts : Atelier Théâtre d'impro",
+    dateObj: new Date("2026-06-20"),
+    time: "17:30 à 18:30",
+    image: "/event/art-atelier-impro.webp",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.THEATRE_IMPRO,
+    eventLink: "https://www.eventbrite.fr/e/billets-journee-des-arts-la-beaute-a-portee-de-sens-1990799799792",
+  }),
+
+  createEvent({
+    title: "Journée des arts : Récital de piano romantique",
+    dateObj: new Date("2026-06-20"),
+    time: "20:00 à 21:00",
+    image: "/event/art-recital.webp",
+    price: "10 €",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SPECTACLE,
+    eventLink: "https://www.eventbrite.fr/e/billets-journee-des-arts-recital-de-piano-romantique-1990807389493",
   }),
 ];
 

@@ -131,12 +131,12 @@ export default function HomePage() {
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
             <Link
-              href={
-                ROUTES.CONTACT
-              }
+              href="https://www.eventbrite.fr/e/billets-rencontre-avec-gilles-colliard-1990119133902"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"02 mai : deux ateliers pour ton enfant intérieur 🎨🤡"} </p>
+                <p>{"19 juin : Rencontre avec Gilles Colliard 🎻"} </p>
               </div>
             </Link>
           </Button>
