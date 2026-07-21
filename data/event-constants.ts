@@ -79,6 +79,10 @@ export const EVENT_TYPES = {
     name: "Rencontre philo" as EventType,
     href: ROUTES.PHILOSOPHIE.SUBPAGES.CONFERENCES,
   },
+  SPORT_PHILO: {
+    name: "Sport et philo" as EventType,
+    href: ROUTES.PHILOSOPHIE.ROOT,
+  },
   SPECTACLE: {
     name: "Spectacle" as EventType,
     href: "cafe-associatif",

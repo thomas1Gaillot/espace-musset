@@ -128,6 +128,16 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#fffbeb",
       textColor: "#78350f",
     },
+    "Sport et philo": {
+      borderColor: "#0891b2",
+      backgroundColor: "#ecfeff",
+      textColor: "#164e63",
+    },
+    "Exploration Vocale": {
+      borderColor: "#f59e0b",
+      backgroundColor: "#fffbeb",
+      textColor: "#78350f",
+    },
   };
 
   return (

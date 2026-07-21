@@ -197,7 +197,42 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-nietzsche-dire-oui-a-la-vie-1984387606750",
   }),
+
+  createEvent({
+    title: "Sport et Philo",
+    dateObj: new Date("2026-07-22"),
+    time: "19:30",
+    image: "/event/sportetphilo.webp",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.SPORT_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-sport-et-philo-1992158991170?aff=erelexpmlt",
+  }),
+
+  createEvent({
+    title: "Ciné Philo : L'attaque des Titans, la caverne de Platon",
+    dateObj: new Date("2026-08-26"),
+    time: "19:30",
+    image: "/event/aot.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CINE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cine-philo-lattaque-des-titans-la-caverne-de-platon-1994229337632",
+  }),
 ];
+
+const devienstoiMemeAtelierPhilo = generateEventsFromDates(
+  customizeTemplate(RECURRING_EVENT_TEMPLATES.ATELIER_PHILO_PAYANT, {
+    title: "Deviens toi-même : atelier de philosophie pratique",
+    price: "5 €",
+    image: "/event/atelier-philo.jpg",
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1467522010839",
+  }),
+  [new Date("2026-09-14"), new Date("2026-09-21"), new Date("2026-09-28")]
+);
 
 /**
  * RECURRING EVENTS - WEEKLY
@@ -995,6 +1030,7 @@ const eventList: EventData[] = [
   ...yogaThursdays,
   ...atelierEcritureFeb,
   ...clownSocratiqueEvents,
+  ...devienstoiMemeAtelierPhilo,
 ];
 
 export { eventList };

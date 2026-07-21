@@ -131,12 +131,12 @@ export default function HomePage() {
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
             <Link
-              href="https://www.eventbrite.fr/e/billets-rencontre-avec-gilles-colliard-1990119133902"
+              href="https://www.eventbrite.fr/e/billets-cine-philo-lattaque-des-titans-la-caverne-de-platon-1994229337632"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"19 juin : Rencontre avec Gilles Colliard 🎻"} </p>
+                <p>{"26 août : Ciné Philo — L'attaque des Titans, la caverne de Platon 🎬"} </p>
               </div>
             </Link>
           </Button>

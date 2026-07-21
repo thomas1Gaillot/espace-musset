@@ -25,6 +25,7 @@ export type EventType =
   | "Rencontre philo"
   | "Volontariat"
   | "Ciné philo"
+  | "Sport et philo"
   | "Cours de philosophie"
   | "Yoga"
   | "Théâtre"
