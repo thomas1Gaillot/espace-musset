@@ -221,6 +221,30 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-cine-philo-lattaque-des-titans-la-caverne-de-platon-1994229337632",
   }),
+
+  createEvent({
+    title: "Café Philo : La culture nous rend-elle plus humain ?",
+    dateObj: new Date("2026-09-01"),
+    time: "19:30 à 21:15",
+    image: "/event/cafe-philo-1er-jeudi.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-la-culuture-nous-rend-elle-plus-humain-1995202166389",
+  }),
+
+  createEvent({
+    title: "World CleanUp Day",
+    dateObj: new Date("2026-09-19"),
+    time: "14:30 à 16:30",
+    image: "/event/cleanup-20-sept.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.ZERO_DECHET,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-world-cleanup-day-1995208437145",
+  }),
 ];
 
 const devienstoiMemeAtelierPhilo = generateEventsFromDates(
