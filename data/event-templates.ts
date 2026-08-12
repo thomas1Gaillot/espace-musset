@@ -191,6 +191,50 @@ export const RECURRING_EVENT_TEMPLATES = {
     type: EVENT_TYPES.SOIREE_JEUX,
     eventLink: ROUTES.CONTACT,
   } as EventTemplate,
+
+  // 4e jeudi du mois - Soirée jeux et écriture (sept 2026 -> juin 2027)
+  SOIREE_JEUX_4E_JEUDI: {
+    title: "Soirée Jeux de société",
+    time: "20:00 à 23:00",
+    image: "/event/jeu-societe.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SOIREE_JEUX,
+    eventLink: ROUTES.CONTACT,
+  } as EventTemplate,
+
+  ECRITURE_4E_JEUDI: {
+    title: "Atelier Ecriture spontanée",
+    time: "18:00 à 19:00",
+    image: "/cours/ecriture.jpeg",
+    price: "10 €",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.ECRITURE_SPONTANEE,
+    eventContact: "Béatrice, au 06 19 87 06 90",
+  } as EventTemplate,
+
+  // Chant - "Et si on chantait"
+  ET_SI_ON_CHANTAIT: {
+    title: "Et si on chantait",
+    time: "18:15 à 19:15",
+    image: "/cours/chant.jpg",
+    price: "Nous contacter",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.CHANT,
+    eventContact: "Béatrice, au 06 19 87 06 90",
+    eventLink: ROUTES.ACTIVITES.SUBPAGES.CHANT,
+  } as EventTemplate,
+
+  // Maraude - créneau 16h
+  MARAUDE_16H: {
+    title: "Maraude auprès des sans abris",
+    time: "16:00",
+    image: "/event/maraude.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.VOLONTARIAT,
+    type: EVENT_TYPES.MARAUDE,
+    eventLink: ROUTES.CONTACT,
+  } as EventTemplate,
 } as const;
 
 /**

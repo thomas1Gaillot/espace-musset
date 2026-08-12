@@ -223,6 +223,17 @@ const oneTimeEvents: EventData[] = [
   }),
 
   createEvent({
+    title: "Soirée Jeux de société",
+    dateObj: new Date("2026-08-27"),
+    time: "19:30 à 23:00",
+    image: "/event/jeu-societe.jpg",
+    price: "Gratuit",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SOIREE_JEUX,
+    eventLink: ROUTES.CONTACT,
+  }),
+
+  createEvent({
     title: "Café Philo : La culture nous rend-elle plus humain ?",
     dateObj: new Date("2026-09-01"),
     time: "19:30 à 21:15",
@@ -313,6 +324,13 @@ const theatreImproMonday = [
     new Date("2026-06-29"),
     1 // Monday
   ),
+  // Reprise septembre - décembre 2026 (pause estivale juillet-août)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
+    new Date("2026-09-01"),
+    new Date("2026-12-31"),
+    1 // Monday
+  ),
 ];
 
 // Théâtre d'Improvisation - Evening session, excluding March 2
@@ -336,6 +354,13 @@ const theatreImproNuit = [
     new Date("2026-06-29"),
     1 // Monday
   ),
+  // Reprise septembre - décembre 2026 (pause estivale juillet-août)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
+    new Date("2026-09-01"),
+    new Date("2026-12-31"),
+    1 // Monday
+  ),
 ];
 
 // Qi Gong - Every Friday (Oct 2025 - Mar 2026, pause Apr-Mai)
@@ -352,6 +377,37 @@ const mercrediMontessori = generateEventsByDayOfWeek(
   new Date("2025-09-24"),
   new Date("2025-10-29"),
   3 // Wednesday
+);
+
+// Atelier philosophie - Every Wednesday, November 2026 to June 2027, 19h30-22h00
+const atelierPhilosophieMercredi = generateEventsByDayOfWeek(
+  RECURRING_EVENT_TEMPLATES.ATELIER_PHILO_PAYANT,
+  new Date("2026-11-01"),
+  new Date("2027-06-30"),
+  3 // Wednesday
+);
+
+// Et si on chantait - Every Wednesday, reprise septembre 2026 (et décembre 2026)
+const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
+  RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
+  new Date("2026-09-01"),
+  new Date("2026-09-30"),
+  3 // Wednesday
+).concat(
+  generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
+    new Date("2026-12-01"),
+    new Date("2026-12-31"),
+    3 // Wednesday
+  )
+);
+
+// Yoga - Every Thursday, reprise septembre 2026 à janvier 2027
+const yogaSeptJan = generateEventsByDayOfWeek(
+  RECURRING_EVENT_TEMPLATES.YOGA,
+  new Date("2026-09-01"),
+  new Date("2027-01-28"),
+  4 // Thursday
 );
 
 /**
@@ -534,6 +590,42 @@ const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRI
   new Date("2025-11-20"),
   new Date("2026-03-19"),
   new Date("2026-05-28"),
+]);
+
+// 4e jeudi du mois - Soirée jeux (20h-23h) et Atelier écriture (18h-19h) - septembre 2026 à juin 2027
+const quatriemeJeudiDates = [
+  new Date("2026-09-23"),
+  new Date("2026-10-21"),
+  new Date("2026-11-25"),
+  new Date("2026-12-23"),
+  new Date("2027-01-27"),
+  new Date("2027-02-24"),
+  new Date("2027-03-24"),
+  new Date("2027-04-21"),
+  new Date("2027-05-26"),
+  new Date("2027-06-23"),
+];
+const soireeJeux4eJeudi = generateEventsFromDates(
+  RECURRING_EVENT_TEMPLATES.SOIREE_JEUX_4E_JEUDI,
+  quatriemeJeudiDates
+);
+const ecriture4eJeudi = generateEventsFromDates(
+  RECURRING_EVENT_TEMPLATES.ECRITURE_4E_JEUDI,
+  quatriemeJeudiDates
+);
+
+// Maraude - créneau 16h, dernier dimanche du mois, septembre 2026 à juin 2027
+const maraude16h = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE_16H, [
+  new Date("2026-09-26"),
+  new Date("2026-10-24"),
+  new Date("2026-11-28"),
+  new Date("2026-12-26"),
+  new Date("2027-01-30"),
+  new Date("2027-02-27"),
+  new Date("2027-03-27"),
+  new Date("2027-04-24"),
+  new Date("2027-05-29"),
+  new Date("2027-06-26"),
 ]);
 
 /**
@@ -1055,6 +1147,12 @@ const eventList: EventData[] = [
   ...atelierEcritureFeb,
   ...clownSocratiqueEvents,
   ...devienstoiMemeAtelierPhilo,
+  ...atelierPhilosophieMercredi,
+  ...etSiOnChantaitSeptDec,
+  ...yogaSeptJan,
+  ...soireeJeux4eJeudi,
+  ...ecriture4eJeudi,
+  ...maraude16h,
 ];
 
 export { eventList };
