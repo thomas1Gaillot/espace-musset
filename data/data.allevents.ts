@@ -246,8 +246,20 @@ const oneTimeEvents: EventData[] = [
   }),
 
   createEvent({
+    title: "Atelier/Conférence : Hannah Arendt, résister à l'indifférence",
+    dateObj: new Date("2026-09-11"),
+    time: "19:30 à 21:30",
+    image: "/event/arendt.jpg",
+    price: "10 € / 8 € réduit",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-atelierconference-hannah-arendt-resister-a-lindifference-1995202765180",
+  }),
+
+  createEvent({
     title: "World CleanUp Day",
-    dateObj: new Date("2026-09-19"),
+    dateObj: new Date("2026-09-20"),
     time: "14:30 à 16:30",
     image: "/event/cleanup-20-sept.jpg",
     price: "Gratuit",
@@ -324,10 +336,10 @@ const theatreImproMonday = [
     new Date("2026-06-29"),
     1 // Monday
   ),
-  // Reprise septembre - décembre 2026 (pause estivale juillet-août)
+  // Reprise septembre - décembre 2026 (pause estivale juillet-août, reprise le 14 septembre)
   ...generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-    new Date("2026-09-01"),
+    new Date("2026-09-14"),
     new Date("2026-12-31"),
     1 // Monday
   ),
@@ -354,10 +366,10 @@ const theatreImproNuit = [
     new Date("2026-06-29"),
     1 // Monday
   ),
-  // Reprise septembre - décembre 2026 (pause estivale juillet-août)
+  // Reprise septembre - décembre 2026 (pause estivale juillet-août, reprise le 14 septembre)
   ...generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
-    new Date("2026-09-01"),
+    new Date("2026-09-14"),
     new Date("2026-12-31"),
     1 // Monday
   ),
@@ -592,18 +604,18 @@ const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRI
   new Date("2026-05-28"),
 ]);
 
-// 4e jeudi du mois - Soirée jeux (20h-23h) et Atelier écriture (18h-19h) - septembre 2026 à juin 2027
+// 4e jeudi du mois - Soirée jeux (20h-23h) et Atelier écriture (19h-21h) - septembre 2026 à juin 2027
 const quatriemeJeudiDates = [
-  new Date("2026-09-23"),
-  new Date("2026-10-21"),
-  new Date("2026-11-25"),
-  new Date("2026-12-23"),
-  new Date("2027-01-27"),
-  new Date("2027-02-24"),
-  new Date("2027-03-24"),
-  new Date("2027-04-21"),
-  new Date("2027-05-26"),
-  new Date("2027-06-23"),
+  new Date("2026-09-24"),
+  new Date("2026-10-22"),
+  new Date("2026-11-26"),
+  new Date("2026-12-24"),
+  new Date("2027-01-28"),
+  new Date("2027-02-25"),
+  new Date("2027-03-25"),
+  new Date("2027-04-22"),
+  new Date("2027-05-27"),
+  new Date("2027-06-24"),
 ];
 const soireeJeux4eJeudi = generateEventsFromDates(
   RECURRING_EVENT_TEMPLATES.SOIREE_JEUX_4E_JEUDI,
@@ -616,16 +628,16 @@ const ecriture4eJeudi = generateEventsFromDates(
 
 // Maraude - créneau 16h, dernier dimanche du mois, septembre 2026 à juin 2027
 const maraude16h = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE_16H, [
-  new Date("2026-09-26"),
-  new Date("2026-10-24"),
-  new Date("2026-11-28"),
-  new Date("2026-12-26"),
-  new Date("2027-01-30"),
-  new Date("2027-02-27"),
-  new Date("2027-03-27"),
-  new Date("2027-04-24"),
-  new Date("2027-05-29"),
-  new Date("2027-06-26"),
+  new Date("2026-09-27"),
+  new Date("2026-10-25"),
+  new Date("2026-11-29"),
+  new Date("2026-12-27"),
+  new Date("2027-01-31"),
+  new Date("2027-02-28"),
+  new Date("2027-03-28"),
+  new Date("2027-04-25"),
+  new Date("2027-05-30"),
+  new Date("2027-06-27"),
 ]);
 
 /**
