@@ -258,6 +258,17 @@ const oneTimeEvents: EventData[] = [
   }),
 
   createEvent({
+    title: "Journée Portes Ouvertes",
+    dateObj: new Date("2026-09-12"),
+    time: "14:00 à 22:00",
+    image: "/event/JPO.png",
+    price: "Entrée libre",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.PORTES_OUVERTES,
+    eventLink: ROUTES.CONTACT,
+  }),
+
+  createEvent({
     title: "World CleanUp Day",
     dateObj: new Date("2026-09-20"),
     time: "14:30 à 16:30",
@@ -286,7 +297,7 @@ const devienstoiMemeAtelierPhilo = generateEventsFromDates(
  * Events that happen every week on the same day
  */
 
-// Atelier Chant - Every Wednesday (January to June 2026, except Feb 4)
+// Atelier Chant - Every Wednesday (January to June 2026, except Feb 4, Sept 2, Sept 9)
 const atelierChantJanJun = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHANT_ATELIER, [
   new Date("2026-01-07"),
   new Date("2026-01-14"),
@@ -402,7 +413,7 @@ const atelierPhilosophieMercredi = generateEventsByDayOfWeek(
 // Et si on chantait - Every Wednesday, reprise septembre 2026 (et décembre 2026)
 const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
-  new Date("2026-09-01"),
+  new Date("2026-09-16"),
   new Date("2026-09-30"),
   3 // Wednesday
 ).concat(
@@ -414,13 +425,20 @@ const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
   )
 );
 
-// Yoga - Every Thursday, reprise septembre 2026 à janvier 2027
-const yogaSeptJan = generateEventsByDayOfWeek(
-  RECURRING_EVENT_TEMPLATES.YOGA,
-  new Date("2026-09-01"),
-  new Date("2027-01-28"),
-  4 // Thursday
-);
+// Yoga - Every Thursday, reprise septembre 2026 à janvier 2027, except Sept 3
+const yogaSeptJan = [
+  ...generateEventsFromDates(RECURRING_EVENT_TEMPLATES.YOGA, [
+    new Date("2026-09-10"),
+    new Date("2026-09-17"),
+    new Date("2026-09-24"),
+  ]),
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.YOGA,
+    new Date("2026-10-01"),
+    new Date("2027-01-28"),
+    4 // Thursday
+  ),
+];
 
 /**
  * RECURRING EVENTS - MONTHLY

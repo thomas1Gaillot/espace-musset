@@ -1,5 +1,6 @@
 import EventsSection from "@/components/events-section";
-import { HeroCarousel } from "@/components/hero-carousel";
+// TEMPORAIRE : à décommenter avec le carrousel (~26/09/2026)
+// import { HeroCarousel } from "@/components/hero-carousel";
 import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -91,6 +92,9 @@ export default function HomePage() {
     },
   ];
 
+  // TEMPORAIRE (à réactiver ~26/09/2026) : carrousel remplacé par l'affiche JPO plein écran.
+  // Pour restaurer : décommenter ce tableau + le <HeroCarousel /> dans la section Hero.
+  /*
   const heroImages = [
     {
       src: "/gallerie/3.JPG",
@@ -123,6 +127,7 @@ export default function HomePage() {
       logo: "/diseuses-amertume.jpeg",
     },
   ];
+  */
 
   return (
     <div className="min-h-screen">
@@ -130,13 +135,11 @@ export default function HomePage() {
       <div className=" top-[60px] sticky w-full max-w-[100vw] z-50">
         <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
           <Button variant={"link"} asChild className="text-white ">
-            <Link
-              href="https://www.eventbrite.fr/e/billets-cafe-philo-la-culture-nous-rend-elle-plus-humain-1995202166389"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="/contact">
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>{"Mardi prochain - Café philo : La culture nous rend plus humain ?  (01/09) "} </p>
+                <p>
+                  {"Samedi 12 septembre - Journée Portes Ouvertes : ateliers découverte gratuits de 14h à 22h - Entrée libre"}{" "}
+                </p>
               </div>
             </Link>
           </Button>
@@ -145,14 +148,25 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="hero-section relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-gray-950">
-        {/* Carousel background - crossfade every 4s */}
-        <HeroCarousel images={heroImages} />
-
-        {/* Lighter overlay — let images breathe */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/20 to-black/30 pointer-events-none" />
+        {/* TEMPORAIRE : affiche Journée Portes Ouvertes plein écran.
+            À réactiver ~26/09/2026 — remplacer ce bloc par : <HeroCarousel images={heroImages} />
+            et décommenter le tableau heroImages ci-dessus. */}
+        <div className="relative z-[5] flex items-center justify-center px-4 pt-8 pb-6">
+          <Link href={ROUTES.CONTACT} className="block">
+            <Image
+              src="/event/JPO.png"
+              alt="Journée Portes Ouvertes — samedi 12 septembre, 14h à 22h, entrée libre"
+              width={2000}
+              height={1414}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="h-auto w-auto max-h-[70vh] max-w-full object-contain rounded-sm shadow-2xl"
+            />
+          </Link>
+        </div>
 
         {/* Buttons — bottom */}
-        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-end h-[85vh] pb-16 pointer-events-none">
+        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center pb-12 pointer-events-none">
           <div
             className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up pointer-events-auto"
             style={{ animationDelay: "0.3s" }}
