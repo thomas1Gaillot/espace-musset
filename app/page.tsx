@@ -138,7 +138,7 @@ export default function HomePage() {
             <Link href="/contact">
               <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
                 <p>
-                  {"Samedi 12 septembre - Journée Portes Ouvertes : ateliers découverte gratuits de 14h à 22h - Entrée libre"}{" "}
+                  {"Samedi 12 septembre - Journée Portes Ouvertes - Entrée libre"}{" "}
                 </p>
               </div>
             </Link>
