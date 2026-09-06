@@ -14,11 +14,12 @@ export function getMonthlyEvents(allEvents: EventData[]): EventData[] {
   const now = new Date();
   const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  // Filtrer les événements du mois en cours
+  // Filtrer les événements du mois en cours et non encore passés
   const monthlyEvents = allEvents.filter((event) => {
     const d = event.dateObj;
-    return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+    return d.getMonth() === currentMonth && d.getFullYear() === currentYear && d >= today;
   });
 
   // Supprimer les doublons (même titre)
@@ -40,11 +41,12 @@ export function getMonthlyEventsGrouped(allEvents: EventData[]): MonthlyEventsDa
   const now = new Date();
   const currentMonth = now.getMonth();
   const currentYear = now.getFullYear();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  // Filtrer les événements du mois en cours
+  // Filtrer les événements du mois en cours et non encore passés
   const monthlyEvents = allEvents.filter((event) => {
     const d = event.dateObj;
-    return d.getMonth() === currentMonth && d.getFullYear() === currentYear;
+    return d.getMonth() === currentMonth && d.getFullYear() === currentYear && d >= today;
   });
 
   // Grouper les événements récurrents
