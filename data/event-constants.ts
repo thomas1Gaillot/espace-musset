@@ -123,6 +123,10 @@ export const EVENT_TYPES = {
     name: "Yoga" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.YOGA,
   },
+  PSYCHOPHONIE: {
+    name: "Psychophonie" as EventType,
+    href: ROUTES.ACTIVITES.SUBPAGES.PSYCHOPHONIE,
+  },
 } as const;
 
 /**

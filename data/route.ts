@@ -39,6 +39,7 @@ export const ROUTES = {
       MONTESSORI: "/activites/montessori",
       ECRITURE_SPONTANEE: "/activites/ecriture-spontanee",
       ATELIER_VOCAL: "/activités/atelier-vocal",
+      PSYCHOPHONIE: "/activites/psychophonie",
     },
   },
   MISE_A_DISPOSITION: "/mise-a-disposition",

@@ -19,7 +19,8 @@ export default function ActivitesPage() {
       e.type.name === "Clown Socratique" ||
       e.type.name === "Ecriture spontanée" ||
       e.type.name === "Mercredi Montessori" ||
-      e.type.name === "Théâtre d'improvisation"
+      e.type.name === "Théâtre d'improvisation" ||
+      e.type.name === "Psychophonie"
   );
   const subpages = [
     {
@@ -53,6 +54,12 @@ export default function ActivitesPage() {
         "Explorez votre créativité et votre expressivité à travers l'improvisation et le jeu théâtral dans un cadre ludique et bienveillant.",
       link: ROUTES.ACTIVITES.SUBPAGES.THEATRE,
       icon: "🎭",
+    },
+    {
+      title: "Psychophonie",
+      description: "Venez découvrir votre voix et votre corps-instrument !",
+      link: ROUTES.ACTIVITES.SUBPAGES.PSYCHOPHONIE,
+      icon: "🎶",
     },
   ];
 

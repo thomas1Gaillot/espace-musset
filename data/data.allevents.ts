@@ -658,6 +658,26 @@ const maraude16h = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE_16H
   new Date("2027-06-27"),
 ]);
 
+// Psychophonie - 5 séances du dimanche, 10h à 12h
+const psychophonieDimanches = generateEventsFromDates(
+  {
+    title: "Psychophonie",
+    time: "10:00 à 12:00",
+    image: "/cours/psychophonie.png",
+    price: "30 €",
+    category: EVENT_CATEGORIES.ACTIVITES,
+    type: EVENT_TYPES.PSYCHOPHONIE,
+    eventLink: ROUTES.ACTIVITES.SUBPAGES.PSYCHOPHONIE,
+  },
+  [
+    new Date("2026-11-15"),
+    new Date("2027-01-24"),
+    new Date("2027-03-21"),
+    new Date("2027-05-02"),
+    new Date("2027-06-13"),
+  ]
+);
+
 /**
  * VOLUNTEER ACTIVITIES
  */
@@ -1183,6 +1203,7 @@ const eventList: EventData[] = [
   ...soireeJeux4eJeudi,
   ...ecriture4eJeudi,
   ...maraude16h,
+  ...psychophonieDimanches,
 ];
 
 export { eventList };

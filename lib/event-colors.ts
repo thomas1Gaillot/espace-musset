@@ -138,6 +138,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#fffbeb",
       textColor: "#78350f",
     },
+    Psychophonie: {
+      borderColor: "#06b6d4",
+      backgroundColor: "#ecfeff",
+      textColor: "#164e63",
+    },
   };
 
   return (
