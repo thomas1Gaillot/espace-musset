@@ -20,6 +20,7 @@ export type EventType =
   | "Atelier philo"
   | "Clown Socratique"
   | "Qi Gong"
+  | "Qi Gong Énergétique"
   | "Méditation"
   | "Conférence"
   | "Rencontre philo"

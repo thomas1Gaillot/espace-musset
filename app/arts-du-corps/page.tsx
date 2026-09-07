@@ -16,7 +16,11 @@ export default function ArtsCorpsPage() {
   const artsDuCorpsEvents = eventList.filter(
     (e) =>
       e.category.name === "Arts" &&
-      (e.type.name === "Qi Gong" || e.type.name === "Méditation" || e.type.name === "Yoga du rire" || e.type.name === "Exploration Vocale")
+      (e.type.name === "Qi Gong" ||
+        e.type.name === "Qi Gong Énergétique" ||
+        e.type.name === "Méditation" ||
+        e.type.name === "Yoga du rire" ||
+        e.type.name === "Exploration Vocale")
   );
   const subpages = [
     {
@@ -32,6 +36,13 @@ export default function ArtsCorpsPage() {
         "Venez découvrir le Qi Gong et les arts Taoistes périphériques à cette pratique avec Martial Gontrand, enseignant en Qi Gong depuis 3 ans chez Leçon du Gong.",
       link: ROUTES.ARTS.SUBPAGES.QI_GONG,
       icon: "⛩️",
+    },
+    {
+      title: "Qi Gong Énergétique",
+      description:
+        "Harmoniser le corps, apaiser l'esprit et cultiver l'énergie vitale, avec Philippe. Un jeudi sur deux, en ateliers participatifs.",
+      link: ROUTES.ARTS.SUBPAGES.QI_GONG_ENERGETIQUE,
+      icon: "🌬️",
     },
     {
       title: "Méditation",

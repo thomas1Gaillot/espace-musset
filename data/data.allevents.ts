@@ -678,6 +678,18 @@ const psychophonieDimanches = generateEventsFromDates(
   ]
 );
 
+// Qi Gong Énergétique avec Philippe - un jeudi sur deux, 18h à 19h30
+const qiGongEnergetiquePhilippe = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.QI_GONG_ENERGETIQUE, [
+  new Date("2026-09-10"),
+  new Date("2026-09-24"),
+  new Date("2026-10-08"),
+  new Date("2026-10-22"),
+  new Date("2026-11-05"),
+  new Date("2026-11-19"),
+  new Date("2026-12-03"),
+  new Date("2026-12-17"),
+]);
+
 /**
  * VOLUNTEER ACTIVITIES
  */
@@ -1204,6 +1216,7 @@ const eventList: EventData[] = [
   ...ecriture4eJeudi,
   ...maraude16h,
   ...psychophonieDimanches,
+  ...qiGongEnergetiquePhilippe,
 ];
 
 export { eventList };

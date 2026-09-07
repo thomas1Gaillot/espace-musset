@@ -25,6 +25,7 @@ export const ROUTES = {
     SUBPAGES: {
       MEDITATION: "/arts-du-corps/meditation",
       QI_GONG: "/arts-du-corps/qi-gong",
+      QI_GONG_ENERGETIQUE: "/arts-du-corps/qi-gong-energetique",
       YOGA_DU_RIRE: "/arts-du-corps/yoga-du-rire",
       EXPLORATION_VOCALE: "/arts-du-corps/exploration-vocale",
     },

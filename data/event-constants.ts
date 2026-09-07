@@ -35,6 +35,10 @@ export const EVENT_TYPES = {
     name: "Qi Gong" as EventType,
     href: ROUTES.ARTS.SUBPAGES.QI_GONG,
   },
+  QI_GONG_ENERGETIQUE: {
+    name: "Qi Gong Énergétique" as EventType,
+    href: ROUTES.ARTS.SUBPAGES.QI_GONG_ENERGETIQUE,
+  },
   CHANT: {
     name: "Chant" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.CHANT,

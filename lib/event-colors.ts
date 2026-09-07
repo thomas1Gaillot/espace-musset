@@ -123,6 +123,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#ffffffff",
       textColor: "#fb2c36",
     },
+    "Qi Gong Énergétique": {
+      borderColor: "#7c3aed",
+      backgroundColor: "#f5f3ff",
+      textColor: "#4c1d95",
+    },
     "Atelier Vocal": {
       borderColor: "#f59e0b",
       backgroundColor: "#fffbeb",

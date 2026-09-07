@@ -30,6 +30,16 @@ export const RECURRING_EVENT_TEMPLATES = {
     eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG,
   } as EventTemplate,
 
+  QI_GONG_ENERGETIQUE: {
+    title: "Qi Gong Énergétique",
+    time: "18:00 à 19:30",
+    image: "/cours/qi-gong-energ.png",
+    price: "15 €",
+    category: EVENT_CATEGORIES.ARTS,
+    type: EVENT_TYPES.QI_GONG_ENERGETIQUE,
+    eventLink: ROUTES.ARTS.SUBPAGES.QI_GONG_ENERGETIQUE,
+  } as EventTemplate,
+
   MEDITATION: {
     title: "Atelier Méditation",
     time: "18:00 à 18:45",
