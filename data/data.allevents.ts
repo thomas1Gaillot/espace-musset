@@ -279,6 +279,31 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-world-cleanup-day-1995208437145",
   }),
+
+  createEvent({
+    title: "Spinoza : de la nécessité à la liberté",
+    dateObj: new Date("2026-10-01"),
+    time: "19:30 à 21:30",
+    image: "/event/spinoza.jpg",
+    price: "12 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventContact: "Fabien Amouroux",
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-spinoza-de-la-necessite-a-la-liberte-2001070921995",
+  }),
+
+  createEvent({
+    title: "Café philo : L'amour est-il un chemin de liberté ?",
+    dateObj: new Date("2026-10-06"),
+    time: "19:30 à 21:15",
+    image: "/event/cafephilo.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-lamour-est-il-un-chemin-de-liberte-1999720780686",
+  }),
 ];
 
 const devienstoiMemeAtelierPhilo = generateEventsFromDates(
@@ -622,7 +647,7 @@ const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRI
   new Date("2026-05-28"),
 ]);
 
-// 4e jeudi du mois - Soirée jeux (20h-23h) et Atelier écriture (19h-21h) - septembre 2026 à juin 2027
+// 4e jeudi du mois - Soirée jeux (20h-23h) - septembre 2026 à juin 2027
 const quatriemeJeudiDates = [
   new Date("2026-09-24"),
   new Date("2026-10-22"),
@@ -639,9 +664,17 @@ const soireeJeux4eJeudi = generateEventsFromDates(
   RECURRING_EVENT_TEMPLATES.SOIREE_JEUX_4E_JEUDI,
   quatriemeJeudiDates
 );
+
+// Atelier écriture (19h-21h) - septembre 2026 à décembre 2026
+const ecritureJeudiDates = [
+  new Date("2026-09-17"),
+  new Date("2026-10-15"),
+  new Date("2026-11-19"),
+  new Date("2026-12-10"),
+];
 const ecriture4eJeudi = generateEventsFromDates(
   RECURRING_EVENT_TEMPLATES.ECRITURE_4E_JEUDI,
-  quatriemeJeudiDates
+  ecritureJeudiDates
 );
 
 // Maraude - créneau 16h, dernier dimanche du mois, septembre 2026 à juin 2027
