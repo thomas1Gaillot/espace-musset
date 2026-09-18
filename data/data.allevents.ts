@@ -306,16 +306,7 @@ const oneTimeEvents: EventData[] = [
   }),
 ];
 
-const devienstoiMemeAtelierPhilo = generateEventsFromDates(
-  customizeTemplate(RECURRING_EVENT_TEMPLATES.ATELIER_PHILO_PAYANT, {
-    title: "Deviens toi-même : atelier de philosophie pratique",
-    price: "5 €",
-    image: "/event/atelier-philo.jpg",
-    eventLink:
-      "https://www.eventbrite.fr/e/billets-deviens-toi-meme-atelier-de-philosophie-pratique-1467522010839",
-  }),
-  [new Date("2026-09-14"), new Date("2026-09-21"), new Date("2026-09-28")]
-);
+
 
 /**
  * RECURRING EVENTS - WEEKLY
@@ -351,35 +342,6 @@ const atelierChantJanJun = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.CHA
   new Date("2026-06-24"),
 ]);
 
-// Théâtre d'Improvisation - Every Monday (multiple time slots), excluding March 2
-const theatreImproMonday = [
-  ...generateEventsByDayOfWeek(
-    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-    new Date("2025-09-29"),
-    new Date("2026-02-23"),
-    1 // Monday
-  ),
-  ...generateEventsByDayOfWeek(
-    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-    new Date("2026-03-09"),
-    new Date("2026-05-30"),
-    1 // Monday
-  ),
-  // Tous les lundis de juin 2026 (1, 8, 15, 22, 29)
-  ...generateEventsByDayOfWeek(
-    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-    new Date("2026-06-01"),
-    new Date("2026-06-29"),
-    1 // Monday
-  ),
-  // Reprise septembre - décembre 2026 (pause estivale juillet-août, reprise le 14 septembre)
-  ...generateEventsByDayOfWeek(
-    RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_SOIR,
-    new Date("2026-09-14"),
-    new Date("2026-12-31"),
-    1 // Monday
-  ),
-];
 
 // Théâtre d'Improvisation - Evening session, excluding March 2
 const theatreImproNuit = [
@@ -1220,7 +1182,6 @@ const eventList: EventData[] = [
   ...oneTimeEvents,
   ...atelierChantJanJun,
   ...atelierChantOctNov,
-  ...theatreImproMonday,
   ...theatreImproNuit,
   ...qiGongTuesday,
   ...mercrediMontessori,
@@ -1228,7 +1189,6 @@ const eventList: EventData[] = [
   ...atelierPhiloMondays,
   ...meditationThursdays,
   ...meditationMidiTuesdays,
-
   ...clownSocratiqueTuesdays,
   ...ecritureSpontanee,
   ...volunteerEvents,
@@ -1241,7 +1201,6 @@ const eventList: EventData[] = [
   ...yogaThursdays,
   ...atelierEcritureFeb,
   ...clownSocratiqueEvents,
-  ...devienstoiMemeAtelierPhilo,
   ...atelierPhilosophieMercredi,
   ...etSiOnChantaitSeptDec,
   ...yogaSeptJan,

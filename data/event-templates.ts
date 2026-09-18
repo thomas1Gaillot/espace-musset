@@ -91,17 +91,6 @@ export const RECURRING_EVENT_TEMPLATES = {
     eventLink: ROUTES.ACTIVITES.SUBPAGES.YOGA,
   } as EventTemplate,
 
-  // Activities
-  THEATRE_IMPRO_SOIR: {
-    title: "Théatre d'improvisation",
-    time: "18:30 à 20:30",
-    image: "/diseuses_profil.webp",
-    price: "Nous contacter",
-    category: EVENT_CATEGORIES.ACTIVITES,
-    type: EVENT_TYPES.THEATRE_IMPRO,
-    eventLink: ROUTES.ACTIVITES.SUBPAGES.THEATRE,
-  } as EventTemplate,
-
   THEATRE_IMPRO_NUIT: {
     title: "Théatre d'improvisation",
     time: "20:45 à 22h45",
