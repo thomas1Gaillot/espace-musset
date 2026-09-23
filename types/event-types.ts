@@ -43,4 +43,5 @@ export type EventType =
   | "Atelier Cuisine"
   | "Atelier Vocal"
   | "Exploration Vocale"
-  | "Psychophonie";
+  | "Psychophonie"
+  | "Vacances";

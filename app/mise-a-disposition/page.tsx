@@ -55,7 +55,6 @@ export default function MiseADispositionPage() {
       name: "Salle des muses",
       capacity: "42m² - 24-50 personnes selon disposition",
       features: [
-        { title: "Vidéoprojecteur", Icon: Projector },
         { title: "WiFi", Icon: Wifi },
         { title: "Toilettes PMR", Icon: Accessibility },
         { title: "Éclairage avec variateurs et tonalités", Icon: Lightbulb },
@@ -81,6 +80,7 @@ export default function MiseADispositionPage() {
       pricesWeekEnd: [" 1/2 Journée - 140 €", " Journée - 240 €", " Horaire - 60 €/h"],
       contactForPrice: false,
       showDispositions: true,
+      paidOptions: [{ title: "Vidéoprojecteur (sur demande)", Icon: Projector }],
     },
 
     {
@@ -92,7 +92,6 @@ export default function MiseADispositionPage() {
         { title: "Toilettes PMR", Icon: Accessibility },
         { title: "Lumière du jour", Icon: Sun },
         { title: "Calme", Icon: Bird },
-        { title: "Café, Thé", Icon: Coffee },
       ],
       activity: [
         { title: "Conférences", Icon: SpeakerIcon },
@@ -105,6 +104,11 @@ export default function MiseADispositionPage() {
       pricesWeekEnd: [" Journée - 120 €", " 1/2 Journée - 75 €", " Horaire - 40 €/h"],
       contactForPrice: false,
       showDispositions: false,
+      paidOptions: [
+        { title: "Café, Thé (sur demande)", Icon: Coffee },
+        { title: "Bières (sur demande)", Icon: GlassWater },
+        { title: "Tapas fait maison (sur demande)", Icon: CookingPot },
+      ],
     },
   ];
 
@@ -193,7 +197,8 @@ export default function MiseADispositionPage() {
             </div>
             <h3 className="font-serif text-lg md:text-xl font-bold mb-3">Équipements modernes</h3>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              Vidéoprojecteur, WiFi, climatisation, éclairage modulable et bien plus
+              WiFi, climatisation, éclairage modulable et bien plus (vidéoprojecteur disponible en
+              option)
             </p>
           </div>
           <div className="bg-white rounded-xl border border-gray-100 p-6 md:p-8 text-center hover:shadow-lg transition-shadow">
@@ -349,6 +354,29 @@ export default function MiseADispositionPage() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Équipements payants à la demande */}
+                  {salle.paidOptions && salle.paidOptions.length > 0 && (
+                    <div className="space-y-4">
+                      <h3 className="font-serif text-2xl font-semibold text-foreground">
+                        Équipements payants à la demande
+                      </h3>
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                        {salle.paidOptions.map((option, idx) => (
+                          <div
+                            key={idx}
+                            className="px-4 py-3 flex items-center gap-2 rounded-lg border-2 border-dashed border-gray-300 hover:border-primary/40 hover:bg-primary/5 transition-all text-sm font-medium"
+                          >
+                            <option.Icon
+                              strokeWidth={1.5}
+                              className="size-5 text-primary flex-shrink-0"
+                            />
+                            <span className="text-xs leading-tight">{option.title}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Dispositions */}
                   {salle.showDispositions && (

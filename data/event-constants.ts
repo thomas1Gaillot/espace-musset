@@ -25,6 +25,10 @@ export const EVENT_CATEGORIES = {
     name: "Café associatif",
     href: "cafe-associatif",
   },
+  INFOS: {
+    name: "Informations",
+    href: ROUTES.CONTACT,
+  },
 } as const;
 
 /**
@@ -130,6 +134,10 @@ export const EVENT_TYPES = {
   PSYCHOPHONIE: {
     name: "Psychophonie" as EventType,
     href: ROUTES.ACTIVITES.SUBPAGES.PSYCHOPHONIE,
+  },
+  VACANCES: {
+    name: "Vacances" as EventType,
+    href: ROUTES.CONTACT,
   },
 } as const;
 

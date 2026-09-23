@@ -148,6 +148,11 @@ export const getEventColor = (eventType: EventType): ColorScheme => {
       backgroundColor: "#ecfeff",
       textColor: "#164e63",
     },
+    Vacances: {
+      borderColor: "#94a3b8",
+      backgroundColor: "#f1f5f9",
+      textColor: "#334155",
+    },
   };
 
   return (

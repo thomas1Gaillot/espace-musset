@@ -365,10 +365,11 @@ const theatreImproNuit = [
     1 // Monday
   ),
   // Reprise septembre - décembre 2026 (pause estivale juillet-août, reprise le 14 septembre)
+  // Arrêt au 17 décembre 2026 (vacances de Noël du 18 au 31 décembre 2026)
   ...generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.THEATRE_IMPRO_NUIT,
     new Date("2026-09-14"),
-    new Date("2026-12-31"),
+    new Date("2026-12-17"),
     1 // Monday
   ),
 ];
@@ -390,12 +391,21 @@ const mercrediMontessori = generateEventsByDayOfWeek(
 );
 
 // Atelier philosophie - Every Wednesday, November 2026 to June 2027, 19h30-22h00
+// Exclu : 4 et 11 nov 2026, ateliers de décembre 2026 sauf le 1er (2 déc)
+const atelierPhiloExclusions = new Set([
+  "2026-11-04",
+  "2026-11-11",
+  "2026-12-09",
+  "2026-12-16",
+  "2026-12-23",
+  "2026-12-30",
+]);
 const atelierPhilosophieMercredi = generateEventsByDayOfWeek(
   RECURRING_EVENT_TEMPLATES.ATELIER_PHILO_PAYANT,
   new Date("2026-11-01"),
   new Date("2027-06-30"),
   3 // Wednesday
-);
+).filter((event) => !atelierPhiloExclusions.has(event.dateObj.toISOString().slice(0, 10)));
 
 // Et si on chantait - Every Wednesday, reprise septembre 2026 (et décembre 2026)
 const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
@@ -404,10 +414,11 @@ const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
   new Date("2026-09-30"),
   3 // Wednesday
 ).concat(
+  // Arrêt au 17 décembre 2026 (vacances de Noël du 18 au 31 décembre 2026)
   generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
     new Date("2026-12-01"),
-    new Date("2026-12-31"),
+    new Date("2026-12-17"),
     3 // Wednesday
   )
 );
@@ -419,9 +430,16 @@ const yogaSeptJan = [
     new Date("2026-09-17"),
     new Date("2026-09-24"),
   ]),
+  // Arrêt au 17 décembre 2026 (vacances de Noël du 18 au 31 décembre 2026), reprise le 7 janvier 2027
   ...generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.YOGA,
     new Date("2026-10-01"),
+    new Date("2026-12-17"),
+    4 // Thursday
+  ),
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.YOGA,
+    new Date("2027-01-07"),
     new Date("2027-01-28"),
     4 // Thursday
   ),
@@ -610,11 +628,11 @@ const ecritureSpontanee = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.ECRI
 ]);
 
 // 4e jeudi du mois - Soirée jeux (20h-23h) - septembre 2026 à juin 2027
+// Le 24 décembre 2026 est retiré (vacances de Noël du 18 au 31 décembre 2026)
 const quatriemeJeudiDates = [
   new Date("2026-09-24"),
   new Date("2026-10-22"),
   new Date("2026-11-26"),
-  new Date("2026-12-24"),
   new Date("2027-01-28"),
   new Date("2027-02-25"),
   new Date("2027-03-25"),
@@ -640,11 +658,11 @@ const ecriture4eJeudi = generateEventsFromDates(
 );
 
 // Maraude - créneau 16h, dernier dimanche du mois, septembre 2026 à juin 2027
+// Le 27 décembre 2026 est retiré (vacances de Noël du 18 au 31 décembre 2026)
 const maraude16h = generateEventsFromDates(RECURRING_EVENT_TEMPLATES.MARAUDE_16H, [
   new Date("2026-09-27"),
   new Date("2026-10-25"),
   new Date("2026-11-29"),
-  new Date("2026-12-27"),
   new Date("2027-01-31"),
   new Date("2027-02-28"),
   new Date("2027-03-28"),
@@ -684,6 +702,35 @@ const qiGongEnergetiquePhilippe = generateEventsFromDates(RECURRING_EVENT_TEMPLA
   new Date("2026-12-03"),
   new Date("2026-12-17"),
 ]);
+
+// Vacances d'hiver - du 18 au 31 décembre 2026 (association fermée)
+const vacancesHiver2026 = generateEventsFromDates(
+  {
+    title: "Vacances d'hiver",
+    time: "Toute la journée",
+    image: "/espace-musset.jpeg",
+    price: "Fermé",
+    category: EVENT_CATEGORIES.INFOS,
+    type: EVENT_TYPES.VACANCES,
+    eventLink: ROUTES.CONTACT,
+  },
+  [
+    new Date("2026-12-18"),
+    new Date("2026-12-19"),
+    new Date("2026-12-20"),
+    new Date("2026-12-21"),
+    new Date("2026-12-22"),
+    new Date("2026-12-23"),
+    new Date("2026-12-24"),
+    new Date("2026-12-25"),
+    new Date("2026-12-26"),
+    new Date("2026-12-27"),
+    new Date("2026-12-28"),
+    new Date("2026-12-29"),
+    new Date("2026-12-30"),
+    new Date("2026-12-31"),
+  ]
+);
 
 /**
  * VOLUNTEER ACTIVITIES
@@ -1209,6 +1256,7 @@ const eventList: EventData[] = [
   ...maraude16h,
   ...psychophonieDimanches,
   ...qiGongEnergetiquePhilippe,
+  ...vacancesHiver2026,
 ];
 
 export { eventList };
