@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ROUTES } from "@/data/route";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -52,7 +53,13 @@ export const Header = () => {
           {/* Logo */}
           <Link href={ROUTES.ACCUEIL} className="flex items-center space-x-2">
             {/* <span className="text-primary-foreground font-serif font-semibold text-xl">EM</span> */}
-            <img src="/logoEM.png" alt="Espace Musset" className="w-12 h-12" />
+            <Image
+              src="/logoEM.png"
+              alt="Espace Musset"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+            />
 
             <div className="block">
               <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>

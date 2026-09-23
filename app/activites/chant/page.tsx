@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
 import { CoffeeIcon, EuroIcon, HourglassIcon, MapIcon, SettingsIcon } from "lucide-react";
+import Image from "next/image";
 
 const Chant = () => (
   <div className="min-h-screen py-12 px-4">
@@ -40,7 +41,13 @@ const Chant = () => (
       <div className="flex flex-col  sm:flex-row   gap-12 mb-12">
         {/* Image principale */}
         <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
-          <img src="/cours/chant.jpg" alt={"chant"} className="w-full h-auto object-cover" />
+          <Image
+            src="/cours/chant.jpg"
+            alt={"chant"}
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover"
+          />
           <div className="absolute inset-0 bg-transparent" />
         </div>
 

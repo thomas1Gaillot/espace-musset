@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface NewsletterHeaderProps {
   month?: string;
   year?: number;
@@ -31,7 +33,13 @@ export function NewsletterHeader({ month, year }: NewsletterHeaderProps) {
             <p className="text-xs opacity-80 text-end">Centre culturel & associatif</p>
           </div>
           <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center">
-            <img src="/logoEM.png" alt="Espace Musset" className="min-w-10 h-10" />
+            <Image
+              src="/logoEM.png"
+              alt="Espace Musset"
+              width={40}
+              height={40}
+              className="min-w-10 h-10"
+            />
           </div>
         </div>
       </div>

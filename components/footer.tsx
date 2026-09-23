@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/data/route";
 import { ExternalLinkIcon, Instagram } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const Footer = () => {
@@ -10,7 +11,13 @@ export const Footer = () => {
         {/* Logo centré */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-3">
-            <img src="/logoEM.png" alt="Espace Musset" className="w-16 h-16" />
+            <Image
+              src="/logoEM.png"
+              alt="Espace Musset"
+              width={64}
+              height={64}
+              className="w-16 h-16"
+            />
             <div>
               <h2 className="font-serif font-bold text-2xl text-foreground">Espace Musset</h2>
               <p className="text-sm text-muted-foreground">Centre culturel & associatif</p>

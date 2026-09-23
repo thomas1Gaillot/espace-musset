@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface HeroImage {
   src: string;
@@ -42,7 +43,14 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
             className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
             style={{ opacity: i === current ? 1 : 0 }}
           >
-            <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              className="object-cover"
+            />
           </div>
         ))}
       </div>
@@ -113,7 +121,14 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
                   "left 0.8s cubic-bezier(0.4,0,0.2,1), width 0.8s cubic-bezier(0.4,0,0.2,1), opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1), filter 0.8s cubic-bezier(0.4,0,0.2,1)",
               }}
             >
-              <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="70vw"
+                priority={offset === 0}
+                className="object-cover"
+              />
             </div>
           );
         })}
@@ -139,9 +154,11 @@ export function HeroCarousel({ images }: { images: HeroImage[] }) {
       <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none px-4 pb-40 md:pb-24">
         <div className="flex flex-col items-center gap-3 md:flex-row md:gap-6 max-w-[90vw] md:max-w-none">
           {currentImage.logo && (
-            <img
+            <Image
               src={currentImage.logo}
               alt=""
+              width={128}
+              height={128}
               className="w-20 h-20 md:w-32 md:h-32 rounded-full object-cover border-2 border-white/40 shadow-xl shrink-0"
             />
           )}

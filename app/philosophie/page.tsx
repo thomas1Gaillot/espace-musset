@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { eventList } from "@/data/data.allevents";
 import { philosophieContent } from "@/data/philosophie.data";
+import Image from "next/image";
 import Link from "next/link";
 import EventList from "../../components/event-list";
 
@@ -49,7 +50,13 @@ export default function PhilosophiePage() {
 
       <div className="grid lg:grid-cols-2 gap-12 mb-12 container">
         <div className="relative h-80 rounded-lg overflow-hidden">
-          <img src={hero.image.url} alt={hero.image.alt} className="w-full h-full object-cover" />
+          <Image
+            src={hero.image.url}
+            alt={hero.image.alt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
 

@@ -1,4 +1,5 @@
 import EventList from "@/components/event-list";
+import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -46,7 +47,13 @@ const MercrediMontessoriPage = () => {
         <div className="flex flex-col  sm:flex-row   gap-12 mb-12">
           {/* Image principale */}
           <div className="relative h-[600px] w-full sm:min-w-[600px] rounded-lg overflow-hidden">
-            <img src="/cours/montessori.png" alt={"Clown"} className="w-full h-auto object-cover" />
+            <Image
+              src="/cours/montessori.png"
+              alt={"Montessori"}
+              width={600}
+              height={600}
+              className="w-full h-auto object-cover"
+            />
             <div className="absolute inset-0 bg-transparent" />
           </div>
 

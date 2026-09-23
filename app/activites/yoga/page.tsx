@@ -7,6 +7,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
+import Image from "next/image";
 import {
   CalendarIcon,
   EuroIcon,
@@ -48,7 +49,13 @@ const YogaMedha = () => {
 
         <div className="flex flex-col sm:flex-row gap-12 mb-12">
           <div className="relative w-full sm:w-[600px] rounded-lg overflow-hidden">
-            <img src="/cours/yoga.jpg" alt={"chant"} className="w-full h-auto object-cover" />
+            <Image
+              src="/cours/yoga.jpg"
+              alt={"yoga"}
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+            />
             <div className="absolute inset-0 bg-transparent" />
           </div>
 

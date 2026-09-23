@@ -1,6 +1,5 @@
 import EventsSection from "@/components/events-section";
-// TEMPORAIRE : à décommenter avec le carrousel (~26/09/2026)
-// import { HeroCarousel } from "@/components/hero-carousel";
+import { HeroCarousel } from "@/components/hero-carousel";
 import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -92,9 +91,6 @@ export default function HomePage() {
     },
   ];
 
-  // TEMPORAIRE (à réactiver ~26/09/2026) : carrousel remplacé par l'affiche JPO plein écran.
-  // Pour restaurer : décommenter ce tableau + le <HeroCarousel /> dans la section Hero.
-  /*
   const heroImages = [
     {
       src: "/gallerie/3.JPG",
@@ -127,43 +123,12 @@ export default function HomePage() {
       logo: "/diseuses-amertume.jpeg",
     },
   ];
-  */
 
   return (
     <div className="min-h-screen">
-      {/* Announcement Bar */}
-      <div className=" top-[60px] sticky w-full max-w-[100vw] z-50">
-        <div className=" max-w-vw h-12 w-screen bg-primary/90 flex items-center justify-center text-white">
-          <Button variant={"link"} asChild className="text-white ">
-            <Link href="/contact">
-              <div className="break-words gap-1 md:whitespace-nowrap flex-col sm:flex-row flex justify-center items-center">
-                <p>
-                  {"Samedi 12 Sept. - Journée Portes Ouvertes - Entrée libre"}{" "}
-                </p>
-              </div>
-            </Link>
-          </Button>
-        </div>
-      </div>
-
       {/* Hero Section */}
       <section className="hero-section relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-gray-950">
-        {/* TEMPORAIRE : affiche Journée Portes Ouvertes plein écran.
-            À réactiver ~26/09/2026 — remplacer ce bloc par : <HeroCarousel images={heroImages} />
-            et décommenter le tableau heroImages ci-dessus. */}
-        <div className="relative z-[5] flex items-center justify-center px-4 pt-8 pb-6">
-          <Link href={ROUTES.CONTACT} className="block">
-            <Image
-              src="/event/JPO.png"
-              alt="Journée Portes Ouvertes — samedi 12 septembre, 14h à 22h, entrée libre"
-              width={2000}
-              height={1414}
-              priority
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="h-auto w-auto max-h-[70vh] max-w-full object-contain rounded-sm shadow-2xl"
-            />
-          </Link>
-        </div>
+        <HeroCarousel images={heroImages} />
 
         {/* Buttons — bottom */}
         <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center pb-12 pointer-events-none">
@@ -312,10 +277,12 @@ export default function HomePage() {
             {activities.map((activity, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow group">
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={activity.image}
                     alt={activity.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 </div>

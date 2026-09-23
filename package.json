@@ -10,7 +10,8 @@
     "lint:fix": "eslint **/*.{js,jsx,ts,tsx} --fix",
     "format": "prettier --write **/*.{js,jsx,ts,tsx,json,css,md,html}",
     "start": "next start",
-    "generate:recettes": "node scripts/generate-recette-index.js"
+    "generate:recettes": "node scripts/generate-recette-index.js",
+    "compress:images": "node scripts/compress-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -80,6 +81,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "postcss": "^8.5",
     "prettier": "^3.6.2",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
     "typescript": "^5"

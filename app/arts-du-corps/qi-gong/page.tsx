@@ -1,4 +1,5 @@
 import EventList from "@/components/event-list";
+import Image from "next/image";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -58,7 +59,13 @@ const QiGong = () => {
         <div className="flex flex-col sm:flex-row gap-12 mb-12">
           {/* Image principale */}
           <div className="relative h-[300px] w-full sm:w-[1200px] rounded-lg overflow-hidden">
-            <img src="/cours/qi-gong.png" alt={"Qi Gong"} className="w-full h-auto object-cover" />
+            <Image
+              src="/cours/qi-gong.png"
+              alt={"Qi Gong"}
+              width={1200}
+              height={300}
+              className="w-full h-auto object-cover"
+            />
             <div className="absolute inset-0 bg-transparent" />
           </div>
 
