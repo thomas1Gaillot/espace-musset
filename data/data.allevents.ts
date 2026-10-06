@@ -304,6 +304,19 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.eventbrite.fr/e/billets-cafe-philo-lamour-est-il-un-chemin-de-liberte-1999720780686",
   }),
+
+  createEvent({
+    title: "Conférence active : Maria Montessori, une femme engagée pour la paix",
+    dateObj: new Date("2026-10-15"),
+    time: "20:00 à 21:30",
+    image: "/event/montessori.png",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventContact: "Ensemble toi et moi",
+    eventLink:
+      "https://www.helloasso.com/associations/ensemble-toi-et-moi/evenements/conference-active-maria-montessori-une-femme-engagee-pour-la-paix?utm_source=app_ha&utm_campaign=share_campaign_button&utm_medium=android",
+  }),
 ];
 
 
@@ -407,21 +420,37 @@ const atelierPhilosophieMercredi = generateEventsByDayOfWeek(
   3 // Wednesday
 ).filter((event) => !atelierPhiloExclusions.has(event.dateObj.toISOString().slice(0, 10)));
 
-// Et si on chantait - Every Wednesday, reprise septembre 2026 (et décembre 2026)
-const etSiOnChantaitSeptDec = generateEventsByDayOfWeek(
-  RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
-  new Date("2026-09-16"),
-  new Date("2026-09-30"),
-  3 // Wednesday
-).concat(
-  // Arrêt au 17 décembre 2026 (vacances de Noël du 18 au 31 décembre 2026)
-  generateEventsByDayOfWeek(
+// Et si on chantait - Every Wednesday, septembre 2026 to décembre 2026
+const etSiOnChantaitSeptDec = [
+  // Septembre 2026 (16, 23, 30)
+  ...generateEventsByDayOfWeek(
     RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
-    new Date("2026-12-01"),
-    new Date("2026-12-17"),
+    new Date("2026-09-16"),
+    new Date("2026-09-30"),
     3 // Wednesday
-  )
-);
+  ),
+  // Octobre 2026 (7, 14, 21, 28)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
+    new Date("2026-10-07"),
+    new Date("2026-10-28"),
+    3 // Wednesday
+  ),
+  // Novembre 2026 (4, 11, 18, 25)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
+    new Date("2026-11-04"),
+    new Date("2026-11-25"),
+    3 // Wednesday
+  ),
+  // Décembre 2026 (2, 9, 16) - Arrêt au 17 décembre 2026 (vacances de Noël du 18 au 31 décembre 2026)
+  ...generateEventsByDayOfWeek(
+    RECURRING_EVENT_TEMPLATES.ET_SI_ON_CHANTAIT,
+    new Date("2026-12-02"),
+    new Date("2026-12-16"),
+    3 // Wednesday
+  ),
+];
 
 // Yoga - Every Thursday, reprise septembre 2026 à janvier 2027, except Sept 3
 const yogaSeptJan = [
