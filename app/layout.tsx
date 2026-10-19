@@ -47,6 +47,10 @@ export const metadata: Metadata = {
     shortcut: "/favicon/favicon.ico",
   },
   manifest: "/favicon/site.webmanifest",
+  // Vérification de propriété du site dans Bing Webmaster Tools
+  verification: {
+    other: { "msvalidate.01": "FFD24EC760BBAEA34325B06D0254F9FC" },
+  },
   other: {
     "msapplication-TileColor": "#da532c",
     "msapplication-config": "/browserconfig.xml",
