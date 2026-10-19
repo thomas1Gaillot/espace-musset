@@ -1,5 +1,5 @@
 import { PUBLIC_PAGES, type PageSeo } from "@/data/pages.seo";
-import { DISPOSITIONS_SALLE_DES_MUSES, SALLES, SALLES_FAQ, formatTarif } from "@/data/salles.data";
+import { HORAIRES_LOCATION, SALLES, SALLES_FAQ, formatTarif, sallePath } from "@/data/salles.data";
 import { eventUrl, getUpcomingEvents } from "@/lib/events-seo";
 import { SITE, absoluteUrl } from "@/lib/site";
 
@@ -18,7 +18,7 @@ export function GET() {
     [
       `### ${salle.name} – ${salle.surface} m², jusqu'à ${salle.maxCapacity} personnes`,
       "",
-      salle.description,
+      `${salle.description} Fiche : ${absoluteUrl(sallePath(salle))}`,
       "",
       "| Formule | Lundi–vendredi | Week-end |",
       "| --- | --- | --- |",
@@ -29,8 +29,7 @@ export function GET() {
       `- Équipements inclus : ${salle.features.map((f) => f.title).join(", ")}`,
       salle.paidOptions.length > 0 &&
         `- En option : ${salle.paidOptions.map((o) => o.title).join(", ")}`,
-      salle.showDispositions &&
-        `- Dispositions : ${DISPOSITIONS_SALLE_DES_MUSES.map((d) => `${d.name} (${d.capacity.toLowerCase()})`).join(", ")}`,
+      `- Dispositions : ${salle.dispositions.map((d) => `${d.name} (${d.capacity.toLowerCase()})`).join(", ")}`,
     ]
       .filter((line) => line !== false)
       .join("\n")
@@ -74,6 +73,7 @@ export function GET() {
 
 Page : ${absoluteUrl("/mise-a-disposition")}
 Réservation par téléphone au ${SITE.phoneDisplay} (Anne-Marie) ou par e-mail à ${SITE.email}. Visite et devis personnalisé.
+Horaires : ${HORAIRES_LOCATION}
 
 ${salles}
 

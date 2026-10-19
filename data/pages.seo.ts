@@ -1,11 +1,19 @@
-import { PRIX_HORAIRE_MIN } from "./salles.data";
 import { ROUTES } from "./route";
+import { USAGES, usagePath } from "./salles-usages.data";
+import { PRIX_HORAIRE_MIN, SALLES, prixHoraire, sallePath } from "./salles.data";
 
 export type PageSeo = {
   path: string;
   title: string;
   description: string;
-  section: "Le lieu" | "Philosophie" | "Arts du corps" | "Activités et arts" | "Écologie" | "Infos";
+  section:
+    | "Le lieu"
+    | "Location de salles"
+    | "Philosophie"
+    | "Arts du corps"
+    | "Activités et arts"
+    | "Écologie"
+    | "Infos";
   image?: string;
   priority?: number;
 };
@@ -27,7 +35,7 @@ export const PAGES = {
     path: ROUTES.MISE_A_DISPOSITION,
     title: "Location de salle à Toulouse (Minimes) – Réunion, formation, séminaire",
     description: `Louez une salle à Toulouse Minimes, métro ligne A : Salle des Muses (42 m², jusqu'à 50 personnes) ou Café d'Oc (28 m², 25 personnes). WiFi, climatisation, accès PMR. Dès ${PRIX_HORAIRE_MIN} €/h.`,
-    section: "Le lieu",
+    section: "Location de salles",
     image: "/salle-des-muses.jpg",
     priority: 0.9,
   },
@@ -244,7 +252,36 @@ export const PAGES = {
   },
 } satisfies Record<string, PageSeo>;
 
-export const PUBLIC_PAGES: PageSeo[] = Object.values(PAGES);
+const SALLE_DESCRIPTIONS: Record<string, string> = {
+  "salle-des-muses":
+    "Salle lumineuse de 42 m² avec vue sur jardin à Toulouse Minimes : jusqu'à 50 personnes en conférence, 24 en U ou en classe. Climatisation, WiFi, micro, accès PMR.",
+  "cafe-doc":
+    "Louez le Café d'Oc, café associatif de 28 m² à Toulouse Minimes : jusqu'à 25 personnes, bar, café, thé et tapas faits maison sur demande.",
+};
+
+/** Une page par salle : /mise-a-disposition/<id> */
+export const SALLE_PAGES: PageSeo[] = SALLES.map((salle) => ({
+  path: sallePath(salle),
+  title: `${salle.name} – Salle de ${salle.surface} m² à louer à Toulouse`,
+  description: `${SALLE_DESCRIPTIONS[salle.id] ?? salle.description} Dès ${prixHoraire(salle)} €/h.`,
+  section: "Location de salles",
+  image: salle.image,
+  priority: 0.8,
+}));
+
+/** Une page par usage : /mise-a-disposition/<slug> */
+export const USAGE_PAGES: PageSeo[] = USAGES.map((usage) => ({
+  path: usagePath(usage),
+  title: usage.title,
+  description: usage.description,
+  section: "Location de salles",
+  image: usage.image,
+  priority: 0.8,
+}));
+
+export const PUBLIC_PAGES: PageSeo[] = [...Object.values(PAGES), ...SALLE_PAGES, ...USAGE_PAGES];
+
+export const pageSeoByPath = (path: string) => PUBLIC_PAGES.find((p) => p.path === path);
 
 const PUBLIC_PATHS = new Set(PUBLIC_PAGES.map((p) => p.path));
 

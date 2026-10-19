@@ -8,6 +8,7 @@ import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ROUTES } from "@/data/route";
+import { USAGES, usagePath } from "@/data/salles-usages.data";
 import { cn } from "@/lib/utils";
 import { Instagram, Users, DoorOpen } from "lucide-react";
 import Image from "next/image";
@@ -25,43 +26,47 @@ const homeImageData: OurImageData[] = [
   {
     src: "/gallery/gallery-cafe-0.jpeg",
     blurredSrc: "/blur/gallery-0.jpeg",
-    alt: "Gallery Image 1",
+    alt: "Bénévoles du Café d'Oc présentant des pizzas faites maison",
   },
   {
     src: "/gallery/gallery-cafe-1.jpeg",
     blurredSrc: "/blur/gallery-1.jpeg",
-    alt: "Gallery Image 2",
+    alt: "Bénévoles en chasuble après un ramassage de mégots devant l'Espace Musset",
   },
-  { src: "/gallery/gallery-7.jpeg", blurredSrc: "/blur/gallery-2.jpeg", alt: "Gallery Image 3" },
+  {
+    src: "/gallery/gallery-7.jpeg",
+    blurredSrc: "/blur/gallery-2.jpeg",
+    alt: "Intervenants saluant le public après une soirée sur la Divine Comédie de Dante, Salle des Muses",
+  },
   {
     src: "/gallery/gallery-cafe-3.jpeg",
     blurredSrc: "/blur/gallery-3.jpeg",
-    alt: "Gallery Image 4",
+    alt: "Concert de musique ancienne au luth, à la viole et au violon dans la Salle des Muses",
   },
   {
     src: "/gallery/gallery-cafe-4.jpeg",
     blurredSrc: "/blur/gallery-4.jpeg",
-    alt: "Gallery Image 5",
+    alt: "Buffet d'assiettes de salade et de charcuterie préparé au Café d'Oc",
   },
   {
     src: "/gallery/gallery-cafe-8.jpeg",
     blurredSrc: "/blur/gallery-5.jpeg",
-    alt: "Gallery Image 6",
+    alt: "L'équipe du Café d'Oc au comptoir avec des plats faits maison et le drapeau occitan",
   },
   {
     src: "/gallery/gallery-cafe-9.jpeg",
     blurredSrc: "/blur/gallery-9.jpeg",
-    alt: "Gallery Image 7",
+    alt: "Préparation d'une assiette de tapas dans la cuisine du Café d'Oc",
   },
   {
     src: "/gallery/gallery-cafe-10.jpeg",
     blurredSrc: "/blur/gallery-10.jpeg",
-    alt: "Gallery Image 8",
+    alt: "Soirée conviviale au comptoir du Café d'Oc, café associatif de l'Espace Musset",
   },
   {
     src: "/gallery/gallery-cafe-11.jpeg",
     blurredSrc: "/blur/gallery-11.jpeg",
-    alt: "Gallery Image 9",
+    alt: "Débat philosophique avec paperboard dans la Salle des Muses",
   },
 ];
 
@@ -220,7 +225,10 @@ export default function HomePage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 rounded-xl bg-primary/5">
+            <Link
+              href={`${ROUTES.MISE_A_DISPOSITION}/salle-des-muses`}
+              className="text-center p-6 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+            >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <DoorOpen className="w-7 h-7 text-primary" />
               </div>
@@ -228,8 +236,11 @@ export default function HomePage() {
               <p className="text-sm text-muted-foreground">
                 42m² — jusqu'à 50 personnes, vidéoprojecteur, climatisation
               </p>
-            </div>
-            <div className="text-center p-6 rounded-xl bg-primary/5">
+            </Link>
+            <Link
+              href={`${ROUTES.MISE_A_DISPOSITION}/cafe-doc`}
+              className="text-center p-6 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+            >
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
                 <Users className="w-7 h-7 text-primary" />
               </div>
@@ -237,8 +248,19 @@ export default function HomePage() {
               <p className="text-sm text-muted-foreground">
                 28m² — 25 personnes, ambiance conviviale, café & thé
               </p>
-            </div>
+            </Link>
           </div>
+          <p className="text-center text-sm text-muted-foreground mt-8">
+            Idéal pour :{" "}
+            {USAGES.map((usage, idx) => (
+              <span key={usage.slug}>
+                {idx > 0 && " · "}
+                <Link href={usagePath(usage)} className="font-medium text-primary hover:underline">
+                  {usage.label}
+                </Link>
+              </span>
+            ))}
+          </p>
           <div className="text-center mt-10">
             <Button size="lg" asChild>
               <Link href={ROUTES.MISE_A_DISPOSITION}>Découvrir nos espaces</Link>

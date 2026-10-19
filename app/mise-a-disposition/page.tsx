@@ -1,4 +1,9 @@
-"use client";
+import { JsonLd } from "@/components/json-ld";
+import { FaqList } from "@/components/salles/faq-list";
+import { ReservationCta } from "@/components/salles/reservation-cta";
+import { SalleCard } from "@/components/salles/salle-card";
+import { SalleCarousel } from "@/components/salles/salle-carousel";
+import { UsagesGrid } from "@/components/salles/usages-grid";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,37 +12,68 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PAGES } from "@/data/pages.seo";
 import { ROUTES } from "@/data/route";
-import { SALLES, SALLES_FAQ, formatTarif } from "@/data/salles.data";
+import { SALLES, SALLES_FAQ, sallePath } from "@/data/salles.data";
 import {
-  Accessibility,
-  Brackets,
-  Coffee,
-  Drama,
-  Lightbulb,
-  MicIcon,
-  MoveDiagonal2,
-  SquareDashed,
-  SquareMenu,
-  Theater,
-} from "lucide-react";
+  breadcrumbJsonLd,
+  faqJsonLd,
+  locationServiceJsonLd,
+  meetingRoomJsonLd,
+} from "@/lib/salles-jsonld";
+import { pageMetadata } from "@/lib/site";
+import { cn } from "@/lib/utils";
+import { Accessibility, ArrowRight, Lightbulb, MoveDiagonal2 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
+const path = ROUTES.MISE_A_DISPOSITION;
+
+export const metadata = pageMetadata(PAGES.MISE_A_DISPOSITION);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    locationServiceJsonLd({
+      id: "service",
+      name: "Location de salles à l'Espace Musset",
+      serviceType: "Location de salle de réunion, de formation et d'événement",
+      description:
+        "Mise à disposition de salles modulables et équipées à Toulouse (quartier des Minimes) pour réunions, formations, séminaires, ateliers, conférences, yoga et événements associatifs ou professionnels.",
+      path,
+      salles: SALLES,
+    }),
+    ...SALLES.map(meetingRoomJsonLd),
+    faqJsonLd(SALLES_FAQ),
+    breadcrumbJsonLd([
+      { name: "Accueil", path: ROUTES.ACCUEIL },
+      { name: "Mise à disposition de salles", path },
+    ]),
+  ],
+};
+
+const AVANTAGES = [
+  {
+    title: "Équipements modernes",
+    text: "WiFi, climatisation, éclairage modulable et bien plus (vidéoprojecteur disponible en option)",
+    Icon: Lightbulb,
+  },
+  {
+    title: "Espaces modulables",
+    text: "Configuration adaptable : conférence, U, classe, ou espace libre",
+    Icon: MoveDiagonal2,
+  },
+  {
+    title: "Accessibilité PMR",
+    text: "Espaces accessibles avec toilettes PMR pour tous vos participants",
+    Icon: Accessibility,
+  },
+];
 
 export default function MiseADispositionPage() {
-  const salles = SALLES;
-
   return (
     <div className="min-h-screen">
+      <JsonLd data={jsonLd} />
       <div className="container mx-auto px-4">
         <Breadcrumb className="py-6">
           <BreadcrumbList>
@@ -70,79 +106,68 @@ export default function MiseADispositionPage() {
           </p>
         </div>
 
-        {/* Description générale */}
-        <div className="mb-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col justify-center space-y-6 order-2 lg:order-1">
-              <h2 className="font-serif text-3xl font-bold text-foreground">La salle des muses</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  La Salle des Muses est une salle de 42 m² lumineuse et calme, offrant une vue
-                  agréable sur un jardin privatif.
-                </p>
-                <p>
-                  Pensée pour être chaleureuse, elle dispose d'un plancher en chêne et d'un
-                  environnement apaisant, propice au travail et aux échanges. L'éclairage modulable
-                  et la climatisation réversible garantissent un confort optimal en toute saison.
-                </p>
-                <p>
-                  Idéale pour formations, réunions, ateliers ou tout autre événement professionnel
-                  ou associatif. Une personne dédiée est disponible pour vous accompagner selon vos
-                  besoins.
-                </p>
+        {/* Description des salles */}
+        <div className="mb-24 space-y-16">
+          {SALLES.map((salle, index) => (
+            <div key={salle.id} className="grid lg:grid-cols-2 gap-12 items-center">
+              <div
+                className={cn(
+                  "flex flex-col justify-center space-y-6 order-2",
+                  index % 2 === 0 && "lg:order-1"
+                )}
+              >
+                <h2 className="font-serif text-3xl font-bold text-foreground">
+                  {salle.name} – {salle.surface} m²
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  {salle.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+                <Link
+                  href={sallePath(salle)}
+                  className="inline-flex items-center gap-2 font-semibold text-primary hover:underline"
+                >
+                  Découvrir {salle.nameWithArticle} <ArrowRight className="size-4" />
+                </Link>
+              </div>
+
+              {/* Photos au-dessus du texte sur mobile, en alternance sur grand écran */}
+              <div className={cn("order-1", index % 2 === 0 && "lg:order-2")}>
+                <SalleCarousel salleId={salle.id} />
               </div>
             </div>
-
-            <div className="order-1 lg:order-2">
-              <CarouselSalleDesMuses />
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <CarouselCafeDoc />
-
-            <div className="flex flex-col justify-center space-y-6">
-              <h2 className="font-serif text-3xl font-bold text-foreground">Café d'Oc – 28 m²</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Idéal pour vos rencontres, ateliers, réunions ou événements professionnels ou
-                  associatifs, dans un cadre convivial et chaleureux.
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Avantages clés */}
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-24">
-          <div className="bg-white rounded-xl border border-gray-100 p-6 md:p-8 text-center hover:shadow-lg transition-shadow">
-            <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mb-4 md:mb-5">
-              <Lightbulb className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+          {AVANTAGES.map(({ title, text, Icon }) => (
+            <div
+              key={title}
+              className="bg-white rounded-xl border border-gray-100 p-6 md:p-8 text-center hover:shadow-lg transition-shadow"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mb-4 md:mb-5">
+                <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+              </div>
+              <h3 className="font-serif text-lg md:text-xl font-bold mb-3">{title}</h3>
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{text}</p>
             </div>
-            <h3 className="font-serif text-lg md:text-xl font-bold mb-3">Équipements modernes</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              WiFi, climatisation, éclairage modulable et bien plus (vidéoprojecteur disponible en
-              option)
+          ))}
+        </div>
+
+        {/* Usages */}
+        <div className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">
+              Une salle pour chaque usage
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Formation, réunion, cours de yoga ou conférence : découvrez la configuration adaptée à
+              votre projet
             </p>
           </div>
-          <div className="bg-white rounded-xl border border-gray-100 p-6 md:p-8 text-center hover:shadow-lg transition-shadow">
-            <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mb-4 md:mb-5">
-              <MoveDiagonal2 className="w-8 h-8 md:w-10 md:h-10 text-primary" />
-            </div>
-            <h3 className="font-serif text-lg md:text-xl font-bold mb-3">Espaces modulables</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              Configuration adaptable : conférence, U, classe, ou espace libre
-            </p>
-          </div>
-          <div className="bg-white rounded-xl border border-gray-100 p-6 md:p-8 text-center hover:shadow-lg transition-shadow">
-            <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 mb-4 md:mb-5">
-              <Accessibility className="w-8 h-8 md:w-10 md:h-10 text-primary" />
-            </div>
-            <h3 className="font-serif text-lg md:text-xl font-bold mb-3">Accessibilité PMR</h3>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              Espaces accessibles avec toilettes PMR pour tous vos participants
-            </p>
-          </div>
+          <UsagesGrid />
         </div>
 
         {/* Nos salles */}
@@ -158,271 +183,13 @@ export default function MiseADispositionPage() {
           </div>
 
           <div className="max-w-6xl flex flex-col gap-12 mx-auto">
-            {salles.map((salle, index) => (
-              <Card key={index} className="overflow-hidden border-2 shadow-lg">
-                <CardHeader className="bg-gradient-to-br from-primary/5 to-primary/10 pb-6">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6">
-                    <div className="flex-1">
-                      <CardTitle className="font-serif text-3xl font-bold mb-2">
-                        {salle.name}
-                      </CardTitle>
-                      <CardDescription className="text-base font-medium text-primary">
-                        {salle.capacity}
-                      </CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="p-8 space-y-8">
-                  {/* Activités */}
-                  <div className="space-y-4">
-                    <h3 className="font-serif text-2xl font-semibold text-foreground flex items-center gap-2">
-                      <Drama className="w-6 h-6 text-primary" />
-                      Activités possibles
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                      {salle.activity.map((a, idx) => (
-                        <div
-                          key={idx}
-                          className="px-5 py-3 flex items-center gap-3 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors text-sm font-semibold"
-                        >
-                          <a.Icon strokeWidth={1.5} className="size-5" />
-                          {a.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Tarifs */}
-                  <div className="space-y-4">
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">Tarifs</h3>
-                    {salle.contactForPrice ? (
-                      <div className="bg-primary/10 border-2 border-primary/20 rounded-lg p-6 text-center">
-                        <p className="text-lg font-semibold text-foreground mb-2">Nous contacter</p>
-                        <p className="text-muted-foreground text-sm">
-                          Pour connaître nos tarifs et disponibilités, n'hésitez pas à nous
-                          contacter
-                        </p>
-                        <Button variant="outline" size="sm" className="mt-4" asChild>
-                          <Link href="/contact">Demander un devis</Link>
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {/* Tarif Semaine */}
-                        <div className="bg-white border-2 rounded-lg overflow-hidden">
-                          <div className="bg-primary text-primary-foreground px-4 py-3 text-center">
-                            <h4 className="font-bold text-lg">Tarif Semaine</h4>
-                            <p className="text-xs opacity-90">Lundi au Vendredi</p>
-                          </div>
-                          <div className="p-6 space-y-3">
-                            {salle.tarifs.map((t, idx) => (
-                              <div
-                                key={idx}
-                                className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
-                              >
-                                <span className="font-medium text-muted-foreground">{t.label}</span>
-                                <span className="font-bold text-xl text-foreground">
-                                  {formatTarif(t, t.semaine)}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Tarif Week-End */}
-                        <div className="bg-white border-2 rounded-lg overflow-hidden">
-                          <div className="bg-secondary text-secondary-foreground px-4 py-3 text-center">
-                            <h4 className="font-bold text-lg">Tarif Week-End</h4>
-                            <p className="text-xs opacity-90">Samedi et Dimanche</p>
-                          </div>
-                          <div className="p-6 space-y-3">
-                            {salle.tarifs.map((t, idx) => (
-                              <div
-                                key={idx}
-                                className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
-                              >
-                                <span className="font-medium text-muted-foreground">{t.label}</span>
-                                <span className="font-bold text-xl text-foreground">
-                                  {formatTarif(t, t.weekend)}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Équipements */}
-                  <div className="space-y-4">
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Équipements inclus
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                      {salle.features.map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="px-4 py-3 flex items-center gap-2 rounded-lg border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all text-sm font-medium"
-                        >
-                          <feature.Icon
-                            strokeWidth={1.5}
-                            className="size-5 text-primary flex-shrink-0"
-                          />
-                          <span className="text-xs leading-tight">{feature.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Équipements payants à la demande */}
-                  {salle.paidOptions && salle.paidOptions.length > 0 && (
-                    <div className="space-y-4">
-                      <h3 className="font-serif text-2xl font-semibold text-foreground">
-                        Équipements payants à la demande
-                      </h3>
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                        {salle.paidOptions.map((option, idx) => (
-                          <div
-                            key={idx}
-                            className="px-4 py-3 flex items-center gap-2 rounded-lg border-2 border-dashed border-gray-300 hover:border-primary/40 hover:bg-primary/5 transition-all text-sm font-medium"
-                          >
-                            <option.Icon
-                              strokeWidth={1.5}
-                              className="size-5 text-primary flex-shrink-0"
-                            />
-                            <span className="text-xs leading-tight">{option.title}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Dispositions */}
-                  {salle.showDispositions && (
-                    <div className="space-y-4">
-                      <h3 className="font-serif text-2xl font-semibold text-foreground">
-                        Dispositions possibles
-                      </h3>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                          <SquareDashed
-                            strokeWidth={1.5}
-                            className="size-6 text-primary flex-shrink-0"
-                          />
-                          <div className="text-sm">
-                            <p className="font-semibold">Espace vide</p>
-                            <p className="text-xs text-muted-foreground">Configuration libre</p>
-                          </div>
-                        </div>
-                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                          <Theater
-                            strokeWidth={1.5}
-                            className="size-6 text-primary flex-shrink-0"
-                          />
-                          <div className="text-sm">
-                            <p className="font-semibold">Conférence</p>
-                            <p className="text-xs text-muted-foreground">Jusqu'à 50 personnes</p>
-                          </div>
-                        </div>
-                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                          <Brackets
-                            strokeWidth={1.5}
-                            className="size-6 text-primary flex-shrink-0"
-                          />
-                          <div className="text-sm">
-                            <p className="font-semibold">En U</p>
-                            <p className="text-xs text-muted-foreground">10 à 24 personnes</p>
-                          </div>
-                        </div>
-                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                          <SquareMenu
-                            strokeWidth={1.5}
-                            className="size-6 text-primary flex-shrink-0"
-                          />
-                          <div className="text-sm">
-                            <p className="font-semibold">Salle de classe</p>
-                            <p className="text-xs text-muted-foreground">12 à 24 personnes</p>
-                          </div>
-                        </div>
-                        <div className="px-4 py-3 flex items-center gap-3 rounded-lg border-2 border-gray-200 hover:border-primary/40 hover:bg-primary/5 transition-all">
-                          <MoveDiagonal2
-                            strokeWidth={1.5}
-                            className="size-6 text-primary flex-shrink-0"
-                          />
-                          <div className="text-sm">
-                            <p className="font-semibold">En épis</p>
-                            <p className="text-xs text-muted-foreground">12 à 21 personnes</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+            {SALLES.map((salle) => (
+              <SalleCard key={salle.id} salle={salle} href={sallePath(salle)} />
             ))}
           </div>
         </div>
 
-        {/* Processus de réservation */}
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 md:p-12 mb-24">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">
-              Comment réserver ?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Un processus simple et rapide pour réserver votre espace
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mb-4">
-                1
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-3">Contactez-nous</h3>
-              <p className="text-muted-foreground text-sm">
-                Par téléphone ou par mail, partagez-nous votre projet et vos besoins
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mb-4">
-                2
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-3">Visite & Devis</h3>
-              <p className="text-muted-foreground text-sm">
-                Visitez nos espaces et recevez un devis personnalisé adapté à votre événement
-              </p>
-            </div>
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-bold text-xl mb-4">
-                3
-              </div>
-              <h3 className="font-serif text-xl font-semibold mb-3">Réservation</h3>
-              <p className="text-muted-foreground text-sm">
-                Validation de votre réservation et préparation de la salle selon vos souhaits
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <p className="text-lg text-muted-foreground mb-6">
-              Prêt à réserver votre espace ? Contactez-nous dès maintenant
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant={"outline"} size="lg" className="text-base" asChild>
-                <a href="tel:+33621799750">
-                  <MicIcon className="w-5 h-5 mr-2" />
-                  Appeler Anne-Marie
-                </a>
-              </Button>
-              <span className="text-muted-foreground font-medium">ou</span>
-              <Button size="lg" className="text-base" asChild>
-                <Link href="contact">Nous contacter par mail</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
+        <ReservationCta />
 
         {/* Informations complémentaires */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -445,6 +212,7 @@ export default function MiseADispositionPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
+                Horaires flexibles, en semaine comme le week-end : on s'adapte à votre projet.
                 Parking disponible à proximité. Accès PMR. Cuisine et espace détente accessibles
                 selon les formules. Possibilité de restauration sur demande.
               </p>
@@ -452,254 +220,7 @@ export default function MiseADispositionPage() {
           </Card>
         </div>
 
-        {/* FAQ — réponses présentes dans le HTML (balises natives) pour être lues par les moteurs */}
-        <section className="max-w-4xl mx-auto mb-24">
-          <h2 className="font-serif text-4xl font-bold text-foreground mb-8 text-center">
-            Questions fréquentes
-          </h2>
-          <div className="space-y-3">
-            {SALLES_FAQ.map((item) => (
-              <details
-                key={item.question}
-                className="group bg-white border-2 rounded-lg px-6 py-4 open:border-primary/40"
-              >
-                <summary className="font-serif text-lg font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
-                  <h3>{item.question}</h3>
-                  <span className="text-primary text-2xl transition-transform group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="text-muted-foreground leading-relaxed mt-3">{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-}
-
-function CarouselCafeDoc() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-
-  const images = [
-    {
-      src: "/mise-a-disposition/cafe_oc.jpeg",
-      title: "Le café d'Oc",
-      config: "Bar",
-      capacity: "18 couverts",
-      icon: Coffee,
-    },
-    {
-      src: "/mise-a-disposition/cafe_classe.jpeg",
-      title: "Le café d'Oc",
-      config: "Classe",
-      capacity: "12 personnes",
-      icon: SquareMenu,
-    },
-    {
-      src: "/mise-a-disposition/cafe_conf.jpeg",
-      title: "Le café d'Oc",
-      config: "Conférence",
-      capacity: "25 personnes",
-      icon: Theater,
-    },
-    {
-      src: "/mise-a-disposition/cafe_U.jpeg",
-      title: "Le café d'Oc",
-      config: "En Bloc",
-      capacity: "12 personnes",
-      icon: Brackets,
-    },
-    {
-      src: "/mise-a-disposition/cafe_U2.jpeg",
-      title: "Le café d'Oc",
-      config: "En Bloc",
-      capacity: "12 personnes",
-      icon: Brackets,
-    },
-  ];
-
-  React.useEffect(() => {
-    if (!api) return;
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  return (
-    <div className="mx-auto w-full relative rounded-sm overflow-hidden shadow-xl mt-6">
-      <Carousel setApi={setApi} className="w-full">
-        <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem key={index} className="relative">
-              <div className="aspect-[4/3] w-full relative group">
-                <img
-                  src={image.src}
-                  alt={`${image.title} - ${image.config}`}
-                  className="w-full h-full object-cover"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Légende en overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex-shrink-0">
-                      <image.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-serif text-lg sm:text-2xl font-bold mb-1 truncate">
-                        {image.title}
-                      </h3>
-                      <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
-                        <span className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full font-medium">
-                          {image.config}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <span className="hidden sm:inline">•</span>
-                          <span className="font-medium">{image.capacity}</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-
-        {/* Boutons de navigation - cachés sur mobile, visibles sur desktop */}
-        <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
-        <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
-      </Carousel>
-
-      {/* Indicateurs de pagination */}
-      <div className="bg-white px-4 py-2 sm:py-3">
-        <div className="flex items-center justify-center gap-2">
-          {Array.from({ length: count }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => api?.scrollTo(idx)}
-              className={`h-2 rounded-full transition-all ${
-                idx === current - 1 ? "w-8 bg-primary" : "w-2 bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Aller à l'image ${idx + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CarouselSalleDesMuses() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-
-  const images = [
-    {
-      src: "/salle-des-muses-3.jpg",
-      title: "Salle des muses",
-      config: "en U",
-      capacity: "24 personnes",
-      icon: Brackets,
-    },
-    {
-      src: "/salle-des-muses.jpg",
-      title: "Salle des muses",
-      config: "Conférence",
-      capacity: "50 personnes",
-      icon: Theater,
-    },
-    {
-      src: "/salle-des-muses-2.jpg",
-      title: "Salle des muses",
-      config: "Classe",
-      capacity: "24 personnes",
-      icon: SquareMenu,
-    },
-  ];
-
-  React.useEffect(() => {
-    if (!api) return;
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
-
-  return (
-    <div className="mx-auto w-full relative rounded-sm overflow-hidden shadow-xl">
-      <Carousel setApi={setApi} className="w-full">
-        <CarouselContent>
-          {images.map((image, index) => (
-            <CarouselItem key={index} className="relative">
-              <div className="aspect-[4/3] w-full relative group">
-                <img
-                  src={image.src}
-                  alt={`${image.title} - ${image.config}`}
-                  className="w-full h-full object-cover"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                {/* Légende en overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="hidden sm:flex items-center justify-center w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex-shrink-0">
-                      <image.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-serif text-lg sm:text-2xl font-bold mb-1 truncate">
-                        {image.title}
-                      </h3>
-                      <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
-                        <span className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full font-medium">
-                          {image.config}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <span className="hidden sm:inline">•</span>
-                          <span className="font-medium">{image.capacity}</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-
-        {/* Boutons de navigation - cachés sur mobile, visibles sur desktop */}
-        <CarouselPrevious className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
-        <CarouselNext className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg hidden sm:flex" />
-      </Carousel>
-
-      {/* Indicateurs de pagination */}
-      <div className="bg-white px-4 py-2 sm:py-3">
-        <div className="flex items-center justify-center gap-2">
-          {Array.from({ length: count }).map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => api?.scrollTo(idx)}
-              className={`h-2 rounded-full transition-all ${
-                idx === current - 1 ? "w-8 bg-primary" : "w-2 bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Aller à l'image ${idx + 1}`}
-            />
-          ))}
-        </div>
+        <FaqList items={SALLES_FAQ} />
       </div>
     </div>
   );
