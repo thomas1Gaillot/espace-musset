@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import {
   Breadcrumb,
@@ -9,6 +11,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
+
+export const metadata = pageMetadata(PAGES.PHILO_RENCONTRES);
 
 const RencontresPhilo = () => {
   const recentRencontresPhilo = eventList.filter(

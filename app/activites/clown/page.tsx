@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,6 +11,8 @@ import {
 import { ROUTES } from "@/data/route";
 import { CoffeeIcon, EuroIcon, HourglassIcon, MapIcon, SettingsIcon } from "lucide-react";
 import Image from "next/image";
+
+export const metadata = pageMetadata(PAGES.ACTIVITES_CLOWN);
 
 const Clown = () => (
   <div className="min-h-screen py-12 px-4">

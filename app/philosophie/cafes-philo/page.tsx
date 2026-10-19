@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import {
   Breadcrumb,
@@ -11,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import Link from "next/link";
+
+export const metadata = pageMetadata(PAGES.PHILO_CAFES);
 
 const CafesPhilo = () => {
   const cafePhilosEvent = eventList.filter(

@@ -40,7 +40,7 @@ export default function EventList({ data, title }: { data: EventData[]; title: s
   return (
     <>
       <div className="flex justify-between items-center mb-6 gap-2">
-        <h1 className="text-2xl font-bold">{`${title} (${upcomingEvents.length})`}</h1>
+        <h2 className="text-2xl font-bold">{`${title} (${upcomingEvents.length})`}</h2>
         <Select value={sortBy} onValueChange={setSortBy}>
           <SelectTrigger className="w-32">
             <SelectValue placeholder="Trier par" />

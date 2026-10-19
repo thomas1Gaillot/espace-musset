@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import Image from "next/image";
 import {
@@ -20,6 +22,8 @@ import {
   PhoneIcon,
   SettingsIcon,
 } from "lucide-react";
+
+export const metadata = pageMetadata(PAGES.ARTS_QI_GONG);
 
 const QiGong = () => {
   const QiGongEvents = eventList.filter(

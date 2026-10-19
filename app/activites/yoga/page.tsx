@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,6 +18,8 @@ import {
   PhoneIcon,
   UserIcon,
 } from "lucide-react";
+
+export const metadata = pageMetadata(PAGES.ACTIVITES_YOGA);
 
 const YogaMedha = () => {
   return (

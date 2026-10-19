@@ -1,7 +1,9 @@
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { JsonLd } from "@/components/json-ld";
 import { Toaster } from "@/components/ui/sonner";
-import type { Metadata } from "next";
+import { ORGANIZATION_ID, SITE, absoluteUrl, postalAddressJsonLd } from "@/lib/site";
+import type { Metadata, Viewport } from "next";
 import { Crimson_Text, Inter } from "next/font/google";
 import Script from "next/script";
 import type React from "react";
@@ -20,9 +22,20 @@ const crimsonText = Crimson_Text({
 });
 
 export const metadata: Metadata = {
-  title: "Espace Musset - Lieu de vie associatif à Toulouse",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: "Espace Musset – Lieu associatif et location de salles à Toulouse",
+    template: "%s | Espace Musset Toulouse",
+  },
   description:
     "Espace Musset est un lieu de vie associatif à Toulouse dédié à la philosophie, l'écologie, aux arts du corps et au partage culturel.",
+  applicationName: SITE.name,
+  openGraph: {
+    siteName: SITE.name,
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: SITE.image }],
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico" },
@@ -34,11 +47,39 @@ export const metadata: Metadata = {
     shortcut: "/favicon/favicon.ico",
   },
   manifest: "/favicon/site.webmanifest",
-  themeColor: "#ffffff",
   other: {
     "msapplication-TileColor": "#da532c",
     "msapplication-config": "/browserconfig.xml",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EventVenue"],
+  "@id": ORGANIZATION_ID,
+  name: SITE.name,
+  alternateName: "Espace Musset Toulouse",
+  description: SITE.shortDescription,
+  url: SITE.url,
+  logo: absoluteUrl(SITE.logo),
+  image: absoluteUrl(SITE.image),
+  email: SITE.email,
+  telephone: SITE.phone,
+  address: postalAddressJsonLd,
+  geo: { "@type": "GeoCoordinates", ...SITE.geo },
+  hasMap: "https://maps.google.com/?q=Espace+Musset+52+bis+rue+Alfred+de+Musset+31200+Toulouse",
+  publicAccess: true,
+  isAccessibleForFree: true,
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Accès PMR", value: true },
+    { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Café associatif", value: true },
+  ],
+  sameAs: SITE.sameAs,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -53,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${inter.variable} ${crimsonText.variable} font-sans bg-cream text-burgundy`}
       >
+        <JsonLd data={organizationJsonLd} />
         <Header />
         <Toaster />
 

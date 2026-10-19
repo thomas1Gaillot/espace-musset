@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import Image from "next/image";
 import {
@@ -11,6 +13,8 @@ import {
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import { EuroIcon, HourglassIcon, MapIcon, PackageIcon, SettingsIcon } from "lucide-react";
+
+export const metadata = pageMetadata(PAGES.ACTIVITES_MONTESSORI);
 
 const MercrediMontessoriPage = () => {
   const montessoriEvent = eventList.filter((e) => e.type.name === "Mercredi Montessori");

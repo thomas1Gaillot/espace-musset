@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -9,6 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/data/route";
 import Link from "next/link";
+
+export const metadata = pageMetadata(PAGES.ECOLOGIE_ZERO_DECHET);
 
 const ZeroDechet = () => {
   return (

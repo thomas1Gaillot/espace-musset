@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import {
   Breadcrumb,
@@ -10,6 +12,8 @@ import {
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import { EuroIcon, MapIcon, PhoneIcon, UsersIcon } from "lucide-react";
+
+export const metadata = pageMetadata(PAGES.ARTS_EXPLORATION_VOCALE);
 
 const ExplorationVocale = () => {
   const explorationVocaleEvents = eventList.filter(

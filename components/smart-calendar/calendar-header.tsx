@@ -37,10 +37,10 @@ export function CalendarHeader({ currentDate, onPreviousMonth, onNextMonth }: Ca
       </Button>
 
       <div className="flex flex-col items-center">
-        <h1 className="text-lg flex  gap-1 font-bold text-gray-700">
+        <div className="text-lg flex  gap-1 font-bold text-gray-700">
           {monthNames[currentDate.getMonth()]}
           <p className="font-light">{currentDate.getFullYear()}</p>
-        </h1>
+        </div>
       </div>
 
       <Button

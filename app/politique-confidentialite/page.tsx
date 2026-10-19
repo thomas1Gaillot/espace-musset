@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,6 +8,8 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { ROUTES } from "@/data/route";
+
+export const metadata = pageMetadata(PAGES.POLITIQUE_CONFIDENTIALITE);
 
 export default function PolitiqueConfidentialitePage() {
   return (

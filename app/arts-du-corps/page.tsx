@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventList from "@/components/event-list";
 import {
   Breadcrumb,
@@ -11,6 +13,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { eventList } from "@/data/data.allevents";
 import { ROUTES } from "@/data/route";
 import Link from "next/link";
+
+export const metadata = pageMetadata(PAGES.ARTS);
 
 export default function ArtsCorpsPage() {
   const artsDuCorpsEvents = eventList.filter(

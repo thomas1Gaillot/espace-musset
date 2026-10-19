@@ -62,7 +62,7 @@ export const Header = () => {
             />
 
             <div className="block">
-              <h1 className="font-serif font-semibold text-xl text-foreground">Espace Musset</h1>
+              <p className="font-serif font-semibold text-xl text-foreground">Espace Musset</p>
               <p className="text-xs text-muted-foreground">Lieu inter-associatif</p>
             </div>
           </Link>

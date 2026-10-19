@@ -17,100 +17,24 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { ROUTES } from "@/data/route";
+import { SALLES, SALLES_FAQ, formatTarif } from "@/data/salles.data";
 import {
   Accessibility,
-  AirVentIcon,
-  Armchair,
-  Bird,
   Brackets,
-  Brush,
   Coffee,
-  CookingPot,
   Drama,
-  GlassWater,
   Lightbulb,
   MicIcon,
-  Minus,
   MoveDiagonal2,
-  PencilRuler,
-  PianoIcon,
-  Projector,
-  Scroll,
-  Snowflake,
-  SpeakerIcon,
   SquareDashed,
   SquareMenu,
-  Sun,
   Theater,
-  TreeDeciduous,
-  Wifi,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 export default function MiseADispositionPage() {
-  const salles = [
-    {
-      id: "salle-des-muses",
-      name: "Salle des muses",
-      capacity: "42m² - 24-50 personnes selon disposition",
-      features: [
-        { title: "WiFi", Icon: Wifi },
-        { title: "Toilettes PMR", Icon: Accessibility },
-        { title: "Éclairage avec variateurs et tonalités", Icon: Lightbulb },
-        { title: "Climatisation", Icon: Snowflake },
-        { title: "Lumière du jour", Icon: Sun },
-        { title: "Micro", Icon: MicIcon },
-        { title: "Plancher chêne", Icon: TreeDeciduous },
-        { title: "Calme", Icon: Bird },
-        { title: "Table et chaises", Icon: Armchair },
-        { title: "Paperboard et feutres", Icon: Scroll },
-        { title: "Verres et carafes d'eau", Icon: GlassWater },
-        { title: "Tapis de Yoga et coussins de méditation", Icon: Minus },
-      ],
-      activity: [
-        { title: "Séminaire", Icon: PencilRuler },
-        { title: "Yoga", Icon: AirVentIcon },
-        { title: "Conférences", Icon: SpeakerIcon },
-        { title: "Piano", Icon: PianoIcon },
-        { title: "Art", Icon: Brush },
-        { title: "Evènements", Icon: Drama },
-      ],
-      prices: [" 1/2 Journée - 120 €", " Journée - 200 €", " Horaire - 50 €/h"],
-      pricesWeekEnd: [" 1/2 Journée - 140 €", " Journée - 240 €", " Horaire - 60 €/h"],
-      contactForPrice: false,
-      showDispositions: true,
-      paidOptions: [{ title: "Vidéoprojecteur (sur demande)", Icon: Projector }],
-    },
-
-    {
-      id: "cafe-doc",
-      name: "Le café d'Oc",
-      capacity: "28m² - 25 personnes en mode conférence",
-      features: [
-        { title: "WiFi", Icon: Wifi },
-        { title: "Toilettes PMR", Icon: Accessibility },
-        { title: "Lumière du jour", Icon: Sun },
-        { title: "Calme", Icon: Bird },
-      ],
-      activity: [
-        { title: "Conférences", Icon: SpeakerIcon },
-        { title: "Ateliers", Icon: PencilRuler },
-        { title: "Evènements", Icon: Drama },
-        { title: "Art", Icon: Brush },
-        { title: "Séminaire", Icon: PencilRuler },
-      ],
-      prices: [" Journée - 100 €", " 1/2 Journée - 60 €", " Horaire - 30 €/h"],
-      pricesWeekEnd: [" Journée - 120 €", " 1/2 Journée - 75 €", " Horaire - 40 €/h"],
-      contactForPrice: false,
-      showDispositions: false,
-      paidOptions: [
-        { title: "Café, Thé (sur demande)", Icon: Coffee },
-        { title: "Bières (sur demande)", Icon: GlassWater },
-        { title: "Tapas fait maison (sur demande)", Icon: CookingPot },
-      ],
-    },
-  ];
+  const salles = SALLES;
 
   return (
     <div className="min-h-screen">
@@ -292,16 +216,14 @@ export default function MiseADispositionPage() {
                             <p className="text-xs opacity-90">Lundi au Vendredi</p>
                           </div>
                           <div className="p-6 space-y-3">
-                            {salle.prices?.map((p, idx) => (
+                            {salle.tarifs.map((t, idx) => (
                               <div
                                 key={idx}
                                 className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
                               >
-                                <span className="font-medium text-muted-foreground">
-                                  {p.split(" - ")[0].trim()}
-                                </span>
+                                <span className="font-medium text-muted-foreground">{t.label}</span>
                                 <span className="font-bold text-xl text-foreground">
-                                  {p.split(" - ")[1].trim()}
+                                  {formatTarif(t, t.semaine)}
                                 </span>
                               </div>
                             ))}
@@ -315,16 +237,14 @@ export default function MiseADispositionPage() {
                             <p className="text-xs opacity-90">Samedi et Dimanche</p>
                           </div>
                           <div className="p-6 space-y-3">
-                            {salle.pricesWeekEnd?.map((p, idx) => (
+                            {salle.tarifs.map((t, idx) => (
                               <div
                                 key={idx}
                                 className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
                               >
-                                <span className="font-medium text-muted-foreground">
-                                  {p.split(" - ")[0].trim()}
-                                </span>
+                                <span className="font-medium text-muted-foreground">{t.label}</span>
                                 <span className="font-bold text-xl text-foreground">
-                                  {p.split(" - ")[1].trim()}
+                                  {formatTarif(t, t.weekend)}
                                 </span>
                               </div>
                             ))}
@@ -531,6 +451,29 @@ export default function MiseADispositionPage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* FAQ — réponses présentes dans le HTML (balises natives) pour être lues par les moteurs */}
+        <section className="max-w-4xl mx-auto mb-24">
+          <h2 className="font-serif text-4xl font-bold text-foreground mb-8 text-center">
+            Questions fréquentes
+          </h2>
+          <div className="space-y-3">
+            {SALLES_FAQ.map((item) => (
+              <details
+                key={item.question}
+                className="group bg-white border-2 rounded-lg px-6 py-4 open:border-primary/40"
+              >
+                <summary className="font-serif text-lg font-semibold cursor-pointer list-none flex justify-between items-center gap-4">
+                  <h3>{item.question}</h3>
+                  <span className="text-primary text-2xl transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="text-muted-foreground leading-relaxed mt-3">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

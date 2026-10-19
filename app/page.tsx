@@ -1,4 +1,8 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import EventsSection from "@/components/events-section";
+import { JsonLd } from "@/components/json-ld";
+import { eventJsonLd, getUpcomingEvents } from "@/lib/events-seo";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { SmartCalendar } from "@/components/smart-calendar/smart-calendar";
 import { Button } from "@/components/ui/button";
@@ -11,6 +15,11 @@ import Link from "next/link";
 import EventList from "../components/event-list";
 import { eventList } from "../data/data.allevents";
 import { OurImageData } from "./cafe-associatif/page";
+
+export const metadata = pageMetadata(PAGES.ACCUEIL);
+
+// Régénère la page chaque jour pour que les événements à venir (JSON-LD) restent à jour
+export const revalidate = 86400;
 
 const homeImageData: OurImageData[] = [
   {
@@ -124,8 +133,17 @@ export default function HomePage() {
     },
   ];
 
+  const upcomingEventsJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": getUpcomingEvents(60).slice(0, 40).map(eventJsonLd),
+  };
+
   return (
     <div className="min-h-screen">
+      <JsonLd data={upcomingEventsJsonLd} />
+      <h1 className="sr-only">
+        Espace Musset, lieu associatif et location de salles à Toulouse (Minimes)
+      </h1>
       {/* Hero Section */}
       <section className="hero-section relative min-h-[85vh] flex flex-col justify-center overflow-hidden bg-gray-950">
         <HeroCarousel images={heroImages} />

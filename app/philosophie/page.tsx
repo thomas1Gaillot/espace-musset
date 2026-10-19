@@ -1,3 +1,5 @@
+import { PAGES } from "@/data/pages.seo";
+import { pageMetadata } from "@/lib/site";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,6 +21,8 @@ import { philosophieContent } from "@/data/philosophie.data";
 import Image from "next/image";
 import Link from "next/link";
 import EventList from "../../components/event-list";
+
+export const metadata = pageMetadata(PAGES.PHILOSOPHIE);
 
 export default function PhilosophiePage() {
   const philoEvents = eventList.filter((e) => e.category.name === "Philosophie");
