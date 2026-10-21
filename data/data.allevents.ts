@@ -317,6 +317,56 @@ const oneTimeEvents: EventData[] = [
     eventLink:
       "https://www.helloasso.com/associations/ensemble-toi-et-moi/evenements/conference-active-maria-montessori-une-femme-engagee-pour-la-paix?utm_source=app_ha&utm_campaign=share_campaign_button&utm_medium=android",
   }),
+
+  createEvent({
+    title: "Notre existence a-t-elle un sens ?",
+    dateObj: new Date("2026-11-04"),
+    time: "19:30 à 21:30",
+    image: "/event/existence_3nov.webp",
+    price: "12 € / 10 € réduit",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventContact: "Fernand Schwarz",
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-notre-existence-a-t-elle-un-sens-2002921331620",
+  }),
+
+  createEvent({
+    title: "Conférence : La rhétorique, l'art de l'éloquence",
+    dateObj: new Date("2026-11-20"),
+    time: "19:30 à 21:30",
+    image: "/event/réthorique_20nov.webp",
+    price: "12 € / 10 € réduit",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventContact: "Gilles Colliard, violoniste",
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-conference-la-rhetorique-lart-de-leloquence-2002975937949",
+  }),
+
+  createEvent({
+    title: "Café philo : Le progrès scientifique fait-il progresser l'être humain ?",
+    dateObj: new Date("2026-11-21"),
+    time: "16:00 à 17:30",
+    image: "/event/cafephilo.jpg",
+    price: "6 €",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CAFE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-cafe-philo-le-progres-scientifique-fait-il-progresser-letre-humain-2002428205667",
+  }),
+
+  createEvent({
+    title: "Conférence : Les sages fous de l'Himalaya",
+    dateObj: new Date("2026-11-21"),
+    time: "20:00 à 22:00",
+    image: "/event/sagesfou_21nov.webp",
+    price: "10 € / 8 € réduit",
+    category: EVENT_CATEGORIES.PHILOSOPHIE,
+    type: EVENT_TYPES.CONFERENCE_PHILO,
+    eventLink:
+      "https://www.eventbrite.fr/e/billets-les-sages-fous-de-lhimalaya-2002921597415",
+  }),
 ];
 
 
