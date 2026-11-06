@@ -33,6 +33,17 @@ import { RECURRING_EVENT_TEMPLATES, customizeTemplate } from "./event-templates"
  */
 const oneTimeEvents: EventData[] = [
   createEvent({
+    title: "Ciné surprise",
+    dateObj: new Date("2026-11-14"),
+    time: "19:00",
+    image: "/event/cineclub.png",
+    price: "5 €",
+    category: EVENT_CATEGORIES.CAFE_ASSOCIATIF,
+    type: EVENT_TYPES.SPECTACLE,
+    eventContact: "06 59 11 95 71",
+  }),
+
+  createEvent({
     title: "Ciné philo : Kaamelott et le roi Arthur",
     dateObj: new Date("2025-08-26"),
     time: "19:30 à 21:30",
@@ -345,7 +356,7 @@ const oneTimeEvents: EventData[] = [
   }),
 
   createEvent({
-    title: "Café philo : Le progrès scientifique fait-il progresser l'être humain ?",
+    title: "Le progrès scientifique fait-il progresser l'être humain ?",
     dateObj: new Date("2026-11-21"),
     time: "16:00 à 17:30",
     image: "/event/cafephilo.jpg",
@@ -443,6 +454,14 @@ const qiGongTuesday = generateEventsByDayOfWeek(
   new Date("2025-10-28"),
   new Date("2026-03-31"),
   5 // Friday
+);
+
+// Qi Gong avec Martial - tous les mardis 18h15-19h15 (nov - mi-déc 2026, fermeture du 18 au 31 déc)
+const qiGongMardi2026 = generateEventsByDayOfWeek(
+  customizeTemplate(RECURRING_EVENT_TEMPLATES.QI_GONG, { time: "18:15 à 19:15" }),
+  new Date("2026-11-10"),
+  new Date("2026-12-15"),
+  2 // Tuesday
 );
 
 // Mercredi Montessori - Every Wednesday
@@ -1310,6 +1329,7 @@ const eventList: EventData[] = [
   ...atelierChantOctNov,
   ...theatreImproNuit,
   ...qiGongTuesday,
+  ...qiGongMardi2026,
   ...mercrediMontessori,
   ...cafePhiloMonthly,
   ...atelierPhiloMondays,

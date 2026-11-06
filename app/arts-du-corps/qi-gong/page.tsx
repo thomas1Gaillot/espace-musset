@@ -118,7 +118,7 @@ const QiGong = () => {
 
           <p className="text-sm text-muted-foreground mt-6">
             <HourglassIcon className="inline-block mr-1 mb-1" size={14} />
-            {"Les mardis de 18h30 à 19h30"}
+            {"Les mardis de 18h15 à 19h15"}
           </p>
           <p className="text-sm text-muted-foreground mt-2">
             <EuroIcon className="inline-block mr-1 mb-1" size={14} />
