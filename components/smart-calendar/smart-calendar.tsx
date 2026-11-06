@@ -57,6 +57,13 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
       eventsByDate.get(dateKey)!.push(event);
     });
 
+    // Sort each day's events by start time
+    const startMinutes = (e: EventData) => {
+      const m = e.time.match(/(\d{1,2})\s*[h:]\s*(\d{2})?/i);
+      return m ? parseInt(m[1], 10) * 60 + parseInt(m[2] ?? "0", 10) : Number.MAX_SAFE_INTEGER;
+    };
+    eventsByDate.forEach((list) => list.sort((a, b) => startMinutes(a) - startMinutes(b)));
+
     return { calendarDays: days, eventsMap: eventsByDate };
   }, [currentDate, events]);
 
@@ -110,13 +117,11 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
           <div className="grid grid-cols-7 flex-1 overflow-hidden">
             {calendarDays.map((date, index) => {
               const dateEvents = date ? eventsMap.get(date.toDateString()) || [] : [];
-              const hasMoreEvents = dateEvents.length > 3;
-              const visibleEvents = dateEvents.slice(0, 3);
 
               return (
                 <div
                   key={index}
-                  className={`border-r border-secondary/20  border-b p-1 sm:p-2 h-[120px]  w-[54px] sm:h-[120px] sm:w-[80px] lg:h-[140px] lg:w-[120px]  overflow-hidden
+                  className={`flex flex-col border-r border-secondary/20  border-b p-[2px] sm:p-2 h-[150px] min-w-0 sm:h-[150px] sm:w-[80px] lg:h-[155px] lg:w-[120px]  overflow-hidden
                     ${
                       !date
                         ? "bg-gray-50/60"
@@ -127,7 +132,7 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                 >
                   {date && (
                     <>
-                      <div className="relative flex w-full justify-end items-end">
+                      <div className="relative flex w-full shrink-0 justify-end items-end">
                         <span
                           className={`absolute top-0  w-0 h-0 text-[10px] sm:text-xs font-medium 
                         ${
@@ -140,19 +145,14 @@ export function SmartCalendar({ events }: SmartCalendarProps) {
                         </span>
                       </div>
 
-                      <div className="space-y-1  overflow-hidden">
-                        {visibleEvents.map((event) => (
+                      <div className="space-y-1 flex-1 min-h-0 overflow-y-auto overflow-x-hidden">
+                        {dateEvents.map((event) => (
                           <EventCard
                             key={event.id}
                             event={event}
                             onClick={() => handleEventClick(event)}
                           />
                         ))}
-                        {hasMoreEvents && (
-                          <div className="text-[10px] sm:text-xs text-gray-500 px-1 sm:px-2 py-1">
-                            +{dateEvents.length - 2} autre{dateEvents.length - 2 > 1 ? "(s)" : ""}
-                          </div>
-                        )}
                       </div>
                     </>
                   )}

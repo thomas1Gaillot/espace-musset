@@ -281,7 +281,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-2 ">
+          <div className="w-full max-w-4xl sm:mx-2">
             <SmartCalendar events={eventList} />
           </div>
           <div
